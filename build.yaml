@@ -1,0 +1,10 @@
+# build.yaml
+targets:
+  $default:
+    builders:
+      functional_widget:
+        options:
+          # Default values:
+          debugFillProperties: false
+          widgetType: stateless # or 'hook'
+          equality: none # or 'identical'/'equal'
