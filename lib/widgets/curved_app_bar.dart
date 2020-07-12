@@ -62,14 +62,19 @@ class CurvedAppBar extends StatelessWidget {
                   ),
                 ),
           SpaceH4(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                title ?? '',
-                style: theme.textTheme.headline6,
-              )
-            ],
+          Container(
+            margin: const EdgeInsets.only(
+              left: Sizes.MARGIN_60,
+            ),
+            child: Row(
+//            mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  title ?? '',
+                  style: theme.textTheme.headline6,
+                )
+              ],
+            ),
           ),
         ],
       ),

@@ -4,49 +4,25 @@ class StringConst {
   //strings
   static const String APP_NAME = "Flutter Catalog";
 
-  static const String GREET_USER = "Hi, ";
-  static const String WELCOME_MESSAGE = "Welcome to learning made easy";
-  static const String USER_NAME = "Helen";
-  static const String CATEGORIES = "Categories";
-  static const String SHOW_ALL = "Show all";
-  static const String RECOMMENDED_FOR_YOU = "Recommended for you";
+  //Profile
+  static const String MARIA = "Maria Snow";
+  static const String JEROME = "Jerome Gaveau";
+  static const String USER_LOCATION = "San Francisco, CA";
+  static const String AGE = "20 years";
 
-  //Tags
-  static const String TRENDING = "Trending";
-  static const String TOP_RATED = "Top Rated";
-  static const String POPULAR = "Popular";
-  static const String BEST_SELLER = "Best Seller";
-
-  //Menu
-  static const String HOME = "Home";
-  static const String COURSES = "Courses";
-  static const String DASHBOARD = "Dashboard";
+  //Buttons
+  static const String FOLLOW = "Follow";
   static const String CHAT = "Chat";
+  static const String DOCKS = "Docks";
+  static const String LOCATION = "Location";
+  static const String FRIENDS = "Friends";
+  static const String SETTINGS = "Settings";
+  static const String NOTIFICATIONS = "Notifications";
 
-  //Categories List
-  static const String ART = "Art";
-  static const String PHOTOGRAPHY = "Photography";
-  static const String PROGRAMMING = "Programming";
-  static const String SCIENCE = "Science";
-  static const String DESIGN = "Design";
-  static const String DANCE = "Dance";
-
-  //Courses List
-  static const String DANCE_COURSE_TITLE = "Dance class with Madam Suszu";
-  static const String INTRO_TO_ALGORITHM =
-      "Introduction to Data Science and Algorithm";
-  static const String FUNDAMENTALS_OF_GRAPHIC_DESIGN =
-      "Fundamentals of graphic design";
-  static const String DIGITAL_MARKETING_PROCESSES =
-      "Digital Marketing Processes";
-
-  //Course Subtitle
-  static const String DANCE_COURSE_SUBTITLE = "Suszu dance school";
-  static const String INTRO_TO_ALGORITHM_SUBTITLE = "Freecodecamp school";
-  static const String FUNDAMENTALS_OF_GRAPHIC_DESIGN_SUBTITLE =
-      "Motion Design School";
-  static const String DIGITAL_MARKETING_PROCESSES_SUBTITLE = "Khan Academy";
-
-  //HintText
-  static const String SEARCH_INPUT_HINT_TEXT = "Find courses here";
+  static const String NUMBER_OF_COMMENTS = "143";
+  static const String NUMBER_OF_LIKES = "942";
+  static const String DATE = "8 Nov";
+  static const String POST_1 = "8 Nov";
+  static const String LOREM_IPSUM =
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
 }
