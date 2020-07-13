@@ -5,7 +5,7 @@ import 'package:fluttercatalog/widgets/spaces.dart';
 class ActionIcon extends StatelessWidget {
   ActionIcon({
     this.iconData,
-    this.color,
+    this.color = AppColors.grey,
     this.title,
     this.size,
     this.hasTitle = true,

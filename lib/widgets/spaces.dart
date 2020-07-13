@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+class SpaceH2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 2.0,
+    );
+  }
+}
+
 class SpaceH4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -154,7 +163,6 @@ class SpaceW24 extends StatelessWidget {
   }
 }
 
-
 class SpaceW30 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -164,7 +172,6 @@ class SpaceW30 extends StatelessWidget {
   }
 }
 
-
 class SpaceW36 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -173,7 +180,6 @@ class SpaceW36 extends StatelessWidget {
     );
   }
 }
-
 
 class SpaceW40 extends StatelessWidget {
   @override
@@ -201,4 +207,3 @@ class SpaceW60 extends StatelessWidget {
     );
   }
 }
-

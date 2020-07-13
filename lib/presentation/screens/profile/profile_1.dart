@@ -6,6 +6,7 @@ import 'package:fluttercatalog/widgets/action_icon.dart';
 import 'package:fluttercatalog/widgets/background_widget.dart';
 import 'package:fluttercatalog/widgets/curved_button.dart';
 import 'package:fluttercatalog/widgets/curved_container.dart';
+import 'package:fluttercatalog/widgets/custom_app_bar_1.dart';
 import 'package:fluttercatalog/widgets/post_card.dart';
 import 'package:fluttercatalog/widgets/spaces.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
@@ -29,7 +30,7 @@ class Profile1Screen extends StatelessWidget {
                   right: Sizes.PADDING_16,
                   top: Sizes.SAFE_AREA_MARGIN + Sizes.PADDING_16,
                 ),
-                child: _buildAppBar(),
+                child: CustomAppBar1(),
               ),
               CurvedContainer(
                 height: assignHeight(context: context, fraction: 0.65),
@@ -62,28 +63,6 @@ class Profile1Screen extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  @widget
-  Widget _buildAppBar() {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        InkWell(
-          onTap: () {},
-          child: Icon(
-            Icons.arrow_back,
-          ),
-        ),
-        InkWell(
-          onTap: () {},
-          child: Icon(
-            Icons.search,
-          ),
-        )
-      ],
     );
   }
 
@@ -148,7 +127,7 @@ class Profile1Screen extends StatelessWidget {
                 onTap: () {},
                 title: StringConst.CHAT,
                 iconData: FeatherIcons.messageSquare,
-                color: AppColors.grey,
+                color: AppColors.indigo100,
               ),
               Spacer(),
               ActionIcon(
@@ -183,7 +162,7 @@ class Profile1Screen extends StatelessWidget {
                 onTap: () {},
                 title: StringConst.SETTINGS,
                 iconData: FeatherIcons.settings,
-                color: AppColors.grey,
+                color: AppColors.purple100,
               ),
               Spacer(),
               ActionIcon(

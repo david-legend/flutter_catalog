@@ -10,6 +10,7 @@ class ImagePath {
 
   //Images
   static const String MARIA = "$imageDir/maria.png";
+  static const String IDA = "$imageDir/ida.png";
   static const String AMIR = "$imageDir/amir.jpg";
 
   //Icons

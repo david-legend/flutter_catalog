@@ -22,6 +22,15 @@ class PostCard extends StatelessWidget {
     this.onCommentsTap,
     this.onLike,
     this.onShare,
+    this.headMainAxisAlignment = MainAxisAlignment.start,
+    this.footerMainAxisAlignment = MainAxisAlignment.start,
+    this.contentTextAlign,
+    this.titleStyle,
+    this.subtitleStyle,
+    this.contentStyle,
+    this.iconTextStyle,
+    this.canShare = true,
+    this.iconColor,
   });
 
   final double height;
@@ -35,9 +44,18 @@ class PostCard extends StatelessWidget {
   final String subTitle;
   final String content;
   final String imagePath;
+  final TextStyle titleStyle;
+  final TextStyle subtitleStyle;
+  final TextStyle contentStyle;
+  final TextStyle iconTextStyle;
   final GestureTapCallback onShare;
   final GestureTapCallback onCommentsTap;
   final GestureTapCallback onLike;
+  final MainAxisAlignment headMainAxisAlignment;
+  final MainAxisAlignment footerMainAxisAlignment;
+  final TextAlign contentTextAlign;
+  final bool canShare;
+  final Color iconColor;
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +76,7 @@ class PostCard extends StatelessWidget {
       child: Column(
         children: [
           Row(
+            mainAxisAlignment: headMainAxisAlignment,
             children: [
               CircleAvatar(
                 backgroundImage: AssetImage(imagePath),
@@ -70,14 +89,15 @@ class PostCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: theme.textTheme.subtitle2,
+                    style: titleStyle ?? theme.textTheme.subtitle2,
                   ),
                   Text(
                     subTitle,
-                    style: theme.textTheme.bodyText1.copyWith(
-                      color: AppColors.grey,
-                      fontSize: Sizes.TEXT_SIZE_14,
-                    ),
+                    style: subtitleStyle ??
+                        theme.textTheme.bodyText1.copyWith(
+                          color: AppColors.grey,
+                          fontSize: Sizes.TEXT_SIZE_14,
+                        ),
                   ),
                 ],
               )
@@ -88,33 +108,40 @@ class PostCard extends StatelessWidget {
             child: Text(
               content,
               maxLines: 4,
-              style: theme.textTheme.bodyText1.copyWith(
-                fontSize: Sizes.TEXT_SIZE_14,
-              ),
+              textAlign: contentTextAlign,
+              style: contentStyle ??
+                  theme.textTheme.bodyText1.copyWith(
+                    fontSize: Sizes.TEXT_SIZE_14,
+                  ),
             ),
           ),
           SpaceH16(),
           Row(
+            mainAxisAlignment: footerMainAxisAlignment,
             children: [
-              InkWell(
-                onTap: onShare,
-                child: Icon(FeatherIcons.share2, color: AppColors.grey),
-              ),
-              Spacer(),
+              canShare
+                  ? InkWell(
+                      onTap: onShare,
+                      child: Icon(FeatherIcons.share2, color: AppColors.grey),
+                    )
+                  : Container(),
+              canShare ? Spacer() : Container(),
               ActionIcon(
                 onTap: onCommentsTap,
                 title: StringConst.NUMBER_OF_COMMENTS,
                 iconData: FeatherIcons.messageSquare,
                 isHorizontal: true,
-                color: AppColors.grey,
+                color: iconColor,
+                titleStyle: iconTextStyle,
               ),
-              SpaceW8(),
+              SpaceW16(),
               ActionIcon(
                 onTap: onLike,
                 title: StringConst.NUMBER_OF_LIKES,
                 iconData: FeatherIcons.heart,
                 isHorizontal: true,
-                color: AppColors.grey,
+                titleStyle: iconTextStyle,
+                color: iconColor,
               ),
             ],
           )
