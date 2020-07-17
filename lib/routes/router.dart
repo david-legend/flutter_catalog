@@ -3,6 +3,7 @@ import 'package:fluttercatalog/presentation/root_screen.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_1.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_2.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_3.dart';
+import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
 
 @MaterialAutoRouter(
   routes: <AutoRoute>[
@@ -11,6 +12,7 @@ import 'package:fluttercatalog/presentation/screens/profile/profile_3.dart';
     MaterialRoute(page: Profile1Screen),
     MaterialRoute(page: Profile2Screen),
     MaterialRoute(page: Profile3Screen),
+    MaterialRoute(page: Profile4Screen),
   ],
 )
 class $Router {}

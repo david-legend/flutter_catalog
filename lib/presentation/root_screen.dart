@@ -50,9 +50,6 @@ class RootScreen extends StatelessWidget {
               style: TextStyle(color: Colors.black),
             ),
           ),
-          CurvedAppBar(
-            title: StringConst.APP_NAME,
-          ),
         ],
       ),
     );

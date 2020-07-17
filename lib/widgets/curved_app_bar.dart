@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
+import 'package:fluttercatalog/widgets/curved_container.dart';
 import 'package:fluttercatalog/widgets/spaces.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
 class CurvedAppBar extends StatelessWidget {
   CurvedAppBar({
-    this.title,
     this.height,
     this.borderRadius,
+    this.iconColor,
+    this.iconSize = Sizes.SIZE_24,
+    this.leadingIcon = Icons.arrow_back,
+    this.trailingIcon = Icons.search,
     this.leading,
     this.trailing,
     this.onLeadingTap,
@@ -16,9 +20,15 @@ class CurvedAppBar extends StatelessWidget {
     this.hasLeading = true,
     this.hasTrailing = false,
     this.backgroundColor = AppColors.primaryColor,
+    this.margin,
+    this.decoration,
+    this.topLeftRadius = Sizes.RADIUS_0,
+    this.topRightRadius = Sizes.RADIUS_0,
+    this.bottomRightRadius = Sizes.RADIUS_0,
+    this.bottomLeftRadius = Sizes.RADIUS_0,
+    this.title,
   });
 
-  final String title;
   final double height;
   final Widget leading;
   final Widget trailing;
@@ -27,20 +37,32 @@ class CurvedAppBar extends StatelessWidget {
   final bool hasLeading;
   final bool hasTrailing;
   final Color backgroundColor;
+  final IconData leadingIcon;
+  final IconData trailingIcon;
+  final Color iconColor;
+  final double iconSize;
   final BorderRadiusGeometry borderRadius;
+  final BoxDecoration decoration;
+  final EdgeInsetsGeometry margin;
+  final double topLeftRadius;
+  final double topRightRadius;
+  final double bottomRightRadius;
+  final double bottomLeftRadius;
+  final Widget title;
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    return Container(
+    return CurvedContainer(
+      margin: margin,
       height: height ?? assignHeight(context: context, fraction: 0.15),
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: borderRadius ??
-            BorderRadius.only(
-              bottomLeft: Radius.circular(Sizes.RADIUS_60),
-            ),
-      ),
+      decoration: decoration,
+      backgroundColor: backgroundColor,
+      borderRadius: borderRadius,
+      topLeftRadius: topLeftRadius,
+      topRightRadius: topRightRadius,
+      bottomLeftRadius: bottomLeftRadius,
+      bottomRightRadius: bottomRightRadius,
       child: Column(
         children: [
           (hasLeading == false && hasTrailing == false)
@@ -61,21 +83,7 @@ class CurvedAppBar extends StatelessWidget {
                     ],
                   ),
                 ),
-          SpaceH4(),
-          Container(
-            margin: const EdgeInsets.only(
-              left: Sizes.MARGIN_60,
-            ),
-            child: Row(
-//            mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  title ?? '',
-                  style: theme.textTheme.headline6,
-                )
-              ],
-            ),
-          ),
+          title ?? Container(),
         ],
       ),
     );
@@ -85,7 +93,11 @@ class CurvedAppBar extends StatelessWidget {
   Widget defaultLeading() {
     return InkWell(
       onTap: () {},
-      child: Icon(Icons.arrow_back),
+      child: Icon(
+        leadingIcon,
+        color: iconColor,
+        size: iconSize,
+      ),
     );
   }
 
@@ -93,7 +105,11 @@ class CurvedAppBar extends StatelessWidget {
   Widget defaultTrailing() {
     return InkWell(
       onTap: () {},
-      child: Icon(Icons.search),
+      child: Icon(
+        trailingIcon,
+        color: iconColor,
+        size: iconSize,
+      ),
     );
   }
 }

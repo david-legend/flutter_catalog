@@ -13,6 +13,7 @@ class ImagePath {
   static const String AMIR = "$imageDir/amir.jpg";
   static const String CAVES = "$imageDir/caves.png";
   static const String IDA = "$imageDir/ida.png";
+  static const String JACK_SNOW = "$imageDir/jack_snow.png";
   static const String MARIA = "$imageDir/maria.png";
   static const String PROFILE_COVER = "$imageDir/profile_cover.png";
   static const String SHAPES = "$imageDir/shapes.png";

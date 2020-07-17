@@ -17,7 +17,7 @@ class FlutterCatalog extends StatelessWidget {
       theme: AppTheme.lightThemeData,
       builder: ExtendedNavigator<Router>(
         router: Router(),
-        initialRoute: Routes.profile3Screen,
+        initialRoute: Routes.profile4Screen,
       ),
     );
   }

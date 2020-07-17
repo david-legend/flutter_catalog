@@ -8,6 +8,7 @@ class StringConst {
   static const String ALEXIO_MORALES = "Alexio Morales";
   static const String MARIA = "Maria Snow";
   static const String JEROME = "Jerome Gaveau";
+  static const String JACK_SNOW = "Jack Snow";
   static const String IDA = "Ida Niska";
   static const String USER_LOCATION = "San Francisco, CA";
   static const String AGE = "20 years";
@@ -27,6 +28,7 @@ class StringConst {
   static const String CHAT = "Chat";
   static const String DOCKS = "Docks";
   static const String LOCATION = "Location";
+  static const String LOCATION_2 = "San Francisco, CA";
   static const String FRIENDS = "Friends";
   static const String SETTINGS = "Settings";
   static const String NOTIFICATIONS = "Notifications";

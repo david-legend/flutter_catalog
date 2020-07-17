@@ -11,17 +11,20 @@ import 'package:fluttercatalog/presentation/root_screen.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_1.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_2.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_3.dart';
+import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
 
 class Routes {
   static const String rootScreen = '/';
   static const String profile1Screen = '/profile1-screen';
   static const String profile2Screen = '/profile2-screen';
   static const String profile3Screen = '/profile3-screen';
+  static const String profile4Screen = '/profile4-screen';
   static const all = <String>{
     rootScreen,
     profile1Screen,
     profile2Screen,
     profile3Screen,
+    profile4Screen,
   };
 }
 
@@ -33,6 +36,7 @@ class Router extends RouterBase {
     RouteDef(Routes.profile1Screen, page: Profile1Screen),
     RouteDef(Routes.profile2Screen, page: Profile2Screen),
     RouteDef(Routes.profile3Screen, page: Profile3Screen),
+    RouteDef(Routes.profile4Screen, page: Profile4Screen),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -58,6 +62,12 @@ class Router extends RouterBase {
     Profile3Screen: (RouteData data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => Profile3Screen(),
+        settings: data,
+      );
+    },
+    Profile4Screen: (RouteData data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => Profile4Screen(),
         settings: data,
       );
     },
