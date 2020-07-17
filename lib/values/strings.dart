@@ -5,6 +5,7 @@ class StringConst {
   static const String APP_NAME = "Flutter Catalog";
 
   //Profile
+  static const String ALEXIO_MORALES = "Alexio Morales";
   static const String MARIA = "Maria Snow";
   static const String JEROME = "Jerome Gaveau";
   static const String IDA = "Ida Niska";
@@ -17,6 +18,9 @@ class StringConst {
   static const String RECENT = "Recent";
   static const String NUMBER_OF_FOLLOWING = "150";
   static const String NUMBER_OF_FOLLOWERS = "125";
+  static const String NUMBER_OF_FOLLOWERS_2 = "128k followers";
+  static const String PHOTOS_AND_VIDEOS = "Photos & Videos";
+  static const String NUMBER_OF_PHOTOS = "269 photos";
 
   //Buttons
   static const String FOLLOW = "Follow";

@@ -9,14 +9,15 @@ class ImagePath {
 //  static const String LOGIN_1 = "$screenshotsDir/login1.png";
 
   //Images
-  static const String MARIA = "$imageDir/maria.png";
-  static const String IDA = "$imageDir/ida.png";
+  static const String ALEXIO_MORALES = "$imageDir/alexio_morales.png";
   static const String AMIR = "$imageDir/amir.jpg";
+  static const String CAVES = "$imageDir/caves.png";
+  static const String IDA = "$imageDir/ida.png";
+  static const String MARIA = "$imageDir/maria.png";
+  static const String PROFILE_COVER = "$imageDir/profile_cover.png";
+  static const String SHAPES = "$imageDir/shapes.png";
+  static const String TOWER = "$imageDir/tower.png";
 
   //Icons
-  static const String COMPUTER_LOGO = "$imageDir/computer.svg";
-  static const String LAB_LOGO = "$imageDir/laboratory.svg";
-  static const String PAINT_LOGO = "$imageDir/paint-palette.svg";
-  static const String TRIPOD_LOGO = "$imageDir/tripod.svg";
-  static const String WEB_LOGO = "$imageDir/web-development.svg";
+
 }
