@@ -29,6 +29,7 @@ class AppColors {
   //violet
   static const Color violet400 = Color(0xFF241332);
   static const Color violet200 = Color(0xFF352641);
+  static const Color violet50 = Color(0xFF372231);
 
   //brown
 }

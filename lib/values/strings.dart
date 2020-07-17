@@ -13,6 +13,8 @@ class StringConst {
   static const String LIKES = "Likes";
   static const String FOLLOWING = "Following";
   static const String FOLLOWERS = "Followers";
+  static const String POPULAR = "Popular";
+  static const String RECENT = "Recent";
   static const String NUMBER_OF_FOLLOWING = "150";
   static const String NUMBER_OF_FOLLOWERS = "125";
 
