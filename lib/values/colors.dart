@@ -11,6 +11,7 @@ class AppColors {
   static const Color white50 = Color(0xFFF1F0F2);
 
   //grey
+  static const Color grey50 = Color(0xFFE6EBEB);
   static const Color grey = Color(0xFFA1A1A1);
 
   //Indigo

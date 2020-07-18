@@ -3,8 +3,22 @@ part of values;
 class ImagePath {
   //images route
   static const String imageDir = "assets/images";
+  static const String categoriesImageDir = "assets/images/categories";
   static const String screenshotsDir = "assets/screenshots";
 
+  //Categories
+  static const String ALERT_DIALOGS = "$categoriesImageDir/alert_dialogs.jpg";
+  static const String BOTTOM_NAVIGATION =
+      "$categoriesImageDir/bottom_navigation.jpg";
+  static const String LIST = "$categoriesImageDir/list.jpg";
+  static const String LOGIN = "$categoriesImageDir/login.jpg";
+  static const String MENU = "$categoriesImageDir/menu.jpg";
+  static const String ONBOARDING = "$categoriesImageDir/onboarding.jpg";
+  static const String PROFILE = "$categoriesImageDir/profile.jpg";
+  static const String SETTINGS = "$categoriesImageDir/settings.jpg";
+  static const String STATS_INFORMATION =
+      "$categoriesImageDir/stats_information.jpg";
+  static const String VERIFICATION = "$categoriesImageDir/verification.jpg";
   //Screenshots
 //  static const String LOGIN_1 = "$screenshotsDir/login1.png";
 

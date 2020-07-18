@@ -4,6 +4,17 @@ class StringConst {
   //strings
   static const String APP_NAME = "Flutter Catalog";
 
+  //Categories
+  static const String PROFILE = "Profiles";
+  static const String MENU = "Menus";
+  static const String ONBOARDING = "Onboarding";
+  static const String LISTS = "Lists";
+  static const String SETTINGS = "Settings";
+  static const String ALERT_DIALOGS = "Alert Dialogs";
+  static const String VERIFICATION = "Verifications";
+  static const String LOGIN = "Login & Sign up";
+  static const String STATS_AND_INFORMATION = "Stats & Information";
+  static const String BOTTOM_NAVIGATION = "Bottom Navigation";
   //Profile
   static const String ALEXIO_MORALES = "Alexio Morales";
   static const String MARIA = "Maria Snow";
@@ -30,7 +41,6 @@ class StringConst {
   static const String LOCATION = "Location";
   static const String LOCATION_2 = "San Francisco, CA";
   static const String FRIENDS = "Friends";
-  static const String SETTINGS = "Settings";
   static const String NOTIFICATIONS = "Notifications";
 
   static const String NUMBER_OF_COMMENTS = "143";
