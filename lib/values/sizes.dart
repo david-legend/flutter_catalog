@@ -149,6 +149,7 @@ class Sizes {
   static const double MARGIN_0 = 0.0;
 
   //Paddings
+  static const double PADDING_44 = 44.0;
   static const double PADDING_40 = 40.0;
   static const double PADDING_36 = 36.0;
   static const double PADDING_32 = 32.0;

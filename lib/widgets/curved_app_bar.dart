@@ -26,6 +26,8 @@ class CurvedAppBar extends StatelessWidget {
     this.topRightRadius = Sizes.RADIUS_0,
     this.bottomRightRadius = Sizes.RADIUS_0,
     this.bottomLeftRadius = Sizes.RADIUS_0,
+    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
     this.title,
   });
 
@@ -48,6 +50,8 @@ class CurvedAppBar extends StatelessWidget {
   final double topRightRadius;
   final double bottomRightRadius;
   final double bottomLeftRadius;
+  final MainAxisAlignment mainAxisAlignment;
+  final CrossAxisAlignment crossAxisAlignment;
   final Widget title;
 
   @override
@@ -64,6 +68,8 @@ class CurvedAppBar extends StatelessWidget {
       bottomLeftRadius: bottomLeftRadius,
       bottomRightRadius: bottomRightRadius,
       child: Column(
+        mainAxisAlignment: mainAxisAlignment,
+        crossAxisAlignment: crossAxisAlignment,
         children: [
           (hasLeading == false && hasTrailing == false)
               ? Spacer()

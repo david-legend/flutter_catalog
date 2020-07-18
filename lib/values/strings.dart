@@ -16,11 +16,17 @@ class StringConst {
   static const String LOGIN = "Login & Sign up";
   static const String STATS_AND_INFORMATION = "Stats & Information";
   static const String BOTTOM_NAVIGATION = "Bottom Navigation";
+
   //Profile
+  static const String TIMELINE = "Timeline";
   static const String ALEXIO_MORALES = "Alexio Morales";
   static const String MARIA = "Maria Snow";
   static const String JEROME = "Jerome Gaveau";
   static const String JACK_SNOW = "Jack Snow";
+  static const String JOHN_BROWN = "John Brown";
+  static const String ALICIA = "Alicia";
+  static const String JEAN_COUTU = "Jean Coutu";
+  static const String MAXIME_BARBOSA = "Marxime Barbosa";
   static const String IDA = "Ida Niska";
   static const String USER_LOCATION = "San Francisco, CA";
   static const String AGE = "20 years";

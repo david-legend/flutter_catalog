@@ -12,6 +12,7 @@ import 'package:fluttercatalog/presentation/screens/profile/profile_1.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_2.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_3.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
+import 'package:fluttercatalog/presentation/screens/activities/timeline.dart';
 
 class Routes {
   static const String rootScreen = '/';
@@ -19,12 +20,14 @@ class Routes {
   static const String profile2Screen = '/profile2-screen';
   static const String profile3Screen = '/profile3-screen';
   static const String profile4Screen = '/profile4-screen';
+  static const String timeLine = '/time-line';
   static const all = <String>{
     rootScreen,
     profile1Screen,
     profile2Screen,
     profile3Screen,
     profile4Screen,
+    timeLine,
   };
 }
 
@@ -37,6 +40,7 @@ class Router extends RouterBase {
     RouteDef(Routes.profile2Screen, page: Profile2Screen),
     RouteDef(Routes.profile3Screen, page: Profile3Screen),
     RouteDef(Routes.profile4Screen, page: Profile4Screen),
+    RouteDef(Routes.timeLine, page: TimeLine),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -68,6 +72,12 @@ class Router extends RouterBase {
     Profile4Screen: (RouteData data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => Profile4Screen(),
+        settings: data,
+      );
+    },
+    TimeLine: (RouteData data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => TimeLine(),
         settings: data,
       );
     },
