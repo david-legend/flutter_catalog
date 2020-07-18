@@ -53,6 +53,14 @@ class TimeLine extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: AppColors.primaryColor,
+        child: Icon(
+          Icons.add,
+          color: AppColors.white,
+        ),
+      ),
     );
   }
 
