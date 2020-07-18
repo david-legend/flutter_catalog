@@ -5,6 +5,7 @@ class StringConst {
   static const String APP_NAME = "Flutter Catalog";
 
   //Categories
+  static const String CATEGORIES = "Categories";
   static const String PROFILE = "Profiles";
   static const String MENU = "Menus";
   static const String ONBOARDING = "Onboarding";

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttercatalog/data/demos.dart';
 import 'package:fluttercatalog/values/values.dart';
 import 'package:fluttercatalog/widgets/gallery_widgets.dart';
+import 'package:fluttercatalog/widgets/spaces.dart';
 
 class RootScreen extends StatefulWidget {
   @override
@@ -31,54 +32,25 @@ class _RootScreenState extends State<RootScreen>
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return Scaffold(
       backgroundColor: AppColors.grey50,
       body: Stack(
         children: [
           ListView(
-            children: _buildCategoryList(),
-//            [
-
-//              _AnimatedCategoryItem(
-//                startDelayFraction: 0.00,
-//                controller: _animationController,
-//                child: CategoryListItem(
-//                  key: const PageStorageKey<CatalogDemoCategory>(
-//                    CatalogDemoCategory.profile,
-//                  ),
-//                  category: CatalogDemoCategory.profile,
-//                  imageString: ImagePath.ALEXIO_MORALES,
-//                  demos: materialDemos(),
-//                  initiallyExpanded: false,
-//                ),
-//              ),
-//              _AnimatedCategoryItem(
-//                startDelayFraction: 0.05,
-//                controller: _animationController,
-//                child: CategoryListItem(
-//                  key: const PageStorageKey<CatalogDemoCategory>(
-//                    CatalogDemoCategory.settings,
-//                  ),
-//                  category: CatalogDemoCategory.settings,
-//                  imageString: ImagePath.ALEXIO_MORALES,
-//                  demos: materialDemos(),
-//                  initiallyExpanded: false,
-//                ),
-//              ),
-//              _AnimatedCategoryItem(
-//                startDelayFraction: 0.10,
-//                controller: _animationController,
-//                child: CategoryListItem(
-//                  key: const PageStorageKey<CatalogDemoCategory>(
-//                    CatalogDemoCategory.login,
-//                  ),
-//                  category: CatalogDemoCategory.login,
-//                  imageString: ImagePath.ALEXIO_MORALES,
-//                  demos: materialDemos(),
-//                  initiallyExpanded: false,
-//                ),
-//              ),
-//            ],
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 32.0),
+                child: Text(
+                  StringConst.CATEGORIES,
+                  style: theme.textTheme.headline5.copyWith(
+                    color: AppColors.primaryColor,
+                  ),
+                ),
+              ),
+              SpaceH8(),
+              ..._buildCategoryList()
+            ],
           )
         ],
       ),

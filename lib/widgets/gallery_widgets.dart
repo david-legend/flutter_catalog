@@ -215,8 +215,9 @@ class _CategoryHeader extends StatelessWidget {
                         padding: const EdgeInsetsDirectional.only(start: 8),
                         child: Text(
                           category.displayTitle(),
-                          style: Theme.of(context).textTheme.headline6.apply(
+                          style: Theme.of(context).textTheme.headline6.copyWith(
                                 color: colorScheme.onSurface,
+                                fontSize: Sizes.TEXT_SIZE_18,
                               ),
                         ),
                       ),
