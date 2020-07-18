@@ -18,7 +18,7 @@ class PostCard extends StatelessWidget {
     this.title = StringConst.JEROME,
     this.subTitle = StringConst.DATE,
     this.content = StringConst.LOREM_IPSUM,
-    this.imagePath = ImagePath.AMIR,
+    this.profileImagePath = ImagePath.AMIR,
     this.onCommentsTap,
     this.onLike,
     this.onShare,
@@ -31,6 +31,8 @@ class PostCard extends StatelessWidget {
     this.iconTextStyle,
     this.canShare = true,
     this.iconColor,
+    this.hasImage = false,
+    this.contentImagePath,
   });
 
   final double height;
@@ -43,7 +45,8 @@ class PostCard extends StatelessWidget {
   final String title;
   final String subTitle;
   final String content;
-  final String imagePath;
+  final String profileImagePath;
+  final String contentImagePath;
   final TextStyle titleStyle;
   final TextStyle subtitleStyle;
   final TextStyle contentStyle;
@@ -55,6 +58,7 @@ class PostCard extends StatelessWidget {
   final MainAxisAlignment footerMainAxisAlignment;
   final TextAlign contentTextAlign;
   final bool canShare;
+  final bool hasImage;
   final Color iconColor;
 
   @override
@@ -79,7 +83,7 @@ class PostCard extends StatelessWidget {
             mainAxisAlignment: headMainAxisAlignment,
             children: [
               CircleAvatar(
-                backgroundImage: AssetImage(imagePath),
+                backgroundImage: AssetImage(profileImagePath),
                 minRadius: Sizes.RADIUS_20,
                 maxRadius: Sizes.RADIUS_20,
               ),
@@ -115,6 +119,8 @@ class PostCard extends StatelessWidget {
                   ),
             ),
           ),
+          hasImage ? SpaceH4() : Container(),
+          hasImage ? Image.asset(contentImagePath) : Container(),
           SpaceH16(),
           Row(
             mainAxisAlignment: footerMainAxisAlignment,

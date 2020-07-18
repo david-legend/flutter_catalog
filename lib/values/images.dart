@@ -18,6 +18,7 @@ class ImagePath {
   static const String PROFILE_COVER = "$imageDir/profile_cover.png";
   static const String SHAPES = "$imageDir/shapes.png";
   static const String TOWER = "$imageDir/tower.png";
+  static const String BREAKFAST = "$imageDir/breakfast.png";
 
   //Icons
 

@@ -37,6 +37,8 @@ class StringConst {
   static const String NUMBER_OF_LIKES = "942";
   static const String DATE = "8 Nov";
   static const String TIME = "1 hour ago";
+  static const String SHORT_LOREM_IPSUM =
+      "Lorem ipsum dolor sit amet, consectetur";
   static const String LOREM_IPSUM =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
 }

@@ -7,7 +7,7 @@ class Styles {
     double fontSize = Sizes.TEXT_SIZE_14,
     FontStyle fontStyle: FontStyle.normal,
   }) {
-    return GoogleFonts.roboto(
+    return GoogleFonts.poppins(
       fontSize: fontSize,
       color: color,
       fontWeight: fontWeight,
@@ -21,7 +21,7 @@ class Styles {
     double fontSize = Sizes.TEXT_SIZE_16,
     FontStyle fontStyle: FontStyle.normal,
   }) {
-    return GoogleFonts.comfortaa(
+    return GoogleFonts.roboto(
       fontSize: fontSize,
       color: color,
       fontWeight: fontWeight,

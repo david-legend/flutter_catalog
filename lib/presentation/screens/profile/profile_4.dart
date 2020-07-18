@@ -3,25 +3,39 @@ import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
 import 'package:fluttercatalog/widgets/curved_app_bar.dart';
 import 'package:fluttercatalog/widgets/curved_container.dart';
+import 'package:fluttercatalog/widgets/post_card.dart';
 import 'package:fluttercatalog/widgets/spaces.dart';
 import 'package:fluttercatalog/widgets/vertical_text.dart';
+import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
 class Profile4Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    TextStyle titleTextStyle = theme.textTheme.subtitle2.copyWith(
-      color: AppColors.white,
-    );
+
     TextStyle subtitleTextStyle = theme.textTheme.bodyText1.copyWith(
       color: AppColors.white,
       fontSize: Sizes.TEXT_SIZE_14,
-//      fontWeight: FontWeight.w100,
     );
     return Scaffold(
       backgroundColor: AppColors.violet400,
       body: Stack(
         children: [
+          ListView(
+            padding: const EdgeInsets.symmetric(
+              horizontal: Sizes.PADDING_16,
+              vertical: Sizes.PADDING_16,
+            ),
+            shrinkWrap: true,
+            children: [
+              SizedBox(
+                height: assignHeight(context: context, fraction: 0.55),
+              ),
+              _buildListCards(context),
+              SpaceH16(),
+              _buildListCards(context),
+            ],
+          ),
           CurvedContainer(
             backgroundColor: AppColors.primaryColor,
             bottomLeftRadius: Sizes.RADIUS_80,
@@ -90,6 +104,42 @@ class Profile4Screen extends StatelessWidget {
           color: AppColors.violet400,
         ),
       ),
+    );
+  }
+
+  @widget
+  Widget _buildListCards(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+    TextStyle headingStyle = theme.textTheme.subtitle2.copyWith(
+      color: AppColors.white,
+    );
+    TextStyle contentStyle = theme.textTheme.bodyText1.copyWith(
+      color: AppColors.purple10,
+      fontSize: Sizes.TEXT_SIZE_14,
+    );
+    TextStyle iconTextStyle = theme.textTheme.subtitle1.copyWith(
+      color: AppColors.indigo50,
+    );
+
+    return PostCard(
+      headMainAxisAlignment: MainAxisAlignment.start,
+      footerMainAxisAlignment: MainAxisAlignment.end,
+      height: assignHeight(context: context, fraction: 0.35),
+      padding: const EdgeInsets.all(Sizes.PADDING_16),
+      color: AppColors.violet200,
+      profileImagePath: ImagePath.JACK_SNOW,
+      title: StringConst.JACK_SNOW,
+      content: StringConst.SHORT_LOREM_IPSUM,
+      contentTextAlign: TextAlign.center,
+      hasImage: true,
+      contentImagePath: ImagePath.BREAKFAST,
+      subTitle: StringConst.DATE,
+      titleStyle: headingStyle,
+      subtitleStyle: contentStyle,
+      contentStyle: contentStyle,
+      iconTextStyle: iconTextStyle,
+      iconColor: AppColors.purple50,
+      canShare: false,
     );
   }
 }
