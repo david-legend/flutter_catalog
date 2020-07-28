@@ -98,7 +98,7 @@ class CurvedAppBar extends StatelessWidget {
   @widget
   Widget defaultLeading() {
     return InkWell(
-      onTap: () {},
+      onTap: onLeadingTap,
       child: Icon(
         leadingIcon,
         color: iconColor,
@@ -110,7 +110,7 @@ class CurvedAppBar extends StatelessWidget {
   @widget
   Widget defaultTrailing() {
     return InkWell(
-      onTap: () {},
+      onTap: onTrailingTap,
       child: Icon(
         trailingIcon,
         color: iconColor,

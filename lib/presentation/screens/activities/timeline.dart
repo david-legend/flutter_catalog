@@ -1,10 +1,12 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
 import 'package:fluttercatalog/widgets/curved_app_bar.dart';
 import 'package:fluttercatalog/widgets/post_card.dart';
 import 'package:fluttercatalog/widgets/spaces.dart';
-import 'package:fluttercatalog/widgets/vertical_text.dart';
+
+import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
 class TimeLine extends StatelessWidget {
@@ -35,6 +37,9 @@ class TimeLine extends StatelessWidget {
             height: heightOfAppBar,
             bottomLeftRadius: Sizes.RADIUS_80,
             crossAxisAlignment: CrossAxisAlignment.start,
+            onLeadingTap: () {
+              ExtendedNavigator.ofRouter<Router>().pop();
+            },
             title: Padding(
               padding: const EdgeInsets.only(
                 left: Sizes.PADDING_44,

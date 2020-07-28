@@ -12,6 +12,7 @@ enum CatalogDemoCategory {
   settings,
   alertDialogs,
   verification,
+  activitiesAndTimeLine,
   login,
   statsAndInformation,
   bottomNavigation,
@@ -26,6 +27,8 @@ extension CatalogDemoExtension on CatalogDemoCategory {
         return StringConst.PROFILE;
       case CatalogDemoCategory.menu:
         return StringConst.MENU;
+      case CatalogDemoCategory.activitiesAndTimeLine:
+        return StringConst.ACTIVITIES_AND_TIMELINE;
       case CatalogDemoCategory.onBoarding:
         return StringConst.ONBOARDING;
       case CatalogDemoCategory.list:
@@ -79,6 +82,15 @@ List<CategoryListItem> categoryList() {
       category: CatalogDemoCategory.profile,
       imageString: ImagePath.PROFILE,
       demos: profileDemos(),
+      initiallyExpanded: false,
+    ),
+    CategoryListItem(
+      key: const PageStorageKey<CatalogDemoCategory>(
+        CatalogDemoCategory.activitiesAndTimeLine,
+      ),
+      category: CatalogDemoCategory.activitiesAndTimeLine,
+      imageString: ImagePath.LIST,
+      demos: activitiesAndTimelineDemos(),
       initiallyExpanded: false,
     ),
     CategoryListItem(
@@ -198,6 +210,19 @@ List<CatalogDemo> profileDemos() {
       subtitle: "beautifully designed category",
       category: CatalogDemoCategory.profile,
       routeName: Routes.profile4Screen,
+    ),
+  ];
+}
+
+List<CatalogDemo> activitiesAndTimelineDemos() {
+  return [
+    CatalogDemo(
+      title: "TimeLine 1",
+      icon: Icons.person,
+      slug: 'banner',
+      subtitle: "beautifully designed category",
+      category: CatalogDemoCategory.activitiesAndTimeLine,
+      routeName: Routes.timeLine,
     ),
   ];
 }

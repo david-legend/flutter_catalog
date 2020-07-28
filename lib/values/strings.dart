@@ -9,6 +9,7 @@ class StringConst {
   static const String PROFILE = "Profiles";
   static const String MENU = "Menus";
   static const String ONBOARDING = "Onboarding";
+  static const String ACTIVITIES_AND_TIMELINE = "Activities & Timeline";
   static const String LISTS = "Lists";
   static const String SETTINGS = "Settings";
   static const String ALERT_DIALOGS = "Alert Dialogs";
@@ -59,8 +60,6 @@ class StringConst {
   static const String LOREM_IPSUM =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua";
 
-
-
   static const String WELCOME = "Welcome";
   static const String FITNESS_GYM = "Fitness Gym";
   static const String WELCOME_BACK = "Welcome back,";
@@ -76,7 +75,7 @@ class StringConst {
   static const String SIGN_UP_MSG = "We are happy to see you here!";
 
   static const String LOGIN_MSG =
-  '''Enter your registered email id or contact number and password to login into your acount.''';
+      '''Enter your registered email id or contact number and password to login into your acount.''';
   static const String LOGIN_MSG_2 = "Log into your existing account";
 
   static const String LOG_IN = "Log in";
