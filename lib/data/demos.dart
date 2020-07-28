@@ -227,7 +227,80 @@ List<CatalogDemo> verificationDemos() {
 }
 
 List<CatalogDemo> loginDemos() {
-  return [];
+  return [
+    CatalogDemo(
+      title: "Login Design 1",
+      icon: Icons.person,
+      slug: 'banner',
+      subtitle: "beautifully designed category",
+      category: CatalogDemoCategory.profile,
+      routeName: Routes.loginScreen1,
+    ),
+    CatalogDemo(
+      title: "Login Design 1",
+      icon: Icons.person,
+      slug: 'banner',
+      subtitle: "beautifully designed category",
+      category: CatalogDemoCategory.profile,
+      routeName: Routes.loginScreen2,
+    ),
+    CatalogDemo(
+      title: "Login Design 5",
+      icon: Icons.person,
+      slug: 'banner',
+      subtitle: "beautifully designed category",
+      category: CatalogDemoCategory.profile,
+      routeName: Routes.loginScreen3,
+    ),
+    CatalogDemo(
+      title: "Login Design 6",
+      icon: Icons.person,
+      slug: 'banner',
+      subtitle: "beautifully designed category",
+      category: CatalogDemoCategory.profile,
+      routeName: Routes.loginScreen4,
+    ),
+    CatalogDemo(
+      title: "Login Design 7",
+      icon: Icons.person,
+      slug: 'banner',
+      subtitle: "beautifully designed category",
+      category: CatalogDemoCategory.profile,
+      routeName: Routes.loginScreen5,
+    ),
+    CatalogDemo(
+      title: "Login Design 6",
+      icon: Icons.person,
+      slug: 'banner',
+      subtitle: "beautifully designed category",
+      category: CatalogDemoCategory.profile,
+      routeName: Routes.loginScreen6,
+    ),
+    CatalogDemo(
+      title: "Login Design 7",
+      icon: Icons.person,
+      slug: 'banner',
+      subtitle: "beautifully designed category",
+      category: CatalogDemoCategory.profile,
+      routeName: Routes.registerScreen7,
+    ),
+    CatalogDemo(
+      title: "Login Design 8",
+      icon: Icons.person,
+      slug: 'banner',
+      subtitle: "beautifully designed category",
+      category: CatalogDemoCategory.profile,
+      routeName: Routes.loginScreen8,
+    ),
+    CatalogDemo(
+      title: "Login Design 9",
+      icon: Icons.person,
+      slug: 'banner',
+      subtitle: "beautifully designed category",
+      category: CatalogDemoCategory.profile,
+      routeName: Routes.loginScreen9,
+    ),
+  ];
 }
 
 List<CatalogDemo> statsAndInformationDemos() {
