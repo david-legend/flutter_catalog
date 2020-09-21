@@ -14,6 +14,7 @@ class CurvedContainer extends StatelessWidget {
     this.topRightRadius = Sizes.RADIUS_0,
     this.bottomRightRadius = Sizes.RADIUS_0,
     this.bottomLeftRadius = Sizes.RADIUS_0,
+    this.boxShadow,
   });
 
   final double height;
@@ -26,6 +27,7 @@ class CurvedContainer extends StatelessWidget {
   final double topRightRadius;
   final double bottomRightRadius;
   final double bottomLeftRadius;
+  final List<BoxShadow> boxShadow;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +44,7 @@ class CurvedContainer extends StatelessWidget {
                   bottomRight: Radius.circular(bottomRightRadius),
                   bottomLeft: Radius.circular(bottomLeftRadius),
                 ),
+            boxShadow: boxShadow,
           ),
       child: child,
     );

@@ -13,3 +13,4 @@ part 'styles.dart';
 part 'data.dart';
 part 'gradients.dart';
 part 'decoration.dart';
+part 'shadows.dart';

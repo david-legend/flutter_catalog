@@ -224,6 +224,14 @@ List<CatalogDemo> activitiesAndTimelineDemos() {
       category: CatalogDemoCategory.activitiesAndTimeLine,
       routeName: Routes.timeLine,
     ),
+    CatalogDemo(
+      title: "Activity",
+      icon: Icons.person,
+      slug: 'Activity',
+      subtitle: "Activity Screen Design",
+      category: CatalogDemoCategory.activitiesAndTimeLine,
+      routeName: Routes.activityScreen,
+    ),
   ];
 }
 

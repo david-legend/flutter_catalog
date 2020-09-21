@@ -19,6 +19,7 @@ class StringConst {
   static const String BOTTOM_NAVIGATION = "Bottom Navigation";
 
   //Profile
+  static const String ACTIVITY = "Activity";
   static const String TIMELINE = "Timeline";
   static const String ALEXIO_MORALES = "Alexio Morales";
   static const String MARIA = "Maria Snow";
