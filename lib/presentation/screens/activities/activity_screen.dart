@@ -8,6 +8,12 @@ import 'package:fluttercatalog/widgets/curved_post_card.dart';
 
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
+//TODO:: clean up code
+//TODO:: Add other screens
+//TODO:: -- Updates Screen (with those cool colors)
+//TODO:: -- Updates2 Screen(with those cool colors)
+//TODO:: -- Updates3 Screen(with those cool colors)
+
 class ActivityScreen extends StatefulWidget {
   @override
   _ActivityScreenState createState() => _ActivityScreenState();
@@ -64,12 +70,38 @@ class _ActivityScreenState extends State<ActivityScreen> {
   @widget
   Widget _buildListCards(BuildContext context) {
     double heightOfAppBar = assignHeight(context: context, fraction: 0.2);
+
+    //height = height of previous item + your height
+    //Spacerheight = height of previous item
     return Stack(
       children: [
         CurvedPostCard(
+          height: 200 + 260 + 200 + heightOfAppBar,
+          spacerHeight: 260 + 200 + heightOfAppBar,
+        ),
+        CurvedPostCard(
+          height: 260 + 200 + heightOfAppBar,
+          spacerHeight: 200 + heightOfAppBar + 40,
+          hasFooter: false,
+          body: Container(
+            height: 200,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
+              children: [
+                Image.asset(ImagePath.MEDITATION),
+                Image.asset(ImagePath.YOGA),
+                Image.asset(ImagePath.MEDITATION),
+                Image.asset(ImagePath.YOGA),
+              ],
+            ),
+          ),
+        ),
+        CurvedPostCard(
           height: 200 + heightOfAppBar,
           spacerHeight: heightOfAppBar,
-        )
+        ),
       ],
     );
   }
