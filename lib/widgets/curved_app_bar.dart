@@ -69,7 +69,7 @@ class CurvedAppBar extends StatelessWidget {
       topRightRadius: topRightRadius,
       bottomLeftRadius: bottomLeftRadius,
       bottomRightRadius: bottomRightRadius,
-      boxShadow: [boxShadow],
+      boxShadow: [boxShadow ?? BoxShadow()],
       child: Column(
         mainAxisAlignment: mainAxisAlignment,
         crossAxisAlignment: crossAxisAlignment,

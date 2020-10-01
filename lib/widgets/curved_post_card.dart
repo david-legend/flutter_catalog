@@ -5,6 +5,20 @@ import 'package:fluttercatalog/widgets/spaces.dart';
 
 import 'action_icon.dart';
 
+class PostItem {
+  PostItem({
+    @required this.height,
+    @required this.body,
+    this.hasFooter = true,
+    this.topMargin = 0.0,
+  });
+
+  final double height;
+  final double topMargin;
+  final bool hasFooter;
+  final Widget body;
+}
+
 class CurvedPostCard extends StatelessWidget {
   CurvedPostCard({
     this.spacerHeight,

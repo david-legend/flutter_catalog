@@ -8,11 +8,38 @@ import 'package:fluttercatalog/widgets/curved_post_card.dart';
 
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
-//TODO:: clean up code
+//TODO:: Document how curvedPostCards is being added
 //TODO:: Add other screens
 //TODO:: -- Updates Screen (with those cool colors)
 //TODO:: -- Updates2 Screen(with those cool colors)
 //TODO:: -- Updates3 Screen(with those cool colors)
+
+List<PostItem> curvedPostCardItems = [
+  PostItem(
+    height: 200,
+    body: null,
+  ),
+  PostItem(
+    height: 260,
+    topMargin: 40,
+    body: Container(
+      height: 200,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+        padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
+        children: [
+          Image.asset(ImagePath.MEDITATION),
+          Image.asset(ImagePath.YOGA),
+          Image.asset(ImagePath.MEDITATION),
+          Image.asset(ImagePath.YOGA),
+        ],
+      ),
+    ),
+    hasFooter: false,
+  ),
+  PostItem(height: 200, body: null),
+];
 
 class ActivityScreen extends StatefulWidget {
   @override
@@ -24,15 +51,15 @@ class _ActivityScreenState extends State<ActivityScreen> {
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     double heightOfAppBar = assignHeight(context: context, fraction: 0.2);
+
     return Scaffold(
       body: Stack(
         children: [
           ListView(
             children: [
-//              SizedBox(
-//                height: heightOfAppBar,
-//              ),
-              _buildListCards(context),
+              Stack(
+                children: _buildCurvedCards(curvedPostCardItems),
+              ),
             ],
           ),
           CurvedAppBar(
@@ -68,41 +95,31 @@ class _ActivityScreenState extends State<ActivityScreen> {
   }
 
   @widget
-  Widget _buildListCards(BuildContext context) {
+  List<Widget> _buildCurvedCards(List<PostItem> postItems) {
     double heightOfAppBar = assignHeight(context: context, fraction: 0.2);
+    List<Widget> curvedCards = [];
 
-    //height = height of previous item + your height
-    //Spacerheight = height of previous item
-    return Stack(
-      children: [
+    for (var index = 0; index < postItems.length; index++) {
+      double height = getHeight(index, postItems.length);
+      double spacerHeight = getHeight(index + 1, postItems.length);
+      double topMargin = postItems[index].topMargin;
+      curvedCards.add(
         CurvedPostCard(
-          height: 200 + 260 + 200 + heightOfAppBar,
-          spacerHeight: 260 + 200 + heightOfAppBar,
+          height: height + heightOfAppBar,
+          spacerHeight: spacerHeight + heightOfAppBar + topMargin,
+          hasFooter: postItems[index].hasFooter,
+          body: postItems[index].body,
         ),
-        CurvedPostCard(
-          height: 260 + 200 + heightOfAppBar,
-          spacerHeight: 200 + heightOfAppBar + 40,
-          hasFooter: false,
-          body: Container(
-            height: 200,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
-              children: [
-                Image.asset(ImagePath.MEDITATION),
-                Image.asset(ImagePath.YOGA),
-                Image.asset(ImagePath.MEDITATION),
-                Image.asset(ImagePath.YOGA),
-              ],
-            ),
-          ),
-        ),
-        CurvedPostCard(
-          height: 200 + heightOfAppBar,
-          spacerHeight: heightOfAppBar,
-        ),
-      ],
-    );
+      );
+    }
+    return curvedCards;
+  }
+
+  double getHeight(int startIndex, int length) {
+    double height = 0.0;
+    for (var i = startIndex; i < length; i++) {
+      height += curvedPostCardItems[i].height;
+    }
+    return height;
   }
 }
