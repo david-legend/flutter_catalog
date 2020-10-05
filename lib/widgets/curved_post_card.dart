@@ -18,6 +18,8 @@ class PostItem {
     this.profileImagePath,
     this.headerSubTitle,
     this.headerTitle,
+    this.headerTitleColor = AppColors.white,
+    this.headerSubtitleColor = AppColors.white,
   });
 
   final double height;
@@ -29,7 +31,9 @@ class PostItem {
   final Color footerIconColor;
   final String profileImagePath;
   final String headerTitle;
+  final Color headerTitleColor;
   final String headerSubTitle;
+  final Color headerSubtitleColor;
   final Widget body;
 }
 
@@ -54,7 +58,9 @@ class CurvedPostCard extends StatelessWidget {
     this.headerMainAxisAlignment = MainAxisAlignment.start,
     this.profileImagePath,
     this.headerTitle,
+    this.headerTitleColor = AppColors.white,
     this.headerSubTitle,
+    this.headerSubtitleColor = AppColors.white,
     this.headerTitleStyle,
     this.headerSubtitleStyle,
   });
@@ -74,7 +80,9 @@ class CurvedPostCard extends StatelessWidget {
   final MainAxisAlignment headerMainAxisAlignment;
   final String profileImagePath;
   final String headerTitle;
+  final Color headerTitleColor;
   final String headerSubTitle;
+  final Color headerSubtitleColor;
   final TextStyle headerTitleStyle;
   final TextStyle headerSubtitleStyle;
   final BoxShadow shadow;
@@ -176,14 +184,14 @@ class CurvedPostCard extends StatelessWidget {
               headerTitle,
               style: headerTitleStyle ??
                   theme.textTheme.subtitle2.copyWith(
-                    color: AppColors.white,
+                    color: headerTitleColor,
                   ),
             ),
             Text(
               headerSubTitle,
               style: headerSubtitleStyle ??
                   theme.textTheme.bodyText1.copyWith(
-                    color: footerIconColor,
+                    color: headerSubtitleColor,
                     fontSize: Sizes.TEXT_SIZE_14,
                   ),
             ),

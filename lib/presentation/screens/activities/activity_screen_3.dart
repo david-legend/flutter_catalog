@@ -5,6 +5,7 @@ import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 import 'package:fluttercatalog/widgets/curved_app_bar.dart';
 import 'package:fluttercatalog/widgets/curved_post_card.dart';
+import 'package:fluttercatalog/widgets/spaces.dart';
 
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
@@ -31,13 +32,30 @@ List<PostItem> curvedPostCardItems = [
     hasHeader: true,
   ),
   PostItem(
-    height: 250,
-    body: null,
-    backgroundColor: AppColors.violet400,
-    bodyTextColor: AppColors.purple10,
+    height: 300,
+    body: Padding(
+      padding: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_24),
+      child: Column(
+        children: [
+          Text(
+            StringConst.SHORT_LOREM_IPSUM,
+            style: TextStyle(
+              color: AppColors.grey,
+            ),
+          ),
+          SpaceH8(),
+          Image.asset(ImagePath.CINEMA),
+        ],
+      ),
+    ),
+    backgroundColor: AppColors.white,
+    bodyTextColor: AppColors.grey,
+    footerIconColor: AppColors.grey,
     profileImagePath: ImagePath.MARCUS,
     headerTitle: StringConst.MARCUS_BROWNLEE,
+    headerTitleColor: AppColors.violet400,
     headerSubTitle: StringConst.DATE,
+    headerSubtitleColor: AppColors.grey,
     hasHeader: true,
   ),
 ];
@@ -119,7 +137,9 @@ class _ActivityScreen3State extends State<ActivityScreen3> {
           shadow: Shadows.containerShadow2,
           profileImagePath: postItems[index].profileImagePath,
           headerTitle: postItems[index].headerTitle,
+          headerTitleColor: postItems[index].headerTitleColor,
           headerSubTitle: postItems[index].headerSubTitle,
+          headerSubtitleColor: postItems[index].headerSubtitleColor,
           body: postItems[index].body,
           backgroundColor: postItems[index].backgroundColor,
           bodyTextColor: postItems[index].bodyTextColor,
