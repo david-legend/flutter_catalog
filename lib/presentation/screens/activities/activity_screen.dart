@@ -117,6 +117,9 @@ class _ActivityScreenState extends State<ActivityScreen> {
           spacerHeight: spacerHeight + heightOfAppBar + topMargin,
           hasFooter: postItems[index].hasFooter,
           body: postItems[index].body,
+          backgroundColor: postItems[index].backgroundColor,
+          bodyTextColor: postItems[index].bodyTextColor,
+          footerIconColor: postItems[index].footerIconColor,
         ),
       );
     }

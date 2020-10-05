@@ -10,40 +10,44 @@ import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
 List<PostItem> curvedPostCardItems = [
   PostItem(
-    height: 200,
+    height: 250,
     body: null,
-    backgroundColor: AppColors.indigo100,
-    bodyTextColor: AppColors.white,
+    backgroundColor: AppColors.violet400,
+    bodyTextColor: AppColors.purple10,
+    profileImagePath: ImagePath.ABDULLAH,
+    headerTitle: StringConst.ABDULLAH_HADLEY,
+    headerSubTitle: StringConst.DATE,
+    hasHeader: true,
   ),
   PostItem(
-    height: 260,
-    topMargin: 40,
-    backgroundColor: AppColors.violet400,
-    body: Container(
-      height: 200,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        shrinkWrap: true,
-        padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
-        children: [
-          Image.asset(ImagePath.BALLET),
-          Image.asset(ImagePath.BUSINESS),
-          Image.asset(ImagePath.SKIES),
-          Image.asset(ImagePath.BUSINESS),
-        ],
-      ),
-    ),
-    hasFooter: false,
+    height: 250,
+    body: null,
+    backgroundColor: AppColors.pink50,
+    bodyTextColor: AppColors.white,
+    footerIconColor: AppColors.white,
+    profileImagePath: ImagePath.JACK_SNOW,
+    headerTitle: StringConst.JACK_SNOW,
+    headerSubTitle: StringConst.DATE,
+    hasHeader: true,
   ),
-  PostItem(height: 200, body: null),
+  PostItem(
+    height: 250,
+    body: null,
+    backgroundColor: AppColors.violet400,
+    bodyTextColor: AppColors.purple10,
+    profileImagePath: ImagePath.MARCUS,
+    headerTitle: StringConst.MARCUS_BROWNLEE,
+    headerSubTitle: StringConst.DATE,
+    hasHeader: true,
+  ),
 ];
 
-class ActivityScreen2 extends StatefulWidget {
+class ActivityScreen3 extends StatefulWidget {
   @override
-  _ActivityScreen2State createState() => _ActivityScreen2State();
+  _ActivityScreen3State createState() => _ActivityScreen3State();
 }
 
-class _ActivityScreen2State extends State<ActivityScreen2> {
+class _ActivityScreen3State extends State<ActivityScreen3> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -60,13 +64,13 @@ class _ActivityScreen2State extends State<ActivityScreen2> {
             ],
           ),
           CurvedAppBar(
-            backgroundColor: AppColors.white,
+            backgroundColor: AppColors.violet400,
             hasTrailing: true,
-            iconColor: AppColors.violet400,
+            iconColor: AppColors.white,
             height: heightOfAppBar,
             bottomLeftRadius: Sizes.RADIUS_80,
             crossAxisAlignment: CrossAxisAlignment.start,
-            boxShadow: Shadows.containerShadow,
+            boxShadow: Shadows.containerShadow2,
             onLeadingTap: () {
               ExtendedNavigator.ofRouter<Router>().pop();
             },
@@ -78,9 +82,11 @@ class _ActivityScreen2State extends State<ActivityScreen2> {
               child: Column(
                 children: [
                   Text(
-                    StringConst.ACTIVITY_2,
+                    StringConst.ACTIVITY_3,
                     textAlign: TextAlign.left,
-                    style: theme.textTheme.headline5.copyWith(),
+                    style: theme.textTheme.headline5.copyWith(
+                      color: AppColors.white,
+                    ),
                   )
                 ],
               ),
@@ -108,7 +114,12 @@ class _ActivityScreen2State extends State<ActivityScreen2> {
         CurvedPostCard(
           height: height + heightOfAppBar,
           spacerHeight: spacerHeight + heightOfAppBar + topMargin,
+          hasHeader: postItems[index].hasHeader,
           hasFooter: postItems[index].hasFooter,
+          shadow: Shadows.containerShadow2,
+          profileImagePath: postItems[index].profileImagePath,
+          headerTitle: postItems[index].headerTitle,
+          headerSubTitle: postItems[index].headerSubTitle,
           body: postItems[index].body,
           backgroundColor: postItems[index].backgroundColor,
           bodyTextColor: postItems[index].bodyTextColor,

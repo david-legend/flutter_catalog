@@ -9,15 +9,27 @@ class PostItem {
   PostItem({
     @required this.height,
     @required this.body,
+    this.hasHeader = false,
     this.hasFooter = true,
     this.topMargin = 0.0,
     this.backgroundColor = AppColors.white,
+    this.bodyTextColor = AppColors.black,
+    this.footerIconColor = AppColors.grey,
+    this.profileImagePath,
+    this.headerSubTitle,
+    this.headerTitle,
   });
 
   final double height;
   final double topMargin;
+  final bool hasHeader;
   final bool hasFooter;
   final Color backgroundColor;
+  final Color bodyTextColor;
+  final Color footerIconColor;
+  final String profileImagePath;
+  final String headerTitle;
+  final String headerSubTitle;
   final Widget body;
 }
 
@@ -29,6 +41,7 @@ class CurvedPostCard extends StatelessWidget {
     this.bodyText = StringConst.LOREM_IPSUM,
     this.body,
     this.hasFooter = true,
+    this.hasHeader = false,
     this.padding = const EdgeInsets.symmetric(
       horizontal: Sizes.PADDING_24,
       vertical: Sizes.PADDING_24,
@@ -36,6 +49,14 @@ class CurvedPostCard extends StatelessWidget {
     this.footer,
     this.backgroundColor = Colors.white,
     this.shadow = Shadows.containerShadow,
+    this.bodyTextColor = AppColors.black,
+    this.footerIconColor = AppColors.grey,
+    this.headerMainAxisAlignment = MainAxisAlignment.start,
+    this.profileImagePath,
+    this.headerTitle,
+    this.headerSubTitle,
+    this.headerTitleStyle,
+    this.headerSubtitleStyle,
   });
 
   final double spacerHeight;
@@ -43,10 +64,19 @@ class CurvedPostCard extends StatelessWidget {
   final double height;
   final String bodyText;
   final bool hasFooter;
+  final bool hasHeader;
   final EdgeInsetsGeometry padding;
   final Color backgroundColor;
+  final Color bodyTextColor;
+  final Color footerIconColor;
   final Widget body;
   final Widget footer;
+  final MainAxisAlignment headerMainAxisAlignment;
+  final String profileImagePath;
+  final String headerTitle;
+  final String headerSubTitle;
+  final TextStyle headerTitleStyle;
+  final TextStyle headerSubtitleStyle;
   final BoxShadow shadow;
 
   @override
@@ -64,25 +94,47 @@ class CurvedPostCard extends StatelessWidget {
       child: Column(
         children: [
           Container(height: spacerHeight) ?? Container(),
+          hasHeader
+              ? Padding(
+                  padding: padding,
+                  child: _buildHeader(context),
+                )
+              : Container(),
           body ??
               Padding(
-                padding: padding,
-                child: Text(bodyText),
+                padding: hasHeader
+                    ? EdgeInsets.symmetric(horizontal: Sizes.MARGIN_24)
+                    : padding,
+                child: Text(
+                  bodyText,
+                  style: TextStyle(
+                    color: bodyTextColor,
+                  ),
+                ),
               ),
           hasFooter
-              ? (footer ?? Padding(padding: padding, child: _buildFooter()))
+              ? (footer ??
+                  Padding(padding: padding, child: _buildFooter(context)))
               : Container(),
         ],
       ),
     );
   }
 
-  Widget _buildFooter() {
+  Widget _buildFooter(BuildContext context) {
+    TextStyle textStyle = Theme.of(context).textTheme.bodyText1.copyWith(
+          color: footerIconColor,
+          fontSize: Sizes.TEXT_SIZE_14,
+        );
+
     return Row(
       children: [
         InkWell(
           onTap: () {},
-          child: Icon(FeatherIcons.share2, color: AppColors.grey),
+          child: Icon(
+            FeatherIcons.share2,
+            color: footerIconColor,
+          ),
         ),
         Spacer(),
         ActionIcon(
@@ -90,8 +142,8 @@ class CurvedPostCard extends StatelessWidget {
           title: StringConst.NUMBER_OF_COMMENTS,
           iconData: FeatherIcons.messageSquare,
           isHorizontal: true,
-//          color: iconColor,
-//          titleStyle: iconTextStyle,
+          color: footerIconColor,
+          titleStyle: textStyle,
         ),
         SpaceW16(),
         ActionIcon(
@@ -99,9 +151,44 @@ class CurvedPostCard extends StatelessWidget {
           title: StringConst.NUMBER_OF_LIKES,
           iconData: FeatherIcons.heart,
           isHorizontal: true,
-//          color: iconColor,
-//          titleStyle: iconTextStyle,
+          color: footerIconColor,
+          titleStyle: textStyle,
         ),
+      ],
+    );
+  }
+
+  Widget _buildHeader(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+    return Row(
+      mainAxisAlignment: headerMainAxisAlignment,
+      children: [
+        CircleAvatar(
+          backgroundImage: AssetImage(profileImagePath),
+          minRadius: Sizes.RADIUS_20,
+          maxRadius: Sizes.RADIUS_20,
+        ),
+        SpaceW16(),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              headerTitle,
+              style: headerTitleStyle ??
+                  theme.textTheme.subtitle2.copyWith(
+                    color: AppColors.white,
+                  ),
+            ),
+            Text(
+              headerSubTitle,
+              style: headerSubtitleStyle ??
+                  theme.textTheme.bodyText1.copyWith(
+                    color: footerIconColor,
+                    fontSize: Sizes.TEXT_SIZE_14,
+                  ),
+            ),
+          ],
+        )
       ],
     );
   }

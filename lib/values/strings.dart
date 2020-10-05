@@ -21,11 +21,14 @@ class StringConst {
   //Profile
   static const String ACTIVITY_1 = "Activity 1";
   static const String ACTIVITY_2 = "Activity 2";
+  static const String ACTIVITY_3 = "Activity 3";
   static const String TIMELINE = "Timeline";
   static const String ALEXIO_MORALES = "Alexio Morales";
   static const String MARIA = "Maria Snow";
   static const String JEROME = "Jerome Gaveau";
   static const String JACK_SNOW = "Jack Snow";
+  static const String ABDULLAH_HADLEY = "Abdullah Hadley";
+  static const String MARCUS_BROWNLEE = "Marcus Brownlee";
   static const String JOHN_BROWN = "John Brown";
   static const String ALICIA = "Alicia";
   static const String JEAN_COUTU = "Jean Coutu";

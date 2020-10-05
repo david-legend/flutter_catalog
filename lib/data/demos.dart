@@ -240,6 +240,14 @@ List<CatalogDemo> activitiesAndTimelineDemos() {
       category: CatalogDemoCategory.activitiesAndTimeLine,
       routeName: Routes.activityScreen2,
     ),
+    CatalogDemo(
+      title: "Activity 3",
+      icon: Icons.person,
+      slug: 'Activity3',
+      subtitle: "Activity Screen 3 Design",
+      category: CatalogDemoCategory.activitiesAndTimeLine,
+      routeName: Routes.activityScreen3,
+    ),
   ];
 }
 
