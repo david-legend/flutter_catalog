@@ -8,12 +8,6 @@ import 'package:fluttercatalog/widgets/curved_post_card.dart';
 
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
-//TODO:: Document how curvedPostCards is being added
-//TODO:: Add other screens
-//TODO:: -- Updates Screen (with those cool colors)
-//TODO:: -- Updates2 Screen(with those cool colors)
-//TODO:: -- Updates3 Screen(with those cool colors)
-
 List<PostItem> curvedPostCardItems = [
   PostItem(
     height: 200,
