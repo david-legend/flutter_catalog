@@ -102,9 +102,21 @@ class _ActivityScreenState extends State<ActivityScreen> {
     List<Widget> curvedCards = [];
 
     for (var index = 0; index < postItems.length; index++) {
+      /// gets the height of all the postItems that have not been rendered including the
+      /// one about to be rendered and sums the up.
       double height = getHeight(index, postItems.length);
+
+      /// gets the spacing height of all the postItems that have not been rendered
       double spacerHeight = getHeight(index + 1, postItems.length);
       double topMargin = postItems[index].topMargin;
+
+      ///height of a post card is the sum of the height of the Appbar and height of all postItems
+      ///that have not been rendered yet.
+      ///This is because: since the postCards are being rendered inside a stack, the longest of them all
+      ///will be rendered first, followed by the second longest, which will be on top of the previous one that
+      ///was rendered. Hence we need to know the height of all the cards so that we can allocate space.
+      ///
+      ///SpacerHeight is used to allocate sapce on top of actual text or design
       curvedCards.add(
         CurvedPostCard(
           height: height + heightOfAppBar,
@@ -120,6 +132,8 @@ class _ActivityScreenState extends State<ActivityScreen> {
     return curvedCards;
   }
 
+  /// gets the height of all the postItems that have not been rendered including the
+  /// one about to be rendered and sums the up.
   double getHeight(int startIndex, int length) {
     double height = 0.0;
     for (var i = startIndex; i < length; i++) {
