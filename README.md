@@ -21,7 +21,7 @@
 ![Screenshot](assets/screenshots/activitiesAndProfile.png)
 
 ## Activities & Profile Designs
-![Screenshot](assets/screenshots/activities_details.png)
+![Screenshot](assets/screenshots/activities_detail.png)
 ![Screenshot](assets/screenshots/activities_details2.png)
 
 
