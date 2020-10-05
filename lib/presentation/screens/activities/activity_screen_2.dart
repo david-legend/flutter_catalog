@@ -8,20 +8,16 @@ import 'package:fluttercatalog/widgets/curved_post_card.dart';
 
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
-//TODO:: Document how curvedPostCards is being added
-//TODO:: Add other screens
-//TODO:: -- Updates Screen (with those cool colors)
-//TODO:: -- Updates2 Screen(with those cool colors)
-//TODO:: -- Updates3 Screen(with those cool colors)
-
 List<PostItem> curvedPostCardItems = [
   PostItem(
     height: 200,
     body: null,
+    backgroundColor: AppColors.indigo100,
   ),
   PostItem(
     height: 260,
     topMargin: 40,
+    backgroundColor: AppColors.violet400,
     body: Container(
       height: 200,
       child: ListView(
@@ -29,10 +25,10 @@ List<PostItem> curvedPostCardItems = [
         shrinkWrap: true,
         padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
         children: [
-          Image.asset(ImagePath.MEDITATION),
-          Image.asset(ImagePath.YOGA),
-          Image.asset(ImagePath.MEDITATION),
-          Image.asset(ImagePath.YOGA),
+          Image.asset(ImagePath.BALLET),
+          Image.asset(ImagePath.BUSINESS),
+          Image.asset(ImagePath.SKIES),
+          Image.asset(ImagePath.BUSINESS),
         ],
       ),
     ),
@@ -41,12 +37,12 @@ List<PostItem> curvedPostCardItems = [
   PostItem(height: 200, body: null),
 ];
 
-class ActivityScreen extends StatefulWidget {
+class ActivityScreen2 extends StatefulWidget {
   @override
-  _ActivityScreenState createState() => _ActivityScreenState();
+  _ActivityScreen2State createState() => _ActivityScreen2State();
 }
 
-class _ActivityScreenState extends State<ActivityScreen> {
+class _ActivityScreen2State extends State<ActivityScreen2> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -81,7 +77,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
               child: Column(
                 children: [
                   Text(
-                    StringConst.ACTIVITY_1,
+                    StringConst.ACTIVITY_2,
                     textAlign: TextAlign.left,
                     style: theme.textTheme.headline5.copyWith(),
                   )
@@ -92,12 +88,8 @@ class _ActivityScreenState extends State<ActivityScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.pink50,
         onPressed: () {},
-        child: Icon(
-          Icons.add,
-          color: AppColors.white,
-        ),
+        child: Icon(Icons.add),
       ),
     );
   }
@@ -117,6 +109,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
           spacerHeight: spacerHeight + heightOfAppBar + topMargin,
           hasFooter: postItems[index].hasFooter,
           body: postItems[index].body,
+          backgroundColor: postItems[index].backgroundColor,
         ),
       );
     }

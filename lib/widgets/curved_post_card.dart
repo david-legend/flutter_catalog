@@ -11,11 +11,13 @@ class PostItem {
     @required this.body,
     this.hasFooter = true,
     this.topMargin = 0.0,
+    this.backgroundColor = AppColors.white,
   });
 
   final double height;
   final double topMargin;
   final bool hasFooter;
+  final Color backgroundColor;
   final Widget body;
 }
 
@@ -32,6 +34,7 @@ class CurvedPostCard extends StatelessWidget {
       vertical: Sizes.PADDING_24,
     ),
     this.footer,
+    this.backgroundColor = Colors.white,
     this.shadow = Shadows.containerShadow,
   });
 
@@ -41,6 +44,7 @@ class CurvedPostCard extends StatelessWidget {
   final String bodyText;
   final bool hasFooter;
   final EdgeInsetsGeometry padding;
+  final Color backgroundColor;
   final Widget body;
   final Widget footer;
   final BoxShadow shadow;
@@ -54,7 +58,7 @@ class CurvedPostCard extends StatelessWidget {
             BorderRadius.only(
               bottomLeft: Radius.circular(Sizes.RADIUS_60),
             ),
-        color: Colors.white,
+        color: backgroundColor,
         boxShadow: [shadow],
       ),
       child: Column(

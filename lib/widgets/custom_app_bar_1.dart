@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar1 extends StatelessWidget {
@@ -10,6 +11,8 @@ class CustomAppBar1 extends StatelessWidget {
     this.trailingIconData = Icons.search,
     this.trailingIconColor,
     this.trailingIconSize,
+    this.onLeadingTap,
+    this.onTrailingTap,
   });
 
   final Widget leading;
@@ -20,6 +23,8 @@ class CustomAppBar1 extends StatelessWidget {
   final IconData trailingIconData;
   final Color trailingIconColor;
   final double trailingIconSize;
+  final GestureTapCallback onLeadingTap;
+  final GestureTapCallback onTrailingTap;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +33,7 @@ class CustomAppBar1 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         InkWell(
-          onTap: () {},
+          onTap: onLeadingTap ?? () => ExtendedNavigator.of(context).pop(),
           child: Icon(
             leadingIconData,
             size: leadingIconSize,
@@ -36,7 +41,7 @@ class CustomAppBar1 extends StatelessWidget {
           ),
         ),
         InkWell(
-          onTap: () {},
+          onTap: onTrailingTap,
           child: Icon(
             trailingIconData,
             size: trailingIconSize,

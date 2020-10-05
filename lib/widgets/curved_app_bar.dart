@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
@@ -85,7 +86,9 @@ class CurvedAppBar extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      hasLeading ? (leading ?? defaultLeading()) : Spacer(),
+                      hasLeading
+                          ? (leading ?? defaultLeading(context))
+                          : Spacer(),
                       hasTrailing
                           ? (trailing ?? defaultTrailing())
                           : Container(),
@@ -99,9 +102,9 @@ class CurvedAppBar extends StatelessWidget {
   }
 
   @widget
-  Widget defaultLeading() {
+  Widget defaultLeading(BuildContext context) {
     return InkWell(
-      onTap: onLeadingTap,
+      onTap: onLeadingTap ?? () => ExtendedNavigator.of(context).pop(),
       child: Icon(
         leadingIcon,
         color: iconColor,

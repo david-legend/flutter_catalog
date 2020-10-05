@@ -14,6 +14,7 @@ import 'package:fluttercatalog/presentation/screens/profile/profile_3.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
 import 'package:fluttercatalog/presentation/screens/activities/timeline.dart';
 import 'package:fluttercatalog/presentation/screens/activities/activity_screen.dart';
+import 'package:fluttercatalog/presentation/screens/activities/activity_screen_2.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_1/login_screen_1.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_1/signup_screen_1.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_2/login_screen_2.dart';
@@ -40,6 +41,7 @@ class Routes {
   static const String profile4Screen = '/profile4-screen';
   static const String timeLine = '/time-line';
   static const String activityScreen = '/activity-screen';
+  static const String activityScreen2 = '/activity-screen2';
   static const String loginScreen1 = '/login-screen1';
   static const String signUpScreen1 = '/sign-up-screen1';
   static const String loginScreen2 = '/login-screen2';
@@ -65,6 +67,7 @@ class Routes {
     profile4Screen,
     timeLine,
     activityScreen,
+    activityScreen2,
     loginScreen1,
     signUpScreen1,
     loginScreen2,
@@ -96,6 +99,7 @@ class Router extends RouterBase {
     RouteDef(Routes.profile4Screen, page: Profile4Screen),
     RouteDef(Routes.timeLine, page: TimeLine),
     RouteDef(Routes.activityScreen, page: ActivityScreen),
+    RouteDef(Routes.activityScreen2, page: ActivityScreen2),
     RouteDef(Routes.loginScreen1, page: LoginScreen1),
     RouteDef(Routes.signUpScreen1, page: SignUpScreen1),
     RouteDef(Routes.loginScreen2, page: LoginScreen2),
@@ -156,6 +160,12 @@ class Router extends RouterBase {
     ActivityScreen: (RouteData data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => ActivityScreen(),
+        settings: data,
+      );
+    },
+    ActivityScreen2: (RouteData data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => ActivityScreen2(),
         settings: data,
       );
     },

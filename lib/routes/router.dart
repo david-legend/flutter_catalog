@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route_annotations.dart';
 import 'package:fluttercatalog/presentation/root_screen.dart';
 import 'package:fluttercatalog/presentation/screens/activities/activity_screen.dart';
+import 'package:fluttercatalog/presentation/screens/activities/activity_screen_2.dart';
 import 'package:fluttercatalog/presentation/screens/activities/timeline.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_1/login_screen_1.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_1/signup_screen_1.dart';
@@ -37,6 +38,7 @@ import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
     //Activities
     MaterialRoute(page: TimeLine),
     MaterialRoute(page: ActivityScreen),
+    MaterialRoute(page: ActivityScreen2),
 
     //Login Screens
     MaterialRoute(page: LoginScreen1),
