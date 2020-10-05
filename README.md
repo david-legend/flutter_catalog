@@ -8,12 +8,13 @@
 <p align="center">
     It is inspired by a lot of UI Kits. I will be updating the list as I build them.
 </p>
-
 <p align="center">
- <ul>
-      <li> <a href="https://www.behance.net/gallery/72907227/Social-Meet-Up-UI-Kit-FREE-for-Adobe-XD?tracking_source=search_projects_recommended%7Cfree%20ui%20kit" target="_blank">Social MeetUp Design</a></li>
- </ul>
+<a href="https://www.behance.net/gallery/72907227/Social-Meet-Up-UI-Kit-FREE-for-Adobe-XD?tracking_source=search_projects_recommended%7Cfree%20ui%20kit" target="_blank">Social MeetUp Design</a>
 </p>
+
+
+ 
+
     
 
 
