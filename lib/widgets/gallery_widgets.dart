@@ -297,7 +297,7 @@ class CategoryDemoItem extends StatelessWidget {
         child: InkWell(
           onTap: () {
             if (routeName != null) {
-              ExtendedNavigator.ofRouter<Router>().pushNamed(routeName);
+              ExtendedNavigator.root.push(routeName);
             }
           },
           child: Padding(

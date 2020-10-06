@@ -25,7 +25,7 @@ class NotificationsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             boxShadow: Shadows.containerShadow,
             onLeadingTap: () {
-              ExtendedNavigator.ofRouter<Router>().pop();
+              ExtendedNavigator.root.pop();
             },
             title: Padding(
               padding: const EdgeInsets.only(

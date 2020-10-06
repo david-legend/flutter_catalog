@@ -65,7 +65,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             boxShadow: Shadows.containerShadow,
             onLeadingTap: () {
-              ExtendedNavigator.ofRouter<Router>().pop();
+              ExtendedNavigator.root.pop();
             },
             title: Padding(
               padding: const EdgeInsets.only(

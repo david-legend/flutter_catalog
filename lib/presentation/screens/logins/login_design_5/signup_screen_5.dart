@@ -48,8 +48,7 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
                         ),
                         SpaceH8(),
                         InkWell(
-                          onTap: () =>
-                              ExtendedNavigator.ofRouter<Router>().pop(),
+                          onTap: () => ExtendedNavigator.root.pop(),
                           child: RichText(
                             text: TextSpan(
                               children: [

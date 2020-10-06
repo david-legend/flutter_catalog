@@ -38,7 +38,7 @@ class TimeLine extends StatelessWidget {
             bottomLeftRadius: Sizes.RADIUS_80,
             crossAxisAlignment: CrossAxisAlignment.start,
             onLeadingTap: () {
-              ExtendedNavigator.ofRouter<Router>().pop();
+              ExtendedNavigator.root.pop();
             },
             title: Padding(
               padding: const EdgeInsets.only(
