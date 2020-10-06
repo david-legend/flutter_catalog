@@ -16,6 +16,8 @@ import 'package:fluttercatalog/presentation/screens/activities/timeline.dart';
 import 'package:fluttercatalog/presentation/screens/activities/activity_screen.dart';
 import 'package:fluttercatalog/presentation/screens/activities/activity_screen_2.dart';
 import 'package:fluttercatalog/presentation/screens/activities/activity_screen_3.dart';
+import 'package:fluttercatalog/presentation/screens/messages_notifications/messages_screen.dart';
+import 'package:fluttercatalog/presentation/screens/messages_notifications/notifications_screen.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_1/login_screen_1.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_1/signup_screen_1.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_2/login_screen_2.dart';
@@ -44,6 +46,8 @@ class Routes {
   static const String activityScreen = '/activity-screen';
   static const String activityScreen2 = '/activity-screen2';
   static const String activityScreen3 = '/activity-screen3';
+  static const String messagesScreen = '/messages-screen';
+  static const String notificationsScreen = '/notifications-screen';
   static const String loginScreen1 = '/login-screen1';
   static const String signUpScreen1 = '/sign-up-screen1';
   static const String loginScreen2 = '/login-screen2';
@@ -71,6 +75,8 @@ class Routes {
     activityScreen,
     activityScreen2,
     activityScreen3,
+    messagesScreen,
+    notificationsScreen,
     loginScreen1,
     signUpScreen1,
     loginScreen2,
@@ -104,6 +110,8 @@ class Router extends RouterBase {
     RouteDef(Routes.activityScreen, page: ActivityScreen),
     RouteDef(Routes.activityScreen2, page: ActivityScreen2),
     RouteDef(Routes.activityScreen3, page: ActivityScreen3),
+    RouteDef(Routes.messagesScreen, page: MessagesScreen),
+    RouteDef(Routes.notificationsScreen, page: NotificationsScreen),
     RouteDef(Routes.loginScreen1, page: LoginScreen1),
     RouteDef(Routes.signUpScreen1, page: SignUpScreen1),
     RouteDef(Routes.loginScreen2, page: LoginScreen2),
@@ -176,6 +184,18 @@ class Router extends RouterBase {
     ActivityScreen3: (RouteData data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => ActivityScreen3(),
+        settings: data,
+      );
+    },
+    MessagesScreen: (RouteData data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => MessagesScreen(),
+        settings: data,
+      );
+    },
+    NotificationsScreen: (RouteData data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => NotificationsScreen(),
         settings: data,
       );
     },

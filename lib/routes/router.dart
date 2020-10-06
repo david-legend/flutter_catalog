@@ -21,6 +21,8 @@ import 'package:fluttercatalog/presentation/screens/logins/login_design_7/regist
 import 'package:fluttercatalog/presentation/screens/logins/login_design_8/login_screen_8.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_9/login_screen_9.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_9/signup_screen_9.dart';
+import 'package:fluttercatalog/presentation/screens/messages_notifications/messages_screen.dart';
+import 'package:fluttercatalog/presentation/screens/messages_notifications/notifications_screen.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_1.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_2.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_3.dart';
@@ -41,6 +43,10 @@ import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
     MaterialRoute(page: ActivityScreen),
     MaterialRoute(page: ActivityScreen2),
     MaterialRoute(page: ActivityScreen3),
+
+    //Messages & Notifications
+    MaterialRoute(page: MessagesScreen),
+    MaterialRoute(page: NotificationsScreen),
 
     //Login Screens
     MaterialRoute(page: LoginScreen1),

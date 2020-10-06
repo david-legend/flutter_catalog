@@ -8,6 +8,7 @@ enum CatalogDemoCategory {
   profile,
   menu,
   onBoarding,
+  messagesAndNotification,
   list,
   settings,
   alertDialogs,
@@ -45,6 +46,8 @@ extension CatalogDemoExtension on CatalogDemoCategory {
         return StringConst.BOTTOM_NAVIGATION;
       case CatalogDemoCategory.login:
         return StringConst.LOGIN;
+      case CatalogDemoCategory.messagesAndNotification:
+        return StringConst.MESSAGES_AND_NOTIFICATION;
     }
     return null;
   }
@@ -91,6 +94,15 @@ List<CategoryListItem> categoryList() {
       category: CatalogDemoCategory.activitiesAndTimeLine,
       imageString: ImagePath.LIST,
       demos: activitiesAndTimelineDemos(),
+      initiallyExpanded: false,
+    ),
+    CategoryListItem(
+      key: const PageStorageKey<CatalogDemoCategory>(
+        CatalogDemoCategory.messagesAndNotification,
+      ),
+      category: CatalogDemoCategory.messagesAndNotification,
+      imageString: ImagePath.STATS_INFORMATION,
+      demos: messagesAndNotificationsDemos(),
       initiallyExpanded: false,
     ),
     CategoryListItem(
@@ -251,6 +263,27 @@ List<CatalogDemo> activitiesAndTimelineDemos() {
   ];
 }
 
+List<CatalogDemo> messagesAndNotificationsDemos() {
+  return [
+    CatalogDemo(
+      title: "Messages",
+      icon: Icons.person,
+      slug: 'Messages',
+      subtitle: "Messages Screen Design",
+      category: CatalogDemoCategory.messagesAndNotification,
+      routeName: Routes.messagesScreen,
+    ),
+    CatalogDemo(
+      title: "Notification",
+      icon: Icons.person,
+      slug: 'Notification',
+      subtitle: "Notifications Screen Design",
+      category: CatalogDemoCategory.messagesAndNotification,
+      routeName: Routes.notificationsScreen,
+    ),
+  ];
+}
+
 List<CatalogDemo> menuDemos() {
   return [];
 }
@@ -286,7 +319,7 @@ List<CatalogDemo> loginDemos() {
       routeName: Routes.loginScreen1,
     ),
     CatalogDemo(
-      title: "Login Design 1",
+      title: "Login Design 2",
       icon: Icons.person,
       slug: 'banner',
       subtitle: "beautifully designed category",
@@ -294,7 +327,7 @@ List<CatalogDemo> loginDemos() {
       routeName: Routes.loginScreen2,
     ),
     CatalogDemo(
-      title: "Login Design 5",
+      title: "Login Design 3",
       icon: Icons.person,
       slug: 'banner',
       subtitle: "beautifully designed category",
@@ -302,7 +335,7 @@ List<CatalogDemo> loginDemos() {
       routeName: Routes.loginScreen3,
     ),
     CatalogDemo(
-      title: "Login Design 6",
+      title: "Login Design 4",
       icon: Icons.person,
       slug: 'banner',
       subtitle: "beautifully designed category",
@@ -310,7 +343,7 @@ List<CatalogDemo> loginDemos() {
       routeName: Routes.loginScreen4,
     ),
     CatalogDemo(
-      title: "Login Design 7",
+      title: "Login Design 5",
       icon: Icons.person,
       slug: 'banner',
       subtitle: "beautifully designed category",
