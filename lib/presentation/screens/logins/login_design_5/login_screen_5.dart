@@ -51,8 +51,7 @@ class _LoginScreen5State extends State<LoginScreen5> {
                         ),
                         SpaceH8(),
                         InkWell(
-                          onTap: () =>
-                              ExtendedNavigator.ofRouter<Router>().pushNamed(
+                          onTap: () => ExtendedNavigator.root.push(
                             Routes.signUpScreen5,
                           ),
                           child: RichText(
