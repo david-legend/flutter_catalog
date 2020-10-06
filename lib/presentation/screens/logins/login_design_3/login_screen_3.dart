@@ -139,9 +139,7 @@ class _LoginScreen3State extends State<LoginScreen3> {
                             margin:
                                 EdgeInsets.only(right: (widthOfScreen - 120)),
                             child: RaisedButton(
-                              onPressed: () =>
-                                  ExtendedNavigator.ofRouter<Router>()
-                                      .pushNamed(
+                              onPressed: () => ExtendedNavigator.root.push(
                                 Routes.signUpScreen3,
                               ),
                               color: AppColors.white,

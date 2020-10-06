@@ -20,7 +20,7 @@ class SignUpScreen1 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.greyShade2,
         leading: IconButton(
-          onPressed: () => ExtendedNavigator.ofRouter<Router>().pop(),
+          onPressed: () => ExtendedNavigator.root.pop(),
           icon: Icon(Icons.arrow_back_ios),
         ),
         elevation: Sizes.ELEVATION_0,
@@ -168,8 +168,7 @@ class SignUpScreen1 extends StatelessWidget {
         ),
         SpaceH20(),
         InkWell(
-          onTap: () => ExtendedNavigator.ofRouter<Router>()
-              .pushReplacementNamed(Routes.loginScreen1),
+          onTap: () => ExtendedNavigator.root.replace(Routes.loginScreen1),
           child: Text(
             StringConst.ALREADY_HAVE_AN_ACCOUNT,
             style: textTheme.subtitle.copyWith(

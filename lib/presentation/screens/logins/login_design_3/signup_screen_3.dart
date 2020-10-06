@@ -110,8 +110,8 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
                 height: Sizes.HEIGHT_60,
                 width: Sizes.WIDTH_120,
                 child: RaisedButton(
-                  onPressed: () => ExtendedNavigator.ofRouter<Router>()
-                      .pushNamed(Routes.loginScreen3),
+                  onPressed: () =>
+                      ExtendedNavigator.root.push(Routes.loginScreen3),
                   color: AppColors.white,
                   elevation: Sizes.ELEVATION_6,
                   shape: RoundedRectangleBorder(

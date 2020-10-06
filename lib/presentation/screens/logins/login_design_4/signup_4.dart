@@ -75,8 +75,8 @@ class _SignUp4State extends State<SignUp4> {
                       color: AppColors.blackShade10,
                       fontWeight: FontWeight.w600,
                       fontSize: Sizes.TEXT_SIZE_14),
-                  onPressed: () => ExtendedNavigator.ofRouter<Router>()
-                      .pushNamed(Routes.signUpScreen4),
+                  onPressed: () =>
+                      ExtendedNavigator.root.push(Routes.signUpScreen4),
                 ),
               ),
               Spacer(flex: 1),
@@ -122,8 +122,7 @@ class _SignUp4State extends State<SignUp4> {
               ),
               Spacer(flex: 1),
               InkWell(
-                onTap: () => ExtendedNavigator.ofRouter<Router>()
-                    .pushNamed(Routes.loginScreen4),
+                onTap: () => ExtendedNavigator.root.push(Routes.loginScreen4),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: RichText(

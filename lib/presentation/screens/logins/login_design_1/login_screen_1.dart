@@ -164,8 +164,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
         ),
         SpaceH20(),
         InkWell(
-          onTap: () => ExtendedNavigator.ofRouter<Router>()
-              .pushNamed(Routes.signUpScreen1),
+          onTap: () => ExtendedNavigator.root.push(Routes.signUpScreen1),
           child: Text(
             StringConst.DONT_HAVE_AN_ACCOUNT,
             textAlign: TextAlign.center,

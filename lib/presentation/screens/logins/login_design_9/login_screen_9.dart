@@ -68,8 +68,7 @@ class _LoginScreen9State extends State<LoginScreen9> {
                               color: AppColors.indigo200,
                             ),
                             onTap: () {
-                              ExtendedNavigator.ofRouter<Router>()
-                                  .pushNamed(Routes.signUpScreen9);
+                              ExtendedNavigator.root.push(Routes.signUpScreen9);
                             },
                           ),
                         )

@@ -52,8 +52,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
                   ),
                 ),
                 InkWell(
-                  onTap: () => ExtendedNavigator.ofRouter<Router>()
-                      .pushNamed(Routes.loginScreen2),
+                  onTap: () => ExtendedNavigator.root.push(Routes.loginScreen2),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[

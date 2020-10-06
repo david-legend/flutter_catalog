@@ -147,8 +147,7 @@ class _LoginScreen6State extends State<LoginScreen6> {
         ),
         InkWell(
           onTap: () {
-            ExtendedNavigator.ofRouter<Router>()
-                .pushNamed(Routes.signUpScreen6);
+            ExtendedNavigator.root.push(Routes.signUpScreen6);
           },
           child: RichText(
             text: TextSpan(

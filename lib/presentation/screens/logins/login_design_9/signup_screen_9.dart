@@ -60,7 +60,7 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
                               color: AppColors.indigo200,
                             ),
                             onTap: () {
-                              ExtendedNavigator.ofRouter<Router>().pop();
+                              ExtendedNavigator.root.pop();
                             },
                           ),
                         ),
