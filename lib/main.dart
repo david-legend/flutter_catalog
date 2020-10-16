@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:fluttercatalog/app_theme.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
