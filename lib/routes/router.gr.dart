@@ -99,7 +99,7 @@ class Routes {
   };
 }
 
-class Router extends RouterBase {
+class AppRouter extends RouterBase {
   @override
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[

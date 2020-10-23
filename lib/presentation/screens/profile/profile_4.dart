@@ -107,7 +107,7 @@ class Profile4Screen extends StatelessWidget {
     );
   }
 
-  @widget
+  @swidget
   Widget _buildListCards(BuildContext context) {
     ThemeData theme = Theme.of(context);
     TextStyle headingStyle = theme.textTheme.subtitle2.copyWith(

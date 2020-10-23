@@ -96,7 +96,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
     );
   }
 
-  @widget
+  @swidget
   List<Widget> _buildCurvedCards(List<PostItem> postItems) {
     double heightOfAppBar = assignHeight(context: context, fraction: 0.2);
     List<Widget> curvedCards = [];

@@ -18,15 +18,15 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.9.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
   google_fonts: ^1.1.0
-  auto_route: ^0.6.1
-  functional_widget_annotation: ^0.5.1
+  auto_route: ^0.6.9
+  functional_widget_annotation: ^0.8.0
   flutter_feather_icons: ^1.0.3
   bubble_tab_indicator: "^0.1.4"
   font_awesome_flutter: ^8.8.1
@@ -40,10 +40,11 @@ dev_dependencies:
     sdk: flutter
 
   build_runner:
-  auto_route_generator: ^0.6.0
+  functional_widget: ^0.8.0
+  auto_route_generator: ^0.6.9
 
 builders:
-  functional_widget: ^0.7.2
+  functional_widget: ^0.8.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

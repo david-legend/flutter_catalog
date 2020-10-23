@@ -66,7 +66,7 @@ class Profile1Screen extends StatelessWidget {
     );
   }
 
-  @widget
+  @swidget
   Widget _buildProfileDetails({@required BuildContext context}) {
     ThemeData theme = Theme.of(context);
     return Container(
@@ -105,7 +105,7 @@ class Profile1Screen extends StatelessWidget {
     );
   }
 
-  @widget
+  @swidget
   Widget _buildOptionIcons({@required BuildContext context}) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_16),

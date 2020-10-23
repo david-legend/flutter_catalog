@@ -92,7 +92,7 @@ class Profile2Screen extends StatelessWidget {
     );
   }
 
-  @widget
+  @swidget
   Widget _buildAccountDetail() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -113,7 +113,7 @@ class Profile2Screen extends StatelessWidget {
     );
   }
 
-  @widget
+  @swidget
   Widget _buildContent({@required BuildContext context}) {
     ThemeData theme = Theme.of(context);
     TextStyle headingStyle = theme.textTheme.subtitle2.copyWith(

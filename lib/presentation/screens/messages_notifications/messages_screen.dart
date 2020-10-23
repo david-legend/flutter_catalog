@@ -68,7 +68,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
     );
   }
 
-  @widget
+  @swidget
   List<Widget> _buildCurvedCards(List<PostListTileItem> postListTileItems) {
     double heightOfAppBar = assignHeight(context: context, fraction: 0.2);
     List<Widget> curvedCards = [];

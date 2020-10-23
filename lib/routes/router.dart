@@ -68,4 +68,4 @@ import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
     MaterialRoute(page: SignUpScreen9),
   ],
 )
-class $Router {}
+class $AppRouter {}

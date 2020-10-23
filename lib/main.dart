@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart' hide Router;
+import 'package:flutter/material.dart';
 import 'package:fluttercatalog/app_theme.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
@@ -21,8 +21,8 @@ class FlutterCatalog extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: StringConst.APP_NAME,
       theme: AppTheme.lightThemeData,
-      builder: ExtendedNavigator<Router>(
-        router: Router(),
+      builder: ExtendedNavigator<AppRouter>(
+        router: AppRouter(),
         initialRoute: Routes.rootScreen,
       ),
     );

@@ -101,7 +101,7 @@ class CurvedAppBar extends StatelessWidget {
     );
   }
 
-  @widget
+  @swidget
   Widget defaultLeading(BuildContext context) {
     return InkWell(
       onTap: onLeadingTap ?? () => ExtendedNavigator.of(context).pop(),
@@ -113,7 +113,7 @@ class CurvedAppBar extends StatelessWidget {
     );
   }
 
-  @widget
+  @swidget
   Widget defaultTrailing() {
     return InkWell(
       onTap: onTrailingTap,
