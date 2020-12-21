@@ -350,14 +350,14 @@ List<CatalogDemo> alertDialogsDemos() {
       category: CatalogDemoCategory.messagesAndNotification,
       routeName: Routes.bottomSheet2,
     ),
-//    CatalogDemo(
-//      title: "Messages",
-//      icon: Icons.person,
-//      slug: 'Messages',
-//      subtitle: "Messages Screen Design",
-//      category: CatalogDemoCategory.messagesAndNotification,
-//      routeName: Routes.bottomSheet3,
-//    ),
+    CatalogDemo(
+      title: "Messages",
+      icon: Icons.person,
+      slug: 'Messages',
+      subtitle: "Messages Screen Design",
+      category: CatalogDemoCategory.messagesAndNotification,
+      routeName: Routes.bottomSheet3,
+    ),
 //    CatalogDemo(
 //      title: "Messages",
 //      icon: Icons.person,

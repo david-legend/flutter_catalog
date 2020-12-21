@@ -6,7 +6,6 @@ import 'package:fluttercatalog/values/values.dart';
 import 'package:fluttercatalog/widgets/container_handle.dart';
 import 'package:fluttercatalog/widgets/custom_button.dart';
 import 'package:fluttercatalog/widgets/spaces.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomSheet2 extends StatelessWidget {
   @override
