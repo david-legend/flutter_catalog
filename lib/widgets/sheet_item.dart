@@ -105,7 +105,8 @@ class SheetItem extends StatelessWidget {
                   onTap: onActionTap,
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 16.0),
-                    child: Text(action, style: actionStyle),
+                    child: Text(action.toUpperCase(),
+                        style: actionTextStyle ?? actionStyle),
                   ),
                 )
               : Container(),
