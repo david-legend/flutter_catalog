@@ -49,6 +49,17 @@ class StringConst {
   static const String PHOTOS_AND_VIDEOS = "Photos & Videos";
   static const String NUMBER_OF_PHOTOS = "269 photos";
 
+  //Dialogs
+  static const String HOLD_ON = "Hold on!";
+  static const String ARE_YOU_SURE = "Are you sure?";
+  static const String SKIP = "Skip";
+  static const String NEXT = "Next";
+  static const String YES = "Yes";
+  static const String MAYBE = "Maybe";
+  static const String CANCEL = "Cancel";
+  static const String CONFIRM = "Confirm?";
+  static const String SHOW_ALERT = "Show Alert Dialog";
+
   //Buttons
   static const String FOLLOW = "Follow";
   static const String CHAT = "Chat";

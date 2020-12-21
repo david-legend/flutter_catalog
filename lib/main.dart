@@ -7,7 +7,7 @@ import 'package:fluttercatalog/values/values.dart';
 //TODO:: Module name: "Messages & Notifications" Add 1. Messages 2. Notifications 3. Categories
 //TODO:: Module name: "Chats" Add 1. Messages chat 2. Chats
 //TODO:: Module name: "Dialogs and BottomSheets": Build all prompt UIs
-//TODO:: Module name: "Onboarding": First 8 screens
+//TODO:: Module name: "OnBoarding": First 8 screens
 //TODO:: Module name: "Menus":
 
 void main() {

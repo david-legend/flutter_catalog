@@ -14,6 +14,10 @@ import '../presentation/screens/activities/activity_screen.dart';
 import '../presentation/screens/activities/activity_screen_2.dart';
 import '../presentation/screens/activities/activity_screen_3.dart';
 import '../presentation/screens/activities/timeline.dart';
+import '../presentation/screens/alert_dialogs/alert_dialog_1.dart';
+import '../presentation/screens/alert_dialogs/alert_dialog_2.dart';
+import '../presentation/screens/alert_dialogs/alert_dialog_3.dart';
+import '../presentation/screens/alert_dialogs/alert_dialog_4.dart';
 import '../presentation/screens/logins/login_design_1/login_screen_1.dart';
 import '../presentation/screens/logins/login_design_1/signup_screen_1.dart';
 import '../presentation/screens/logins/login_design_2/login_screen_2.dart';
@@ -67,6 +71,10 @@ class Routes {
   static const String loginScreen8 = '/login-screen8';
   static const String loginScreen9 = '/login-screen9';
   static const String signUpScreen9 = '/sign-up-screen9';
+  static const String alertDialog1 = '/alert-dialog1';
+  static const String alertDialog2 = '/alert-dialog2';
+  static const String alertDialog3 = '/alert-dialog3';
+  static const String alertDialog4 = '/alert-dialog4';
   static const all = <String>{
     rootScreen,
     profile1Screen,
@@ -96,6 +104,10 @@ class Routes {
     loginScreen8,
     loginScreen9,
     signUpScreen9,
+    alertDialog1,
+    alertDialog2,
+    alertDialog3,
+    alertDialog4,
   };
 }
 
@@ -131,6 +143,10 @@ class AppRouter extends RouterBase {
     RouteDef(Routes.loginScreen8, page: LoginScreen8),
     RouteDef(Routes.loginScreen9, page: LoginScreen9),
     RouteDef(Routes.signUpScreen9, page: SignUpScreen9),
+    RouteDef(Routes.alertDialog1, page: AlertDialog1),
+    RouteDef(Routes.alertDialog2, page: AlertDialog2),
+    RouteDef(Routes.alertDialog3, page: AlertDialog3),
+    RouteDef(Routes.alertDialog4, page: AlertDialog4),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -300,6 +316,30 @@ class AppRouter extends RouterBase {
     SignUpScreen9: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => SignUpScreen9(),
+        settings: data,
+      );
+    },
+    AlertDialog1: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => AlertDialog1(),
+        settings: data,
+      );
+    },
+    AlertDialog2: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => AlertDialog2(),
+        settings: data,
+      );
+    },
+    AlertDialog3: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => AlertDialog3(),
+        settings: data,
+      );
+    },
+    AlertDialog4: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => AlertDialog4(),
         settings: data,
       );
     },

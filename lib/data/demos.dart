@@ -301,7 +301,72 @@ List<CatalogDemo> settingsDemos() {
 }
 
 List<CatalogDemo> alertDialogsDemos() {
-  return [];
+  return [
+    CatalogDemo(
+      title: "Messages",
+      icon: Icons.person,
+      slug: 'Messages',
+      subtitle: "Messages Screen Design",
+      category: CatalogDemoCategory.messagesAndNotification,
+      routeName: Routes.alertDialog1,
+    ),
+    CatalogDemo(
+      title: "Messages",
+      icon: Icons.person,
+      slug: 'Messages',
+      subtitle: "Messages Screen Design",
+      category: CatalogDemoCategory.messagesAndNotification,
+      routeName: Routes.alertDialog2,
+    ),
+    CatalogDemo(
+      title: "Messages",
+      icon: Icons.person,
+      slug: 'Messages',
+      subtitle: "Messages Screen Design",
+      category: CatalogDemoCategory.messagesAndNotification,
+      routeName: Routes.alertDialog3,
+    ),
+    CatalogDemo(
+      title: "Messages",
+      icon: Icons.person,
+      slug: 'Messages',
+      subtitle: "Messages Screen Design",
+      category: CatalogDemoCategory.messagesAndNotification,
+      routeName: Routes.alertDialog4,
+    ),
+//    CatalogDemo(
+//      title: "Messages",
+//      icon: Icons.person,
+//      slug: 'Messages',
+//      subtitle: "Messages Screen Design",
+//      category: CatalogDemoCategory.messagesAndNotification,
+//      routeName: Routes.alertDialog5,
+//    ),
+//    CatalogDemo(
+//      title: "Messages",
+//      icon: Icons.person,
+//      slug: 'Messages',
+//      subtitle: "Messages Screen Design",
+//      category: CatalogDemoCategory.messagesAndNotification,
+//      routeName: Routes.alertDialog6,
+//    ),
+//    CatalogDemo(
+//      title: "Messages",
+//      icon: Icons.person,
+//      slug: 'Messages',
+//      subtitle: "Messages Screen Design",
+//      category: CatalogDemoCategory.messagesAndNotification,
+//      routeName: Routes.alertDialog7,
+//    ),
+//    CatalogDemo(
+//      title: "Messages",
+//      icon: Icons.person,
+//      slug: 'Messages',
+//      subtitle: "Messages Screen Design",
+//      category: CatalogDemoCategory.messagesAndNotification,
+//      routeName: Routes.alertDialog8,
+//    ),
+  ];
 }
 
 List<CatalogDemo> verificationDemos() {

@@ -4,6 +4,10 @@ import 'package:fluttercatalog/presentation/screens/activities/activity_screen.d
 import 'package:fluttercatalog/presentation/screens/activities/activity_screen_2.dart';
 import 'package:fluttercatalog/presentation/screens/activities/activity_screen_3.dart';
 import 'package:fluttercatalog/presentation/screens/activities/timeline.dart';
+import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_1.dart';
+import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_2.dart';
+import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_3.dart';
+import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_4.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_1/login_screen_1.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_1/signup_screen_1.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_2/login_screen_2.dart';
@@ -66,6 +70,16 @@ import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
     MaterialRoute(page: LoginScreen8),
     MaterialRoute(page: LoginScreen9),
     MaterialRoute(page: SignUpScreen9),
+
+    //Alert Dialogs
+    MaterialRoute(page: AlertDialog1),
+    MaterialRoute(page: AlertDialog2),
+    MaterialRoute(page: AlertDialog3),
+    MaterialRoute(page: AlertDialog4),
+//    MaterialRoute(page: AlertDialog5),
+//    MaterialRoute(page: AlertDialog6),
+//    MaterialRoute(page: AlertDialog7),
+//    MaterialRoute(page: AlertDialog8),
   ],
 )
 class $AppRouter {}
