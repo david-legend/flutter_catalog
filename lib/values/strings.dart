@@ -49,7 +49,7 @@ class StringConst {
   static const String PHOTOS_AND_VIDEOS = "Photos & Videos";
   static const String NUMBER_OF_PHOTOS = "269 photos";
 
-  //Dialogs
+  //Dialogs & BottomSheets
   static const String HOLD_ON = "Hold on!";
   static const String ARE_YOU_SURE = "Are you sure?";
   static const String SKIP = "Skip";
@@ -59,6 +59,9 @@ class StringConst {
   static const String CANCEL = "Cancel";
   static const String CONFIRM = "Confirm?";
   static const String SHOW_ALERT = "Show Alert Dialog";
+  static const String SHOW_BOTTOM_SHEET = "Show Bottom Sheet";
+  static const String BRING_GUEST = "Bringing Guests?";
+  static const String GUEST_INFO = "You +1 guest are going!";
 
   //Buttons
   static const String FOLLOW = "Follow";

@@ -334,13 +334,21 @@ List<CatalogDemo> alertDialogsDemos() {
       category: CatalogDemoCategory.messagesAndNotification,
       routeName: Routes.alertDialog4,
     ),
+    CatalogDemo(
+      title: "Messages",
+      icon: Icons.person,
+      slug: 'Messages',
+      subtitle: "Messages Screen Design",
+      category: CatalogDemoCategory.messagesAndNotification,
+      routeName: Routes.bottomSheet1,
+    ),
 //    CatalogDemo(
 //      title: "Messages",
 //      icon: Icons.person,
 //      slug: 'Messages',
 //      subtitle: "Messages Screen Design",
 //      category: CatalogDemoCategory.messagesAndNotification,
-//      routeName: Routes.alertDialog5,
+//      routeName: Routes.bottomSheet2,
 //    ),
 //    CatalogDemo(
 //      title: "Messages",
@@ -348,7 +356,7 @@ List<CatalogDemo> alertDialogsDemos() {
 //      slug: 'Messages',
 //      subtitle: "Messages Screen Design",
 //      category: CatalogDemoCategory.messagesAndNotification,
-//      routeName: Routes.alertDialog6,
+//      routeName: Routes.bottomSheet3,
 //    ),
 //    CatalogDemo(
 //      title: "Messages",
@@ -356,15 +364,7 @@ List<CatalogDemo> alertDialogsDemos() {
 //      slug: 'Messages',
 //      subtitle: "Messages Screen Design",
 //      category: CatalogDemoCategory.messagesAndNotification,
-//      routeName: Routes.alertDialog7,
-//    ),
-//    CatalogDemo(
-//      title: "Messages",
-//      icon: Icons.person,
-//      slug: 'Messages',
-//      subtitle: "Messages Screen Design",
-//      category: CatalogDemoCategory.messagesAndNotification,
-//      routeName: Routes.alertDialog8,
+//      routeName: Routes.bottomSheet4,
 //    ),
   ];
 }

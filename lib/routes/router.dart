@@ -8,6 +8,7 @@ import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_1
 import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_2.dart';
 import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_3.dart';
 import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_4.dart';
+import 'package:fluttercatalog/presentation/screens/alert_dialogs/bottom_sheet_1.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_1/login_screen_1.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_1/signup_screen_1.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_2/login_screen_2.dart';
@@ -71,15 +72,15 @@ import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
     MaterialRoute(page: LoginScreen9),
     MaterialRoute(page: SignUpScreen9),
 
-    //Alert Dialogs
+    //Alert Dialogs & BottomSheets
     MaterialRoute(page: AlertDialog1),
     MaterialRoute(page: AlertDialog2),
     MaterialRoute(page: AlertDialog3),
     MaterialRoute(page: AlertDialog4),
-//    MaterialRoute(page: AlertDialog5),
-//    MaterialRoute(page: AlertDialog6),
-//    MaterialRoute(page: AlertDialog7),
-//    MaterialRoute(page: AlertDialog8),
+    MaterialRoute(page: BottomSheet1),
+//    MaterialRoute(page: BottomSheet2),
+//    MaterialRoute(page: BottomSheet3),
+//    MaterialRoute(page: BottomSheet4),
   ],
 )
 class $AppRouter {}
