@@ -14,18 +14,6 @@ class BottomSheet1 extends StatefulWidget {
 class _BottomSheet1State extends State<BottomSheet1> {
   int guests = 1;
 
-  void _increaseGuests() {
-    setState(() {
-      guests++;
-    });
-  }
-
-  void _decreaseGuests() {
-    setState(() {
-      guests -= 1;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     Radius borderRadius = const Radius.circular(Sizes.RADIUS_60);

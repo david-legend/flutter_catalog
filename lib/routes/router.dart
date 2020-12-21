@@ -9,6 +9,7 @@ import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_2
 import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_3.dart';
 import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_4.dart';
 import 'package:fluttercatalog/presentation/screens/alert_dialogs/bottom_sheet_1.dart';
+import 'package:fluttercatalog/presentation/screens/alert_dialogs/bottom_sheet_2.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_1/login_screen_1.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_1/signup_screen_1.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_2/login_screen_2.dart';
@@ -78,7 +79,7 @@ import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
     MaterialRoute(page: AlertDialog3),
     MaterialRoute(page: AlertDialog4),
     MaterialRoute(page: BottomSheet1),
-//    MaterialRoute(page: BottomSheet2),
+    MaterialRoute(page: BottomSheet2),
 //    MaterialRoute(page: BottomSheet3),
 //    MaterialRoute(page: BottomSheet4),
   ],

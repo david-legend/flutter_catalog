@@ -54,6 +54,8 @@ class StringConst {
   static const String ARE_YOU_SURE = "Are you sure?";
   static const String SKIP = "Skip";
   static const String NEXT = "Next";
+  static const String DONE = "Done";
+  static const String TELL_FRIENDS = "Tell Friends";
   static const String YES = "Yes";
   static const String MAYBE = "Maybe";
   static const String CANCEL = "Cancel";
@@ -62,6 +64,8 @@ class StringConst {
   static const String SHOW_BOTTOM_SHEET = "Show Bottom Sheet";
   static const String BRING_GUEST = "Bringing Guests?";
   static const String GUEST_INFO = "You +1 guest are going!";
+  static const String YOGA_TIME = "TODAY 5:30PM -  6:00PM";
+  static const String YOGA_TITLE = "Yoga and Meditation for Beginners";
 
   //Buttons
   static const String FOLLOW = "Follow";
