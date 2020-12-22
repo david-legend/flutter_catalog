@@ -15,7 +15,7 @@ class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
   int pageLength;
   List<String> onBoardingImageList = [
     ImagePath.YOGA_2,
-    ImagePath.SUNRISE,
+    ImagePath.JADE_YOGA,
     ImagePath.YOGA_2,
   ];
 
@@ -66,7 +66,7 @@ class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
                 dotsCount: pageLength,
                 position: currentIndexPage,
                 decorator: DotsDecorator(
-                  color: AppColors.black50,
+                  color: AppColors.indigo50,
                   activeColor: AppColors.white,
                 ),
               ),

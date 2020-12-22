@@ -9,6 +9,7 @@ class OnBoardingScreen1 extends StatefulWidget {
   _OnBoardingScreen1State createState() => _OnBoardingScreen1State();
 }
 
+//TODO:: Fix button issues --> When an inkwell is added as a parent for the button function, the pageviewer stops working
 class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
   double currentIndexPage;
   int pageLength;
@@ -32,6 +33,9 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
         children: [
           Container(
             height: assignHeight(context: context, fraction: 0.8),
+            decoration: BoxDecoration(
+              gradient: Gradients.darkOverlayGradient,
+            ),
             child: PageView(
               children: _buildBackgroundImages(onBoardingImageList),
               onPageChanged: (value) {
@@ -132,7 +136,7 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
                 ),
               ),
               Text(
-                StringConst.WELCOME_TO,
+                StringConst.WELCOME_TO_MEET_UP,
                 style: theme.textTheme.headline4.copyWith(
                   color: AppColors.white,
                 ),
@@ -146,39 +150,36 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
 
   Widget _buildButton() {
     ThemeData theme = Theme.of(context);
-    return InkWell(
-      onTap: () {},
-      child: Align(
-        alignment: Alignment.bottomRight,
-        child: Container(
-          width: assignWidth(context: context, fraction: 0.4),
-          height: assignHeight(context: context, fraction: 0.1),
-          padding: const EdgeInsets.symmetric(
-            horizontal: Sizes.PADDING_16,
-            vertical: Sizes.PADDING_16,
+    return Align(
+      alignment: Alignment.bottomRight,
+      child: Container(
+        width: assignWidth(context: context, fraction: 0.4),
+        height: assignHeight(context: context, fraction: 0.1),
+        padding: const EdgeInsets.symmetric(
+          horizontal: Sizes.PADDING_16,
+          vertical: Sizes.PADDING_16,
+        ),
+        margin: EdgeInsets.only(
+          bottom: assignHeight(context: context, fraction: 0.05),
+        ),
+        decoration: BoxDecoration(
+          color: AppColors.pink50,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(Sizes.RADIUS_40),
+            bottomLeft: Radius.circular(Sizes.RADIUS_40),
           ),
-          margin: EdgeInsets.only(
-            bottom: assignHeight(context: context, fraction: 0.05),
-          ),
-          decoration: BoxDecoration(
-            color: AppColors.pink50,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(Sizes.RADIUS_40),
-              bottomLeft: Radius.circular(Sizes.RADIUS_40),
-            ),
-          ),
-          child: Row(
-            children: [
-              Text(
-                StringConst.GET_STARTED.toUpperCase(),
-                style: theme.textTheme.subtitle2.copyWith(
-                  color: AppColors.white,
-                ),
+        ),
+        child: Row(
+          children: [
+            Text(
+              StringConst.GET_STARTED.toUpperCase(),
+              style: theme.textTheme.subtitle2.copyWith(
+                color: AppColors.white,
               ),
-              SpaceW4(),
-              Icon(Icons.arrow_forward, color: AppColors.white),
-            ],
-          ),
+            ),
+            SpaceW4(),
+            Icon(Icons.arrow_forward, color: AppColors.white),
+          ],
         ),
       ),
     );

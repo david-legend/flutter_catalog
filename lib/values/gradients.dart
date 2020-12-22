@@ -62,4 +62,17 @@ class Gradients {
       Color.fromARGB(105, 45, 45, 45),
     ],
   );
+
+  static const Gradient darkOverlayGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    stops: [
+      0,
+      1,
+    ],
+    colors: [
+      Color.fromARGB(255, 0, 0, 0),
+      Color.fromARGB(255, 8, 8, 8),
+    ],
+  );
 }

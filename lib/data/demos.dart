@@ -306,6 +306,14 @@ List<CatalogDemo> onBoardingDemos() {
       category: CatalogDemoCategory.onBoarding,
       routeName: Routes.onBoardingScreen2,
     ),
+    CatalogDemo(
+      title: "OnBoarding Design 3",
+      icon: Icons.person,
+      slug: 'onBoarding-design',
+      subtitle: "OnBoarding Screen Design 3",
+      category: CatalogDemoCategory.onBoarding,
+      routeName: Routes.onBoardingScreen3,
+    ),
   ];
 }
 

@@ -70,7 +70,7 @@ class StringConst {
   //OnBoarding
   static const String TUTORIAL = "Tutorial";
   static const String GET_STARTED = "Get Started";
-  static const String WELCOME_TO = "Welcome to";
+  static const String WELCOME_TO_MEET_UP = "Welcome to Meet Up";
   static const String MEET_UP = "Meet Up";
 
   //Buttons
@@ -147,6 +147,7 @@ class StringConst {
   static const String GOOGLE = "Google";
   static const String SIGN_IN_WITH_GOOGLE = "Sign in with Google";
   static const String SIGN_UP_WITH_GOOGLE = "Sign up with Google";
+  static const String CONTINUE_WITH = "Continue with:";
   static const String CONTINUE_WITH_FACEBOOK = "Continue with Facebook";
   static const String FACEBOOK = "Facebook";
   static const String LOGIN_WITH_FACEBOOK = "Login With Facebook";
