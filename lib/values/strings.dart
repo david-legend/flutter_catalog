@@ -148,6 +148,7 @@ class StringConst {
   static const String SIGN_IN_WITH_GOOGLE = "Sign in with Google";
   static const String SIGN_UP_WITH_GOOGLE = "Sign up with Google";
   static const String CONTINUE_WITH = "Continue with:";
+  static const String CONTINUE = "Continue";
   static const String CONTINUE_WITH_FACEBOOK = "Continue with Facebook";
   static const String FACEBOOK = "Facebook";
   static const String LOGIN_WITH_FACEBOOK = "Login With Facebook";
