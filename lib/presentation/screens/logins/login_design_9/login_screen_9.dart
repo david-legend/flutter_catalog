@@ -125,7 +125,7 @@ class _LoginScreen9State extends State<LoginScreen9> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  StringConst.GET_STARTED,
+                  StringConst.LETS_GET_STARTED,
                   style: theme.textTheme.headline5.copyWith(
                     color: AppColors.white,
                   ),

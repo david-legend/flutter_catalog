@@ -67,6 +67,11 @@ class StringConst {
   static const String YOGA_TIME = "TODAY 5:30PM -  6:00PM";
   static const String YOGA_TITLE = "Yoga and Meditation for Beginners";
 
+  //OnBoarding
+  static const String TUTORIAL = "Tutorial";
+  static const String GET_STARTED = "Get Started";
+  static const String WELCOME_TO = "Welcome to";
+
   //Buttons
   static const String FOLLOW = "Follow";
   static const String CHAT = "Chat";
@@ -91,7 +96,7 @@ class StringConst {
   static const String WELCOME_BACK_2 = "Welcome back!";
   static const String HELLO = "HELLO";
   static const String HELLO_2 = "Hello,";
-  static const String GET_STARTED = "Let's Get Started!";
+  static const String LETS_GET_STARTED = "Let's Get Started!";
   static const String CREATE_ACCOUNT = "Create an account to get all features";
   static const String REGISTER = "Register";
   static const String BACK = "Back!";

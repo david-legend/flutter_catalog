@@ -289,7 +289,16 @@ List<CatalogDemo> menuDemos() {
 }
 
 List<CatalogDemo> onBoardingDemos() {
-  return [];
+  return [
+    CatalogDemo(
+      title: "OnBoarding Design 1",
+      icon: Icons.person,
+      slug: 'onBoarding-design',
+      subtitle: "OnBoarding Screen Design 1",
+      category: CatalogDemoCategory.onBoarding,
+      routeName: Routes.onBoardingScreen1,
+    ),
+  ];
 }
 
 List<CatalogDemo> listDemos() {
@@ -307,7 +316,7 @@ List<CatalogDemo> alertDialogsDemos() {
       icon: Icons.person,
       slug: 'Messages',
       subtitle: "Messages Screen Design",
-      category: CatalogDemoCategory.messagesAndNotification,
+      category: CatalogDemoCategory.alertDialogs,
       routeName: Routes.alertDialog1,
     ),
     CatalogDemo(
@@ -315,7 +324,7 @@ List<CatalogDemo> alertDialogsDemos() {
       icon: Icons.person,
       slug: 'Messages',
       subtitle: "Messages Screen Design",
-      category: CatalogDemoCategory.messagesAndNotification,
+      category: CatalogDemoCategory.alertDialogs,
       routeName: Routes.alertDialog2,
     ),
     CatalogDemo(
@@ -323,7 +332,7 @@ List<CatalogDemo> alertDialogsDemos() {
       icon: Icons.person,
       slug: 'Messages',
       subtitle: "Messages Screen Design",
-      category: CatalogDemoCategory.messagesAndNotification,
+      category: CatalogDemoCategory.alertDialogs,
       routeName: Routes.alertDialog3,
     ),
     CatalogDemo(
@@ -331,7 +340,7 @@ List<CatalogDemo> alertDialogsDemos() {
       icon: Icons.person,
       slug: 'Messages',
       subtitle: "Messages Screen Design",
-      category: CatalogDemoCategory.messagesAndNotification,
+      category: CatalogDemoCategory.alertDialogs,
       routeName: Routes.alertDialog4,
     ),
     CatalogDemo(
@@ -339,7 +348,7 @@ List<CatalogDemo> alertDialogsDemos() {
       icon: Icons.person,
       slug: 'Messages',
       subtitle: "Messages Screen Design",
-      category: CatalogDemoCategory.messagesAndNotification,
+      category: CatalogDemoCategory.alertDialogs,
       routeName: Routes.bottomSheet1,
     ),
     CatalogDemo(
@@ -347,7 +356,7 @@ List<CatalogDemo> alertDialogsDemos() {
       icon: Icons.person,
       slug: 'Messages',
       subtitle: "Messages Screen Design",
-      category: CatalogDemoCategory.messagesAndNotification,
+      category: CatalogDemoCategory.alertDialogs,
       routeName: Routes.bottomSheet2,
     ),
     CatalogDemo(
@@ -355,7 +364,7 @@ List<CatalogDemo> alertDialogsDemos() {
       icon: Icons.person,
       slug: 'Messages',
       subtitle: "Messages Screen Design",
-      category: CatalogDemoCategory.messagesAndNotification,
+      category: CatalogDemoCategory.alertDialogs,
       routeName: Routes.bottomSheet3,
     ),
     CatalogDemo(
@@ -363,7 +372,7 @@ List<CatalogDemo> alertDialogsDemos() {
       icon: Icons.person,
       slug: 'Messages',
       subtitle: "Messages Screen Design",
-      category: CatalogDemoCategory.messagesAndNotification,
+      category: CatalogDemoCategory.alertDialogs,
       routeName: Routes.bottomSheet4,
     ),
   ];

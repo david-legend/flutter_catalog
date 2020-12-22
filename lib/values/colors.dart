@@ -102,6 +102,7 @@ class AppColors {
   static const Color lighterBlue = Color(0xFFD8F4FD);
   static const Color lighterBlue2 = Color(0xFFD0EBF7);
   static const Color lightBlue = Color(0xFF83C0CF);
+  static const Color lightBlue200 = Color(0xFF6591AF);
   static const Color blue = Color(0xFF4045EE);
   static const Color blueShade1 = Color(0xFF70C4CD);
   static const Color blueShade2 = Color(0xFF47A9FF);

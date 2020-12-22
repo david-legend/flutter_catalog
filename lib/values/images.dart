@@ -47,6 +47,8 @@ class ImagePath {
   static const String MARCUS = "$imageDir/marcus.png";
   static const String CINEMA = "$imageDir/cinema.png";
   static const String AVA = "$imageDir/ava.png";
+  static const String JADE_YOGA = "$imageDir/jade_yoga.png";
+  static const String SUNRISE = "$imageDir/sunrise.png";
 
   //Icons
   static const String GOOGLE_LOGO = "$imageDir/google.png";
