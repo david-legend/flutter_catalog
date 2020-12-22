@@ -44,6 +44,7 @@ import '../presentation/screens/messages_notifications/notifications_screen.dart
 import '../presentation/screens/onboarding/onboarding_screen_1.dart';
 import '../presentation/screens/onboarding/onboarding_screen_2.dart';
 import '../presentation/screens/onboarding/onboarding_screen_3.dart';
+import '../presentation/screens/onboarding/onboarding_screen_4.dart';
 import '../presentation/screens/profile/profile_1.dart';
 import '../presentation/screens/profile/profile_2.dart';
 import '../presentation/screens/profile/profile_3.dart';
@@ -89,6 +90,7 @@ class Routes {
   static const String onBoardingScreen1 = '/on-boarding-screen1';
   static const String onBoardingScreen2 = '/on-boarding-screen2';
   static const String onBoardingScreen3 = '/on-boarding-screen3';
+  static const String onBoardingScreen4 = '/on-boarding-screen4';
   static const all = <String>{
     rootScreen,
     profile1Screen,
@@ -129,6 +131,7 @@ class Routes {
     onBoardingScreen1,
     onBoardingScreen2,
     onBoardingScreen3,
+    onBoardingScreen4,
   };
 }
 
@@ -175,6 +178,7 @@ class AppRouter extends RouterBase {
     RouteDef(Routes.onBoardingScreen1, page: OnBoardingScreen1),
     RouteDef(Routes.onBoardingScreen2, page: OnBoardingScreen2),
     RouteDef(Routes.onBoardingScreen3, page: OnBoardingScreen3),
+    RouteDef(Routes.onBoardingScreen4, page: OnBoardingScreen4),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -410,6 +414,12 @@ class AppRouter extends RouterBase {
     OnBoardingScreen3: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => OnBoardingScreen3(),
+        settings: data,
+      );
+    },
+    OnBoardingScreen4: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => OnBoardingScreen4(),
         settings: data,
       );
     },

@@ -14,9 +14,9 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
   double currentIndexPage;
   int pageLength;
   List<String> onBoardingImageList = [
+    ImagePath.YOGA_3,
     ImagePath.SUNRISE,
     ImagePath.JADE_YOGA,
-    ImagePath.YOGA_3,
   ];
 
   @override
