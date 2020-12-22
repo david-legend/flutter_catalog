@@ -72,6 +72,7 @@ class StringConst {
   static const String GET_STARTED = "Get Started";
   static const String WELCOME_TO_MEET_UP = "Welcome to Meet Up";
   static const String MEET_UP = "Meet Up";
+  static const String MEET_UP_UI_KIT = "Meet Up UI-Kit";
 
   //Buttons
   static const String FOLLOW = "Follow";

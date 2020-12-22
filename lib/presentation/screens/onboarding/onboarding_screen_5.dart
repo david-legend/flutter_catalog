@@ -2,8 +2,6 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
-import 'package:fluttercatalog/widgets/custom_button.dart';
-import 'package:fluttercatalog/widgets/spaces.dart';
 
 class OnBoardingScreen5 extends StatefulWidget {
   @override

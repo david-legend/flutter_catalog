@@ -36,6 +36,7 @@ import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen
 import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen_3.dart';
 import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen_4.dart';
 import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen_5.dart';
+import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen_6.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_1.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_2.dart';
 import 'package:fluttercatalog/presentation/screens/profile/profile_3.dart';
@@ -96,6 +97,8 @@ import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
     MaterialRoute(page: OnBoardingScreen3),
     MaterialRoute(page: OnBoardingScreen4),
     MaterialRoute(page: OnBoardingScreen5),
+    MaterialRoute(page: OnBoardingScreen6),
+//    MaterialRoute(page: OnBoardingScreen7),
   ],
 )
 class $AppRouter {}
