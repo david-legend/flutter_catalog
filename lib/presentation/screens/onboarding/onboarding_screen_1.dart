@@ -13,9 +13,9 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
   double currentIndexPage;
   int pageLength;
   List<String> onBoardingImageList = [
+    ImagePath.JADE_YOGA,
     ImagePath.MARIA,
     ImagePath.SUNRISE,
-    ImagePath.JADE_YOGA,
   ];
 
   @override
@@ -146,36 +146,39 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
 
   Widget _buildButton() {
     ThemeData theme = Theme.of(context);
-    return Align(
-      alignment: Alignment.bottomRight,
-      child: Container(
-        width: assignWidth(context: context, fraction: 0.4),
-        height: assignHeight(context: context, fraction: 0.1),
-        padding: const EdgeInsets.symmetric(
-          horizontal: Sizes.PADDING_16,
-          vertical: Sizes.PADDING_16,
-        ),
-        margin: EdgeInsets.only(
-          bottom: assignHeight(context: context, fraction: 0.05),
-        ),
-        decoration: BoxDecoration(
-          color: AppColors.pink50,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(Sizes.RADIUS_40),
-            bottomLeft: Radius.circular(Sizes.RADIUS_40),
+    return InkWell(
+      onTap: () {},
+      child: Align(
+        alignment: Alignment.bottomRight,
+        child: Container(
+          width: assignWidth(context: context, fraction: 0.4),
+          height: assignHeight(context: context, fraction: 0.1),
+          padding: const EdgeInsets.symmetric(
+            horizontal: Sizes.PADDING_16,
+            vertical: Sizes.PADDING_16,
           ),
-        ),
-        child: Row(
-          children: [
-            Text(
-              StringConst.GET_STARTED.toUpperCase(),
-              style: theme.textTheme.subtitle2.copyWith(
-                color: AppColors.white,
-              ),
+          margin: EdgeInsets.only(
+            bottom: assignHeight(context: context, fraction: 0.05),
+          ),
+          decoration: BoxDecoration(
+            color: AppColors.pink50,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(Sizes.RADIUS_40),
+              bottomLeft: Radius.circular(Sizes.RADIUS_40),
             ),
-            SpaceW4(),
-            Icon(Icons.arrow_forward, color: AppColors.white),
-          ],
+          ),
+          child: Row(
+            children: [
+              Text(
+                StringConst.GET_STARTED.toUpperCase(),
+                style: theme.textTheme.subtitle2.copyWith(
+                  color: AppColors.white,
+                ),
+              ),
+              SpaceW4(),
+              Icon(Icons.arrow_forward, color: AppColors.white),
+            ],
+          ),
         ),
       ),
     );

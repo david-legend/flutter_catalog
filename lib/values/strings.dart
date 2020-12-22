@@ -71,6 +71,7 @@ class StringConst {
   static const String TUTORIAL = "Tutorial";
   static const String GET_STARTED = "Get Started";
   static const String WELCOME_TO = "Welcome to";
+  static const String MEET_UP = "Meet Up";
 
   //Buttons
   static const String FOLLOW = "Follow";
