@@ -74,6 +74,16 @@ class StringConst {
   static const String MEET_UP = "Meet Up";
   static const String MEET_UP_UI_KIT = "Meet Up UI-Kit";
 
+  //Menus
+  static const String SALOMAN = "Aurelien Saloman";
+  static const String SALOMAN_USERNAME = "@aureliensaloman";
+  static const String HOME = "Home";
+  static const String MEET_UPS = "Meetups";
+  static const String EVENTS = "Events";
+  static const String CONTACT_US = "Contact Us";
+  static const String ABOUT_US = "About Us";
+  static const String LOG_OUT = "Log Out";
+
   //Buttons
   static const String FOLLOW = "Follow";
   static const String CHAT = "Chat";

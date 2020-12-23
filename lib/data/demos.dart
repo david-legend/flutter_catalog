@@ -9,10 +9,10 @@ enum CatalogDemoCategory {
   menu,
   onBoarding,
   messagesAndNotification,
-  list,
+//  list,
   settings,
   alertDialogs,
-  verification,
+//  verification,
   activitiesAndTimeLine,
   login,
   statsAndInformation,
@@ -32,14 +32,10 @@ extension CatalogDemoExtension on CatalogDemoCategory {
         return StringConst.ACTIVITIES_AND_TIMELINE;
       case CatalogDemoCategory.onBoarding:
         return StringConst.ONBOARDING;
-      case CatalogDemoCategory.list:
-        return StringConst.LISTS;
       case CatalogDemoCategory.settings:
         return StringConst.SETTINGS;
       case CatalogDemoCategory.alertDialogs:
         return StringConst.ALERT_DIALOGS;
-      case CatalogDemoCategory.verification:
-        return StringConst.VERIFICATION;
       case CatalogDemoCategory.statsAndInformation:
         return StringConst.STATS_AND_INFORMATION;
       case CatalogDemoCategory.bottomNavigation:
@@ -134,20 +130,11 @@ List<CategoryListItem> categoryList() {
     ),
     CategoryListItem(
       key: const PageStorageKey<CatalogDemoCategory>(
-        CatalogDemoCategory.list,
+        CatalogDemoCategory.alertDialogs,
       ),
-      category: CatalogDemoCategory.list,
-      imageString: ImagePath.LIST,
-      demos: listDemos(),
-      initiallyExpanded: false,
-    ),
-    CategoryListItem(
-      key: const PageStorageKey<CatalogDemoCategory>(
-        CatalogDemoCategory.verification,
-      ),
-      category: CatalogDemoCategory.verification,
-      imageString: ImagePath.VERIFICATION,
-      demos: verificationDemos(),
+      category: CatalogDemoCategory.alertDialogs,
+      imageString: ImagePath.ALERT_DIALOGS,
+      demos: alertDialogsDemos(),
       initiallyExpanded: false,
     ),
     CategoryListItem(
@@ -175,15 +162,6 @@ List<CategoryListItem> categoryList() {
       category: CatalogDemoCategory.bottomNavigation,
       imageString: ImagePath.BOTTOM_NAVIGATION,
       demos: bottomNavigationDemos(),
-      initiallyExpanded: false,
-    ),
-    CategoryListItem(
-      key: const PageStorageKey<CatalogDemoCategory>(
-        CatalogDemoCategory.alertDialogs,
-      ),
-      category: CatalogDemoCategory.alertDialogs,
-      imageString: ImagePath.ALERT_DIALOGS,
-      demos: alertDialogsDemos(),
       initiallyExpanded: false,
     ),
   ];
@@ -285,7 +263,16 @@ List<CatalogDemo> messagesAndNotificationsDemos() {
 }
 
 List<CatalogDemo> menuDemos() {
-  return [];
+  return [
+    CatalogDemo(
+      title: "Menu Design 1",
+      icon: Icons.person,
+      slug: 'menu-design',
+      subtitle: "Menu Screen Design 1",
+      category: CatalogDemoCategory.menu,
+      routeName: Routes.menuScreen1,
+    ),
+  ];
 }
 
 List<CatalogDemo> onBoardingDemos() {

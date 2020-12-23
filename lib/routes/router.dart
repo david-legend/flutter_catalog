@@ -29,6 +29,7 @@ import 'package:fluttercatalog/presentation/screens/logins/login_design_7/regist
 import 'package:fluttercatalog/presentation/screens/logins/login_design_8/login_screen_8.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_9/login_screen_9.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_9/signup_screen_9.dart';
+import 'package:fluttercatalog/presentation/screens/menus/menu_1.dart';
 import 'package:fluttercatalog/presentation/screens/messages_notifications/messages_screen.dart';
 import 'package:fluttercatalog/presentation/screens/messages_notifications/notifications_screen.dart';
 import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen_1.dart';
@@ -100,6 +101,9 @@ import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
     MaterialRoute(page: OnBoardingScreen5),
     MaterialRoute(page: OnBoardingScreen6),
     MaterialRoute(page: OnBoardingScreen7),
+
+    //Menu Screens
+    MaterialRoute(page: MenuScreen1),
   ],
 )
 class $AppRouter {}
