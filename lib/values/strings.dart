@@ -83,6 +83,7 @@ class StringConst {
   static const String CONTACT_US = "Contact Us";
   static const String ABOUT_US = "About Us";
   static const String LOG_OUT = "Log Out";
+  static const String OPEN_DRAWER = "Open Drawer";
 
   //Buttons
   static const String FOLLOW = "Follow";

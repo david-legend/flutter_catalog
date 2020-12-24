@@ -30,6 +30,7 @@ import 'package:fluttercatalog/presentation/screens/logins/login_design_8/login_
 import 'package:fluttercatalog/presentation/screens/logins/login_design_9/login_screen_9.dart';
 import 'package:fluttercatalog/presentation/screens/logins/login_design_9/signup_screen_9.dart';
 import 'package:fluttercatalog/presentation/screens/menus/menu_1.dart';
+import 'package:fluttercatalog/presentation/screens/menus/menu_2.dart';
 import 'package:fluttercatalog/presentation/screens/messages_notifications/messages_screen.dart';
 import 'package:fluttercatalog/presentation/screens/messages_notifications/notifications_screen.dart';
 import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen_1.dart';
@@ -104,6 +105,7 @@ import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
 
     //Menu Screens
     MaterialRoute(page: MenuScreen1),
+    MaterialRoute(page: MenuScreen2),
   ],
 )
 class $AppRouter {}

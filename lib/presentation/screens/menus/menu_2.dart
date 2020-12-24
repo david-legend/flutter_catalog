@@ -11,12 +11,12 @@ class MenuItem {
   final GestureTapCallback onTap;
 }
 
-class MenuScreen1 extends StatefulWidget {
+class MenuScreen2 extends StatefulWidget {
   @override
-  _MenuScreen1State createState() => _MenuScreen1State();
+  _MenuScreen2State createState() => _MenuScreen2State();
 }
 
-class _MenuScreen1State extends State<MenuScreen1> {
+class _MenuScreen2State extends State<MenuScreen2> {
   List<MenuItem> menuList = [
     MenuItem(StringConst.HOME, Icons.home, onTap: () {}),
     MenuItem(StringConst.MEET_UPS, Icons.person_outline, onTap: () {}),
@@ -39,16 +39,24 @@ class _MenuScreen1State extends State<MenuScreen1> {
         child: Drawer(
           child: Container(
             decoration: BoxDecoration(
-              color: AppColors.violet400,
+              color: AppColors.white,
             ),
             child: Column(
               children: <Widget>[
-                DrawerHeader(
-                  margin: const EdgeInsets.all(Sizes.MARGIN_0),
-                  padding: const EdgeInsets.all(Sizes.PADDING_0),
-                  child: _buildDrawerHeader(),
-                  decoration: BoxDecoration(
-                    color: AppColors.violet400,
+                ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: const Radius.circular(Sizes.RADIUS_60),
+                  ),
+                  child: DrawerHeader(
+                    margin: const EdgeInsets.all(Sizes.MARGIN_0),
+                    padding: const EdgeInsets.all(Sizes.PADDING_0),
+                    child: Container(
+                      height: assignHeight(context: context, fraction: 0.3),
+                      child: _buildDrawerHeader(),
+                    ),
+                    decoration: BoxDecoration(
+                      color: AppColors.violet400,
+                    ),
                   ),
                 ),
                 ..._buildMenuList(menuList),
@@ -76,7 +84,9 @@ class _MenuScreen1State extends State<MenuScreen1> {
         child: Center(
           child: RaisedButton(
             onPressed: () => scaffoldKey.currentState.openDrawer(),
-            child: Text("Open Drawer"),
+            child: Text(
+              "OPEN", /**StringConst.OPEN_DRAWER**/
+            ),
           ),
         ),
       ),

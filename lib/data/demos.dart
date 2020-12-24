@@ -270,6 +270,14 @@ List<CatalogDemo> menuDemos() {
       category: CatalogDemoCategory.menu,
       routeName: Routes.menuScreen1,
     ),
+    CatalogDemo(
+      title: "Menu Design 2",
+      icon: Icons.person,
+      slug: 'menu-design',
+      subtitle: "Menu Screen Design 2",
+      category: CatalogDemoCategory.menu,
+      routeName: Routes.menuScreen2,
+    ),
   ];
 }
 
@@ -332,10 +340,6 @@ List<CatalogDemo> onBoardingDemos() {
       routeName: Routes.onBoardingScreen7,
     ),
   ];
-}
-
-List<CatalogDemo> listDemos() {
-  return [];
 }
 
 List<CatalogDemo> settingsDemos() {
