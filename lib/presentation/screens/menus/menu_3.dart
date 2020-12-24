@@ -49,8 +49,15 @@ class _MenuScreen3State extends State<MenuScreen3> {
             color: AppColors.violet400,
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               DrawerHeader(
+                padding: const EdgeInsets.fromLTRB(
+                  Sizes.PADDING_24,
+                  Sizes.PADDING_16,
+                  Sizes.PADDING_16,
+                  Sizes.PADDING_8,
+                ),
                 child: Container(
                   height: assignHeight(context: context, fraction: 0.3),
                   child: _buildDrawerHeader(),
@@ -59,20 +66,28 @@ class _MenuScreen3State extends State<MenuScreen3> {
                   color: AppColors.violet400,
                 ),
               ),
-              ..._buildMenuList(menuList),
+              Padding(
+                padding: const EdgeInsets.only(left: Sizes.PADDING_8),
+                child: Column(
+                  children: _buildMenuList(menuList),
+                ),
+              ),
               Spacer(),
-              ListTile(
-                leading: Icon(
-                  Icons.logout,
-                  color: AppColors.purple10,
-                ),
-                title: Text(
-                  StringConst.LOG_OUT,
-                  style: theme.textTheme.subtitle2.copyWith(
-                    color: AppColors.white,
+              Padding(
+                padding: const EdgeInsets.only(left: Sizes.PADDING_8),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.logout,
+                    color: AppColors.purple10,
                   ),
+                  title: Text(
+                    StringConst.LOG_OUT,
+                    style: theme.textTheme.subtitle2.copyWith(
+                      color: AppColors.purple10,
+                    ),
+                  ),
+                  onTap: () {},
                 ),
-                onTap: () {},
               ),
               SpaceH30(),
             ],
@@ -84,7 +99,7 @@ class _MenuScreen3State extends State<MenuScreen3> {
           child: RaisedButton(
             onPressed: () => scaffoldKey.currentState.openDrawer(),
             child: Text(
-              "OPEN", /**StringConst.OPEN_DRAWER**/
+              StringConst.OPEN_DRAWER, /**StringConst.OPEN_DRAWER**/
             ),
           ),
         ),
@@ -101,15 +116,20 @@ class _MenuScreen3State extends State<MenuScreen3> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(
-                ImagePath.BOB,
-                fit: BoxFit.cover,
+              ClipRRect(
+                borderRadius: BorderRadius.all(
+                  const Radius.circular(Sizes.RADIUS_60),
+                ),
+                child: Image.asset(
+                  ImagePath.BOB,
+                  fit: BoxFit.cover,
+                ),
               ),
               SpaceH8(),
               Text(
                 StringConst.SALOMAN,
                 style: theme.textTheme.subtitle1.copyWith(
-                  color: AppColors.white,
+                  color: AppColors.purple10,
                 ),
               ),
               Text(
@@ -131,18 +151,38 @@ class _MenuScreen3State extends State<MenuScreen3> {
 
     for (int index = 0; index < menuItemList.length; index++) {
       menuList.add(
-        ListTile(
-          leading: Icon(
-            menuItemList[index].iconData,
-            color: AppColors.purple10,
+        ClipRRect(
+          borderRadius: BorderRadius.all(
+            const Radius.circular(Sizes.RADIUS_60),
           ),
-          title: Text(
-            menuItemList[index].title,
-            style: theme.textTheme.subtitle2.copyWith(
-              color: AppColors.white,
+          child: Container(
+            width: assignWidth(context: context, fraction: 0.45),
+            child: ListTile(
+              selected: menuItemList[index].selected,
+              selectedTileColor: AppColors.primaryColor,
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+              leading: Icon(
+                menuItemList[index].iconData,
+                color: menuItemList[index].selected
+                    ? AppColors.purple10
+                    : AppColors.purple50,
+              ),
+              title: Text(
+                menuItemList[index].title,
+                style: theme.textTheme.subtitle2.copyWith(
+                  color: AppColors.purple10,
+                ),
+              ),
+              shape: RoundedRectangleBorder(
+                side: BorderSide(width: 4),
+                borderRadius: BorderRadius.all(
+                  const Radius.circular(Sizes.RADIUS_80),
+                ),
+              ),
+              onTap: menuItemList[index].onTap,
             ),
           ),
-          onTap: menuItemList[index].onTap,
         ),
       );
     }

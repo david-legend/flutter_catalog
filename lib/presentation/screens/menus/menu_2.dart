@@ -172,7 +172,7 @@ class _MenuScreen2State extends State<MenuScreen2> {
       menuList.add(
         ClipRRect(
           borderRadius: BorderRadius.all(
-            const Radius.circular(Sizes.RADIUS_80),
+            const Radius.circular(Sizes.RADIUS_60),
           ),
           child: Container(
             width: assignWidth(context: context, fraction: 0.45),
