@@ -31,43 +31,45 @@ class _MenuScreen1State extends State<MenuScreen1> {
     ThemeData theme = Theme.of(context);
     return Scaffold(
       key: scaffoldKey,
-      drawer: Drawer(
-        child: Container(
-          decoration: BoxDecoration(
-            color: AppColors.violet400,
-            borderRadius: BorderRadius.only(
-              topRight: const Radius.circular(Sizes.RADIUS_60),
-              bottomRight: const Radius.circular(Sizes.RADIUS_60),
+      drawer: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topRight: const Radius.circular(Sizes.RADIUS_60),
+          bottomRight: const Radius.circular(Sizes.RADIUS_60),
+        ),
+        child: Drawer(
+          child: Container(
+            decoration: BoxDecoration(
+              color: AppColors.violet400,
             ),
-          ),
-          child: Column(
+            child: Column(
 //            padding: EdgeInsets.zero,
-            children: <Widget>[
-              DrawerHeader(
-                margin: const EdgeInsets.all(Sizes.MARGIN_0),
-                padding: const EdgeInsets.all(Sizes.PADDING_0),
-                child: _buildDrawerHeader(),
-                decoration: BoxDecoration(
-                  color: AppColors.violet400,
-                ),
-              ),
-              ..._buildMenuList(menuList),
-              Spacer(),
-              ListTile(
-                leading: Icon(
-                  Icons.logout,
-                  color: AppColors.purple10,
-                ),
-                title: Text(
-                  StringConst.LOG_OUT,
-                  style: theme.textTheme.subtitle2.copyWith(
-                    color: AppColors.white,
+              children: <Widget>[
+                DrawerHeader(
+                  margin: const EdgeInsets.all(Sizes.MARGIN_0),
+                  padding: const EdgeInsets.all(Sizes.PADDING_0),
+                  child: _buildDrawerHeader(),
+                  decoration: BoxDecoration(
+                    color: AppColors.violet400,
                   ),
                 ),
-                onTap: () {},
-              ),
-              SpaceH30(),
-            ],
+                ..._buildMenuList(menuList),
+                Spacer(),
+                ListTile(
+                  leading: Icon(
+                    Icons.logout,
+                    color: AppColors.purple10,
+                  ),
+                  title: Text(
+                    StringConst.LOG_OUT,
+                    style: theme.textTheme.subtitle2.copyWith(
+                      color: AppColors.white,
+                    ),
+                  ),
+                  onTap: () {},
+                ),
+                SpaceH30(),
+              ],
+            ),
           ),
         ),
       ),
