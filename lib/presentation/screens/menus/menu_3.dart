@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
 import 'package:fluttercatalog/widgets/spaces.dart';
 
-class MenuItem {
-  MenuItem(this.title, this.iconData, {this.onTap});
-
-  final String title;
-  final IconData iconData;
-  final GestureTapCallback onTap;
-}
+import 'menu_1.dart';
 
 class MenuScreen3 extends StatefulWidget {
   @override
@@ -18,11 +13,28 @@ class MenuScreen3 extends StatefulWidget {
 
 class _MenuScreen3State extends State<MenuScreen3> {
   List<MenuItem> menuList = [
-    MenuItem(StringConst.HOME, Icons.home, onTap: () {}),
-    MenuItem(StringConst.MEET_UPS, Icons.person_outline, onTap: () {}),
-    MenuItem(StringConst.EVENTS, Icons.event, onTap: () {}),
-    MenuItem(StringConst.CONTACT_US, Icons.person_outline, onTap: () {}),
-    MenuItem(StringConst.ABOUT_US, Icons.info_outline, onTap: () {}),
+    MenuItem(
+      StringConst.HOME,
+      FeatherIcons.home,
+      onTap: () {},
+    ),
+    MenuItem(StringConst.MEET_UPS, FeatherIcons.users, onTap: () {}),
+    MenuItem(
+      StringConst.EVENTS,
+      FeatherIcons.calendar,
+      selected: true,
+      onTap: () {},
+    ),
+    MenuItem(
+      StringConst.CONTACT_US,
+      FeatherIcons.user,
+      onTap: () {},
+    ),
+    MenuItem(
+      StringConst.ABOUT_US,
+      FeatherIcons.info,
+      onTap: () {},
+    ),
   ];
 
   @override

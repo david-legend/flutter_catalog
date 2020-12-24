@@ -286,6 +286,14 @@ List<CatalogDemo> menuDemos() {
       category: CatalogDemoCategory.menu,
       routeName: Routes.menuScreen3,
     ),
+    CatalogDemo(
+      title: "Menu Design 4",
+      icon: Icons.person,
+      slug: 'menu-design',
+      subtitle: "Menu Screen Design 4",
+      category: CatalogDemoCategory.menu,
+      routeName: Routes.menuScreen4,
+    ),
   ];
 }
 

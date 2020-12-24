@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
 import 'package:fluttercatalog/widgets/spaces.dart';
 
 class MenuItem {
-  MenuItem(this.title, this.iconData, {this.onTap});
+  MenuItem(this.title, this.iconData, {this.onTap, this.selected = false});
 
   final String title;
   final IconData iconData;
   final GestureTapCallback onTap;
+  final bool selected;
 }
 
 class MenuScreen1 extends StatefulWidget {
@@ -18,11 +20,11 @@ class MenuScreen1 extends StatefulWidget {
 
 class _MenuScreen1State extends State<MenuScreen1> {
   List<MenuItem> menuList = [
-    MenuItem(StringConst.HOME, Icons.home, onTap: () {}),
-    MenuItem(StringConst.MEET_UPS, Icons.person_outline, onTap: () {}),
-    MenuItem(StringConst.EVENTS, Icons.event, onTap: () {}),
-    MenuItem(StringConst.CONTACT_US, Icons.person_outline, onTap: () {}),
-    MenuItem(StringConst.ABOUT_US, Icons.info_outline, onTap: () {}),
+    MenuItem(StringConst.HOME, FeatherIcons.home, onTap: () {}),
+    MenuItem(StringConst.MEET_UPS, FeatherIcons.users, onTap: () {}),
+    MenuItem(StringConst.EVENTS, FeatherIcons.calendar, onTap: () {}),
+    MenuItem(StringConst.CONTACT_US, FeatherIcons.user, onTap: () {}),
+    MenuItem(StringConst.ABOUT_US, FeatherIcons.info, onTap: () {}),
   ];
 
   @override
@@ -76,7 +78,7 @@ class _MenuScreen1State extends State<MenuScreen1> {
         child: Center(
           child: RaisedButton(
             onPressed: () => scaffoldKey.currentState.openDrawer(),
-            child: Text("Open Drawer"),
+            child: Text(StringConst.OPEN_DRAWER),
           ),
         ),
       ),

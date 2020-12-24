@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
 import 'package:fluttercatalog/widgets/spaces.dart';
 
-class MenuItem {
-  MenuItem(this.title, this.iconData, {this.onTap});
-
-  final String title;
-  final IconData iconData;
-  final GestureTapCallback onTap;
-}
+import 'menu_1.dart';
 
 class MenuScreen2 extends StatefulWidget {
   @override
@@ -18,11 +13,36 @@ class MenuScreen2 extends StatefulWidget {
 
 class _MenuScreen2State extends State<MenuScreen2> {
   List<MenuItem> menuList = [
-    MenuItem(StringConst.HOME, Icons.home, onTap: () {}),
-    MenuItem(StringConst.MEET_UPS, Icons.person_outline, onTap: () {}),
-    MenuItem(StringConst.EVENTS, Icons.event, onTap: () {}),
-    MenuItem(StringConst.CONTACT_US, Icons.person_outline, onTap: () {}),
-    MenuItem(StringConst.ABOUT_US, Icons.info_outline, onTap: () {}),
+    MenuItem(
+      StringConst.HOME,
+      FeatherIcons.home,
+      selected: false,
+      onTap: () {},
+    ),
+    MenuItem(
+      StringConst.MEET_UPS,
+      FeatherIcons.users,
+      selected: false,
+      onTap: () {},
+    ),
+    MenuItem(
+      StringConst.EVENTS,
+      FeatherIcons.calendar,
+      selected: true,
+      onTap: () {},
+    ),
+    MenuItem(
+      StringConst.CONTACT_US,
+      FeatherIcons.user,
+      selected: false,
+      onTap: () {},
+    ),
+    MenuItem(
+      StringConst.ABOUT_US,
+      FeatherIcons.info,
+      selected: false,
+      onTap: () {},
+    ),
   ];
 
   @override
@@ -42,6 +62,7 @@ class _MenuScreen2State extends State<MenuScreen2> {
               color: AppColors.white,
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 ClipRRect(
                   borderRadius: BorderRadius.only(
@@ -49,7 +70,7 @@ class _MenuScreen2State extends State<MenuScreen2> {
                   ),
                   child: DrawerHeader(
                     margin: const EdgeInsets.all(Sizes.MARGIN_0),
-                    padding: const EdgeInsets.all(Sizes.PADDING_0),
+                    padding: const EdgeInsets.only(left: Sizes.PADDING_8),
                     child: Container(
                       height: assignHeight(context: context, fraction: 0.3),
                       child: _buildDrawerHeader(),
@@ -59,20 +80,28 @@ class _MenuScreen2State extends State<MenuScreen2> {
                     ),
                   ),
                 ),
-                ..._buildMenuList(menuList),
+                Padding(
+                  padding: const EdgeInsets.only(left: Sizes.PADDING_8),
+                  child: Column(
+                    children: _buildMenuList(menuList),
+                  ),
+                ),
                 Spacer(),
-                ListTile(
-                  leading: Icon(
-                    Icons.logout,
-                    color: AppColors.purple10,
-                  ),
-                  title: Text(
-                    StringConst.LOG_OUT,
-                    style: theme.textTheme.subtitle2.copyWith(
-                      color: AppColors.white,
+                Padding(
+                  padding: const EdgeInsets.only(left: Sizes.PADDING_8),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.logout,
+                      color: AppColors.purple10,
                     ),
+                    title: Text(
+                      StringConst.LOG_OUT,
+                      style: theme.textTheme.subtitle2.copyWith(
+                        color: AppColors.violet400,
+                      ),
+                    ),
+                    onTap: () {},
                   ),
-                  onTap: () {},
                 ),
                 SpaceH30(),
               ],
@@ -84,9 +113,7 @@ class _MenuScreen2State extends State<MenuScreen2> {
         child: Center(
           child: RaisedButton(
             onPressed: () => scaffoldKey.currentState.openDrawer(),
-            child: Text(
-              "OPEN", /**StringConst.OPEN_DRAWER**/
-            ),
+            child: Text(StringConst.OPEN_DRAWER),
           ),
         ),
       ),
@@ -143,18 +170,40 @@ class _MenuScreen2State extends State<MenuScreen2> {
 
     for (int index = 0; index < menuItemList.length; index++) {
       menuList.add(
-        ListTile(
-          leading: Icon(
-            menuItemList[index].iconData,
-            color: AppColors.purple10,
+        ClipRRect(
+          borderRadius: BorderRadius.all(
+            const Radius.circular(Sizes.RADIUS_80),
           ),
-          title: Text(
-            menuItemList[index].title,
-            style: theme.textTheme.subtitle2.copyWith(
-              color: AppColors.white,
+          child: Container(
+            width: assignWidth(context: context, fraction: 0.45),
+            child: ListTile(
+              selected: menuItemList[index].selected,
+              selectedTileColor: AppColors.primaryColor,
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+              leading: Icon(
+                menuItemList[index].iconData,
+                color: menuItemList[index].selected
+                    ? AppColors.white
+                    : AppColors.purple10,
+              ),
+              title: Text(
+                menuItemList[index].title,
+                style: theme.textTheme.subtitle2.copyWith(
+                  color: menuItemList[index].selected
+                      ? AppColors.white
+                      : AppColors.violet400,
+                ),
+              ),
+              shape: RoundedRectangleBorder(
+                side: BorderSide(width: 4),
+                borderRadius: BorderRadius.all(
+                  const Radius.circular(Sizes.RADIUS_80),
+                ),
+              ),
+              onTap: menuItemList[index].onTap,
             ),
           ),
-          onTap: menuItemList[index].onTap,
         ),
       );
     }
