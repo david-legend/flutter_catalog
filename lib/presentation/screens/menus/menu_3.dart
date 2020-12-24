@@ -15,24 +15,28 @@ class _MenuScreen3State extends State<MenuScreen3> {
   List<MenuItem> menuList = [
     MenuItem(
       StringConst.HOME,
-      FeatherIcons.home,
+      iconData: FeatherIcons.home,
       onTap: () {},
     ),
-    MenuItem(StringConst.MEET_UPS, FeatherIcons.users, onTap: () {}),
+    MenuItem(
+      StringConst.MEET_UPS,
+      iconData: FeatherIcons.users,
+      onTap: () {},
+    ),
     MenuItem(
       StringConst.EVENTS,
-      FeatherIcons.calendar,
+      iconData: FeatherIcons.calendar,
       selected: true,
       onTap: () {},
     ),
     MenuItem(
       StringConst.CONTACT_US,
-      FeatherIcons.user,
+      iconData: FeatherIcons.user,
       onTap: () {},
     ),
     MenuItem(
       StringConst.ABOUT_US,
-      FeatherIcons.info,
+      iconData: FeatherIcons.info,
       onTap: () {},
     ),
   ];
@@ -160,8 +164,9 @@ class _MenuScreen3State extends State<MenuScreen3> {
             child: ListTile(
               selected: menuItemList[index].selected,
               selectedTileColor: AppColors.primaryColor,
-              contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: Sizes.PADDING_16,
+              ),
               leading: Icon(
                 menuItemList[index].iconData,
                 color: menuItemList[index].selected

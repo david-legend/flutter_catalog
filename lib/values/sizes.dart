@@ -44,6 +44,7 @@ class Sizes {
   static const double TEXT_SIZE_8 = 8.0;
 
   //IconSizes
+  static const double ICON_SIZE_60 = 60.0;
   static const double ICON_SIZE_50 = 50.0;
   static const double ICON_SIZE_40 = 40.0;
   static const double ICON_SIZE_32 = 32.0;

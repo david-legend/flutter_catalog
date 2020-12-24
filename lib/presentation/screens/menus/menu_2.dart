@@ -15,31 +15,31 @@ class _MenuScreen2State extends State<MenuScreen2> {
   List<MenuItem> menuList = [
     MenuItem(
       StringConst.HOME,
-      FeatherIcons.home,
+      iconData: FeatherIcons.home,
       selected: false,
       onTap: () {},
     ),
     MenuItem(
       StringConst.MEET_UPS,
-      FeatherIcons.users,
+      iconData: FeatherIcons.users,
       selected: false,
       onTap: () {},
     ),
     MenuItem(
       StringConst.EVENTS,
-      FeatherIcons.calendar,
+      iconData: FeatherIcons.calendar,
       selected: true,
       onTap: () {},
     ),
     MenuItem(
       StringConst.CONTACT_US,
-      FeatherIcons.user,
+      iconData: FeatherIcons.user,
       selected: false,
       onTap: () {},
     ),
     MenuItem(
       StringConst.ABOUT_US,
-      FeatherIcons.info,
+      iconData: FeatherIcons.info,
       selected: false,
       onTap: () {},
     ),
@@ -179,8 +179,9 @@ class _MenuScreen2State extends State<MenuScreen2> {
             child: ListTile(
               selected: menuItemList[index].selected,
               selectedTileColor: AppColors.primaryColor,
-              contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: Sizes.PADDING_16,
+              ),
               leading: Icon(
                 menuItemList[index].iconData,
                 color: menuItemList[index].selected

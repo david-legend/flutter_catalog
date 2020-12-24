@@ -5,7 +5,7 @@ import 'package:fluttercatalog/values/values.dart';
 import 'package:fluttercatalog/widgets/spaces.dart';
 
 class MenuItem {
-  MenuItem(this.title, this.iconData, {this.onTap, this.selected = false});
+  MenuItem(this.title, {this.iconData, this.onTap, this.selected = false});
 
   final String title;
   final IconData iconData;
@@ -20,11 +20,11 @@ class MenuScreen1 extends StatefulWidget {
 
 class _MenuScreen1State extends State<MenuScreen1> {
   List<MenuItem> menuList = [
-    MenuItem(StringConst.HOME, FeatherIcons.home, onTap: () {}),
-    MenuItem(StringConst.MEET_UPS, FeatherIcons.users, onTap: () {}),
-    MenuItem(StringConst.EVENTS, FeatherIcons.calendar, onTap: () {}),
-    MenuItem(StringConst.CONTACT_US, FeatherIcons.user, onTap: () {}),
-    MenuItem(StringConst.ABOUT_US, FeatherIcons.info, onTap: () {}),
+    MenuItem(StringConst.HOME, iconData: FeatherIcons.home, onTap: () {}),
+    MenuItem(StringConst.MEET_UPS, iconData: FeatherIcons.users, onTap: () {}),
+    MenuItem(StringConst.EVENTS, iconData: FeatherIcons.calendar, onTap: () {}),
+    MenuItem(StringConst.CONTACT_US, iconData: FeatherIcons.user, onTap: () {}),
+    MenuItem(StringConst.ABOUT_US, iconData: FeatherIcons.info, onTap: () {}),
   ];
 
   @override

@@ -3,6 +3,7 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
 import 'package:fluttercatalog/widgets/spaces.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'menu_1.dart';
 
@@ -13,11 +14,12 @@ class MenuScreen4 extends StatefulWidget {
 
 class _MenuScreen4State extends State<MenuScreen4> {
   List<MenuItem> menuList = [
-    MenuItem(StringConst.HOME, FeatherIcons.home, onTap: () {}),
-    MenuItem(StringConst.MEET_UPS, FeatherIcons.users, onTap: () {}),
-    MenuItem(StringConst.EVENTS, FeatherIcons.calendar, onTap: () {}),
-    MenuItem(StringConst.CONTACT_US, FeatherIcons.user, onTap: () {}),
-    MenuItem(StringConst.ABOUT_US, FeatherIcons.info, onTap: () {}),
+    MenuItem(StringConst.BUSINESS, onTap: () {}),
+    MenuItem(StringConst.TRENDING, selected: true, onTap: () {}),
+    MenuItem(StringConst.HEALTH, onTap: () {}),
+    MenuItem(StringConst.MUSIC, onTap: () {}),
+    MenuItem(StringConst.SPORTS, onTap: () {}),
+    MenuItem(StringConst.LEARNING, onTap: () {}),
   ];
 
   @override
@@ -26,41 +28,49 @@ class _MenuScreen4State extends State<MenuScreen4> {
     ThemeData theme = Theme.of(context);
     return Scaffold(
       key: scaffoldKey,
-      drawer: Container(
-        width: assignWidth(context: context, fraction: 1.0),
-        child: Drawer(
-          child: Container(
-            decoration: BoxDecoration(
-              color: AppColors.violet400,
-            ),
-            child: Column(
-              children: <Widget>[
-                DrawerHeader(
-                  child: Container(
-                    height: assignHeight(context: context, fraction: 0.3),
-                    child: _buildDrawerHeader(),
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.violet400,
-                  ),
-                ),
-                ..._buildMenuList(menuList),
-                Spacer(),
-                ListTile(
-                  leading: Icon(
-                    Icons.logout,
-                    color: AppColors.purple10,
-                  ),
-                  title: Text(
-                    StringConst.LOG_OUT,
-                    style: theme.textTheme.subtitle2.copyWith(
-                      color: AppColors.white,
+      drawer: SafeArea(
+        child: Container(
+          width: assignWidth(context: context, fraction: 1.0),
+          child: Drawer(
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.white,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  SpaceH20(),
+                  Container(
+                    padding: const EdgeInsets.all(Sizes.PADDING_16),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: AppColors.pink50, width: 3),
+                        borderRadius: BorderRadius.all(Radius.circular(60))),
+                    child: Icon(
+                      FeatherIcons.trendingUp,
+                      color: AppColors.black,
+                      size: Sizes.ICON_SIZE_50,
                     ),
                   ),
-                  onTap: () {},
-                ),
-                SpaceH30(),
-              ],
+                  Spacer(),
+                  ..._buildMenuList(menuList),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 16.0),
+                    child: Align(
+                      alignment: Alignment.bottomRight,
+                      child: FloatingActionButton(
+                        backgroundColor: AppColors.violet400,
+                        elevation: Sizes.ELEVATION_0,
+                        onPressed: () {},
+                        child: Icon(
+                          Icons.add,
+                          color: AppColors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SpaceH24(),
+                ],
+              ),
             ),
           ),
         ),
@@ -69,45 +79,10 @@ class _MenuScreen4State extends State<MenuScreen4> {
         child: Center(
           child: RaisedButton(
             onPressed: () => scaffoldKey.currentState.openDrawer(),
-            child: Text(
-              "OPEN", /**StringConst.OPEN_DRAWER**/
-            ),
+            child: Text(StringConst.OPEN_DRAWER),
           ),
         ),
       ),
-    );
-  }
-
-  Widget _buildDrawerHeader() {
-    ThemeData theme = Theme.of(context);
-    return Column(
-      children: [
-        Container(
-          width: assignWidth(context: context, fraction: 1),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image.asset(
-                ImagePath.BOB,
-                fit: BoxFit.cover,
-              ),
-              SpaceH8(),
-              Text(
-                StringConst.SALOMAN,
-                style: theme.textTheme.subtitle1.copyWith(
-                  color: AppColors.white,
-                ),
-              ),
-              Text(
-                StringConst.SALOMAN_USERNAME,
-                style: theme.textTheme.bodyText2.copyWith(
-                  color: AppColors.purple10,
-                ),
-              ),
-            ],
-          ),
-        )
-      ],
     );
   }
 
@@ -117,20 +92,19 @@ class _MenuScreen4State extends State<MenuScreen4> {
 
     for (int index = 0; index < menuItemList.length; index++) {
       menuList.add(
-        ListTile(
-          leading: Icon(
-            menuItemList[index].iconData,
-            color: AppColors.purple10,
+        Text(
+          menuItemList[index].title,
+          style: theme.textTheme.subtitle2.copyWith(
+            color: menuItemList[index].selected
+                ? AppColors.indigo200
+                : AppColors.greyShade6,
+            fontSize: menuItemList[index].selected
+                ? Sizes.TEXT_SIZE_24
+                : Sizes.TEXT_SIZE_18,
           ),
-          title: Text(
-            menuItemList[index].title,
-            style: theme.textTheme.subtitle2.copyWith(
-              color: AppColors.white,
-            ),
-          ),
-          onTap: menuItemList[index].onTap,
         ),
       );
+      menuList.add(Spacer());
     }
     return menuList;
   }

@@ -19,6 +19,7 @@ class AppColors {
   static const Color blackShade8 = Color(0xFF040404);
   static const Color blackShade9 = Color(0xFF767676);
   static const Color blackShade10 = Color(0xFF606060);
+  static const Color blackShade200 = Color(0xFF374750);
 
   //White
   static const Color white = Color(0xFFFFFFFF);
@@ -38,8 +39,10 @@ class AppColors {
   static const Color greyShade8 = Color(0xFFA3A3A3);
 
   //Indigo
-  static const Color indigo100 = Color(0xFF9599B3);
+//  static const Color indigo = Color(0xFF9FB5D1);
   static const Color indigo50 = Color(0xFFBBBCCD);
+  static const Color indigo100 = Color(0xFF9599B3);
+  static const Color indigo200 = Color(0xFF90999E);
 
   //purple
   static const Color purple10 = Color(0xFFB6B0BA);
@@ -74,11 +77,6 @@ class AppColors {
   static const Color lightBlueShade2 = Color(0xFFA7B4C5);
   static const Color lightBlueShade5 = Color(0xFF526479);
   static const Color deepBlue200 = Color(0xFF2B3F51);
-
-  //Grey
-
-  //indigo
-  static const Color indigo200 = Color(0xFF9FB5D1);
 
   //green
   static const Color green = Color(0xFF18D3BF);

@@ -84,7 +84,12 @@ class StringConst {
   static const String ABOUT_US = "About Us";
   static const String LOG_OUT = "Log Out";
   static const String OPEN_DRAWER = "Open Drawer";
-
+  static const String MUSIC = "Music";
+  static const String SPORTS = "Sports";
+  static const String TRENDING = "Trending";
+  static const String HEALTH = "Health";
+  static const String BUSINESS = "Business";
+  static const String LEARNING = "Learning";
   //Buttons
   static const String FOLLOW = "Follow";
   static const String CHAT = "Chat";
