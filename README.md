@@ -26,10 +26,28 @@
 
 # Drop Case Study
 ![Screenshot](assets/images/drop_images/drop_cover.png)
+<p>
+<a href="https://www.behance.net/gallery/102261423/DROP-Online-Store-E-commerce?tracking_source=curated_galleries_ui-ux" target="_blank">Drop Design on Behance</a>
+</p>
+<p>
+<a href="https://github.com/david-legend/drop" target="_blank">GitHub Link to the stand alone project</a>
+</p>
 <br/>
 
 # Roam Case Study
 ![Screenshot](assets/images/roam_images/roam_cover.jpg)
+<p align="center">
+    Roam — UI / UX Case study for a travel advisory app done by <a href="https://www.linkedin.com/in/georgina-sekyi-050932175/" target="_blank">Georgina Sekyi</a> and built by <a href="https://www.linkedin.com/in/david-cobbina-7b0226119/" target="_blank">David Cobbina</a> using <strong>flutter</strong>.
+</p>
+<p align="center">
+    Find link to the medium article <a href="https://gynahsekyi13.medium.com/roam-ui-ux-case-study-for-a-travel-advisory-app-8094c71b3d76" target="_blank">here</a>
+</p>
+<p align="center">
+<a href="https://www.figma.com/proto/KF7dQnZJSrgk0E5UnE1sad/Roam?node-id=247%3A60&viewport=352%2C-1453%2C0.18740859627723694&scaling=scale-down" target="_blank">Roam Prototypes in Figma</a>
+</p>
+<p>
+<a href="https://github.com/david-legend/roam" target="_blank">GitHub Link to the stand alone project</a>
+</p>
 <br/>
 
 
