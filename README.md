@@ -7,7 +7,7 @@
 </h1>
 
 <p align="center">
-    Flutter Catalog is a  very handy catalog of beautifully designed widgets to help ease your <strong>flutter </flutter> journey.
+    Flutter Catalog is a  very handy catalog of beautifully designed widgets to help ease your <strong>flutter </strong> journey.
 </p>
 <p align="center">
     It is inspired by a lot of UI Kits. I will be updating the list as I build them.
@@ -40,19 +40,18 @@
 ![Screenshot](assets/screenshots/typography.png)
 ![Screenshot](assets/screenshots/colors.png)
 
-## Activities & Profile Designs
+# Activities & Profile Designs
 ![Screenshot](assets/screenshots/activities_detail.png)
 ![Screenshot](assets/screenshots/activities_details2.png)
 
-## Onboarding Designs
+# Onboarding Designs
 ![Screenshot](assets/screenshots/onboarding_details.png)
-
-## Stats & Info Designs
-![Screenshot](assets/screenshots/stats_details.png)
-
-# Dialogs and BottomSheets
-![Screenshot](assets/screenshots/dialogsAndBottomsheets.png)
 
 # Menus
 ![Screenshot](assets/screenshots/menus.png)
 
+# Dialogs and BottomSheets
+![Screenshot](assets/screenshots/dialogsAndBottomsheets.png)
+
+# Stats & Info Designs
+![Screenshot](assets/screenshots/stats_details.png)
