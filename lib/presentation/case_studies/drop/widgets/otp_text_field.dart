@@ -106,7 +106,7 @@ class _OtpTextFieldState extends State<OtpTextField> {
         style: style ?? widget.textStyle,
         autofocus: widget.autoFocus,
         cursorColor: widget.cursorColor,
-        controller: _textControllers[index],
+//        controller: _textControllers[index],
         focusNode: _focusNodes[index],
         enabled: widget.enabled,
         decoration: widget.hasCustomInputDecoration

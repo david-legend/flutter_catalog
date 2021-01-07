@@ -4,6 +4,7 @@ import 'package:fluttercatalog/values/values.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final TextStyle textStyle;
+  final TextEditingController controller;
   final TextStyle hintTextStyle;
   final TextStyle labelStyle;
   final TextStyle titleStyle;
@@ -57,6 +58,7 @@ class CustomTextFormField extends StatelessWidget {
     this.inputFormatters,
     this.width,
     this.height,
+    this.controller,
   });
 
   @override
@@ -77,6 +79,7 @@ class CustomTextFormField extends StatelessWidget {
           margin: textFormFieldMargin,
           child: TextFormField(
             style: textStyle,
+            controller: controller,
             keyboardType: textInputType,
             onChanged: onChanged,
             validator: validator,

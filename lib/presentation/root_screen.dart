@@ -19,6 +19,10 @@ const _carouselHeightMin = 200.0 + 2 * _carouselItemMargin;
 const _desktopCardsPerPage = 4;
 
 //TODO:: clean up rootScreen
+//TODO:: Add themes for login screens
+//TODO:: Add BackDrop
+//TODO:: Link my Bio and Details
+
 class RootScreen extends StatefulWidget {
   RootScreen({@required this.themeBloc});
 

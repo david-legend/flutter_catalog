@@ -4,6 +4,7 @@ import 'package:fluttercatalog/values/values.dart';
 import 'empty.dart';
 
 class CustomTextFormField extends StatelessWidget {
+  final TextEditingController controller;
   final TextStyle textFormFieldStyle;
   final TextStyle fieldTitleTextStyle;
   final TextStyle hintTextStyle;
@@ -58,6 +59,7 @@ class CustomTextFormField extends StatelessWidget {
     this.hasTitle = false,
     this.suffixIcon,
     this.hasSuffixIcon = false,
+    this.controller,
     this.fieldTitle,
   });
 
@@ -83,6 +85,7 @@ class CustomTextFormField extends StatelessWidget {
           TextFormField(
             style: textFormFieldStyle ?? formTextStyle,
             maxLines: maxLines,
+            controller: controller,
             decoration: InputDecoration(
               border: border ??
                   OutlineInputBorder(

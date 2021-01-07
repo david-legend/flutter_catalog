@@ -13,7 +13,12 @@ import 'package:fluttercatalog/values/values.dart';
 const double kPadding = Sizes.PADDING_24;
 
 //TODO:: add borders bubbleTabIndicator
-class AuthScreen extends StatelessWidget {
+class AuthScreen extends StatefulWidget {
+  @override
+  _AuthScreenState createState() => _AuthScreenState();
+}
+
+class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
