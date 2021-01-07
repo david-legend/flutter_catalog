@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:fluttercatalog/presentation/catalog/widgets/gallery_widgets.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
@@ -30,7 +31,7 @@ extension CatalogDemoExtension on CatalogDemoCategory {
       case CatalogDemoCategory.menu:
         return StringConst.MENU;
       case CatalogDemoCategory.activitiesAndTimeLine:
-        return StringConst.ACTIVITIES_AND_TIMELINE;
+        return StringConst.TIMELINES;
       case CatalogDemoCategory.onBoarding:
         return StringConst.ONBOARDING;
       case CatalogDemoCategory.settings:
@@ -81,7 +82,7 @@ List<CategoryListItem> categoryList() {
       ),
       category: CatalogDemoCategory.profile,
       imageString: ImagePath.PROFILE,
-      demos: caseStudyDemos(),
+      demos: profileDemos(),
       initiallyExpanded: false,
     ),
     CategoryListItem(
@@ -156,15 +157,6 @@ List<CategoryListItem> categoryList() {
       demos: settingsDemos(),
       initiallyExpanded: false,
     ),
-    CategoryListItem(
-      key: const PageStorageKey<CatalogDemoCategory>(
-        CatalogDemoCategory.bottomNavigation,
-      ),
-      category: CatalogDemoCategory.bottomNavigation,
-      imageString: ImagePath.BOTTOM_NAVIGATION,
-      demos: bottomNavigationDemos(),
-      initiallyExpanded: false,
-    ),
   ];
 }
 
@@ -190,9 +182,46 @@ List<CatalogDemo> caseStudyDemos() {
       title: "Balenciga",
       icon: Icons.person,
       slug: 'balenciga',
-      subtitle: "COMING SOON!!",
+      subtitle: StringConst.COMING_SOON,
       category: CatalogDemoCategory.balenciagaCaseStudy,
 //      routeName: Routes.balenciagaSplashScreen,
+    ),
+  ];
+}
+
+List<CatalogDemo> profileDemos() {
+  return [
+    CatalogDemo(
+      title: "Profile Design 1",
+      icon: FeatherIcons.user,
+      slug: 'profile-design-1',
+      subtitle: StringConst.PROFILE_SUBTITLE,
+      category: CatalogDemoCategory.profile,
+      routeName: Routes.profile1Screen,
+    ),
+    CatalogDemo(
+      title: "Profile Design 2",
+      icon: FeatherIcons.users,
+      slug: 'profile-design-2',
+      subtitle: StringConst.PROFILE_SUBTITLE,
+      category: CatalogDemoCategory.profile,
+      routeName: Routes.profile2Screen,
+    ),
+    CatalogDemo(
+      title: "Profile Design 3",
+      icon: FeatherIcons.userCheck,
+      slug: 'profile-design-3',
+      subtitle: StringConst.PROFILE_SUBTITLE,
+      category: CatalogDemoCategory.profile,
+      routeName: Routes.profile3Screen,
+    ),
+    CatalogDemo(
+      title: "Profile Design 4",
+      icon: FeatherIcons.userPlus,
+      slug: 'profile-design-4',
+      subtitle: StringConst.PROFILE_SUBTITLE,
+      category: CatalogDemoCategory.profile,
+      routeName: Routes.profile4Screen,
     ),
   ];
 }
@@ -201,33 +230,33 @@ List<CatalogDemo> activitiesAndTimelineDemos() {
   return [
     CatalogDemo(
       title: "TimeLine 1",
-      icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
+      icon: FeatherIcons.clock,
+      slug: 'timeline-1',
+      subtitle: StringConst.ACTIVITIES_SUBTITLE,
       category: CatalogDemoCategory.activitiesAndTimeLine,
       routeName: Routes.timeLine,
     ),
     CatalogDemo(
       title: "Activity 1",
-      icon: Icons.person,
-      slug: 'Activity',
-      subtitle: "Activity Screen Design",
+      icon: FeatherIcons.activity,
+      slug: 'activity-1',
+      subtitle: StringConst.ACTIVITIES_SUBTITLE,
       category: CatalogDemoCategory.activitiesAndTimeLine,
       routeName: Routes.activityScreen,
     ),
     CatalogDemo(
       title: "Activity 2",
-      icon: Icons.person,
-      slug: 'Activity2',
-      subtitle: "Activity Screen 2 Design",
+      icon: FeatherIcons.crosshair,
+      slug: 'activity-2',
+      subtitle: StringConst.ACTIVITIES_SUBTITLE,
       category: CatalogDemoCategory.activitiesAndTimeLine,
       routeName: Routes.activityScreen2,
     ),
     CatalogDemo(
       title: "Activity 3",
-      icon: Icons.person,
-      slug: 'Activity3',
-      subtitle: "Activity Screen 3 Design",
+      icon: FeatherIcons.codesandbox,
+      slug: 'activity-3',
+      subtitle: StringConst.ACTIVITIES_SUBTITLE,
       category: CatalogDemoCategory.activitiesAndTimeLine,
       routeName: Routes.activityScreen3,
     ),
@@ -238,7 +267,7 @@ List<CatalogDemo> messagesAndNotificationsDemos() {
   return [
     CatalogDemo(
       title: "Messages",
-      icon: Icons.person,
+      icon: FeatherIcons.messageCircle,
       slug: 'Messages',
       subtitle: "Messages Screen Design",
       category: CatalogDemoCategory.messagesAndNotification,
@@ -246,7 +275,7 @@ List<CatalogDemo> messagesAndNotificationsDemos() {
     ),
     CatalogDemo(
       title: "Notification",
-      icon: Icons.person,
+      icon: FeatherIcons.bell,
       slug: 'Notification',
       subtitle: "Notifications Screen Design",
       category: CatalogDemoCategory.messagesAndNotification,
@@ -259,33 +288,33 @@ List<CatalogDemo> menuDemos() {
   return [
     CatalogDemo(
       title: "Menu Design 1",
-      icon: Icons.person,
-      slug: 'menu-design',
-      subtitle: "Menu Screen Design 1",
+      icon: FeatherIcons.menu,
+      slug: 'menu-design-1',
+      subtitle: StringConst.MENU_SUBTITLE,
       category: CatalogDemoCategory.menu,
       routeName: Routes.menuScreen1,
     ),
     CatalogDemo(
       title: "Menu Design 2",
-      icon: Icons.person,
-      slug: 'menu-design',
-      subtitle: "Menu Screen Design 2",
+      icon: FeatherIcons.gift,
+      slug: 'menu-design-2',
+      subtitle: StringConst.MENU_SUBTITLE,
       category: CatalogDemoCategory.menu,
       routeName: Routes.menuScreen2,
     ),
     CatalogDemo(
       title: "Menu Design 3",
-      icon: Icons.person,
-      slug: 'menu-design',
-      subtitle: "Menu Screen Design 3",
+      icon: FeatherIcons.globe,
+      slug: 'menu-design-3',
+      subtitle: StringConst.MENU_SUBTITLE,
       category: CatalogDemoCategory.menu,
       routeName: Routes.menuScreen3,
     ),
     CatalogDemo(
       title: "Menu Design 4",
-      icon: Icons.person,
-      slug: 'menu-design',
-      subtitle: "Menu Screen Design 4",
+      icon: FeatherIcons.loader,
+      slug: 'menu-design-4',
+      subtitle: StringConst.MENU_SUBTITLE,
       category: CatalogDemoCategory.menu,
       routeName: Routes.menuScreen4,
     ),
@@ -296,9 +325,9 @@ List<CatalogDemo> onBoardingDemos() {
   return [
     CatalogDemo(
       title: "OnBoarding Design 1",
-      icon: Icons.person,
+      icon: FeatherIcons.menu,
       slug: 'onBoarding-design',
-      subtitle: "OnBoarding Screen Design 1",
+      subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
       routeName: Routes.onBoardingScreen1,
     ),
@@ -306,7 +335,7 @@ List<CatalogDemo> onBoardingDemos() {
       title: "OnBoarding Design 2",
       icon: Icons.person,
       slug: 'onBoarding-design',
-      subtitle: "OnBoarding Screen Design 2",
+      subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
       routeName: Routes.onBoardingScreen2,
     ),
@@ -314,7 +343,7 @@ List<CatalogDemo> onBoardingDemos() {
       title: "OnBoarding Design 3",
       icon: Icons.person,
       slug: 'onBoarding-design',
-      subtitle: "OnBoarding Screen Design 3",
+      subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
       routeName: Routes.onBoardingScreen3,
     ),
@@ -322,7 +351,7 @@ List<CatalogDemo> onBoardingDemos() {
       title: "OnBoarding Design 4",
       icon: Icons.person,
       slug: 'onBoarding-design',
-      subtitle: "OnBoarding Screen Design 4",
+      subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
       routeName: Routes.onBoardingScreen4,
     ),
@@ -330,7 +359,7 @@ List<CatalogDemo> onBoardingDemos() {
       title: "OnBoarding Design 5",
       icon: Icons.person,
       slug: 'onBoarding-design',
-      subtitle: "OnBoarding Screen Design 5",
+      subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
       routeName: Routes.onBoardingScreen5,
     ),
@@ -338,7 +367,7 @@ List<CatalogDemo> onBoardingDemos() {
       title: "OnBoarding Design 6",
       icon: Icons.person,
       slug: 'onBoarding-design',
-      subtitle: "OnBoarding Screen Design 6",
+      subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
       routeName: Routes.onBoardingScreen6,
     ),
@@ -346,15 +375,11 @@ List<CatalogDemo> onBoardingDemos() {
       title: "OnBoarding Design 7",
       icon: Icons.person,
       slug: 'onBoarding-design',
-      subtitle: "OnBoarding Screen Design 7",
+      subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
       routeName: Routes.onBoardingScreen7,
     ),
   ];
-}
-
-List<CatalogDemo> settingsDemos() {
-  return [];
 }
 
 List<CatalogDemo> alertDialogsDemos() {
@@ -426,91 +451,105 @@ List<CatalogDemo> alertDialogsDemos() {
   ];
 }
 
-List<CatalogDemo> verificationDemos() {
-  return [];
-}
-
 List<CatalogDemo> loginDemos() {
   return [
     CatalogDemo(
       title: "Login Design 1",
-      icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
+      icon: FeatherIcons.key,
+      slug: 'login-design-1',
+      subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
       routeName: Routes.loginScreen1,
     ),
     CatalogDemo(
       title: "Login Design 2",
-      icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
+      icon: FeatherIcons.logIn,
+      slug: 'login-design-2',
+      subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
       routeName: Routes.loginScreen2,
     ),
     CatalogDemo(
       title: "Login Design 3",
-      icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
+      icon: FeatherIcons.logOut,
+      slug: 'login-design-3',
+      subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
       routeName: Routes.loginScreen3,
     ),
     CatalogDemo(
       title: "Login Design 4",
-      icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
+      icon: FeatherIcons.award,
+      slug: 'login-design-4',
+      subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
       routeName: Routes.loginScreen4,
     ),
     CatalogDemo(
       title: "Login Design 5",
-      icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
+      icon: FeatherIcons.aperture,
+      slug: 'login-design-5',
+      subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
       routeName: Routes.loginScreen5,
     ),
     CatalogDemo(
       title: "Login Design 6",
-      icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
+      icon: FeatherIcons.check,
+      slug: 'login-design-6',
+      subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
       routeName: Routes.loginScreen6,
     ),
     CatalogDemo(
       title: "Login Design 7",
-      icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
+      icon: FeatherIcons.heart,
+      slug: 'login-design-7',
+      subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
       routeName: Routes.registerScreen7,
     ),
     CatalogDemo(
       title: "Login Design 8",
-      icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
+      icon: FeatherIcons.anchor,
+      slug: 'login-design-8',
+      subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
       routeName: Routes.loginScreen8,
     ),
     CatalogDemo(
       title: "Login Design 9",
-      icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
+      icon: FeatherIcons.loader,
+      slug: 'login-design-9',
+      subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
       routeName: Routes.loginScreen9,
     ),
   ];
 }
 
-List<CatalogDemo> statsAndInformationDemos() {
-  return [];
+List<CatalogDemo> settingsDemos() {
+  return [
+    CatalogDemo(
+      title: StringConst.COMING_SOON,
+      icon: FeatherIcons.settings,
+      slug: 'settings-design',
+      subtitle: "",
+      category: CatalogDemoCategory.settings,
+//      routeName: Routes.menuScreen1,
+    ),
+  ];
 }
 
-List<CatalogDemo> bottomNavigationDemos() {
-  return [];
+List<CatalogDemo> statsAndInformationDemos() {
+  return [
+    CatalogDemo(
+      title: StringConst.COMING_SOON,
+      icon: FeatherIcons.barChart2,
+      slug: 'stats-design',
+      subtitle: "",
+      category: CatalogDemoCategory.statsAndInformation,
+//      routeName: Routes.menuScreen1,
+    ),
+  ];
 }

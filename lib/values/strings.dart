@@ -4,20 +4,27 @@ class StringConst {
   //strings
   static const String APP_NAME = "Flutter Catalog";
 
+  static const String COMING_SOON = "Coming Soon!!";
   //Categories
   static const String CATEGORIES = "Categories";
   static const String PROFILE = "Profiles";
+  static const String PROFILE_SUBTITLE = "Modern user profile design";
   static const String MENU = "Menus";
+  static const String MENU_SUBTITLE = "Lovely, Consistent and beautiful";
   static const String ONBOARDING = "Onboarding";
-  static const String ACTIVITIES_AND_TIMELINE = "Activities & Timeline";
+  static const String ONBOARDING_SUBTITLE = "Elegant and smooth onboarding experience";
+  static const String TIMELINES = "Timelines";
+  static const String ACTIVITIES_SUBTITLE =
+      "Exquisite consistent activity designs";
   static const String LISTS = "Lists";
   static const String SETTINGS = "Settings";
   static const String ALERT_DIALOGS = "Alert Dialogs";
   static const String VERIFICATION = "Verifications";
   static const String LOGIN = "Login & Sign up";
-  static const String STATS_AND_INFORMATION = "Stats & Information";
+  static const String LOGIN_SUBTITLE = "Intuitive, modern & beautiful";
+  static const String STATS_AND_INFORMATION = "Stats & Info";
   static const String BOTTOM_NAVIGATION = "Bottom Navigation";
-  static const String MESSAGES_AND_NOTIFICATION = "Messages & Notifications";
+  static const String MESSAGES_AND_NOTIFICATION = "Messages";
 
   //Profile
   static const String ACTIVITY_1 = "Activity 1";
