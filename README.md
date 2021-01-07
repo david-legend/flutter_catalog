@@ -52,3 +52,18 @@
 # Typography and Colors
 ![Screenshot](assets/screenshots/typography.png)
 ![Screenshot](assets/screenshots/colors.png)
+
+
+# Cases Studies
+<br/>
+<br/>
+<br/>
+
+# Drop Case Study
+![Screenshot](assets/images/drop_images/drop_cover.png)
+
+<br/>
+<br/>
+
+# Roam Case Study
+![Screenshot](assets/images/roam_images/roam_cover.jpg)
