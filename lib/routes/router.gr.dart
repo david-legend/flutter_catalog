@@ -7,55 +7,81 @@
 // ignore_for_file: public_member_api_docs
 
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../presentation/case_studies/drop/screens/auth_screen.dart';
+import '../presentation/case_studies/drop/screens/categories_screen.dart';
+import '../presentation/case_studies/drop/screens/category_item_screen.dart';
+import '../presentation/case_studies/drop/screens/check_out_screen.dart';
+import '../presentation/case_studies/drop/screens/home_screen.dart';
+import '../presentation/case_studies/drop/screens/interest_screen.dart';
+import '../presentation/case_studies/drop/screens/product_screen.dart';
+import '../presentation/case_studies/drop/screens/profile_screen.dart';
+import '../presentation/case_studies/drop/screens/splash_screen.dart';
+import '../presentation/case_studies/drop/screens/verification_screen.dart';
+import '../presentation/case_studies/drop/widgets/product_card.dart';
+import '../presentation/case_studies/roam/screens/add_collaborators.dart';
+import '../presentation/case_studies/roam/screens/discover_screen.dart';
+import '../presentation/case_studies/roam/screens/follow_screen.dart';
+import '../presentation/case_studies/roam/screens/home_screen.dart';
+import '../presentation/case_studies/roam/screens/login_screen.dart';
+import '../presentation/case_studies/roam/screens/onBoarding_screen.dart';
+import '../presentation/case_studies/roam/screens/place_screen.dart';
+import '../presentation/case_studies/roam/screens/plan_trip_screen.dart';
+import '../presentation/case_studies/roam/screens/profile_screen.dart';
+import '../presentation/case_studies/roam/screens/root_screen.dart';
+import '../presentation/case_studies/roam/screens/saved_places_screen.dart';
+import '../presentation/case_studies/roam/screens/select_interest_screen.dart';
+import '../presentation/case_studies/roam/screens/signup_screen.dart';
+import '../presentation/case_studies/roam/screens/splash_screen.dart';
+import '../presentation/catalog/screens/activities/activity_screen.dart';
+import '../presentation/catalog/screens/activities/activity_screen_2.dart';
+import '../presentation/catalog/screens/activities/activity_screen_3.dart';
+import '../presentation/catalog/screens/activities/timeline.dart';
+import '../presentation/catalog/screens/alert_dialogs/alert_dialog_1.dart';
+import '../presentation/catalog/screens/alert_dialogs/alert_dialog_2.dart';
+import '../presentation/catalog/screens/alert_dialogs/alert_dialog_3.dart';
+import '../presentation/catalog/screens/alert_dialogs/alert_dialog_4.dart';
+import '../presentation/catalog/screens/alert_dialogs/bottom_sheet_1.dart';
+import '../presentation/catalog/screens/alert_dialogs/bottom_sheet_2.dart';
+import '../presentation/catalog/screens/alert_dialogs/bottom_sheet_3.dart';
+import '../presentation/catalog/screens/alert_dialogs/bottom_sheet_4.dart';
+import '../presentation/catalog/screens/logins/login_design_1/login_screen_1.dart';
+import '../presentation/catalog/screens/logins/login_design_1/signup_screen_1.dart';
+import '../presentation/catalog/screens/logins/login_design_2/login_screen_2.dart';
+import '../presentation/catalog/screens/logins/login_design_2/signup_screen_2.dart';
+import '../presentation/catalog/screens/logins/login_design_3/login_screen_3.dart';
+import '../presentation/catalog/screens/logins/login_design_3/signup_screen_3.dart';
+import '../presentation/catalog/screens/logins/login_design_4/login_screen_4.dart';
+import '../presentation/catalog/screens/logins/login_design_4/signup_4.dart';
+import '../presentation/catalog/screens/logins/login_design_4/signup_screen_4.dart';
+import '../presentation/catalog/screens/logins/login_design_5/login_screen_5.dart';
+import '../presentation/catalog/screens/logins/login_design_5/signup_screen_5.dart';
+import '../presentation/catalog/screens/logins/login_design_6/login_screen_6.dart';
+import '../presentation/catalog/screens/logins/login_design_6/signup_screen_6.dart';
+import '../presentation/catalog/screens/logins/login_design_7/register_screen_7.dart';
+import '../presentation/catalog/screens/logins/login_design_8/login_screen_8.dart';
+import '../presentation/catalog/screens/logins/login_design_9/login_screen_9.dart';
+import '../presentation/catalog/screens/logins/login_design_9/signup_screen_9.dart';
+import '../presentation/catalog/screens/menus/menu_1.dart';
+import '../presentation/catalog/screens/menus/menu_2.dart';
+import '../presentation/catalog/screens/menus/menu_3.dart';
+import '../presentation/catalog/screens/menus/menu_4.dart';
+import '../presentation/catalog/screens/messages_notifications/messages_screen.dart';
+import '../presentation/catalog/screens/messages_notifications/notifications_screen.dart';
+import '../presentation/catalog/screens/onboarding/onboarding_screen_1.dart';
+import '../presentation/catalog/screens/onboarding/onboarding_screen_2.dart';
+import '../presentation/catalog/screens/onboarding/onboarding_screen_3.dart';
+import '../presentation/catalog/screens/onboarding/onboarding_screen_4.dart';
+import '../presentation/catalog/screens/onboarding/onboarding_screen_5.dart';
+import '../presentation/catalog/screens/onboarding/onboarding_screen_6.dart';
+import '../presentation/catalog/screens/onboarding/onboarding_screen_7.dart';
+import '../presentation/catalog/screens/profile/profile_1.dart';
+import '../presentation/catalog/screens/profile/profile_2.dart';
+import '../presentation/catalog/screens/profile/profile_3.dart';
+import '../presentation/catalog/screens/profile/profile_4.dart';
 import '../presentation/root_screen.dart';
-import '../presentation/screens/activities/activity_screen.dart';
-import '../presentation/screens/activities/activity_screen_2.dart';
-import '../presentation/screens/activities/activity_screen_3.dart';
-import '../presentation/screens/activities/timeline.dart';
-import '../presentation/screens/alert_dialogs/alert_dialog_1.dart';
-import '../presentation/screens/alert_dialogs/alert_dialog_2.dart';
-import '../presentation/screens/alert_dialogs/alert_dialog_3.dart';
-import '../presentation/screens/alert_dialogs/alert_dialog_4.dart';
-import '../presentation/screens/alert_dialogs/bottom_sheet_1.dart';
-import '../presentation/screens/alert_dialogs/bottom_sheet_2.dart';
-import '../presentation/screens/alert_dialogs/bottom_sheet_3.dart';
-import '../presentation/screens/alert_dialogs/bottom_sheet_4.dart';
-import '../presentation/screens/logins/login_design_1/login_screen_1.dart';
-import '../presentation/screens/logins/login_design_1/signup_screen_1.dart';
-import '../presentation/screens/logins/login_design_2/login_screen_2.dart';
-import '../presentation/screens/logins/login_design_2/signup_screen_2.dart';
-import '../presentation/screens/logins/login_design_3/login_screen_3.dart';
-import '../presentation/screens/logins/login_design_3/signup_screen_3.dart';
-import '../presentation/screens/logins/login_design_4/login_screen_4.dart';
-import '../presentation/screens/logins/login_design_4/signup_4.dart';
-import '../presentation/screens/logins/login_design_4/signup_screen_4.dart';
-import '../presentation/screens/logins/login_design_5/login_screen_5.dart';
-import '../presentation/screens/logins/login_design_5/signup_screen_5.dart';
-import '../presentation/screens/logins/login_design_6/login_screen_6.dart';
-import '../presentation/screens/logins/login_design_6/signup_screen_6.dart';
-import '../presentation/screens/logins/login_design_7/register_screen_7.dart';
-import '../presentation/screens/logins/login_design_8/login_screen_8.dart';
-import '../presentation/screens/logins/login_design_9/login_screen_9.dart';
-import '../presentation/screens/logins/login_design_9/signup_screen_9.dart';
-import '../presentation/screens/menus/menu_1.dart';
-import '../presentation/screens/menus/menu_2.dart';
-import '../presentation/screens/menus/menu_3.dart';
-import '../presentation/screens/menus/menu_4.dart';
-import '../presentation/screens/messages_notifications/messages_screen.dart';
-import '../presentation/screens/messages_notifications/notifications_screen.dart';
-import '../presentation/screens/onboarding/onboarding_screen_1.dart';
-import '../presentation/screens/onboarding/onboarding_screen_2.dart';
-import '../presentation/screens/onboarding/onboarding_screen_3.dart';
-import '../presentation/screens/onboarding/onboarding_screen_4.dart';
-import '../presentation/screens/onboarding/onboarding_screen_5.dart';
-import '../presentation/screens/onboarding/onboarding_screen_6.dart';
-import '../presentation/screens/onboarding/onboarding_screen_7.dart';
-import '../presentation/screens/profile/profile_1.dart';
-import '../presentation/screens/profile/profile_2.dart';
-import '../presentation/screens/profile/profile_3.dart';
-import '../presentation/screens/profile/profile_4.dart';
 
 class Routes {
   static const String rootScreen = '/';
@@ -105,6 +131,30 @@ class Routes {
   static const String menuScreen2 = '/menu-screen2';
   static const String menuScreen3 = '/menu-screen3';
   static const String menuScreen4 = '/menu-screen4';
+  static const String dropSplashScreen = '/drop-splash-screen';
+  static const String authScreen = '/auth-screen';
+  static const String verificationScreen = '/verification-screen';
+  static const String interestScreen = '/interest-screen';
+  static const String homeScreen = '/home-screen';
+  static const String categoriesScreen = '/categories-screen';
+  static const String categoryItemScreen = '/category-item-screen';
+  static const String productScreen = '/product-screen';
+  static const String profileScreen = '/profile-screen';
+  static const String checkOutScreen = '/check-out-screen';
+  static const String roamSplashScreen = '/roam-splash-screen';
+  static const String onBoardingScreen = '/on-boarding-screen';
+  static const String loginScreen = '/login-screen';
+  static const String signUpScreen = '/sign-up-screen';
+  static const String selectInterestScreen = '/select-interest-screen';
+  static const String followScreen = '/follow-screen';
+  static const String roamRootScreen = '/roam-root-screen';
+  static const String roamHomeScreen = '/roam-home-screen';
+  static const String discoverScreen = '/discover-screen';
+  static const String savedPlacesScreen = '/saved-places-screen';
+  static const String roamProfileScreen = '/roam-profile-screen';
+  static const String planTripScreen = '/plan-trip-screen';
+  static const String placeScreen = '/place-screen';
+  static const String addCollaboratorsScreen = '/add-collaborators-screen';
   static const all = <String>{
     rootScreen,
     profile1Screen,
@@ -153,6 +203,30 @@ class Routes {
     menuScreen2,
     menuScreen3,
     menuScreen4,
+    dropSplashScreen,
+    authScreen,
+    verificationScreen,
+    interestScreen,
+    homeScreen,
+    categoriesScreen,
+    categoryItemScreen,
+    productScreen,
+    profileScreen,
+    checkOutScreen,
+    roamSplashScreen,
+    onBoardingScreen,
+    loginScreen,
+    signUpScreen,
+    selectInterestScreen,
+    followScreen,
+    roamRootScreen,
+    roamHomeScreen,
+    discoverScreen,
+    savedPlacesScreen,
+    roamProfileScreen,
+    planTripScreen,
+    placeScreen,
+    addCollaboratorsScreen,
   };
 }
 
@@ -207,6 +281,30 @@ class AppRouter extends RouterBase {
     RouteDef(Routes.menuScreen2, page: MenuScreen2),
     RouteDef(Routes.menuScreen3, page: MenuScreen3),
     RouteDef(Routes.menuScreen4, page: MenuScreen4),
+    RouteDef(Routes.dropSplashScreen, page: DropSplashScreen),
+    RouteDef(Routes.authScreen, page: AuthScreen),
+    RouteDef(Routes.verificationScreen, page: VerificationScreen),
+    RouteDef(Routes.interestScreen, page: InterestScreen),
+    RouteDef(Routes.homeScreen, page: HomeScreen),
+    RouteDef(Routes.categoriesScreen, page: CategoriesScreen),
+    RouteDef(Routes.categoryItemScreen, page: CategoryItemScreen),
+    RouteDef(Routes.productScreen, page: ProductScreen),
+    RouteDef(Routes.profileScreen, page: ProfileScreen),
+    RouteDef(Routes.checkOutScreen, page: CheckOutScreen),
+    RouteDef(Routes.roamSplashScreen, page: RoamSplashScreen),
+    RouteDef(Routes.onBoardingScreen, page: OnBoardingScreen),
+    RouteDef(Routes.loginScreen, page: LoginScreen),
+    RouteDef(Routes.signUpScreen, page: SignUpScreen),
+    RouteDef(Routes.selectInterestScreen, page: SelectInterestScreen),
+    RouteDef(Routes.followScreen, page: FollowScreen),
+    RouteDef(Routes.roamRootScreen, page: RoamRootScreen),
+    RouteDef(Routes.roamHomeScreen, page: RoamHomeScreen),
+    RouteDef(Routes.discoverScreen, page: DiscoverScreen),
+    RouteDef(Routes.savedPlacesScreen, page: SavedPlacesScreen),
+    RouteDef(Routes.roamProfileScreen, page: RoamProfileScreen),
+    RouteDef(Routes.planTripScreen, page: PlanTripScreen),
+    RouteDef(Routes.placeScreen, page: PlaceScreen),
+    RouteDef(Routes.addCollaboratorsScreen, page: AddCollaboratorsScreen),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -493,5 +591,186 @@ class AppRouter extends RouterBase {
         settings: data,
       );
     },
+    DropSplashScreen: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => DropSplashScreen(),
+        settings: data,
+      );
+    },
+    AuthScreen: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => AuthScreen(),
+        settings: data,
+      );
+    },
+    VerificationScreen: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => VerificationScreen(),
+        settings: data,
+      );
+    },
+    InterestScreen: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => InterestScreen(),
+        settings: data,
+      );
+    },
+    HomeScreen: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => HomeScreen(),
+        settings: data,
+      );
+    },
+    CategoriesScreen: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => CategoriesScreen(),
+        settings: data,
+      );
+    },
+    CategoryItemScreen: (data) {
+      final args = data.getArgs<CategoryItemScreenArguments>(nullOk: false);
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => CategoryItemScreen(args.category),
+        settings: data,
+      );
+    },
+    ProductScreen: (data) {
+      final args = data.getArgs<ProductScreenArguments>(nullOk: false);
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => ProductScreen(args.product),
+        settings: data,
+      );
+    },
+    ProfileScreen: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => ProfileScreen(),
+        settings: data,
+      );
+    },
+    CheckOutScreen: (data) {
+      return CupertinoPageRoute<dynamic>(
+        builder: (context) => CheckOutScreen(),
+        settings: data,
+      );
+    },
+    RoamSplashScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => RoamSplashScreen(),
+        settings: data,
+      );
+    },
+    OnBoardingScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => OnBoardingScreen(),
+        settings: data,
+      );
+    },
+    LoginScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => LoginScreen(),
+        settings: data,
+      );
+    },
+    SignUpScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => SignUpScreen(),
+        settings: data,
+      );
+    },
+    SelectInterestScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => SelectInterestScreen(),
+        settings: data,
+      );
+    },
+    FollowScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => FollowScreen(),
+        settings: data,
+      );
+    },
+    RoamRootScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => RoamRootScreen(),
+        settings: data,
+      );
+    },
+    RoamHomeScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => RoamHomeScreen(),
+        settings: data,
+      );
+    },
+    DiscoverScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => DiscoverScreen(),
+        settings: data,
+      );
+    },
+    SavedPlacesScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => SavedPlacesScreen(),
+        settings: data,
+      );
+    },
+    RoamProfileScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => RoamProfileScreen(),
+        settings: data,
+      );
+    },
+    PlanTripScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => PlanTripScreen(),
+        settings: data,
+      );
+    },
+    PlaceScreen: (data) {
+      final args = data.getArgs<PlaceScreenArguments>(nullOk: false);
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => PlaceScreen(
+          place: args.place,
+          location: args.location,
+          imagePath: args.imagePath,
+          rating: args.rating,
+        ),
+        settings: data,
+      );
+    },
+    AddCollaboratorsScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => AddCollaboratorsScreen(),
+        settings: data,
+      );
+    },
   };
+}
+
+/// ************************************************************************
+/// Arguments holder classes
+/// *************************************************************************
+
+/// CategoryItemScreen arguments holder class
+class CategoryItemScreenArguments {
+  final String category;
+  CategoryItemScreenArguments({@required this.category});
+}
+
+/// ProductScreen arguments holder class
+class ProductScreenArguments {
+  final ProductItem product;
+  ProductScreenArguments({@required this.product});
+}
+
+/// PlaceScreen arguments holder class
+class PlaceScreenArguments {
+  final String place;
+  final String location;
+  final String imagePath;
+  final double rating;
+  PlaceScreenArguments(
+      {@required this.place,
+      @required this.location,
+      @required this.imagePath,
+      @required this.rating});
 }

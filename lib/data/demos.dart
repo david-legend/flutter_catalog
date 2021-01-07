@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttercatalog/presentation/catalog/widgets/gallery_widgets.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
-import 'package:fluttercatalog/widgets/gallery_widgets.dart';
 
 enum CatalogDemoCategory {
   profile,
@@ -173,7 +173,7 @@ List<CatalogDemo> profileDemos() {
       slug: 'banner',
       subtitle: "beautifully designed category",
       category: CatalogDemoCategory.profile,
-      routeName: Routes.profile1Screen,
+      routeName: Routes.dropSplashScreen,
     ),
     CatalogDemo(
       title: "Profile 2",

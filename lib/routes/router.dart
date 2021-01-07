@@ -1,51 +1,75 @@
 import 'package:auto_route/auto_route_annotations.dart';
+import 'package:fluttercatalog/presentation/case_studies/drop/screens/auth_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/drop/screens/categories_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/drop/screens/category_item_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/drop/screens/check_out_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/drop/screens/home_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/drop/screens/interest_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/drop/screens/product_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/drop/screens/profile_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/drop/screens/splash_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/drop/screens/verification_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/add_collaborators.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/discover_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/follow_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/home_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/login_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/onBoarding_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/place_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/plan_trip_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/profile_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/root_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/saved_places_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/select_interest_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/signup_screen.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/screens/splash_screen.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/activities/activity_screen.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/activities/activity_screen_2.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/activities/activity_screen_3.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/activities/timeline.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/alert_dialogs/alert_dialog_1.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/alert_dialogs/alert_dialog_2.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/alert_dialogs/alert_dialog_3.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/alert_dialogs/alert_dialog_4.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/alert_dialogs/bottom_sheet_1.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/alert_dialogs/bottom_sheet_2.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/alert_dialogs/bottom_sheet_3.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/alert_dialogs/bottom_sheet_4.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_1/login_screen_1.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_1/signup_screen_1.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_2/login_screen_2.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_2/signup_screen_2.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_3/login_screen_3.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_3/signup_screen_3.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_4/login_screen_4.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_4/signup_4.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_4/signup_screen_4.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_5/login_screen_5.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_5/signup_screen_5.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_6/login_screen_6.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_6/signup_screen_6.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_7/register_screen_7.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_8/login_screen_8.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_9/login_screen_9.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/logins/login_design_9/signup_screen_9.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/menus/menu_1.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/menus/menu_2.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/menus/menu_3.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/menus/menu_4.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/messages_notifications/messages_screen.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/messages_notifications/notifications_screen.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/onboarding/onboarding_screen_1.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/onboarding/onboarding_screen_2.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/onboarding/onboarding_screen_3.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/onboarding/onboarding_screen_4.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/onboarding/onboarding_screen_5.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/onboarding/onboarding_screen_6.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/onboarding/onboarding_screen_7.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/profile/profile_1.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/profile/profile_2.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/profile/profile_3.dart';
+import 'package:fluttercatalog/presentation/catalog/screens/profile/profile_4.dart';
 import 'package:fluttercatalog/presentation/root_screen.dart';
-import 'package:fluttercatalog/presentation/screens/activities/activity_screen.dart';
-import 'package:fluttercatalog/presentation/screens/activities/activity_screen_2.dart';
-import 'package:fluttercatalog/presentation/screens/activities/activity_screen_3.dart';
-import 'package:fluttercatalog/presentation/screens/activities/timeline.dart';
-import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_1.dart';
-import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_2.dart';
-import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_3.dart';
-import 'package:fluttercatalog/presentation/screens/alert_dialogs/alert_dialog_4.dart';
-import 'package:fluttercatalog/presentation/screens/alert_dialogs/bottom_sheet_1.dart';
-import 'package:fluttercatalog/presentation/screens/alert_dialogs/bottom_sheet_2.dart';
-import 'package:fluttercatalog/presentation/screens/alert_dialogs/bottom_sheet_3.dart';
-import 'package:fluttercatalog/presentation/screens/alert_dialogs/bottom_sheet_4.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_1/login_screen_1.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_1/signup_screen_1.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_2/login_screen_2.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_2/signup_screen_2.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_3/login_screen_3.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_3/signup_screen_3.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_4/login_screen_4.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_4/signup_4.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_4/signup_screen_4.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_5/login_screen_5.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_5/signup_screen_5.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_6/login_screen_6.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_6/signup_screen_6.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_7/register_screen_7.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_8/login_screen_8.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_9/login_screen_9.dart';
-import 'package:fluttercatalog/presentation/screens/logins/login_design_9/signup_screen_9.dart';
-import 'package:fluttercatalog/presentation/screens/menus/menu_1.dart';
-import 'package:fluttercatalog/presentation/screens/menus/menu_2.dart';
-import 'package:fluttercatalog/presentation/screens/menus/menu_3.dart';
-import 'package:fluttercatalog/presentation/screens/menus/menu_4.dart';
-import 'package:fluttercatalog/presentation/screens/messages_notifications/messages_screen.dart';
-import 'package:fluttercatalog/presentation/screens/messages_notifications/notifications_screen.dart';
-import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen_1.dart';
-import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen_2.dart';
-import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen_3.dart';
-import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen_4.dart';
-import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen_5.dart';
-import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen_6.dart';
-import 'package:fluttercatalog/presentation/screens/onboarding/onboarding_screen_7.dart';
-import 'package:fluttercatalog/presentation/screens/profile/profile_1.dart';
-import 'package:fluttercatalog/presentation/screens/profile/profile_2.dart';
-import 'package:fluttercatalog/presentation/screens/profile/profile_3.dart';
-import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
 
 @MaterialAutoRouter(
   routes: <AutoRoute>[
@@ -110,6 +134,45 @@ import 'package:fluttercatalog/presentation/screens/profile/profile_4.dart';
     MaterialRoute(page: MenuScreen2),
     MaterialRoute(page: MenuScreen3),
     MaterialRoute(page: MenuScreen4),
+
+    /****************************** Drop Routes ******************************/
+    //Drop Routes
+    // initial route is named "/"
+    CupertinoRoute(page: DropSplashScreen),
+
+    //OnBoarding and AuthenticationScreens
+    CupertinoRoute(page: AuthScreen),
+    CupertinoRoute(page: VerificationScreen),
+    CupertinoRoute(page: InterestScreen),
+
+    //Inside App
+    CupertinoRoute(page: HomeScreen),
+    CupertinoRoute(page: CategoriesScreen),
+    CupertinoRoute(page: CategoryItemScreen),
+    CupertinoRoute(page: ProductScreen),
+    CupertinoRoute(page: ProfileScreen),
+    CupertinoRoute(page: CheckOutScreen),
+
+    /****************************** Drop Routes ******************************/
+    // initial route is named "/"
+    MaterialRoute(page: RoamSplashScreen),
+
+    //OnBoarding and AuthenticationScreens
+    MaterialRoute(page: OnBoardingScreen),
+    MaterialRoute(page: LoginScreen),
+    MaterialRoute(page: SignUpScreen),
+    MaterialRoute(page: SelectInterestScreen),
+    MaterialRoute(page: FollowScreen),
+
+    //Inside App
+    MaterialRoute(page: RoamRootScreen),
+    MaterialRoute(page: RoamHomeScreen),
+    MaterialRoute(page: DiscoverScreen),
+    MaterialRoute(page: SavedPlacesScreen),
+    MaterialRoute(page: RoamProfileScreen),
+    MaterialRoute(page: PlanTripScreen),
+    MaterialRoute(page: PlaceScreen),
+    MaterialRoute(page: AddCollaboratorsScreen),
   ],
 )
 class $AppRouter {}

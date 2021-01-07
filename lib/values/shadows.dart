@@ -21,6 +21,12 @@ class Shadows {
     blurRadius: 1.0,
   );
 
+  static const BoxShadow bgCardShadow = const BoxShadow(
+    color: Color(0xFFE7E7E7),
+    offset: Offset(0.0, 1.0), //(x,y)
+    blurRadius: 4.0,
+  );
+
   static customContainerShadow({
     Color color = AppColors.grey,
     Offset offset = const Offset(0.0, 1.0),

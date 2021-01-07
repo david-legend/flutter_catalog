@@ -2,10 +2,11 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:fluttercatalog/data/demos.dart';
+import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
-import 'package:fluttercatalog/widgets/gallery_widgets.dart';
-import 'package:fluttercatalog/widgets/spaces.dart';
 
+import 'catalog/widgets/gallery_widgets.dart';
+import 'catalog/widgets/spaces.dart';
 import 'layout/adaptive.dart';
 import 'layout/image_placeholder.dart';
 
@@ -47,21 +48,21 @@ class _RootScreenState extends State<RootScreen>
     final carouselCards = <Widget>[
       _CarouselCard(
         demo: profileDemos()[0],
-        asset: const AssetImage(ImagePath.PROFILE),
+        asset: const AssetImage(DropImagePath.DROP_COVER),
         assetColor: const Color(0xFFFEDBD0),
-        assetDark: const AssetImage(ImagePath.PROFILE),
+        assetDark: const AssetImage(DropImagePath.DROP_COVER),
         assetDarkColor: const Color(0xFF543B3C),
         textColor: Color(0xFF253538),
-//        studyRoute: ShrineApp.loginRoute,
+        studyRoute: Routes.dropSplashScreen,
       ),
       _CarouselCard(
         demo: profileDemos()[0],
         textColor: Color(0xFF253538),
-        asset: const AssetImage(ImagePath.LIST),
+        asset: const AssetImage(RoamImagePath.ROAM_COVER),
         assetColor: const Color(0xFFD1F2E6),
-        assetDark: const AssetImage(ImagePath.LIST),
+        assetDark: const AssetImage(RoamImagePath.ROAM_COVER),
         assetDarkColor: const Color(0xFF253538),
-//        studyRoute: RallyApp.loginRoute,
+        studyRoute: Routes.roamSplashScreen,
       ),
       _CarouselCard(
         demo: profileDemos()[0],

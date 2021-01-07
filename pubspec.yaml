@@ -24,7 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  google_fonts: ^1.1.0
+  google_fonts: ^1.1.1
   auto_route: ^0.6.9
   functional_widget_annotation: ^0.8.0
   flutter_feather_icons: ^1.0.3
@@ -32,6 +32,9 @@ dependencies:
   font_awesome_flutter: ^8.8.1
   dots_indicator: ^1.2.0
   carousel_slider: ^2.3.1
+  animations: ^1.1.2
+  flutter_svg: ^0.19.2+1
+  flutter_rating_bar: ^3.2.0+1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -63,6 +66,8 @@ flutter:
   assets:
      - assets/images/
      - assets/images/categories/
+     - assets/images/drop_images/
+     - assets/images/roam_images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -75,17 +80,14 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Try Clother
+      fonts:
+        - asset: assets/fonts/TRY_Clother/TRY_Clother-Black.ttf
+          weight: 500
+        - asset: assets/fonts/TRY_Clother/TRY_Clother-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/TRY_Clother/TRY_Clother-Light.ttf
+          weight: 300
+        - asset: assets/fonts/TRY_Clother/TRY_Clother-Regular.ttf
+          weight: 400

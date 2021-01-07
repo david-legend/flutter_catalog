@@ -8,6 +8,7 @@ class Sizes {
   static const double SIZE_80 = 80.0;
   static const double SIZE_60 = 60.0;
   static const double SIZE_48 = 48.0;
+  static const double SIZE_40 = 40.0;
   static const double SIZE_36 = 36.0;
   static const double SIZE_32 = 32.0;
   static const double SIZE_24 = 24.0;
@@ -15,6 +16,7 @@ class Sizes {
   static const double SIZE_16 = 16.0;
   static const double SIZE_12 = 12.0;
   static const double SIZE_8 = 8.0;
+  static const double SIZE_5 = 5.0;
   static const double SIZE_6 = 6.0;
   static const double SIZE_4 = 4.0;
   static const double SIZE_2 = 2.0;
@@ -61,6 +63,7 @@ class Sizes {
 
   //Heights
   static const double HEIGHT_300 = 300.0;
+  static const double HEIGHT_288 = 288.0;
   static const double HEIGHT_240 = 240.0;
   static const double HEIGHT_200 = 200.0;
   static const double HEIGHT_180 = 180.0;
@@ -68,12 +71,15 @@ class Sizes {
   static const double HEIGHT_150 = 150.0;
   static const double HEIGHT_130 = 130.0;
   static const double HEIGHT_100 = 100.0;
+  static const double HEIGHT_74 = 74.0;
   static const double HEIGHT_64 = 64.0;
   static const double HEIGHT_60 = 60.0;
+  static const double HEIGHT_56 = 56.0;
   static const double HEIGHT_50 = 50.0;
   static const double HEIGHT_48 = 48.0;
   static const double HEIGHT_46 = 46.0;
   static const double HEIGHT_44 = 44.0;
+  static const double HEIGHT_42 = 42.0;
   static const double HEIGHT_40 = 40.0;
   static const double HEIGHT_36 = 36.0;
   static const double HEIGHT_32 = 32.0;
@@ -92,6 +98,7 @@ class Sizes {
   static const double HEIGHT_3 = 3.0;
   static const double HEIGHT_2 = 2.0;
   static const double HEIGHT_1 = 1.0;
+  static const double HEIGHT_0 = 0.0;
 
   //Widths
   static const double WIDTH_300 = 300.0;
@@ -106,8 +113,11 @@ class Sizes {
   static const double WIDTH_80 = 80.0;
   static const double WIDTH_64 = 64.0;
   static const double WIDTH_60 = 60.0;
+  static const double WIDTH_56 = 56.0;
   static const double WIDTH_50 = 50.0;
+  static const double WIDTH_48 = 48.0;
   static const double WIDTH_40 = 40.0;
+  static const double WIDTH_36 = 36.0;
   static const double WIDTH_32 = 32.0;
   static const double WIDTH_30 = 30.0;
   static const double WIDTH_25 = 25.0;
@@ -163,11 +173,13 @@ class Sizes {
   static const double PADDING_12 = 12.0;
   static const double PADDING_10 = 10.0;
   static const double PADDING_8 = 8.0;
+  static const double PADDING_6 = 6.0;
   static const double PADDING_4 = 4.0;
   static const double PADDING_2 = 2.0;
   static const double PADDING_0 = 0.0;
 
   //Radius
+  static const double RADIUS_100 = 100.0;
   static const double RADIUS_80 = 80.0;
   static const double RADIUS_70 = 70.0;
   static const double RADIUS_60 = 60.0;

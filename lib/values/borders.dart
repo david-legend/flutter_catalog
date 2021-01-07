@@ -10,6 +10,18 @@ class Borders {
     ),
   );
 
+  static const BorderSide defaultButtonBorder = BorderSide(
+    width: 1.5,
+    color: DropAppColors.secondaryColor2,
+  );
+
+  static const InputBorder defaultPrimaryUnderlineBorder = UnderlineInputBorder(
+    borderSide: BorderSide(
+      width: 1.5,
+      color: DropAppColors.secondaryColor2,
+    ),
+  );
+
   static customBorder({
     Color color = AppColors.blackShade10,
     double width = Sizes.WIDTH_1,
