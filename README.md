@@ -21,25 +21,32 @@
 
     
 
+# Cases Studies
+<br/>
 
+# Drop Case Study
+![Screenshot](assets/images/drop_images/drop_cover.png)
+<br/>
+
+# Roam Case Study
+![Screenshot](assets/images/roam_images/roam_cover.jpg)
+<br/>
 
 
 ![Screenshot](assets/screenshots/flutter_catalog.png)
-
-## Enjoy
 ![Screenshot](assets/screenshots/activitiesAndProfile.png)
+![Screenshot](assets/screenshots/onboarding.png)
+![Screenshot](assets/screenshots/statsAndInfo.png)
+![Screenshot](assets/screenshots/typography.png)
+![Screenshot](assets/screenshots/colors.png)
 
 ## Activities & Profile Designs
 ![Screenshot](assets/screenshots/activities_detail.png)
 ![Screenshot](assets/screenshots/activities_details2.png)
 
-
-![Screenshot](assets/screenshots/onboarding.png)
 ## Onboarding Designs
 ![Screenshot](assets/screenshots/onboarding_details.png)
 
-
-![Screenshot](assets/screenshots/statsAndInfo.png)
 ## Stats & Info Designs
 ![Screenshot](assets/screenshots/stats_details.png)
 
@@ -49,21 +56,3 @@
 # Menus
 ![Screenshot](assets/screenshots/menus.png)
 
-# Typography and Colors
-![Screenshot](assets/screenshots/typography.png)
-![Screenshot](assets/screenshots/colors.png)
-
-
-# Cases Studies
-<br/>
-<br/>
-<br/>
-
-# Drop Case Study
-![Screenshot](assets/images/drop_images/drop_cover.png)
-
-<br/>
-<br/>
-
-# Roam Case Study
-![Screenshot](assets/images/roam_images/roam_cover.jpg)
