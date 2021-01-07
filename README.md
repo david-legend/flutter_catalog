@@ -25,17 +25,17 @@
 <br/>
 
 # Drop Case Study
-![Screenshot](assets/images/drop_images/drop_cover.png)
 <p>
 <a href="https://www.behance.net/gallery/102261423/DROP-Online-Store-E-commerce?tracking_source=curated_galleries_ui-ux" target="_blank">Drop Design on Behance</a>
 </p>
 <p>
 <a href="https://github.com/david-legend/drop" target="_blank">GitHub Link to the stand alone project</a>
 </p>
+
+![Screenshot](assets/images/drop_images/drop_cover.png)
 <br/>
 
 # Roam Case Study
-![Screenshot](assets/images/roam_images/roam_cover.jpg)
 <p align="center">
     Roam — UI / UX Case study for a travel advisory app done by <a href="https://www.linkedin.com/in/georgina-sekyi-050932175/" target="_blank">Georgina Sekyi</a> and built by <a href="https://www.linkedin.com/in/david-cobbina-7b0226119/" target="_blank">David Cobbina</a> using <strong>flutter</strong>.
 </p>
@@ -48,6 +48,8 @@
 <p>
 <a href="https://github.com/david-legend/roam" target="_blank">GitHub Link to the stand alone project</a>
 </p>
+
+![Screenshot](assets/images/roam_images/roam_cover.jpg)
 <br/>
 
 
