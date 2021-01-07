@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercatalog/values/values.dart';
 
-class AppTheme {
+class DropAppTheme {
   static const _lightFillColor = Colors.black;
 
   static final Color _lightFocusColor = Colors.black.withOpacity(0.12);

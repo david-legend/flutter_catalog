@@ -10,6 +10,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../bloc/theme_bloc.dart';
 import '../presentation/case_studies/drop/screens/auth_screen.dart';
 import '../presentation/case_studies/drop/screens/categories_screen.dart';
 import '../presentation/case_studies/drop/screens/category_item_screen.dart';
@@ -310,8 +311,9 @@ class AppRouter extends RouterBase {
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, AutoRouteFactory>{
     RootScreen: (data) {
+      final args = data.getArgs<RootScreenArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => RootScreen(),
+        builder: (context) => RootScreen(themeBloc: args.themeBloc),
         settings: data,
       );
     },
@@ -592,8 +594,9 @@ class AppRouter extends RouterBase {
       );
     },
     DropSplashScreen: (data) {
+      final args = data.getArgs<DropSplashScreenArguments>(nullOk: false);
       return CupertinoPageRoute<dynamic>(
-        builder: (context) => DropSplashScreen(),
+        builder: (context) => DropSplashScreen(themeBloc: args.themeBloc),
         settings: data,
       );
     },
@@ -654,8 +657,9 @@ class AppRouter extends RouterBase {
       );
     },
     RoamSplashScreen: (data) {
+      final args = data.getArgs<RoamSplashScreenArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => RoamSplashScreen(),
+        builder: (context) => RoamSplashScreen(themeBloc: args.themeBloc),
         settings: data,
       );
     },
@@ -750,6 +754,18 @@ class AppRouter extends RouterBase {
 /// Arguments holder classes
 /// *************************************************************************
 
+/// RootScreen arguments holder class
+class RootScreenArguments {
+  final ThemeBloc themeBloc;
+  RootScreenArguments({@required this.themeBloc});
+}
+
+/// DropSplashScreen arguments holder class
+class DropSplashScreenArguments {
+  final ThemeBloc themeBloc;
+  DropSplashScreenArguments({@required this.themeBloc});
+}
+
 /// CategoryItemScreen arguments holder class
 class CategoryItemScreenArguments {
   final String category;
@@ -760,6 +776,12 @@ class CategoryItemScreenArguments {
 class ProductScreenArguments {
   final ProductItem product;
   ProductScreenArguments({@required this.product});
+}
+
+/// RoamSplashScreen arguments holder class
+class RoamSplashScreenArguments {
+  final ThemeBloc themeBloc;
+  RoamSplashScreenArguments({@required this.themeBloc});
 }
 
 /// PlaceScreen arguments holder class

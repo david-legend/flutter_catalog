@@ -35,6 +35,7 @@ dependencies:
   animations: ^1.1.2
   flutter_svg: ^0.19.2+1
   flutter_rating_bar: ^3.2.0+1
+  rxdart: ^0.25.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

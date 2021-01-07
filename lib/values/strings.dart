@@ -12,13 +12,16 @@ class StringConst {
   static const String MENU = "Menus";
   static const String MENU_SUBTITLE = "Lovely, Consistent and beautiful";
   static const String ONBOARDING = "Onboarding";
-  static const String ONBOARDING_SUBTITLE = "Elegant and smooth onboarding experience";
+  static const String ONBOARDING_SUBTITLE =
+      "Elegant and smooth onboarding experience";
   static const String TIMELINES = "Timelines";
   static const String ACTIVITIES_SUBTITLE =
       "Exquisite consistent activity designs";
   static const String LISTS = "Lists";
   static const String SETTINGS = "Settings";
   static const String ALERT_DIALOGS = "Alert Dialogs";
+  static const String ALERT_DIALOGS_SUBTITLE =
+      "Lovely, Consistent and beautiful";
   static const String VERIFICATION = "Verifications";
   static const String LOGIN = "Login & Sign up";
   static const String LOGIN_SUBTITLE = "Intuitive, modern & beautiful";

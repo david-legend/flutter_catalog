@@ -2,31 +2,40 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fluttercatalog/bloc/theme_bloc.dart';
 import 'package:fluttercatalog/presentation/case_studies/roam/widgets/bg_card.dart';
 import 'package:fluttercatalog/presentation/case_studies/roam/widgets/spaces.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
+import 'package:fluttercatalog/themes/roam_app_theme.dart';
 import 'package:fluttercatalog/values/values.dart';
 
 class RoamSplashScreen extends StatefulWidget {
+  RoamSplashScreen({@required this.themeBloc});
+
+  final ThemeBloc themeBloc;
   @override
   _RoamSplashScreenState createState() => _RoamSplashScreenState();
 }
 
 class _RoamSplashScreenState extends State<RoamSplashScreen> {
+  ThemeBloc themeBloc;
   @override
   void initState() {
     super.initState();
+    themeBloc = widget.themeBloc;
+    themeBloc.selectedTheme.add(_buildLightTheme());
     run();
   }
 
   void run() {
     Future.delayed(Duration(milliseconds: 1500), () {
-      ExtendedNavigator.root.pushAndRemoveUntil(
-        Routes.onBoardingScreen,
-        (Route<dynamic> route) => false,
-      );
+      ExtendedNavigator.root.popAndPush(Routes.onBoardingScreen);
     });
+  }
+
+  CurrentTheme _buildLightTheme() {
+    return CurrentTheme('light', RoamAppTheme.lightThemeData);
   }
 
   @override

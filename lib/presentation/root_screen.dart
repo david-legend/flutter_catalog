@@ -1,6 +1,8 @@
 import 'dart:math' as math;
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttercatalog/bloc/theme_bloc.dart';
 import 'package:fluttercatalog/data/demos.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
@@ -18,6 +20,10 @@ const _desktopCardsPerPage = 4;
 
 //TODO:: clean up rootScreen
 class RootScreen extends StatefulWidget {
+  RootScreen({@required this.themeBloc});
+
+  final ThemeBloc themeBloc;
+
   @override
   _RootScreenState createState() => _RootScreenState();
 }
@@ -25,10 +31,12 @@ class RootScreen extends StatefulWidget {
 class _RootScreenState extends State<RootScreen>
     with SingleTickerProviderStateMixin {
   AnimationController _animationController;
+  ThemeBloc themeBloc;
 
   @override
   void initState() {
     super.initState();
+    themeBloc = widget.themeBloc;
     _animationController = AnimationController(
       vsync: this,
       value: 1.0,
@@ -53,7 +61,14 @@ class _RootScreenState extends State<RootScreen>
         assetDark: const AssetImage(DropImagePath.DROP_COVER),
         assetDarkColor: const Color(0xFF543B3C),
         textColor: AppColors.primaryColor,
-        studyRoute: caseStudyDemos()[0].routeName,
+        onTap: () {
+          ExtendedNavigator.root.push(
+            caseStudyDemos()[0].routeName,
+            arguments: DropSplashScreenArguments(
+              themeBloc: themeBloc,
+            ),
+          );
+        },
       ),
       _CarouselCard(
         demo: caseStudyDemos()[1],
@@ -62,7 +77,14 @@ class _RootScreenState extends State<RootScreen>
         assetColor: const Color(0xFFD1F2E6),
         assetDark: const AssetImage(RoamImagePath.ROAM_COVER),
         assetDarkColor: const Color(0xFF253538),
-        studyRoute: caseStudyDemos()[1].routeName,
+        onTap: () {
+          ExtendedNavigator.root.push(
+            caseStudyDemos()[1].routeName,
+            arguments: RoamSplashScreenArguments(
+              themeBloc: themeBloc,
+            ),
+          );
+        },
       ),
       _CarouselCard(
         demo: caseStudyDemos()[2],
@@ -84,11 +106,26 @@ class _RootScreenState extends State<RootScreen>
                   left: 32.0,
                   top: 16.0,
                 ),
-                child: Text(
-                  StringConst.APP_NAME,
-                  style: theme.textTheme.headline5.copyWith(
-                    color: AppColors.primaryColor,
-                  ),
+                child: Row(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        //open drawer
+                      },
+                      child: Icon(
+                        Icons.menu,
+                        color: AppColors.primaryColor,
+                        size: Sizes.ICON_SIZE_28,
+                      ),
+                    ),
+                    SpaceW12(),
+                    Text(
+                      StringConst.APP_NAME,
+                      style: theme.textTheme.headline5.copyWith(
+                        color: AppColors.primaryColor,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               _Carousel(
@@ -377,7 +414,7 @@ class _CarouselCard extends StatelessWidget {
     this.assetColor,
     this.assetDarkColor,
     this.textColor,
-    this.studyRoute,
+    this.onTap,
   }) : super(key: key);
 
   final CatalogDemo demo;
@@ -386,7 +423,7 @@ class _CarouselCard extends StatelessWidget {
   final Color assetColor;
   final Color assetDarkColor;
   final Color textColor;
-  final String studyRoute;
+  final GestureTapCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -406,9 +443,7 @@ class _CarouselCard extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
-          onTap: () {
-            Navigator.of(context).pushNamed(studyRoute);
-          },
+          onTap: onTap,
           child: Stack(
             fit: StackFit.expand,
             children: [

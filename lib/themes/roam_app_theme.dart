@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttercatalog/values/values.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AppTheme {
+class RoamAppTheme {
   static const _lightFillColor = Colors.black;
 
   static final Color _lightFocusColor = Colors.black.withOpacity(0.12);
