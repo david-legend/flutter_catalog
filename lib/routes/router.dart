@@ -176,3 +176,5 @@ import 'package:fluttercatalog/presentation/root_screen.dart';
   ],
 )
 class $AppRouter {}
+
+class CategoryItemDemoArguments {}

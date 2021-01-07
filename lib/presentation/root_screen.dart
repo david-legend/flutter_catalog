@@ -2,11 +2,13 @@ import 'dart:math' as math;
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttercatalog/app_theme.dart';
 import 'package:fluttercatalog/bloc/theme_bloc.dart';
 import 'package:fluttercatalog/data/demos.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+import '../main.dart';
 import 'catalog/widgets/gallery_widgets.dart';
 import 'catalog/widgets/spaces.dart';
 import 'layout/adaptive.dart';
@@ -19,7 +21,6 @@ const _carouselHeightMin = 200.0 + 2 * _carouselItemMargin;
 const _desktopCardsPerPage = 4;
 
 //TODO:: clean up rootScreen
-//TODO:: Add themes for login screens
 //TODO:: Add BackDrop
 //TODO:: Link my Bio and Details
 
@@ -33,7 +34,7 @@ class RootScreen extends StatefulWidget {
 }
 
 class _RootScreenState extends State<RootScreen>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, RouteAware {
   AnimationController _animationController;
   ThemeBloc themeBloc;
 
@@ -51,7 +52,23 @@ class _RootScreenState extends State<RootScreen>
   @override
   void dispose() {
     _animationController.dispose();
+    routeObserver.unsubscribe(this);
     super.dispose();
+  }
+
+  CurrentTheme _buildLightTheme() {
+    return CurrentTheme('light', AppTheme.lightThemeData);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    routeObserver.subscribe(this, ModalRoute.of(context));
+  }
+
+  @override
+  void didPopNext() {
+    themeBloc.selectedTheme.add(CurrentTheme('light', AppTheme.lightThemeData));
   }
 
   @override
@@ -99,6 +116,7 @@ class _RootScreenState extends State<RootScreen>
         assetDarkColor: const Color(0xFF253538),
       ),
     ];
+
     return Scaffold(
       backgroundColor: AppColors.grey50,
       body: Stack(

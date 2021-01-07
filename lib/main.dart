@@ -15,6 +15,8 @@ void main() {
   runApp(FlutterCatalog());
 }
 
+final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
+
 class FlutterCatalog extends StatefulWidget {
   @override
   _FlutterCatalogState createState() => _FlutterCatalogState();
@@ -43,6 +45,7 @@ class _FlutterCatalogState extends State<FlutterCatalog> {
             router: AppRouter(),
             initialRoute: Routes.rootScreen,
             initialRouteArgs: RootScreenArguments(themeBloc: _themeBloc),
+            observers: [routeObserver],
           ),
         );
       },

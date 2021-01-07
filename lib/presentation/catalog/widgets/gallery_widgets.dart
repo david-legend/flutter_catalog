@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttercatalog/bloc/theme_bloc.dart';
 import 'package:fluttercatalog/data/demos.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
