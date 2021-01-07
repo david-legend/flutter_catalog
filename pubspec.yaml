@@ -68,6 +68,7 @@ flutter:
      - assets/images/categories/
      - assets/images/drop_images/
      - assets/images/roam_images/
+     - assets/images/balenciaga_images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

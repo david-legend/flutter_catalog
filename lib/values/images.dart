@@ -254,3 +254,12 @@ class RoamImagePath {
 
 //screenshots for ReadMe
 }
+
+class BalenciagaImagePath {
+  //images route
+  static const String imageDir = "assets/images/balenciaga_images";
+  static const String screenshotsDir = "assets/screenshots/balenciaga_images";
+
+  //Roam Cover
+  static const String BALENCIAGA_COVER = "$imageDir/balenciaga_cover.jpg";
+}

@@ -5,6 +5,9 @@ import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 
 enum CatalogDemoCategory {
+  roamCaseStudy,
+  dropCaseStudy,
+  balenciagaCaseStudy,
   profile,
   menu,
   onBoarding,
@@ -78,7 +81,7 @@ List<CategoryListItem> categoryList() {
       ),
       category: CatalogDemoCategory.profile,
       imageString: ImagePath.PROFILE,
-      demos: profileDemos(),
+      demos: caseStudyDemos(),
       initiallyExpanded: false,
     ),
     CategoryListItem(
@@ -165,39 +168,31 @@ List<CategoryListItem> categoryList() {
   ];
 }
 
-List<CatalogDemo> profileDemos() {
+List<CatalogDemo> caseStudyDemos() {
   return [
     CatalogDemo(
-      title: "Profile 1",
+      title: "Drop Case Study",
       icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
-      category: CatalogDemoCategory.profile,
+      slug: 'drop',
+      subtitle: "Online store with the newest drops",
+      category: CatalogDemoCategory.dropCaseStudy,
       routeName: Routes.dropSplashScreen,
     ),
     CatalogDemo(
-      title: "Profile 2",
+      title: "Roam Case Study",
       icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
-      category: CatalogDemoCategory.profile,
-      routeName: Routes.profile2Screen,
+      slug: 'roam',
+      subtitle: "UI/UX Case study for a travel advisory app",
+      category: CatalogDemoCategory.roamCaseStudy,
+      routeName: Routes.roamSplashScreen,
     ),
     CatalogDemo(
-      title: "Profile 3",
+      title: "Balenciga",
       icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
-      category: CatalogDemoCategory.profile,
-      routeName: Routes.profile3Screen,
-    ),
-    CatalogDemo(
-      title: "Profile 4",
-      icon: Icons.person,
-      slug: 'banner',
-      subtitle: "beautifully designed category",
-      category: CatalogDemoCategory.profile,
-      routeName: Routes.profile4Screen,
+      slug: 'balenciga',
+      subtitle: "COMING SOON!!",
+      category: CatalogDemoCategory.balenciagaCaseStudy,
+//      routeName: Routes.balenciagaSplashScreen,
     ),
   ];
 }

@@ -47,31 +47,30 @@ class _RootScreenState extends State<RootScreen>
     ThemeData theme = Theme.of(context);
     final carouselCards = <Widget>[
       _CarouselCard(
-        demo: profileDemos()[0],
+        demo: caseStudyDemos()[0],
         asset: const AssetImage(DropImagePath.DROP_COVER),
         assetColor: const Color(0xFFFEDBD0),
         assetDark: const AssetImage(DropImagePath.DROP_COVER),
         assetDarkColor: const Color(0xFF543B3C),
-        textColor: Color(0xFF253538),
-        studyRoute: Routes.dropSplashScreen,
+        textColor: AppColors.primaryColor,
+        studyRoute: caseStudyDemos()[0].routeName,
       ),
       _CarouselCard(
-        demo: profileDemos()[0],
-        textColor: Color(0xFF253538),
+        demo: caseStudyDemos()[1],
+        textColor: AppColors.primaryColor,
         asset: const AssetImage(RoamImagePath.ROAM_COVER),
         assetColor: const Color(0xFFD1F2E6),
         assetDark: const AssetImage(RoamImagePath.ROAM_COVER),
         assetDarkColor: const Color(0xFF253538),
-        studyRoute: Routes.roamSplashScreen,
+        studyRoute: caseStudyDemos()[1].routeName,
       ),
       _CarouselCard(
-        demo: profileDemos()[0],
-        textColor: Color(0xFF253538),
-        asset: const AssetImage(ImagePath.ONBOARDING),
+        demo: caseStudyDemos()[2],
+        textColor: AppColors.primaryColor,
+        asset: const AssetImage(BalenciagaImagePath.BALENCIAGA_COVER),
         assetColor: const Color(0xFFD1F2E6),
-        assetDark: const AssetImage(ImagePath.ONBOARDING),
+        assetDark: const AssetImage(BalenciagaImagePath.BALENCIAGA_COVER),
         assetDarkColor: const Color(0xFF253538),
-//        studyRoute: RallyApp.loginRoute,
       ),
     ];
     return Scaffold(
@@ -432,14 +431,14 @@ class _CarouselCard extends StatelessWidget {
                   children: [
                     Text(
                       demo.title,
-                      style: textTheme.caption.apply(color: textColor),
-                      maxLines: 3,
+                      style: textTheme.subtitle1.apply(color: textColor),
+                      maxLines: 1,
                       overflow: TextOverflow.visible,
                     ),
                     Text(
                       demo.subtitle,
-                      style: textTheme.overline.apply(color: textColor),
-                      maxLines: 5,
+                      style: textTheme.caption.apply(color: textColor),
+                      maxLines: 1,
                       overflow: TextOverflow.visible,
                     ),
                   ],
