@@ -9,6 +9,16 @@ class ImagePath {
   static const String DAVID_LEGEND = "$imageDir/david_legend.jpg";
   static const String GHANA_FLAG = "$imageDir/ghana_flag.png";
 
+  //OtherProjects
+  static const String AERIUM_COVER = "$imageDir/aerium_cover.png";
+  static const String FLUTTER_CATALOG_COVER =
+      "$imageDir/flutter_catalog_cover.png";
+  static const String LOGIN_CATALOG_COVER = "$imageDir/login_catalog_cover.png";
+  static const String FOODYBITE_COVER = "$imageDir/foodybite_cover.jpg";
+  static const String ONBOARDING_APP_COVER =
+      "$imageDir/onboarding_app_cover.jpg";
+  static const String OTP_TEXTFIELD_COVER = "$imageDir/otp_package_cover.jpg";
+
   //Categories
   static const String ALERT_DIALOGS = "$categoriesImageDir/alert_dialogs.jpg";
   static const String BOTTOM_NAVIGATION =

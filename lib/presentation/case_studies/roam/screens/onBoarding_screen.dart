@@ -120,7 +120,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         ),
         Container(
           decoration: BoxDecoration(
-            gradient: Gradients.darkOverlayGradient,
+            gradient: Gradients.darkOverlayGradient2,
           ),
         ),
         Container(

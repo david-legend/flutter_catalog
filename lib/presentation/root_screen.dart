@@ -12,8 +12,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../main.dart';
-import 'case_studies/drop/widgets/drop_appbar.dart';
 import 'catalog/screens/menus/menu_1.dart' as Menu;
+import 'catalog/widgets/dev_socials.dart';
 import 'catalog/widgets/gallery_widgets.dart';
 import 'catalog/widgets/spaces.dart';
 import 'layout/adaptive.dart';
@@ -229,6 +229,8 @@ class _RootScreenState extends State<RootScreen>
                     ],
                   ),
                 ),
+                SpaceH8(),
+                DevSocials(),
                 SpaceH24(),
               ],
             ),
@@ -241,17 +243,20 @@ class _RootScreenState extends State<RootScreen>
             children: [
               Padding(
                 padding: const EdgeInsets.only(
-                  left: 32.0,
-                  top: 16.0,
+                  left: Sizes.PADDING_24,
+                  top: Sizes.PADDING_16,
                 ),
                 child: Row(
                   children: [
                     InkWell(
                       onTap: () => scaffoldKey.currentState.openDrawer(),
-                      child: Icon(
-                        Icons.menu,
-                        color: AppColors.primaryColor,
-                        size: Sizes.ICON_SIZE_28,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.menu,
+                          color: AppColors.primaryColor,
+                          size: Sizes.ICON_SIZE_28,
+                        ),
                       ),
                     ),
                     SpaceW12(),

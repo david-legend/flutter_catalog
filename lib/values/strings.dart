@@ -12,29 +12,43 @@ class StringConst {
   //OtherProjects
   static const String PROJECTS = "Projects";
 
+  static const String DEV_LINKED_IN =
+      "https://www.linkedin.com/in/david-cobbina-7b0226119/";
+  static const String DEV_GITHUB = "https://github.com/david-legend";
+  static const String DEV_TWITTER = "https://twitter.com/DavidLegend47";
+  static const String DEV_INSTAGRAM =
+      "https://www.instagram.com/david_legend_47/";
+
   static const String FOODYBITE = "FoodyBite";
-  static const String FOODYBITE_GITHUB_LINK = "Projects";
+  static const String FOODYBITE_GITHUB_LINK =
+      "https://github.com/david-legend/foodybite";
   static const String FOODYBITE_WEB_LINK = "";
 
   static const String LOGIN_CATALOG = "Login Catalog";
-  static const String LOGIN_CATALOG_GITHUB_LINK = "Projects";
+  static const String LOGIN_CATALOG_GITHUB_LINK =
+      "https://github.com/david-legend/login_catalog";
   static const String LOGIN_CATALOG_WEB_LINK = "";
 
   static const String FLUTTER_CATALOG = "Flutter Catalog";
-  static const String FLUTTER_CATALOG_GITHUB_LINK = "Projects";
+  static const String FLUTTER_CATALOG_GITHUB_LINK =
+      "https://github.com/david-legend/flutter_catalog";
   static const String FLUTTER_CATALOG_WEB_LINK = "";
 
   static const String AERIUM = "Aerium";
-  static const String AERIUM_GITHUB_LINK = "Projects";
-  static const String AERIUM_WEB_LINK = "";
+  static const String AERIUM_GITHUB_LINK =
+      "https://github.com/david-legend/aerium";
+  static const String AERIUM_WEB_LINK = "https://davidcobbina.com/#/";
 
-  static const String ONBOARDING_APP = "Aerium";
-  static const String ONBOARDING_APP_GITHUB_LINK = "Projects";
+  static const String ONBOARDING_APP = "OnBoarding App";
+  static const String ONBOARDING_APP_GITHUB_LINK =
+      "https://github.com/david-legend/onboarding-app";
   static const String ONBOARDING_APP_WEB_LINK = "";
 
-  static const String OTP_TEXT_FIELD = "Aerium";
-  static const String OTP_TEXT_FIELD_GITHUB_LINK = "Projects";
-  static const String OTP_TEXT_FIELD_WEB_LINK = "";
+  static const String OTP_TEXT_FIELD = "OTP Textfield";
+  static const String OTP_TEXT_FIELD_GITHUB_LINK =
+      "https://github.com/david-legend/otp_textfield";
+  static const String OTP_TEXT_FIELD_WEB_LINK =
+      "https://pub.dev/packages/flutter_otp_text_field";
 
   //Categories
   static const String CATEGORIES = "Categories";

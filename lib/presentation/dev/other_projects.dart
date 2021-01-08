@@ -5,6 +5,7 @@ import 'package:fluttercatalog/presentation/case_studies/roam/widgets/spaces.dar
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class OtherProjectsScreen extends StatelessWidget {
   @override
@@ -156,30 +157,45 @@ class ProjectCard extends StatelessWidget {
                   children: [
                     isOnGithub
                         ? InkWell(
-                            onTap: () {},
-                            child: Icon(
-                              FontAwesomeIcons.github,
-                              color: AppColors.black,
+                            onTap: () {
+                              _launchInBrowser(gitHubLink);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(Sizes.PADDING_4),
+                              child: Icon(
+                                FontAwesomeIcons.github,
+                                color: AppColors.black,
+                              ),
                             ),
                           )
                         : Empty(),
-                    isOnPlayStore ? SpaceW4() : Empty(),
+                    isOnPlayStore ? SpaceW8() : Empty(),
                     isOnPlayStore
                         ? InkWell(
-                            onTap: () {},
-                            child: Icon(
-                              FeatherIcons.github,
-                              color: AppColors.black,
+                            onTap: () {
+                              _launchInBrowser(playStoreLink);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(Sizes.PADDING_4),
+                              child: Icon(
+                                FontAwesomeIcons.googlePlay,
+                                color: AppColors.black,
+                              ),
                             ),
                           )
                         : Empty(),
-                    isOnTheWeb ? SpaceW4() : Empty(),
+                    isOnTheWeb ? SpaceW8() : Empty(),
                     isOnTheWeb
                         ? InkWell(
-                            onTap: () {},
-                            child: Icon(
-                              FeatherIcons.github,
-                              color: AppColors.black,
+                            onTap: () {
+                              _launchInBrowser(webLink);
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(Sizes.PADDING_4),
+                              child: Icon(
+                                FeatherIcons.globe,
+                                color: AppColors.black,
+                              ),
                             ),
                           )
                         : Empty(),
@@ -191,5 +207,18 @@ class ProjectCard extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<void> _launchInBrowser(String url) async {
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+//        headers: <String, String>{'my_header_key': 'my_header_value'},
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

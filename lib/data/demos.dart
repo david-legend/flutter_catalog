@@ -96,15 +96,6 @@ List<CategoryListItem> categoryList() {
     ),
     CategoryListItem(
       key: const PageStorageKey<CatalogDemoCategory>(
-        CatalogDemoCategory.messagesAndNotification,
-      ),
-      category: CatalogDemoCategory.messagesAndNotification,
-      imageString: ImagePath.STATS_INFORMATION,
-      demos: messagesAndNotificationsDemos(),
-      initiallyExpanded: false,
-    ),
-    CategoryListItem(
-      key: const PageStorageKey<CatalogDemoCategory>(
         CatalogDemoCategory.login,
       ),
       category: CatalogDemoCategory.login,
@@ -137,6 +128,15 @@ List<CategoryListItem> categoryList() {
       category: CatalogDemoCategory.alertDialogs,
       imageString: ImagePath.ALERT_DIALOGS,
       demos: alertDialogsDemos(),
+      initiallyExpanded: false,
+    ),
+    CategoryListItem(
+      key: const PageStorageKey<CatalogDemoCategory>(
+        CatalogDemoCategory.messagesAndNotification,
+      ),
+      category: CatalogDemoCategory.messagesAndNotification,
+      imageString: ImagePath.STATS_INFORMATION,
+      demos: messagesAndNotificationsDemos(),
       initiallyExpanded: false,
     ),
     CategoryListItem(
@@ -266,21 +266,21 @@ List<CatalogDemo> activitiesAndTimelineDemos() {
 List<CatalogDemo> messagesAndNotificationsDemos() {
   return [
     CatalogDemo(
-      title: "Messages",
+      title: StringConst.COMING_SOON,
       icon: FeatherIcons.messageCircle,
-      slug: 'Messages',
-      subtitle: "Messages Screen Design",
+      slug: 'messages',
+      subtitle: "",
       category: CatalogDemoCategory.messagesAndNotification,
       routeName: Routes.messagesScreen,
     ),
-    CatalogDemo(
-      title: "Notification",
-      icon: FeatherIcons.bell,
-      slug: 'Notification',
-      subtitle: "Notifications Screen Design",
-      category: CatalogDemoCategory.messagesAndNotification,
-      routeName: Routes.notificationsScreen,
-    ),
+//    CatalogDemo(
+//      title: "Notification",
+//      icon: FeatherIcons.bell,
+//      slug: 'Notification',
+//      subtitle: "Notifications Screen Design",
+//      category: CatalogDemoCategory.messagesAndNotification,
+//      routeName: Routes.notificationsScreen,
+//    ),
   ];
 }
 
