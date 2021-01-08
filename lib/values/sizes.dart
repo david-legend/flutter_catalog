@@ -73,6 +73,7 @@ class Sizes {
   static const double HEIGHT_150 = 150.0;
   static const double HEIGHT_130 = 130.0;
   static const double HEIGHT_100 = 100.0;
+  static const double HEIGHT_80 = 80.0;
   static const double HEIGHT_74 = 74.0;
   static const double HEIGHT_64 = 64.0;
   static const double HEIGHT_60 = 60.0;

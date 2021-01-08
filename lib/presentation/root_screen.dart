@@ -45,14 +45,11 @@ class _RootScreenState extends State<RootScreen>
   ThemeBloc themeBloc;
   List<Menu.MenuItem> menuList = [
     Menu.MenuItem(
-      StringConst.ABOUT_ME,
-      iconData: FeatherIcons.info,
-      onTap: () {},
-    ),
-    Menu.MenuItem(
       StringConst.OTHER_PROJECTS,
       iconData: FeatherIcons.code,
-      onTap: () {},
+      onTap: () {
+        ExtendedNavigator.root.push(Routes.otherProjectsScreen);
+      },
     ),
   ];
 

@@ -7,8 +7,34 @@ class StringConst {
   static const String COMING_SOON = "Coming Soon!!";
 
   //RootScreen
-  static const String ABOUT_ME = "About Me";
   static const String OTHER_PROJECTS = "Other Projects";
+
+  //OtherProjects
+  static const String PROJECTS = "Projects";
+
+  static const String FOODYBITE = "FoodyBite";
+  static const String FOODYBITE_GITHUB_LINK = "Projects";
+  static const String FOODYBITE_WEB_LINK = "";
+
+  static const String LOGIN_CATALOG = "Login Catalog";
+  static const String LOGIN_CATALOG_GITHUB_LINK = "Projects";
+  static const String LOGIN_CATALOG_WEB_LINK = "";
+
+  static const String FLUTTER_CATALOG = "Flutter Catalog";
+  static const String FLUTTER_CATALOG_GITHUB_LINK = "Projects";
+  static const String FLUTTER_CATALOG_WEB_LINK = "";
+
+  static const String AERIUM = "Aerium";
+  static const String AERIUM_GITHUB_LINK = "Projects";
+  static const String AERIUM_WEB_LINK = "";
+
+  static const String ONBOARDING_APP = "Aerium";
+  static const String ONBOARDING_APP_GITHUB_LINK = "Projects";
+  static const String ONBOARDING_APP_WEB_LINK = "";
+
+  static const String OTP_TEXT_FIELD = "Aerium";
+  static const String OTP_TEXT_FIELD_GITHUB_LINK = "Projects";
+  static const String OTP_TEXT_FIELD_WEB_LINK = "";
 
   //Categories
   static const String CATEGORIES = "Categories";
@@ -93,6 +119,7 @@ class StringConst {
   static const String SALOMAN = "Aurelien Saloman";
   static const String SALOMAN_USERNAME = "@aureliensaloman";
   static const String DAVID_LEGEND = "David Legend";
+  static const String SOFTWARE_ENGINEER = "Software Engineer";
   static const String BUILT_BY = "Built by David Cobbina";
   static const String MADE_IN_GHANA = "Made in Ghana";
   static const String WITH_LOVE = "With";
@@ -206,6 +233,8 @@ class StringConst {
 class DropStringConst {
   //strings
   static const String APP_NAME = "Drop";
+  static const String GITHUB_LINK = "https://github.com/david-legend/drop";
+//  static const String PLAYSTORE_LINK = "";
 
   //Verification Screen
   static const String VERIFICATION_CODE = "Verification Code";
@@ -375,6 +404,7 @@ class DropStringConst {
 class RoamStringConst {
   //strings
   static const String APP_NAME = "Roam";
+  static const String GITHUB_LINK = "https://github.com/david-legend/roam";
 
   //OnBoarding
   static const String ONBOARDING_TITLE_1 =

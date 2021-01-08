@@ -82,6 +82,7 @@ import '../presentation/catalog/screens/profile/profile_1.dart';
 import '../presentation/catalog/screens/profile/profile_2.dart';
 import '../presentation/catalog/screens/profile/profile_3.dart';
 import '../presentation/catalog/screens/profile/profile_4.dart';
+import '../presentation/dev/other_projects.dart';
 import '../presentation/root_screen.dart';
 
 class Routes {
@@ -132,6 +133,7 @@ class Routes {
   static const String menuScreen2 = '/menu-screen2';
   static const String menuScreen3 = '/menu-screen3';
   static const String menuScreen4 = '/menu-screen4';
+  static const String otherProjectsScreen = '/other-projects-screen';
   static const String dropSplashScreen = '/drop-splash-screen';
   static const String authScreen = '/auth-screen';
   static const String verificationScreen = '/verification-screen';
@@ -204,6 +206,7 @@ class Routes {
     menuScreen2,
     menuScreen3,
     menuScreen4,
+    otherProjectsScreen,
     dropSplashScreen,
     authScreen,
     verificationScreen,
@@ -282,6 +285,7 @@ class AppRouter extends RouterBase {
     RouteDef(Routes.menuScreen2, page: MenuScreen2),
     RouteDef(Routes.menuScreen3, page: MenuScreen3),
     RouteDef(Routes.menuScreen4, page: MenuScreen4),
+    RouteDef(Routes.otherProjectsScreen, page: OtherProjectsScreen),
     RouteDef(Routes.dropSplashScreen, page: DropSplashScreen),
     RouteDef(Routes.authScreen, page: AuthScreen),
     RouteDef(Routes.verificationScreen, page: VerificationScreen),
@@ -590,6 +594,12 @@ class AppRouter extends RouterBase {
     MenuScreen4: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => MenuScreen4(),
+        settings: data,
+      );
+    },
+    OtherProjectsScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => OtherProjectsScreen(),
         settings: data,
       );
     },

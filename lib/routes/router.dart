@@ -69,6 +69,7 @@ import 'package:fluttercatalog/presentation/catalog/screens/profile/profile_1.da
 import 'package:fluttercatalog/presentation/catalog/screens/profile/profile_2.dart';
 import 'package:fluttercatalog/presentation/catalog/screens/profile/profile_3.dart';
 import 'package:fluttercatalog/presentation/catalog/screens/profile/profile_4.dart';
+import 'package:fluttercatalog/presentation/dev/other_projects.dart';
 import 'package:fluttercatalog/presentation/root_screen.dart';
 
 @MaterialAutoRouter(
@@ -134,6 +135,9 @@ import 'package:fluttercatalog/presentation/root_screen.dart';
     MaterialRoute(page: MenuScreen2),
     MaterialRoute(page: MenuScreen3),
     MaterialRoute(page: MenuScreen4),
+
+    //Projects Screen
+    MaterialRoute(page: OtherProjectsScreen),
 
     /****************************** Drop Routes ******************************/
     //Drop Routes

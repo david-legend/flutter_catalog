@@ -21,7 +21,7 @@ import 'package:fluttercatalog/presentation/case_studies/roam/widgets/explore_ca
 import 'package:fluttercatalog/presentation/case_studies/roam/widgets/tag.dart';
 import 'package:fluttercatalog/presentation/case_studies/roam/widgets/saved_paces_card.dart';
 import 'package:fluttercatalog/presentation/case_studies/roam/widgets/old_trip_card.dart';
-import 'package:fluttercatalog/presentation/case_studies/roam/screens/discover_screen.dart';
+import 'package:fluttercatalog/presentation/dev/other_projects.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:google_fonts/google_fonts.dart';
 

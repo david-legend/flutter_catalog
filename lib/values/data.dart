@@ -1,6 +1,29 @@
 part of values;
 
-class Data {}
+class Data {
+  static List<ProjectCardItem> projects = [
+    ProjectCardItem(
+      title: DropStringConst.APP_NAME,
+      imagePath: DropImagePath.DROP_COVER,
+      isOnGithub: true,
+      isOnPlayStore: false,
+      isOnTheWeb: false,
+      gitHubLink: DropStringConst.GITHUB_LINK,
+      playStoreLink: "",
+      webLink: "",
+    ),
+    ProjectCardItem(
+      title: RoamStringConst.APP_NAME,
+      imagePath: RoamImagePath.ROAM_COVER,
+      isOnGithub: true,
+      isOnPlayStore: false,
+      isOnTheWeb: false,
+      gitHubLink: RoamStringConst.GITHUB_LINK,
+      playStoreLink: "",
+      webLink: "",
+    ),
+  ];
+}
 
 class DropData {
   static List<PillItem> pillItems = [
