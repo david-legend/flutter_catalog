@@ -42,6 +42,7 @@ class Sizes {
   static const double TEXT_SIZE_16 = 16.0;
   static const double TEXT_SIZE_14 = 14.0;
   static const double TEXT_SIZE_12 = 12.0;
+  static const double TEXT_SIZE_11 = 11.0;
   static const double TEXT_SIZE_10 = 10.0;
   static const double TEXT_SIZE_8 = 8.0;
 

@@ -5,6 +5,11 @@ class StringConst {
   static const String APP_NAME = "Flutter Catalog";
 
   static const String COMING_SOON = "Coming Soon!!";
+
+  //RootScreen
+  static const String ABOUT_ME = "About Me";
+  static const String OTHER_PROJECTS = "Other Projects";
+
   //Categories
   static const String CATEGORIES = "Categories";
   static const String PROFILE = "Profiles";
@@ -87,6 +92,11 @@ class StringConst {
   //Menus
   static const String SALOMAN = "Aurelien Saloman";
   static const String SALOMAN_USERNAME = "@aureliensaloman";
+  static const String DAVID_LEGEND = "David Legend";
+  static const String BUILT_BY = "Built by David Cobbina";
+  static const String MADE_IN_GHANA = "Made in Ghana";
+  static const String WITH_LOVE = "With";
+  static const String DAVID_LEGEND_USERNAME = "@DavidLegend47";
   static const String HOME = "Home";
   static const String MEET_UPS = "Meetups";
   static const String EVENTS = "Events";

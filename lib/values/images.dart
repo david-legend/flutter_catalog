@@ -6,6 +6,8 @@ class ImagePath {
   static const String categoriesImageDir = "assets/images/categories";
   static const String screenshotsDir = "assets/screenshots";
 
+  static const String DAVID_LEGEND = "$imageDir/david_legend.jpg";
+  static const String GHANA_FLAG = "$imageDir/ghana_flag.png";
   //Categories
   static const String ALERT_DIALOGS = "$categoriesImageDir/alert_dialogs.jpg";
   static const String BOTTOM_NAVIGATION =

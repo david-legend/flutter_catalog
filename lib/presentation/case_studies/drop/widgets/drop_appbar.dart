@@ -10,7 +10,11 @@ import 'drop_logo.dart';
 import 'fliter_bottom_sheet.dart';
 
 class MenuItem {
-  MenuItem({@required this.title, this.textColor, this.routeName});
+  MenuItem({
+    @required this.title,
+    this.textColor,
+    this.routeName,
+  });
 
   final String title;
   final Color textColor;

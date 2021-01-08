@@ -2,13 +2,18 @@ import 'dart:math' as math;
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:fluttercatalog/app_theme.dart';
 import 'package:fluttercatalog/bloc/theme_bloc.dart';
 import 'package:fluttercatalog/data/demos.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../main.dart';
+import 'case_studies/drop/widgets/drop_appbar.dart';
+import 'catalog/screens/menus/menu_1.dart' as Menu;
 import 'catalog/widgets/gallery_widgets.dart';
 import 'catalog/widgets/spaces.dart';
 import 'layout/adaptive.dart';
@@ -35,8 +40,21 @@ class RootScreen extends StatefulWidget {
 
 class _RootScreenState extends State<RootScreen>
     with SingleTickerProviderStateMixin, RouteAware {
+  var scaffoldKey = GlobalKey<ScaffoldState>();
   AnimationController _animationController;
   ThemeBloc themeBloc;
+  List<Menu.MenuItem> menuList = [
+    Menu.MenuItem(
+      StringConst.ABOUT_ME,
+      iconData: FeatherIcons.info,
+      onTap: () {},
+    ),
+    Menu.MenuItem(
+      StringConst.OTHER_PROJECTS,
+      iconData: FeatherIcons.code,
+      onTap: () {},
+    ),
+  ];
 
   @override
   void initState() {
@@ -56,10 +74,6 @@ class _RootScreenState extends State<RootScreen>
     super.dispose();
   }
 
-  CurrentTheme _buildLightTheme() {
-    return CurrentTheme('light', AppTheme.lightThemeData);
-  }
-
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -74,6 +88,7 @@ class _RootScreenState extends State<RootScreen>
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
+
     final carouselCards = <Widget>[
       _CarouselCard(
         demo: caseStudyDemos()[0],
@@ -118,7 +133,111 @@ class _RootScreenState extends State<RootScreen>
     ];
 
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: AppColors.grey50,
+      drawer: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topRight: const Radius.circular(Sizes.RADIUS_60),
+          bottomRight: const Radius.circular(Sizes.RADIUS_60),
+        ),
+        child: Drawer(
+          child: Container(
+            decoration: BoxDecoration(
+              color: AppColors.white,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: const Radius.circular(Sizes.RADIUS_60),
+                  ),
+                  child: DrawerHeader(
+                    margin: const EdgeInsets.all(Sizes.MARGIN_0),
+                    padding: const EdgeInsets.only(
+                      left: Sizes.PADDING_24,
+                      top: Sizes.PADDING_8,
+                    ),
+                    child: Container(
+                      height: assignHeight(context: context, fraction: 0.3),
+                      child: _buildDrawerHeader(),
+                    ),
+                    decoration: BoxDecoration(
+                      color: AppColors.primaryColor,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: Sizes.PADDING_8),
+                  child: Column(
+                    children: _buildMenuList(menuList),
+                  ),
+                ),
+                Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(left: Sizes.PADDING_24),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            StringConst.MADE_IN_GHANA,
+                            style: GoogleFonts.lato(
+                              fontSize: Sizes.TEXT_SIZE_10,
+                              color: AppColors.black,
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                          SpaceW4(),
+                          ClipRRect(
+                            borderRadius:
+                                BorderRadius.all(const Radius.circular(20)),
+                            child: Image.asset(
+                              ImagePath.GHANA_FLAG,
+                              width: Sizes.WIDTH_16,
+                              height: Sizes.HEIGHT_16,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          SpaceW4(),
+                          Text(
+                            StringConst.WITH_LOVE,
+                            style: GoogleFonts.lato(
+                              fontSize: Sizes.TEXT_SIZE_10,
+                              color: AppColors.black,
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                          SpaceW4(),
+                          Icon(
+                            FontAwesomeIcons.solidHeart,
+                            color: AppColors.red,
+                            size: Sizes.ICON_SIZE_10,
+                          ),
+                        ],
+                      ),
+                      SpaceH4(),
+                      Text(
+                        StringConst.BUILT_BY,
+                        style: GoogleFonts.lato(
+                          fontSize: Sizes.TEXT_SIZE_11,
+                          color: AppColors.black,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SpaceH24(),
+              ],
+            ),
+          ),
+        ),
+      ),
       body: Stack(
         children: [
           ListView(
@@ -131,9 +250,7 @@ class _RootScreenState extends State<RootScreen>
                 child: Row(
                   children: [
                     InkWell(
-                      onTap: () {
-                        //open drawer
-                      },
+                      onTap: () => scaffoldKey.currentState.openDrawer(),
                       child: Icon(
                         Icons.menu,
                         color: AppColors.primaryColor,
@@ -189,6 +306,87 @@ class _RootScreenState extends State<RootScreen>
       );
     }
     return animatedCategoryList;
+  }
+
+  Widget _buildDrawerHeader() {
+    ThemeData theme = Theme.of(context);
+    return Column(
+      children: [
+        Container(
+          width: assignWidth(context: context, fraction: 1),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.all(
+                  const Radius.circular(Sizes.RADIUS_60),
+                ),
+                child: Image.asset(
+                  ImagePath.DAVID_LEGEND,
+                  width: Sizes.WIDTH_60,
+                  height: Sizes.HEIGHT_60,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              SpaceH8(),
+              Text(
+                StringConst.DAVID_LEGEND,
+                style: theme.textTheme.headline6.copyWith(
+                  color: AppColors.white,
+                ),
+              ),
+              Text(
+                StringConst.DAVID_LEGEND_USERNAME,
+                style: theme.textTheme.caption.copyWith(
+                  color: AppColors.white,
+                ),
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+
+  List<Widget> _buildMenuList(List<Menu.MenuItem> menuItemList) {
+    ThemeData theme = Theme.of(context);
+    List<Widget> menuList = [];
+
+    for (int index = 0; index < menuItemList.length; index++) {
+      menuList.add(
+        ClipRRect(
+          borderRadius: BorderRadius.all(
+            const Radius.circular(Sizes.RADIUS_60),
+          ),
+          child: Container(
+            width: assignWidth(context: context, fraction: 0.65),
+            child: ListTile(
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: Sizes.PADDING_16,
+              ),
+              leading: Icon(
+                menuItemList[index].iconData,
+                color: AppColors.purple10,
+              ),
+              title: Text(
+                menuItemList[index].title,
+                style: theme.textTheme.subtitle2.copyWith(
+                  color: AppColors.black,
+                ),
+              ),
+              shape: RoundedRectangleBorder(
+                side: BorderSide(width: 4),
+                borderRadius: BorderRadius.all(
+                  const Radius.circular(Sizes.RADIUS_80),
+                ),
+              ),
+              onTap: menuItemList[index].onTap,
+            ),
+          ),
+        ),
+      );
+    }
+    return menuList;
   }
 }
 
