@@ -30,7 +30,7 @@ class RoamAppTheme {
     secondary: RoamAppColors.accentColor,
     secondaryVariant: RoamAppColors.accentColor,
     background: Colors.white,
-    surface: Color(0xFFFAFBFB),
+    surface: Colors.white,
     onBackground: RoamAppColors.white100,
     error: _lightFillColor,
     onError: _lightFillColor,

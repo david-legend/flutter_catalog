@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:fluttercatalog/presentation/case_studies/roam/widgets/empty.dart';
+import 'package:fluttercatalog/presentation/case_studies/roam/widgets/image_clipper.dart';
 import 'package:fluttercatalog/presentation/case_studies/roam/widgets/spaces.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';

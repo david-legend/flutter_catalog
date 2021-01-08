@@ -27,7 +27,7 @@ class ThemeBloc {
     return CurrentTheme('initial', AppTheme.lightThemeData);
   }
 
-  dispose() {
+  void dispose() {
     selectedTheme.close();
   }
 }

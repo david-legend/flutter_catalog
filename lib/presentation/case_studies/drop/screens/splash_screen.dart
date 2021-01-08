@@ -26,7 +26,7 @@ class _DropSplashScreenState extends State<DropSplashScreen> {
 
   void run() {
     Future.delayed(Duration(milliseconds: 1000), () {
-      ExtendedNavigator.root.popAndPush(
+      ExtendedNavigator.root.push(
         Routes.authScreen,
       );
     });

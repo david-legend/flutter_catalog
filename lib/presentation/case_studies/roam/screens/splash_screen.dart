@@ -30,7 +30,7 @@ class _RoamSplashScreenState extends State<RoamSplashScreen> {
 
   void run() {
     Future.delayed(Duration(milliseconds: 1500), () {
-      ExtendedNavigator.root.popAndPush(Routes.onBoardingScreen);
+      ExtendedNavigator.root.push(Routes.onBoardingScreen);
     });
   }
 
