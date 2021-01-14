@@ -46,10 +46,10 @@ class Data {
       title: StringConst.FOODYBITE,
       imagePath: ImagePath.FOODYBITE_COVER,
       isOnGithub: true,
-      isOnPlayStore: false,
+      isOnPlayStore: true,
       isOnTheWeb: false,
       gitHubLink: StringConst.FOODYBITE_GITHUB_LINK,
-      playStoreLink: "",
+      playStoreLink: StringConst.FOODYBITE_PLAYSTORE_LINK,
       webLink: "",
     ),
     ProjectCardItem(

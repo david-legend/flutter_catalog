@@ -47,8 +47,14 @@ dev_dependencies:
     sdk: flutter
 
   build_runner:
+  flutter_launcher_icons: "^0.8.1"
   functional_widget: ^0.8.0
   auto_route_generator: ^0.6.9
+
+flutter_icons:
+  image_path: "assets/images/app_icon.png"
+  android: true
+  ios: true
 
 builders:
   functional_widget: ^0.8.0

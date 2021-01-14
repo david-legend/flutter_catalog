@@ -20,6 +20,8 @@ class StringConst {
       "https://www.instagram.com/david_legend_47/";
 
   static const String FOODYBITE = "FoodyBite";
+  static const String FOODYBITE_PLAYSTORE_LINK =
+      "https://play.google.com/store/apps/details?id=com.davidcobbina.potbelly";
   static const String FOODYBITE_GITHUB_LINK =
       "https://github.com/david-legend/foodybite";
   static const String FOODYBITE_WEB_LINK = "";
