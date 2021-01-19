@@ -29,11 +29,14 @@ class StringConst {
   static const String LOGIN_CATALOG = "Login Catalog";
   static const String LOGIN_CATALOG_GITHUB_LINK =
       "https://github.com/david-legend/login_catalog";
-  static const String LOGIN_CATALOG_WEB_LINK = "";
+  static const String LOGIN_CATALOG_PLAY_STORE_LINK =
+      "https://play.google.com/store/apps/details?id=dev.davidcobbina.logincatalog";
 
   static const String FLUTTER_CATALOG = "Flutter Catalog";
   static const String FLUTTER_CATALOG_GITHUB_LINK =
       "https://github.com/david-legend/flutter_catalog";
+  static const String FLUTTER_CATALOG_PLAY_STORE_LINK =
+      "https://play.google.com/store/apps/details?id=dev.davidcobbina.fluttercatalog";
   static const String FLUTTER_CATALOG_WEB_LINK = "";
 
   static const String AERIUM = "Aerium";
@@ -250,7 +253,8 @@ class DropStringConst {
   //strings
   static const String APP_NAME = "Drop";
   static const String GITHUB_LINK = "https://github.com/david-legend/drop";
-//  static const String PLAYSTORE_LINK = "";
+  static const String PLAYSTORE_LINK =
+      "https://play.google.com/store/apps/details?id=com.davidcobbina.drop";
 
   //Verification Screen
   static const String VERIFICATION_CODE = "Verification Code";
@@ -421,6 +425,8 @@ class RoamStringConst {
   //strings
   static const String APP_NAME = "Roam";
   static const String GITHUB_LINK = "https://github.com/david-legend/roam";
+  static const String PLAY_STORE_LINK =
+      "https://play.google.com/store/apps/details?id=com.davidcobbina.roam";
 
   //OnBoarding
   static const String ONBOARDING_TITLE_1 =
