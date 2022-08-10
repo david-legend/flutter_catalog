@@ -11,7 +11,7 @@ class ContainerHandle extends StatelessWidget {
   });
 
   final double height;
-  final double width;
+  final double? width;
   final Color color;
   final BorderRadiusGeometry borderRadius;
 

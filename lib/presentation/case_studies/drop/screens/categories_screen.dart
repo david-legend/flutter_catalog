@@ -8,6 +8,7 @@ import 'package:fluttercatalog/presentation/case_studies/drop/widgets/spaces.dar
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
 class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -43,16 +44,12 @@ class CategoriesScreen extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return CategoryCard(
                     title: DropData.categoryItems[index].title,
-                    subtitle: DropData.categoryItems[index].subtitle,
-                    subtitleColor: DropData.categoryItems[index].subtitleColor,
+                    subtitle: DropData.categoryItems[index].subtitle!,
+                    subtitleColor: DropData.categoryItems[index].subtitleColor!,
                     imagePath: DropData.categoryItems[index].imagePath,
                     onTap: () {
-                      ExtendedNavigator.root.push(
-                        Routes.categoryItemScreen,
-                        arguments: CategoryItemScreenArguments(
-                          category: DropData.categoryItems[index].title,
-                        ),
-                      );
+                      AutoRouter.of(context).push(CategoryItemScreenRoute(category: DropData.categoryItems[index].title));
+
                     },
                   );
                 },

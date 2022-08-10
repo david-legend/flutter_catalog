@@ -4,17 +4,16 @@ import 'package:fluttercatalog/values/values.dart';
 import 'empty.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  final TextEditingController controller;
-  final TextStyle textFormFieldStyle;
-  final TextStyle fieldTitleTextStyle;
-  final TextStyle hintTextStyle;
+  final TextStyle? textFormFieldStyle;
+  final TextStyle? fieldTitleTextStyle;
+  final TextStyle? hintTextStyle;
   final BorderStyle borderStyle;
   final double borderRadius;
   final double borderWidth;
   final double contentPaddingHorizontal;
   final double contentPaddingVertical;
-  final String prefixIconImagePath;
-  final String hintText;
+  final String? prefixIconImagePath;
+  final String? hintText;
   final Color prefixIconColor;
   final Color borderColor;
   final Color focusedBorderColor;
@@ -24,14 +23,14 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscured;
   final bool hasPrefixIcon;
   final bool hasSuffixIcon;
-  final Widget suffixIcon;
+  final Widget? suffixIcon;
   final int maxLines;
   final bool hasTitle;
-  final InputBorder enabledBorder;
-  final InputBorder focusedBorder;
-  final InputBorder border;
+  final InputBorder? enabledBorder;
+  final InputBorder? focusedBorder;
+  final InputBorder? border;
 
-  final String fieldTitle;
+  final String? fieldTitle;
 
   CustomTextFormField({
     this.hasPrefixIcon = false,
@@ -59,18 +58,22 @@ class CustomTextFormField extends StatelessWidget {
     this.hasTitle = false,
     this.suffixIcon,
     this.hasSuffixIcon = false,
-    this.controller,
     this.fieldTitle,
-  });
+  })  : assert((hasSuffixIcon == false && suffixIcon == null) ||
+      (hasSuffixIcon == true && suffixIcon != null)),
+        assert((hasPrefixIcon == false && prefixIconImagePath == null) ||
+            (hasPrefixIcon == true && prefixIconImagePath != null)),
+        assert((hasTitle == false && fieldTitle == null) ||
+            (hasTitle == true && fieldTitle != null));
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    TextStyle titleTextStyle = theme.textTheme.subtitle1;
-    TextStyle formTextStyle = theme.textTheme.subtitle1.copyWith(
+    TextStyle? titleTextStyle = theme.textTheme.titleLarge;
+    TextStyle? formTextStyle = theme.textTheme.titleLarge?.copyWith(
       color: DropAppColors.secondaryColor,
     );
-    TextStyle formHintTextStyle = theme.textTheme.bodyText2.copyWith(
+    TextStyle? formHintTextStyle = theme.textTheme.bodyMedium?.copyWith(
       color: DropAppColors.grey,
     );
     return Container(
@@ -79,13 +82,12 @@ class CustomTextFormField extends StatelessWidget {
         children: [
           hasTitle
               ? formFieldTitle(
-                  fieldTitle: fieldTitle,
-                  textStyle: fieldTitleTextStyle ?? titleTextStyle)
+              fieldTitle: fieldTitle!,
+              textStyle: fieldTitleTextStyle ?? titleTextStyle)
               : Empty(),
           TextFormField(
             style: textFormFieldStyle ?? formTextStyle,
             maxLines: maxLines,
-            controller: controller,
             decoration: InputDecoration(
               border: border ??
                   OutlineInputBorder(
@@ -117,9 +119,9 @@ class CustomTextFormField extends StatelessWidget {
               suffixIcon: hasSuffixIcon ? suffixIcon : null,
               prefixIcon: hasPrefixIcon
                   ? ImageIcon(
-                      AssetImage(prefixIconImagePath),
-                      color: prefixIconColor,
-                    )
+                AssetImage(prefixIconImagePath!),
+                color: prefixIconColor,
+              )
                   : null,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: contentPaddingHorizontal,
@@ -137,7 +139,7 @@ class CustomTextFormField extends StatelessWidget {
     );
   }
 
-  Widget formFieldTitle({@required String fieldTitle, TextStyle textStyle}) {
+  Widget formFieldTitle({required String fieldTitle, TextStyle? textStyle}) {
     return Container(
       margin: EdgeInsets.only(bottom: Sizes.MARGIN_8),
       child: Text(

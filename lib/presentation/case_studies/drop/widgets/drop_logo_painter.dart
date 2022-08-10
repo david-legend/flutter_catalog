@@ -9,27 +9,14 @@ class DropLogoPainter extends CustomPainter {
     double width = size.width;
     double height = size.height;
 
-//    canvas.drawRect(
-//      rect,
-//      Paint()..color = DropAppColors.primaryColor,
-//    );
+
 
     var paint1 = Paint()..color = DropAppColors.accentDarkGreenColor;
 
     drawMultiColoredSquare(canvas, size);
     drawTearDrop(canvas, size);
 
-//    drawLetterD(canvas, size);
-//    canvas.drawRRect(
-//      RRect.fromRectAndCorners(
-//        Rect.fromLTWH(0, 0, width, height),
-//        topLeft: Radius.circular(20.0),
-//        bottomLeft: Radius.circular(20.0),
-//        bottomRight: Radius.circular(80.0),
-//        topRight: Radius.circular(80.0),
-//      ),
-//      paint1,
-//    );
+
   }
 
   void drawMultiColoredSquare(Canvas canvas, Size size) {
@@ -82,7 +69,7 @@ class DropLogoPainter extends CustomPainter {
         secondEndpoint.dx, secondEndpoint.dy);
 
     var thirdEndpoint =
-        Offset((size.width * 0.5) + (radius / 2), size.height * 0.4);
+    Offset((size.width * 0.5) + (radius / 2), size.height * 0.4);
     var thirdControlPoint = Offset(size.width * 0.75, size.height * 0.60);
 
     path.quadraticBezierTo(thirdControlPoint.dx, thirdControlPoint.dy,

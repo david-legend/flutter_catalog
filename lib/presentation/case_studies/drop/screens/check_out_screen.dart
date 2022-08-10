@@ -7,7 +7,6 @@ import 'package:fluttercatalog/presentation/case_studies/drop/widgets/section_he
 import 'package:fluttercatalog/presentation/case_studies/drop/widgets/spaces.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
-
 class CheckOutScreen extends StatefulWidget {
   @override
   _CheckOutScreenState createState() => _CheckOutScreenState();
@@ -79,19 +78,20 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                   onDismissed: (direction) {
                     setState(() {
                       int quantity =
-                          int.parse(DropData.checkOutItems[index].quantity);
+                      int.parse(DropData.checkOutItems[index].quantity);
                       totalPrice -=
                           double.parse(DropData.checkOutItems[index].price) *
                               quantity;
                       DropData.checkOutItems.removeAt(index);
                     });
 
+
                     Scaffold.of(context).showSnackBar(
                       SnackBar(
                         backgroundColor: DropAppColors.primaryColor,
                         content: Text(
                           "$item ${DropStringConst.REMOVED}",
-                          style: theme.textTheme.subtitle1.copyWith(
+                          style: theme.textTheme.titleLarge?.copyWith(
                             color: DropAppColors.accentOrangeColor,
                           ),
                         ),
@@ -147,7 +147,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 children: [
                   Text(
                     DropStringConst.TOTAL,
-                    style: theme.textTheme.subtitle1.copyWith(
+                    style: theme.textTheme.titleLarge?.copyWith(
                       color: DropAppColors.secondaryColor2,
                       fontSize: Sizes.TEXT_SIZE_18,
                     ),
@@ -155,7 +155,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                   Spacer(),
                   Text(
                     "$totalPrice",
-                    style: theme.textTheme.headline6.copyWith(
+                    style: theme.textTheme.headlineSmall?.copyWith(
                       fontSize: Sizes.TEXT_SIZE_24,
                     ),
                   ),
@@ -170,7 +170,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 child: CustomButton(
                   onPressed: () {},
                   title: DropStringConst.CHECK_OUT,
-                  textStyle: theme.textTheme.subtitle1.copyWith(
+                  textStyle: theme.textTheme.titleLarge?.copyWith(
                     color: DropAppColors.white,
                   ),
                   height: Sizes.HEIGHT_60,

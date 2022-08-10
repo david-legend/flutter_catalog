@@ -13,13 +13,13 @@ import 'package:fluttercatalog/values/values.dart';
 /// The selected tab bubble is applied padding by [padding] when [tabBarIndicatorSize] is label.
 
 class CustomBubbleTabIndicator extends Decoration {
-  final double indicatorHeight;
-  final Color indicatorColor;
-  final Color indicatorBorderColor;
-  final double indicatorRadius;
-  final EdgeInsetsGeometry padding;
-  final EdgeInsetsGeometry insets;
-  final TabBarIndicatorSize tabBarIndicatorSize;
+  final double? indicatorHeight;
+  final Color? indicatorColor;
+  final Color? indicatorBorderColor;
+  final double? indicatorRadius;
+  final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? insets;
+  final TabBarIndicatorSize? tabBarIndicatorSize;
 
   const CustomBubbleTabIndicator({
     this.indicatorHeight: 20.0,
@@ -36,7 +36,7 @@ class CustomBubbleTabIndicator extends Decoration {
         assert(insets != null);
 
   @override
-  Decoration lerpFrom(Decoration a, double t) {
+  Decoration? lerpFrom(Decoration? a, double t) {
     if (a is CustomBubbleTabIndicator) {
       return new CustomBubbleTabIndicator(
         padding: EdgeInsetsGeometry.lerp(a.padding, padding, t),
@@ -47,7 +47,7 @@ class CustomBubbleTabIndicator extends Decoration {
   }
 
   @override
-  Decoration lerpTo(Decoration b, double t) {
+  Decoration? lerpTo(Decoration? b, double t) {
     if (b is CustomBubbleTabIndicator) {
       return new CustomBubbleTabIndicator(
         padding: EdgeInsetsGeometry.lerp(padding, b.padding, t),
@@ -58,43 +58,43 @@ class CustomBubbleTabIndicator extends Decoration {
   }
 
   @override
-  _BubblePainter createBoxPainter([VoidCallback onChanged]) {
-    return new _BubblePainter(this, onChanged);
+  _BubblePainter createBoxPainter([VoidCallback? onChanged]) {
+    return new _BubblePainter(decoration: this, onChanged: onChanged);
   }
 }
 
 class _BubblePainter extends BoxPainter {
-  _BubblePainter(this.decoration, VoidCallback onChanged)
-      : assert(decoration != null),
+  _BubblePainter({required this.decoration, VoidCallback? onChanged})
+      :
         super(onChanged);
 
   final CustomBubbleTabIndicator decoration;
 
-  double get indicatorHeight => decoration.indicatorHeight;
+  double? get indicatorHeight => decoration.indicatorHeight;
 
-  Color get indicatorColor => decoration.indicatorColor;
+  Color? get indicatorColor => decoration.indicatorColor;
 
-  Color get indicatorBorderColor => decoration.indicatorBorderColor;
+  Color? get indicatorBorderColor => decoration.indicatorBorderColor;
 
-  double get indicatorRadius => decoration.indicatorRadius;
+  double? get indicatorRadius => decoration.indicatorRadius;
 
-  EdgeInsetsGeometry get padding => decoration.padding;
+  EdgeInsetsGeometry? get padding => decoration.padding;
 
-  EdgeInsetsGeometry get insets => decoration.insets;
+  EdgeInsetsGeometry? get insets => decoration.insets;
 
-  TabBarIndicatorSize get tabBarIndicatorSize => decoration.tabBarIndicatorSize;
+  TabBarIndicatorSize? get tabBarIndicatorSize => decoration.tabBarIndicatorSize;
 
   Rect _indicatorRectFor(
-    Rect rect,
-    TextDirection textDirection,
-  ) {
+      Rect rect,
+      TextDirection textDirection,
+      ) {
     assert(rect != null);
     assert(textDirection != null);
 
-    Rect indicator = padding.resolve(textDirection).inflateRect(rect);
+    Rect indicator = padding!.resolve(textDirection).inflateRect(rect);
 
     if (tabBarIndicatorSize == TabBarIndicatorSize.tab) {
-      indicator = insets.resolve(textDirection).deflateRect(rect);
+      indicator = insets!.resolve(textDirection).deflateRect(rect);
     }
 
     return new Rect.fromLTWH(
@@ -107,20 +107,19 @@ class _BubblePainter extends BoxPainter {
 
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
-    assert(configuration != null);
     assert(configuration.size != null);
 
-    final TextDirection textDirection = configuration.textDirection;
+    final TextDirection textDirection = configuration.textDirection!;
     final Rect rect1 = Offset(
-            offset.dx, (configuration.size.height / 2) - indicatorHeight / 2) &
-        Size(configuration.size.width + 4, indicatorHeight + 4);
+        offset.dx, (configuration.size!.height / 2) - indicatorHeight! / 2) &
+    Size(configuration.size!.width + 4, indicatorHeight! + 4);
 
     final Rect rect2 = Offset(offset.dx + 2,
-            ((configuration.size.height / 2) - indicatorHeight / 2) + 2) &
-        Size(configuration.size.width, indicatorHeight);
+        ((configuration.size!.height / 2) - indicatorHeight! / 2) + 2) &
+    Size(configuration.size!.width, indicatorHeight!);
 
     final Paint paint = Paint();
-    paint.color = indicatorColor;
+    paint.color = indicatorColor!;
     paint.style = PaintingStyle.fill;
 
     canvas.drawRRect(
@@ -129,12 +128,12 @@ class _BubblePainter extends BoxPainter {
           rect1,
           textDirection,
         ),
-        topLeft: Radius.circular(indicatorRadius),
-        bottomLeft: Radius.circular(indicatorRadius),
-        bottomRight: Radius.circular(indicatorRadius),
-        topRight: Radius.circular(indicatorRadius),
+        topLeft: Radius.circular(indicatorRadius!),
+        bottomLeft: Radius.circular(indicatorRadius!),
+        bottomRight: Radius.circular(indicatorRadius!),
+        topRight: Radius.circular(indicatorRadius!),
       ),
-      Paint()..color = indicatorBorderColor,
+      Paint()..color = indicatorBorderColor!,
     );
 
     canvas.drawRRect(
@@ -143,7 +142,7 @@ class _BubblePainter extends BoxPainter {
           rect2,
           textDirection,
         ),
-        Radius.circular(indicatorRadius),
+        Radius.circular(indicatorRadius!),
       ),
       paint,
     );

@@ -7,6 +7,8 @@ import 'package:fluttercatalog/presentation/case_studies/drop/widgets/spaces.dar
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
+
 class CategoryItemScreen extends StatelessWidget {
   final String category;
 
@@ -14,7 +16,7 @@ class CategoryItemScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<ProductItem> products = DropData.productCategories[category];
+    List<ProductItem> products = DropData.productCategories[category]!;
     return Scaffold(
       body: Container(
         child: ListView(
@@ -49,11 +51,8 @@ class CategoryItemScreen extends StatelessWidget {
                   price: products[index].price,
                   imagePath: products[index].imagePath,
                   onTap: () {
-                    ExtendedNavigator.root.push(
-                      Routes.productScreen,
-                      arguments: ProductScreenArguments(
-                        product: products[index],
-                      ),
+                    AutoRouter.of(context).push(
+                      ProductScreenRoute(product: products[index]),
                     );
                   },
                 );
@@ -65,3 +64,4 @@ class CategoryItemScreen extends StatelessWidget {
     );
   }
 }
+

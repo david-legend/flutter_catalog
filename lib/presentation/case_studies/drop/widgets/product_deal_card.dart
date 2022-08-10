@@ -3,10 +3,10 @@ import 'package:fluttercatalog/values/values.dart';
 
 class ProductDealItem {
   ProductDealItem({
-    @required this.title,
-    @required this.subtitle,
-    @required this.price,
-    @required this.imagePath,
+    required this.title,
+    required this.subtitle,
+    required this.price,
+    required this.imagePath,
   });
 
   final String title;
@@ -17,10 +17,10 @@ class ProductDealItem {
 
 class ProductDealCard extends StatelessWidget {
   ProductDealCard({
-    this.title,
-    this.subtitle,
-    this.price,
-    this.imagePath,
+    required this.title,
+    required this.subtitle,
+    required this.price,
+    required this.imagePath,
     this.width = Sizes.WIDTH_200,
     this.height = Sizes.HEIGHT_200,
     this.backgroundColor = DropAppColors.secondaryColor,
@@ -59,13 +59,13 @@ class ProductDealCard extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: theme.textTheme.headline6.copyWith(
+                style: theme.textTheme.headlineSmall?.copyWith(
                   fontSize: Sizes.TEXT_SIZE_28,
                 ),
               ),
               Text(
                 subtitle,
-                style: theme.textTheme.headline6.copyWith(
+                style: theme.textTheme.headlineSmall?.copyWith(
                   color: DropAppColors.secondaryColor2,
                   fontSize: Sizes.TEXT_SIZE_28,
                 ),
@@ -73,7 +73,7 @@ class ProductDealCard extends StatelessWidget {
               RichText(
                 text: TextSpan(
                   text: price[0],
-                  style: theme.textTheme.headline6.copyWith(
+                  style: theme.textTheme.headlineSmall?.copyWith(
                     color: DropAppColors.accentPurpleColor,
                     fontSize: Sizes.TEXT_SIZE_28,
                   ),
@@ -89,8 +89,8 @@ class ProductDealCard extends StatelessWidget {
   }
 
   List<TextSpan> _buildPrice({
-    @required BuildContext context,
-    @required String price,
+    required BuildContext context,
+    required String price,
   }) {
     List<TextSpan> texts = [];
     List<Color> colors = [
@@ -117,14 +117,14 @@ class ProductDealCard extends StatelessWidget {
   }
 
   TextSpan createText({
-    @required BuildContext context,
-    @required String text,
-    Color textColor,
+    required BuildContext context,
+    required String text,
+    required Color textColor,
   }) {
     ThemeData theme = Theme.of(context);
     return TextSpan(
       text: text,
-      style: theme.textTheme.headline6.copyWith(
+      style: theme.textTheme.headlineSmall?.copyWith(
         color: textColor,
         fontSize: Sizes.TEXT_SIZE_28,
       ),

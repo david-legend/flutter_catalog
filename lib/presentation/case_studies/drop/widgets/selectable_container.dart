@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
 class SelectorModel {
   SelectorModel({
-    @required this.title,
+    required this.title,
     this.isSelected = false,
     this.imagePath,
-    this.backgroundColor,
+    required this.backgroundColor,
   });
 
   bool isSelected;
   final String title;
-  final String imagePath;
+  final String? imagePath;
   final Color backgroundColor;
 }
 
@@ -25,7 +26,7 @@ class SelectableContainer extends StatelessWidget {
     ),
     this.border,
     this.backgroundColor,
-    this.model,
+    required this.model,
     this.onTap,
     this.child,
   });
@@ -34,11 +35,11 @@ class SelectableContainer extends StatelessWidget {
   final double height;
   final BorderRadiusGeometry borderRadius;
   final EdgeInsetsGeometry padding;
-  final Color backgroundColor;
-  final Border border;
+  final Color? backgroundColor;
+  final Border? border;
   final SelectorModel model;
-  final GestureTapCallback onTap;
-  final Widget child;
+  final GestureTapCallback? onTap;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -59,9 +60,9 @@ class SelectableContainer extends StatelessWidget {
             Text(
               model.title,
               textAlign: TextAlign.center,
-              style: theme.textTheme.bodyText1.copyWith(
+              style: theme.textTheme.bodyLarge?.copyWith(
                 color:
-                    model.isSelected ? AppColors.white : AppColors.primaryColor,
+                model.isSelected ? DropAppColors.white : DropAppColors.primaryColor,
                 fontSize: Sizes.TEXT_SIZE_28,
               ),
             ),

@@ -220,6 +220,7 @@ class ProjectCard extends StatelessWidget {
       );
     } else {
       throw 'Could not launch $url';
+
     }
   }
 }

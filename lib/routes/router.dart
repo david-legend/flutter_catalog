@@ -1,4 +1,5 @@
-import 'package:auto_route/auto_route_annotations.dart';
+
+import 'package:auto_route/auto_route.dart';
 import 'package:fluttercatalog/presentation/case_studies/drop/screens/auth_screen.dart';
 import 'package:fluttercatalog/presentation/case_studies/drop/screens/categories_screen.dart';
 import 'package:fluttercatalog/presentation/case_studies/drop/screens/category_item_screen.dart';

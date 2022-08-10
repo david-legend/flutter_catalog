@@ -10,6 +10,7 @@ import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -39,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 DropAppBar(
                   leading: InkWell(
                     onTap: () {
-                      ExtendedNavigator.root.pop();
+                      AutoRouter.of(context).pop();
                     },
                     child: Icon(
                       FeatherIcons.x,
@@ -87,9 +88,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemBuilder: (BuildContext context, int index) {
                   return CategoryCard(
                     title: DropData.newArrivalItems[index].title,
-                    subtitle: DropData.newArrivalItems[index].subtitle,
-                    subtitleColor:
-                        DropData.newArrivalItems[index].subtitleColor,
+                    subtitle: DropData.newArrivalItems[index].subtitle!,
+                    subtitleColor: DropData.newArrivalItems[index].subtitleColor!,
                     imagePath: DropData.newArrivalItems[index].imagePath,
                   );
                 },
@@ -149,33 +149,33 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _openDrawer() {
-    scaffoldKey.currentState.openDrawer();
+    scaffoldKey.currentState?.openDrawer();
   }
 
   Widget _buildDrawerItem({
-    @required String title,
-    Color textColor,
-    String routeName,
+    required String title,
+    Color? textColor,
+    PageRouteInfo? route,
   }) {
     ThemeData theme = Theme.of(context);
     return InkWell(
       onTap: () {
-        if (routeName != null) {
-          if (routeName == Routes.homeScreen) {
-            ExtendedNavigator.root.pop();
+        if (route != null) {
+          if (route == HomeScreenRoute()) {
+            AutoRouter.of(context).pop();
           } else {
-            ExtendedNavigator.root.push(routeName);
+            AutoRouter.of(context).push(route);
           }
         }
       },
       child: Text(
         title,
-        style: theme.textTheme.headline4.copyWith(color: textColor),
+        style: theme.textTheme.headlineLarge?.copyWith(color: textColor),
       ),
     );
   }
 
-  List<Widget> _buildMenuList(List<MenuItem> menuList) {
+  List<Widget> _buildMenuList(List<DropMenuItem> menuList) {
     List<Widget> items = [];
 
     for (int index = 0; index < menuList.length; index++) {
@@ -183,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _buildDrawerItem(
           title: menuList[index].title,
           textColor: menuList[index].textColor,
-          routeName: menuList[index].routeName,
+          route: menuList[index].route,
         ),
       );
       items.add(Spacer());

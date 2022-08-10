@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
 class PillItem {
-  PillItem({@required this.title, this.color});
+  PillItem({required this.title, this.color});
 
   final String title;
-  final Color color;
+  final Color? color;
 }
 
 class Pill extends StatefulWidget {
   Pill({
-    @required this.title,
+    required this.title,
     this.titleStyle,
     this.selectedTitleStyle,
     this.padding = const EdgeInsets.symmetric(
@@ -29,11 +30,11 @@ class Pill extends StatefulWidget {
   });
 
   final String title;
-  final TextStyle titleStyle;
-  final TextStyle selectedTitleStyle;
-  final BorderRadiusGeometry borderRadius;
-  final EdgeInsetsGeometry padding;
-  final Border border;
+  final TextStyle? titleStyle;
+  final TextStyle? selectedTitleStyle;
+  final BorderRadiusGeometry? borderRadius;
+  final EdgeInsetsGeometry? padding;
+  final Border? border;
   final Color unselectedBackgroundColor;
   final Color selectedBackgroundColor;
   final bool isSelected;
@@ -43,7 +44,7 @@ class Pill extends StatefulWidget {
 }
 
 class _PillState extends State<Pill> {
-  bool isSelected;
+  late bool isSelected;
 
   @override
   void initState() {
@@ -54,10 +55,10 @@ class _PillState extends State<Pill> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    TextStyle defaultTitleStyle = theme.textTheme.subtitle1.copyWith(
+    TextStyle? defaultTitleStyle = theme.textTheme.titleLarge?.copyWith(
       color: DropAppColors.secondaryColor2,
     );
-    TextStyle defaultSelectedTitleStyle = theme.textTheme.subtitle1.copyWith(
+    TextStyle? defaultSelectedTitleStyle = theme.textTheme.titleLarge?.copyWith(
       color: DropAppColors.white,
     );
     return InkWell(
@@ -94,13 +95,13 @@ class _PillState extends State<Pill> {
       width: Sizes.WIDTH_2,
     );
     if (widget.border != null) {
-      return state ? noBorder : widget.border;
+      return state ? noBorder : widget.border!;
     }
     return state
         ? noBorder
         : Border.all(
-            color: DropAppColors.secondaryColor2,
-            width: Sizes.WIDTH_2,
-          );
+      color: DropAppColors.secondaryColor2,
+      width: Sizes.WIDTH_2,
+    );
   }
 }

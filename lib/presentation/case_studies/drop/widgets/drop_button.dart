@@ -11,36 +11,36 @@ const List<Color> buttonColors = [
 
 class DropButton extends StatelessWidget {
   DropButton({
-    this.title,
+    required this.title,
+    this.width,
     this.onTap,
     this.height = Sizes.HEIGHT_60,
-    this.width,
     this.colorWidth = Sizes.WIDTH_10,
     this.elevation = Sizes.ELEVATION_1,
     this.borderRadius = Sizes.RADIUS_24,
     this.color = DropAppColors.accentPrimaryColor,
     this.borderSide = Borders.defaultPrimaryBorder,
     this.textStyle,
-    this.icon,
     this.colors = buttonColors,
     this.borderRadiusGeometry,
-    this.hasIcon = false,
+    // this.icon,
+    // this.hasIcon = false,
   });
 
-  final GestureTapCallback onTap;
+  final GestureTapCallback? onTap;
   final double height;
-  final double width;
+  final double? width;
   final double colorWidth;
   final List<Color> colors;
   final double elevation;
   final double borderRadius;
-  final BorderRadiusGeometry borderRadiusGeometry;
+  final BorderRadius? borderRadiusGeometry;
   final String title;
   final Color color;
   final BorderSide borderSide;
-  final TextStyle textStyle;
-  final Widget icon;
-  final bool hasIcon;
+  final TextStyle? textStyle;
+  // final Widget icon;
+  // final bool hasIcon;
 
   @override
   Widget build(BuildContext context) {

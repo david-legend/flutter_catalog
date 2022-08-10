@@ -3,7 +3,6 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
 import 'package:fluttercatalog/presentation/catalog/widgets/spaces.dart';
-
 import 'menu_1.dart';
 
 class MenuScreen2 extends StatefulWidget {

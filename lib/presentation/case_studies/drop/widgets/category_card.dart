@@ -6,26 +6,26 @@ const double kPaddingHorizontal = Sizes.PADDING_16;
 
 class CategoryItem {
   CategoryItem({
-    @required this.title,
-    @required this.imagePath,
+    required this.title,
+    required this.imagePath,
     this.subtitle,
     this.subtitleColor,
   });
 
   final String title;
-  final String subtitle;
-  final Color subtitleColor;
   final String imagePath;
+  final String? subtitle;
+  final Color? subtitleColor;
 }
 
 class CategoryCard extends StatelessWidget {
   CategoryCard({
-    this.title,
+    required this.title,
+    required this.imagePath,
     this.subtitle = "0",
     this.width = Sizes.WIDTH_200,
     this.height = Sizes.HEIGHT_200,
     this.subtitleColor = DropAppColors.accentOrangeColor,
-    this.imagePath,
     this.backgroundColor = DropAppColors.secondaryColor,
     this.borderRadius = const BorderRadius.all(
       const Radius.circular(Sizes.RADIUS_30),
@@ -39,9 +39,9 @@ class CategoryCard extends StatelessWidget {
   final double height;
   final Color subtitleColor;
   final String imagePath;
-  final BorderRadiusGeometry borderRadius;
+  final BorderRadius? borderRadius;
   final Color backgroundColor;
-  final GestureTapCallback onTap;
+  final GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -74,13 +74,13 @@ class CategoryCard extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: theme.textTheme.subtitle1,
+                  style: theme.textTheme.titleLarge,
                 ),
                 SpaceW4(),
                 Text(
                   "($subtitle)",
                   style:
-                      theme.textTheme.subtitle2.copyWith(color: subtitleColor),
+                  theme.textTheme.titleMedium?.copyWith(color: subtitleColor),
                 ),
               ],
             )

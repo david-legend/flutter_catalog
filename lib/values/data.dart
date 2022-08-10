@@ -126,30 +126,29 @@ class DropData {
         title: DropStringConst.OFF_WHITE,
         color: DropAppColors.accentYellowColor),
   ];
-
-  static List<MenuItem> menuItems = [
-    MenuItem(
+  static List<DropMenuItem> menuItems = [
+    DropMenuItem(
       title: DropStringConst.HOME,
       textColor: DropAppColors.accentPurpleColor,
-      routeName: Routes.homeScreen,
+      route: HomeScreenRoute(),
     ),
-    MenuItem(
+    DropMenuItem(
       title: DropStringConst.CATEGORIES,
       textColor: DropAppColors.accentOrangeColor,
-      routeName: Routes.categoriesScreen,
+      route: CategoriesScreenRoute(),
     ),
-    MenuItem(
+    DropMenuItem(
       title: DropStringConst.NEW_IN,
       textColor: DropAppColors.accentPinkColor,
     ),
-    MenuItem(
+    DropMenuItem(
       title: DropStringConst.SALE,
       textColor: DropAppColors.accentYellowColor,
     ),
-    MenuItem(
+    DropMenuItem(
       title: DropStringConst.PROFILE,
       textColor: DropAppColors.accentDarkGreenColor,
-      routeName: Routes.profileScreen,
+      route: ProfileScreenRoute(),
     ),
   ];
 

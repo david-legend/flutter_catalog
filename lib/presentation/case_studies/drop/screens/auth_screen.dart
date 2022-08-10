@@ -10,20 +10,14 @@ import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
 const double kPadding = Sizes.PADDING_24;
 
 //TODO:: add borders bubbleTabIndicator
-class AuthScreen extends StatefulWidget {
-  @override
-  _AuthScreenState createState() => _AuthScreenState();
-}
-
-class _AuthScreenState extends State<AuthScreen> {
+class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    double logoSize = Sizes.WIDTH_100;
-    double widthOfScreen = assignWidth(context: context, fraction: 1);
     double heightOfScreen =
         assignHeight(context: context, fraction: 1) - Sizes.SAFE_AREA_MARGIN;
     return DefaultTabController(
@@ -42,7 +36,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     DropLogo(),
                     Text(
                       DropStringConst.APP_NAME.toUpperCase(),
-                      style: theme.textTheme.headline4,
+                      style: theme.textTheme.headlineLarge,
                     ),
                   ],
                 ),
@@ -64,11 +58,11 @@ class _AuthScreenState extends State<AuthScreen> {
                         indicatorSize: TabBarIndicatorSize.tab,
                         labelColor: DropAppColors.primaryText,
                         unselectedLabelColor: DropAppColors.accentPurpleColor,
-                        labelStyle: theme.textTheme.subtitle1.copyWith(
+                        labelStyle: theme.textTheme.titleLarge?.copyWith(
                           color: DropAppColors.primaryText,
                         ),
                         unselectedLabelStyle:
-                            theme.textTheme.subtitle1.copyWith(
+                        theme.textTheme.titleLarge?.copyWith(
                           color: DropAppColors.accentPurpleColor,
                         ),
                         indicator: CustomBubbleTabIndicator(
@@ -104,34 +98,10 @@ class _AuthScreenState extends State<AuthScreen> {
     );
   }
 
-  Widget _buildLogo(BuildContext context) {
-    ThemeData theme = Theme.of(context);
-    return Column(
-      children: [
-        Text(
-          "Logo Goes Here",
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.headline5,
-        ),
-        SpaceH16(),
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 75),
-          child: Center(
-            child: Placeholder(
-              fallbackWidth: 150,
-              fallbackHeight: 150,
-              strokeWidth: 1,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
   Widget _buildLogin(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    TextStyle hintTextStyle = theme.textTheme.subtitle1;
-    TextStyle formTextStyle = theme.textTheme.subtitle1;
+    TextStyle? hintTextStyle = theme.textTheme.titleLarge;
+    TextStyle? formTextStyle = theme.textTheme.titleLarge;
 
     return Container(
       padding: const EdgeInsets.only(left: kPadding),
@@ -162,12 +132,12 @@ class _AuthScreenState extends State<AuthScreen> {
           Spacer(),
           DropButton(
             onTap: () {
-              ExtendedNavigator.root.push(Routes.verificationScreen);
+              AutoRouter.of(context).push(VerificationScreenRoute());
             },
             height: Sizes.HEIGHT_60,
             borderRadiusGeometry: AppRadius.defaultButtonRadius,
             title: DropStringConst.LOG_IN,
-            textStyle: theme.textTheme.subtitle1.copyWith(
+            textStyle: theme.textTheme.titleLarge?.copyWith(
               color: DropAppColors.white,
             ),
           ),
@@ -179,7 +149,7 @@ class _AuthScreenState extends State<AuthScreen> {
             title: DropStringConst.LOG_IN_WITH_GOOGLE,
             color: DropAppColors.white,
             borderSide: Borders.defaultButtonBorder,
-            textStyle: theme.textTheme.subtitle1,
+            textStyle: theme.textTheme.titleLarge,
           ),
           SpaceH16(),
           CustomButton(
@@ -189,7 +159,7 @@ class _AuthScreenState extends State<AuthScreen> {
             title: DropStringConst.LOG_IN_WITH_FACEBOOK,
             color: DropAppColors.white,
             borderSide: Borders.defaultButtonBorder,
-            textStyle: theme.textTheme.subtitle1,
+            textStyle: theme.textTheme.titleLarge,
           ),
           Spacer(),
         ],
@@ -199,8 +169,8 @@ class _AuthScreenState extends State<AuthScreen> {
 
   Widget _buildSignUp(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    TextStyle hintTextStyle = theme.textTheme.subtitle1;
-    TextStyle formTextStyle = theme.textTheme.subtitle1;
+    TextStyle? hintTextStyle = theme.textTheme.titleLarge;
+    TextStyle? formTextStyle = theme.textTheme.titleLarge;
 
     return Container(
       padding: const EdgeInsets.only(left: kPadding),
@@ -243,12 +213,12 @@ class _AuthScreenState extends State<AuthScreen> {
           Spacer(),
           DropButton(
             onTap: () {
-              ExtendedNavigator.root.push(Routes.verificationScreen);
+              AutoRouter.of(context).push(VerificationScreenRoute());
             },
             height: Sizes.HEIGHT_60,
             borderRadiusGeometry: AppRadius.defaultButtonRadius,
             title: DropStringConst.SIGN_UP,
-            textStyle: theme.textTheme.subtitle1.copyWith(
+            textStyle: theme.textTheme.titleLarge?.copyWith(
               color: DropAppColors.white,
             ),
           ),
@@ -260,7 +230,7 @@ class _AuthScreenState extends State<AuthScreen> {
             title: DropStringConst.SIGN_UP_WITH_GOOGLE,
             color: DropAppColors.white,
             borderSide: Borders.defaultButtonBorder,
-            textStyle: theme.textTheme.subtitle1,
+            textStyle: theme.textTheme.titleLarge,
           ),
           SpaceH16(),
           CustomButton(
@@ -270,7 +240,7 @@ class _AuthScreenState extends State<AuthScreen> {
             title: DropStringConst.SIGN_UP_WITH_FACEBOOK,
             color: DropAppColors.white,
             borderSide: Borders.defaultButtonBorder,
-            textStyle: theme.textTheme.subtitle1,
+            textStyle: theme.textTheme.titleLarge,
           ),
           Spacer(),
         ],

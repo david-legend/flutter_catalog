@@ -17,7 +17,7 @@ class DropLogo extends StatelessWidget {
 
   final double width;
   final double height;
-  final BorderRadiusGeometry borderRadius;
+  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) {

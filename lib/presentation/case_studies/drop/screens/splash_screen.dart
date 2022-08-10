@@ -7,7 +7,7 @@ import 'package:fluttercatalog/themes/drop_app_theme.dart';
 import 'package:fluttercatalog/values/values.dart';
 
 class DropSplashScreen extends StatefulWidget {
-  DropSplashScreen({@required this.themeBloc});
+  DropSplashScreen({required this.themeBloc});
 
   final ThemeBloc themeBloc;
   @override
@@ -15,7 +15,7 @@ class DropSplashScreen extends StatefulWidget {
 }
 
 class _DropSplashScreenState extends State<DropSplashScreen> {
-  ThemeBloc themeBloc;
+  late ThemeBloc themeBloc;
   @override
   void initState() {
     super.initState();
@@ -25,9 +25,10 @@ class _DropSplashScreenState extends State<DropSplashScreen> {
   }
 
   void run() {
+
     Future.delayed(Duration(milliseconds: 1000), () {
-      ExtendedNavigator.root.push(
-        Routes.authScreen,
+      AutoRouter.of(context).push(
+        AuthScreenRoute(),
       );
     });
   }

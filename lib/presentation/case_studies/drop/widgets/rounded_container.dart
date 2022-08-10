@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
 class SocialItem {
-  SocialItem({@required this.iconData, this.backgroundColor});
+  SocialItem({required this.iconData, this.backgroundColor});
 
   final IconData iconData;
-  final Color backgroundColor;
+  final Color? backgroundColor;
 }
 
 class RoundedContainer extends StatelessWidget {
@@ -24,17 +25,17 @@ class RoundedContainer extends StatelessWidget {
     this.iconData,
     this.border,
     this.icon,
-  });
+  }) : assert((icon == null && iconData != null) || (icon != null && iconData == null));
 
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final Color backgroundColor;
   final Color iconColor;
   final BorderRadiusGeometry borderRadius;
   final double iconSize;
-  final IconData iconData;
-  final Border border;
-  final Widget icon;
+  final IconData? iconData;
+  final Border? border;
+  final Widget? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -43,8 +44,8 @@ class RoundedContainer extends StatelessWidget {
     double heightOfSocialContainer =
         height ?? assignHeight(context: context, fraction: 0.1);
     return Container(
-      width: width,
-      height: height,
+      width: widthOfSocialContainer,
+      height: heightOfSocialContainer,
       decoration: BoxDecoration(
         borderRadius: borderRadius,
         color: backgroundColor,
