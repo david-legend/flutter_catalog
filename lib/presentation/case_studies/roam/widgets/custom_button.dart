@@ -13,19 +13,17 @@ class CustomButton extends StatelessWidget {
     this.borderSide = Borders.defaultPrimaryBorder,
     this.textStyle,
     this.icon,
-    this.hasIcon = false,
   });
 
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final double height;
   final double elevation;
   final double borderRadius;
-  final String title;
+  final String? title;
   final Color color;
   final BorderSide borderSide;
-  final TextStyle textStyle;
-  final Widget icon;
-  final bool hasIcon;
+  final TextStyle? textStyle;
+  final Widget? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -41,17 +39,17 @@ class CustomButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          hasIcon ? icon : Container(),
-          hasIcon ? SpaceW8() : Container(),
+          icon != null ? icon! : Container(),
+          icon != null ? SpaceW8() : Container(),
           title != null
               ? Text(
-                  title,
-                  style: textStyle,
-                )
+            title!,
+            style: textStyle,
+          )
               : Container(
-                  width: 0,
-                  height: 0,
-                ),
+            width: 0,
+            height: 0,
+          ),
         ],
       ),
     );

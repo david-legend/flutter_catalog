@@ -4,14 +4,16 @@ import 'package:fluttercatalog/presentation/case_studies/roam/widgets/stacked_im
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
+
 class JourneyCardItem {
   JourneyCardItem({
-    @required this.title,
-    @required this.subtitle,
-    @required this.imagePath,
-    @required this.images,
-    this.rating,
-    this.collaborators,
+    required this.title,
+    required this.subtitle,
+    required this.imagePath,
+    required this.images,
+    this.rating = 0,
+    this.collaborators = 0,
   });
 
   final String title;
@@ -26,10 +28,9 @@ class JourneyCard extends StatelessWidget {
   JourneyCard({
     this.width,
     this.height,
-    this.imagePath,
-    this.title,
-    this.subtitle,
-    this.content,
+    required this.imagePath,
+    required this.title,
+    required this.subtitle,
     this.icon = Icons.location_pin,
     this.rating = 0,
     this.elevation = Sizes.ELEVATION_2,
@@ -39,21 +40,26 @@ class JourneyCard extends StatelessWidget {
         Sizes.RADIUS_8,
       ),
     ),
+    this.imageBorderRadius = const BorderRadius.all(
+      const Radius.circular(
+        Sizes.RADIUS_8,
+      ),
+    ),
     this.images = RoamData.profileStackedImage,
   });
 
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final String imagePath;
   final String title;
   final String subtitle;
-  final String content;
   final IconData icon;
   final double rating;
   final double elevation;
   final int collaborators;
   final List<String> images;
   final BorderRadiusGeometry borderRadius;
+  final BorderRadius imageBorderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +80,7 @@ class JourneyCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ClipRRect(
-                borderRadius: borderRadius,
+                borderRadius: imageBorderRadius,
                 child: Image.asset(
                   imagePath,
                   width: (width ?? widthOfCard) - (kPadding * 2),
@@ -87,7 +93,7 @@ class JourneyCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: theme.textTheme.headline6,
+                    style: theme.textTheme.headlineSmall,
                   ),
                   Spacer(),
                   StackedImages(
@@ -99,7 +105,7 @@ class JourneyCard extends StatelessWidget {
               SpaceH8(),
               Text(
                 subtitle,
-                style: theme.textTheme.bodyText2.copyWith(
+                style: theme.textTheme.bodyMedium?.copyWith(
                   color: RoamAppColors.grey200,
                 ),
               ),
@@ -108,7 +114,7 @@ class JourneyCard extends StatelessWidget {
                 children: [
                   Text(
                     "$rating",
-                    style: theme.textTheme.subtitle1.copyWith(
+                    style: theme.textTheme.titleLarge?.copyWith(
                       color: RoamAppColors.primaryText2,
                     ),
                   ),

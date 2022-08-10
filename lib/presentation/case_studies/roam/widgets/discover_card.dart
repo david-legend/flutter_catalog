@@ -8,7 +8,7 @@ class DiscoverCard extends StatelessWidget {
     this.icon,
     this.color,
     this.iconSize,
-    this.title,
+    required this.title,
     this.hasIcon = false,
     this.titleStyle,
     this.backgroundColor,
@@ -19,20 +19,21 @@ class DiscoverCard extends StatelessWidget {
     ),
     this.onTap,
     this.child,
-  });
+  }) : assert((hasIcon == false && child != null) ||
+      ((hasIcon == true && icon != null)));
 
-  final IconData icon;
+  final IconData? icon;
   final bool hasIcon;
-  final Color color;
-  final double iconSize;
+  final Color? color;
+  final double? iconSize;
   final String title;
-  final TextStyle titleStyle;
-  final Color backgroundColor;
-  final double height;
-  final double width;
+  final TextStyle? titleStyle;
+  final Color? backgroundColor;
+  final double? height;
+  final double? width;
   final BorderRadiusGeometry borderRadius;
-  final GestureTapCallback onTap;
-  final Widget child;
+  final GestureTapCallback? onTap;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -45,16 +46,16 @@ class DiscoverCard extends StatelessWidget {
         width: width ?? widthOfCard,
         height: height ?? heightOfCard,
         decoration:
-            BoxDecoration(color: backgroundColor, borderRadius: borderRadius),
+        BoxDecoration(color: backgroundColor, borderRadius: borderRadius),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            hasIcon ? Icon(icon, size: iconSize, color: color) : child,
+            hasIcon ? Icon(icon, size: iconSize, color: color) : child!,
             SpaceH8(),
             Text(
               title,
               style: titleStyle ??
-                  theme.textTheme.subtitle2.copyWith(
+                  theme.textTheme.titleMedium?.copyWith(
                     color: color,
                   ),
             ),

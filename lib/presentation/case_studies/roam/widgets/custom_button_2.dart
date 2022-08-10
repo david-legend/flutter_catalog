@@ -11,17 +11,16 @@ class CustomButton2 extends StatelessWidget {
     this.iconColor = RoamAppColors.white,
     this.iconSize,
     this.borderSide = Borders.defaultPrimaryBorder,
-    this.icon,
+    required this.icon,
   });
 
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final double height;
-//  final double width;
   final double elevation;
   final double borderRadius;
   final Color color;
-  final Color iconColor;
-  final double iconSize;
+  final Color? iconColor;
+  final double? iconSize;
   final BorderSide borderSide;
   final IconData icon;
 

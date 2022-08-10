@@ -12,96 +12,13 @@ import 'package:fluttercatalog/values/values.dart';
 
 const double kPaddingHorizontal = Sizes.PADDING_24;
 
-class RoamProfileScreen extends StatefulWidget {
+class ProfileScreen extends StatefulWidget {
   @override
-  _RoamProfileScreenState createState() => _RoamProfileScreenState();
+  _ProfileScreenState createState() => _ProfileScreenState();
 }
 
-class _RoamProfileScreenState extends State<RoamProfileScreen>
-    with TickerProviderStateMixin {
-//  AnimationController _controller;
-//  Animation<double> heightOfCard;
-//  Animation<double> semiCircleScale;
-//  Animation<double> ellipseScale;
-//  Animation<double> profileImageScale;
-//  bool _isAboutUserVisible = false;
-//  bool _isYellowCircleVisible = false;
-//  bool _isNotificationBellVisible = false;
-//  bool _isUserDataVisible = false;
-//  bool _isOpen =
-//      false; //handles the chevron_down arrow (whether it is pointing downwards or upwards) and also whether to reverse or play animation
-//
-//  @override
-//  void initState() {
-//    super.initState();
-//    _controller = AnimationController(
-//      duration: const Duration(milliseconds: 2000),
-//      vsync: this,
-//    );
-//  }
-//
-//  initializeTweens() {
-//    heightOfCard = Tween<double>(
-//      begin: 0.6,
-//      end: 0.2,
-//    ).animate(
-//      CurvedAnimation(
-//        parent: _controller,
-//        curve: Interval(
-//          0.4,
-//          1.0,
-//          curve: Curves.easeInOutCubic,
-//        ),
-//      ),
-//    );
-//    semiCircleScale = Tween<double>(
-//      begin: 1.0,
-//      end: 0.5,
-//    ).animate(
-//      CurvedAnimation(
-//        parent: _controller,
-//        curve: Interval(
-//          0.4,
-//          1.0,
-//          curve: Curves.easeInOutCubic,
-//        ),
-//      ),
-//    );
-//    ellipseScale = Tween<double>(
-//      begin: 1.0,
-//      end: 0.5,
-//    ).animate(
-//      CurvedAnimation(
-//        parent: _controller,
-//        curve: Interval(
-//          0.4,
-//          1.0,
-//          curve: Curves.easeInOutCubic,
-//        ),
-//      ),
-//    );
-//    profileImageScale = Tween<double>(
-//      begin: 1.0,
-//      end: 0.5,
-//    ).animate(
-//      CurvedAnimation(
-//        parent: _controller,
-//        curve: Interval(
-//          0.4,
-//          1.0,
-//          curve: Curves.easeInOutCubic,
-//        ),
-//      ),
-//    );
-//  }
-//
-//  Future<void> _playAnimation() async {
-//    try {
-//      await _controller.forward().orCancel;
-//    } on TickerCanceled {
-//      // the animation got canceled, probably because it was disposed of
-//    }
-//  }
+class _ProfileScreenState extends State<ProfileScreen>
+{
 
   @override
   Widget build(BuildContext context) {
@@ -208,14 +125,14 @@ class _RoamProfileScreenState extends State<RoamProfileScreen>
                                 color: RoamAppColors.white60,
                                 borderRadius: const BorderRadius.only(
                                   topLeft:
-                                      const Radius.circular(Sizes.RADIUS_60),
+                                  const Radius.circular(Sizes.RADIUS_60),
                                   bottomLeft:
-                                      const Radius.circular(Sizes.RADIUS_60),
+                                  const Radius.circular(Sizes.RADIUS_60),
                                 ),
                               ),
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
+                                MainAxisAlignment.spaceAround,
                                 children: [
                                   VerticalText(
                                     title: RoamStringConst.NO_OF_FOLLOWERS,
@@ -245,13 +162,13 @@ class _RoamProfileScreenState extends State<RoamProfileScreen>
                           children: [
                             Text(
                               RoamStringConst.KRISTIN,
-                              style: theme.textTheme.headline5.copyWith(
+                              style: theme.textTheme.headlineMedium?.copyWith(
                                 color: RoamAppColors.black50,
                               ),
                             ),
                             Text(
                               RoamStringConst.USER_HANDLE,
-                              style: theme.textTheme.bodyText2.copyWith(
+                              style: theme.textTheme.bodyMedium?.copyWith(
                                 color: RoamAppColors.grey200,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -259,7 +176,7 @@ class _RoamProfileScreenState extends State<RoamProfileScreen>
                             SpaceH12(),
                             Text(
                               RoamStringConst.ABOUT_USER,
-                              style: theme.textTheme.bodyText2.copyWith(
+                              style: theme.textTheme.bodyMedium?.copyWith(
                                 color: RoamAppColors.black20,
                                 fontWeight: FontWeight.w600,
                               ),
@@ -286,11 +203,7 @@ class _RoamProfileScreenState extends State<RoamProfileScreen>
     );
   }
 
-//  Wrap(
-//  spacing: Sizes.SIZE_8,
-//  runSpacing: Sizes.SIZE_8,
-//  children: _buildAlbum(Data.albumItems),
-//  )
+
 
   Widget _buildList() {
     ThemeData theme = Theme.of(context);
@@ -330,7 +243,7 @@ class _RoamProfileScreenState extends State<RoamProfileScreen>
             width: Sizes.WIDTH_1,
             color: RoamAppColors.accentColor,
           ),
-          textStyle: theme.textTheme.subtitle1.copyWith(
+          textStyle: theme.textTheme.titleLarge?.copyWith(
             color: RoamAppColors.accentColor,
           ),
         )
@@ -379,8 +292,8 @@ class _RoamProfileScreenState extends State<RoamProfileScreen>
 
 class VerticalText extends StatelessWidget {
   VerticalText({
-    @required this.title,
-    @required this.subtitle,
+    required this.title,
+    required this.subtitle,
   });
 
   final String title;
@@ -395,14 +308,14 @@ class VerticalText extends StatelessWidget {
         children: [
           Text(
             title,
-            style: theme.textTheme.headline6.copyWith(
+            style: theme.textTheme.headlineSmall?.copyWith(
               color: RoamAppColors.black50,
             ),
           ),
           SpaceH8(),
           Text(
             subtitle,
-            style: theme.textTheme.bodyText1.copyWith(
+            style: theme.textTheme.bodyLarge?.copyWith(
               color: RoamAppColors.black50,
               fontSize: Sizes.TEXT_SIZE_14,
             ),

@@ -20,8 +20,7 @@ class LoginScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                SvgPicture.asset(RoamImagePath.LIGHT_ELLIPSE,
-                    fit: BoxFit.cover),
+                SvgPicture.asset(RoamImagePath.LIGHT_ELLIPSE, fit: BoxFit.cover),
                 Container(
                   height: assignHeight(context: context, fraction: 1.0),
                   child: _socialLogin(context),
@@ -37,9 +36,9 @@ class LoginScreen extends StatelessWidget {
   Widget _socialLogin(BuildContext context) {
     ThemeData theme = Theme.of(context);
     double width = assignWidth(context: context, fraction: 1.0);
-    TextStyle hintTextStyle = theme.textTheme.bodyText2;
-    TextStyle titleTextStyle = theme.textTheme.subtitle1;
-    TextStyle formTextStyle = theme.textTheme.subtitle2.copyWith(
+    TextStyle? hintTextStyle = theme.textTheme.bodyMedium;
+    TextStyle? titleTextStyle = theme.textTheme.titleLarge;
+    TextStyle? formTextStyle = theme.textTheme.titleMedium?.copyWith(
       color: RoamAppColors.black50,
     );
     return Column(
@@ -47,7 +46,7 @@ class LoginScreen extends StatelessWidget {
         Spacer(),
         Text(
           RoamStringConst.LOG_IN,
-          style: theme.textTheme.headline5.copyWith(
+          style: theme.textTheme.headlineMedium?.copyWith(
             color: RoamAppColors.secondaryColor,
           ),
         ),
@@ -61,7 +60,6 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {},
                 borderRadius: Sizes.RADIUS_8,
                 color: RoamAppColors.white,
-                hasIcon: true,
                 title: RoamStringConst.GOOGLE,
                 icon: Image.asset(
                   RoamImagePath.GOOGLE,
@@ -76,7 +74,6 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {},
                 borderRadius: Sizes.RADIUS_8,
                 color: RoamAppColors.white,
-                hasIcon: true,
                 title: RoamStringConst.FACEBOOK,
                 icon: Icon(
                   FontAwesomeIcons.facebookSquare,
@@ -142,7 +139,7 @@ class LoginScreen extends StatelessWidget {
               ),
               child: Text(
                 RoamStringConst.FORGOT_PASSWORD,
-                style: theme.textTheme.bodyText2.copyWith(
+                style: theme.textTheme.bodyMedium?.copyWith(
                   color: RoamAppColors.secondaryColor,
                 ),
               ),
@@ -155,11 +152,11 @@ class LoginScreen extends StatelessWidget {
           margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_24),
           child: CustomButton(
             onPressed: () {
-              ExtendedNavigator.root.push(Routes.selectInterestScreen);
+              AutoRouter.of(context).push(SelectInterestScreenRoute());
             },
             borderRadius: Sizes.RADIUS_8,
             title: RoamStringConst.LOG_IN,
-            textStyle: theme.textTheme.subtitle1.copyWith(
+            textStyle: theme.textTheme.titleLarge?.copyWith(
               color: RoamAppColors.white,
             ),
           ),
@@ -167,7 +164,7 @@ class LoginScreen extends StatelessWidget {
         Spacer(),
         InkWell(
           onTap: () {
-            ExtendedNavigator.root.push(Routes.signUpScreen);
+            AutoRouter.of(context).push(SignUpScreenRoute());
           },
           child: Container(
             padding: EdgeInsets.only(
@@ -184,13 +181,13 @@ class LoginScreen extends StatelessWidget {
             child: RichText(
               text: TextSpan(
                 text: RoamStringConst.DONT_HAVE_AN_ACCOUNT,
-                style: theme.textTheme.bodyText2.copyWith(
+                style: theme.textTheme.bodyMedium?.copyWith(
                   color: RoamAppColors.secondaryColor,
                 ),
                 children: <TextSpan>[
                   TextSpan(
                     text: RoamStringConst.CREATE_ACCOUNT,
-                    style: theme.textTheme.bodyText2.copyWith(
+                    style: theme.textTheme.bodyMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: RoamAppColors.secondaryColor,
                     ),

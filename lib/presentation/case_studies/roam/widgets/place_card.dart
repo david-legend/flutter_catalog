@@ -9,10 +9,10 @@ class PlaceCard extends StatelessWidget {
   PlaceCard({
     this.width,
     this.height,
-    this.imagePath,
-    this.title,
-    this.subtitle,
-    this.content,
+    required this.imagePath,
+    required this.title,
+    required this.subtitle,
+    required this.content,
     this.icon = Icons.location_pin,
     this.rating = 0,
     this.borderRadius = const BorderRadius.all(
@@ -20,10 +20,15 @@ class PlaceCard extends StatelessWidget {
         Sizes.RADIUS_8,
       ),
     ),
+    this.imageBorderRadius = const BorderRadius.all(
+      const Radius.circular(
+        Sizes.RADIUS_8,
+      ),
+    ),
   });
 
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final String imagePath;
   final String title;
   final String subtitle;
@@ -31,6 +36,7 @@ class PlaceCard extends StatelessWidget {
   final IconData icon;
   final double rating;
   final BorderRadiusGeometry borderRadius;
+  final BorderRadius? imageBorderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +59,7 @@ class PlaceCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
-                    borderRadius: borderRadius,
+                    borderRadius: imageBorderRadius,
                     child: Image.asset(
                       imagePath,
                       width: (width ?? widthOfCard) - (kPadding * 2),
@@ -66,7 +72,7 @@ class PlaceCard extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: theme.textTheme.headline6,
+                        style: theme.textTheme.headlineSmall,
                       ),
                       Spacer(),
                       Icon(
@@ -77,7 +83,7 @@ class PlaceCard extends StatelessWidget {
                       SpaceW4(),
                       Text(
                         subtitle,
-                        style: theme.textTheme.subtitle1.copyWith(
+                        style: theme.textTheme.titleLarge?.copyWith(
                           color: RoamAppColors.accentColor,
                         ),
                       ),
@@ -88,7 +94,7 @@ class PlaceCard extends StatelessWidget {
                     children: [
                       Text(
                         "$rating",
-                        style: theme.textTheme.subtitle1.copyWith(
+                        style: theme.textTheme.titleLarge?.copyWith(
                           color: RoamAppColors.grey200,
                         ),
                       ),
@@ -106,14 +112,14 @@ class PlaceCard extends StatelessWidget {
                           Icons.star,
                           color: RoamAppColors.yellow,
                         ),
-                        onRatingUpdate: null,
+                        onRatingUpdate: (rating) {},
                       ),
                     ],
                   ),
                   SpaceH8(),
                   Text(
                     content,
-                    style: theme.textTheme.bodyText2.copyWith(
+                    style: theme.textTheme.bodyMedium?.copyWith(
                       color: RoamAppColors.grey200,
                     ),
                   ),

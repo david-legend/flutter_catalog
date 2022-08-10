@@ -3,11 +3,11 @@ import 'package:fluttercatalog/values/values.dart';
 
 class TagItem {
   final String tag;
-  final Color backgroundColor;
-  final Color textColor;
+  final Color? backgroundColor;
+  final Color? textColor;
 
   TagItem({
-    @required this.tag,
+    required this.tag,
     this.textColor,
     this.backgroundColor,
   });
@@ -15,7 +15,7 @@ class TagItem {
 
 class Tag extends StatelessWidget {
   Tag({
-    @required this.tagName,
+    required this.tagName,
     this.width,
     this.height = Sizes.HEIGHT_24,
     this.textColor = RoamAppColors.secondaryColor,
@@ -28,13 +28,13 @@ class Tag extends StatelessWidget {
   });
 
   final String tagName;
-  final double width;
+  final double? width;
   final double height;
   final Color backgroundColor;
   final Color textColor;
   final BorderRadiusGeometry borderRadius;
-  final EdgeInsetsGeometry padding;
-  final TextStyle tagTextStyle;
+  final EdgeInsetsGeometry? padding;
+  final TextStyle? tagTextStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ class Tag extends StatelessWidget {
         child: Text(
           tagName,
           style: tagTextStyle ??
-              theme.textTheme.subtitle2.copyWith(
+              theme.textTheme.titleMedium?.copyWith(
                 color: textColor,
                 fontSize: Sizes.TEXT_SIZE_12,
               ),

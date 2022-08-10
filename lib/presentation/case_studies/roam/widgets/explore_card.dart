@@ -7,9 +7,9 @@ import 'package:fluttercatalog/values/values.dart';
 
 class ExploreCardItem {
   ExploreCardItem({
-    @required this.title,
-    @required this.content,
-    @required this.imagePath,
+    required this.title,
+    required this.content,
+    required this.imagePath,
     this.tags,
     this.rating,
   });
@@ -17,16 +17,16 @@ class ExploreCardItem {
   final String title;
   final String content;
   final String imagePath;
-  final double rating;
-  final List<TagItem> tags;
+  final double? rating;
+  final List<TagItem>? tags;
 }
 
 class ExploreCard extends StatelessWidget {
   ExploreCard({
-    @required this.title,
-    @required this.content,
-    @required this.tags,
-    @required this.imagePath,
+    required this.title,
+    required this.content,
+    required this.tags,
+    required this.imagePath,
     this.width,
     this.height,
     this.borderRadius = const BorderRadius.all(
@@ -39,9 +39,9 @@ class ExploreCard extends StatelessWidget {
   final String content;
   final String imagePath;
   final double rating;
-  final double width;
-  final double height;
-  final BorderRadiusGeometry borderRadius;
+  final double? width;
+  final double? height;
+  final BorderRadius? borderRadius;
   final List<TagItem> tags;
 
   @override
@@ -72,7 +72,7 @@ class ExploreCard extends StatelessWidget {
               Text(
                 title,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.subtitle1.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                   color: RoamAppColors.black50,
                 ),
               ),
@@ -87,7 +87,7 @@ class ExploreCard extends StatelessWidget {
                 children: [
                   Text(
                     "$rating",
-                    style: theme.textTheme.bodyText2.copyWith(
+                    style: theme.textTheme.bodyMedium?.copyWith(
                       color: RoamAppColors.grey200,
                     ),
                   ),
@@ -105,12 +105,12 @@ class ExploreCard extends StatelessWidget {
                       Icons.star,
                       color: RoamAppColors.yellow,
                     ),
-                    onRatingUpdate: null,
+                    onRatingUpdate: (rate){},
                   ),
                   SpaceW8(),
                   Text(
                     "$content",
-                    style: theme.textTheme.bodyText2.copyWith(
+                    style: theme.textTheme.bodyMedium?.copyWith(
                       color: RoamAppColors.grey200,
                     ),
                   ),
@@ -133,8 +133,8 @@ class ExploreCard extends StatelessWidget {
       items.add(
         Tag(
           tagName: tags[index].tag,
-          backgroundColor: tags[index].backgroundColor,
-          textColor: tags[index].textColor,
+          backgroundColor: tags[index].backgroundColor!,
+          textColor: tags[index].textColor!,
         ),
       );
     }

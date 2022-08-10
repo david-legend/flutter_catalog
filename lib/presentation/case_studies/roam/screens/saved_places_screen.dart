@@ -5,6 +5,7 @@ import 'package:fluttercatalog/presentation/case_studies/roam/widgets/search_inp
 import 'package:fluttercatalog/presentation/case_studies/roam/widgets/spaces.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
 const double kSidePadding = Sizes.PADDING_24;
 
 class SavedPlacesScreen extends StatelessWidget {
@@ -28,8 +29,8 @@ class SavedPlacesScreen extends StatelessWidget {
             children: [
               Text(
                 RoamStringConst.SAVED_PLACES,
-                style: theme.textTheme.headline5.copyWith(
-                  color: RoamAppColors.primaryColor,
+                style: theme.textTheme.headlineMedium?.copyWith(
+                  color: AppColors.primaryColor,
                   fontSize: Sizes.TEXT_SIZE_28,
                 ),
               ),
@@ -37,13 +38,13 @@ class SavedPlacesScreen extends StatelessWidget {
               SearchInput(),
               SpaceH20(),
               TabBar(
-                labelColor: RoamAppColors.primaryColor,
-                labelStyle: theme.textTheme.subtitle1.copyWith(
-                  color: RoamAppColors.primaryColor,
+                labelColor: AppColors.primaryColor,
+                labelStyle: theme.textTheme.titleLarge?.copyWith(
+                  color: AppColors.primaryColor,
                   fontSize: Sizes.TEXT_SIZE_14,
                 ),
                 labelPadding: EdgeInsets.zero,
-                unselectedLabelColor: RoamAppColors.grey50,
+                unselectedLabelColor: AppColors.grey50,
                 indicatorSize: TabBarIndicatorSize.label,
                 tabs: [
                   Tab(

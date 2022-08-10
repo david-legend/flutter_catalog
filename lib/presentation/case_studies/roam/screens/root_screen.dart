@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:animations/animations.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttercatalog/presentation/case_studies/roam/widgets/spaces.dart';
 import 'package:fluttercatalog/values/values.dart';
@@ -12,21 +11,21 @@ import 'home_screen.dart';
 import 'profile_screen.dart';
 import 'saved_places_screen.dart';
 
-class RoamRootScreen extends StatefulWidget {
+class RootScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _RoamRootScreenState();
+    return _RootScreenState();
   }
 }
 
-class _RoamRootScreenState extends State<RoamRootScreen> {
+class _RootScreenState extends State<RootScreen> {
   final PageStorageBucket bucket = PageStorageBucket();
   int _selectedIndex = 0;
   final List<Widget> pages = [
-    RoamHomeScreen(),
+    HomeScreen(),
     DiscoverScreen(),
     SavedPlacesScreen(),
-    RoamProfileScreen(),
+    ProfileScreen(),
   ];
 
   @override
@@ -35,10 +34,10 @@ class _RoamRootScreenState extends State<RoamRootScreen> {
       bottomNavigationBar: _bottomNavigationBar(_selectedIndex),
       body: PageTransitionSwitcher(
         transitionBuilder: (
-          Widget child,
-          Animation<double> animation,
-          Animation<double> secondaryAnimation,
-        ) {
+            Widget child,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+            ) {
           return FadeThroughTransition(
             animation: animation,
             secondaryAnimation: secondaryAnimation,
@@ -128,18 +127,19 @@ class _RoamRootScreenState extends State<RoamRootScreen> {
 }
 
 class ActiveIcon extends StatelessWidget {
-  ActiveIcon({this.icon, this.hasIcon = true, this.child});
+  ActiveIcon({this.icon, this.hasIcon = true, this.child})
+      : assert((hasIcon && icon != null) || (!hasIcon && child != null));
 
-  final IconData icon;
+  final IconData? icon;
   final bool hasIcon;
-  final Widget child;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
-          hasIcon ? Icon(icon) : child,
+          hasIcon ? Icon(icon) : child!,
           SpaceH8(),
           Container(
             width: Sizes.WIDTH_4,

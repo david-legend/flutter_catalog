@@ -19,8 +19,7 @@ class SignUpScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                SvgPicture.asset(RoamImagePath.LIGHT_ELLIPSE,
-                    fit: BoxFit.cover),
+                SvgPicture.asset(RoamImagePath.LIGHT_ELLIPSE, fit: BoxFit.cover),
                 Container(
                   height: assignHeight(context: context, fraction: 1.0),
                   child: _socialLogin(context),
@@ -36,17 +35,17 @@ class SignUpScreen extends StatelessWidget {
   Widget _socialLogin(BuildContext context) {
     ThemeData theme = Theme.of(context);
     double width = assignWidth(context: context, fraction: 1.0);
-    TextStyle hintTextStyle = theme.textTheme.bodyText2;
-    TextStyle titleTextStyle = theme.textTheme.subtitle1;
-    TextStyle formTextStyle = theme.textTheme.subtitle2.copyWith(
+    TextStyle? hintTextStyle = theme.textTheme.bodyMedium;
+    TextStyle? titleTextStyle = theme.textTheme.titleLarge;
+    TextStyle? formTextStyle = theme.textTheme.titleMedium?.copyWith(
       color: RoamAppColors.black50,
     );
     return Column(
       children: [
         Spacer(),
         Text(
-          RoamStringConst.SIGN_UP,
-          style: theme.textTheme.headline5.copyWith(
+          StringConst.SIGN_UP,
+          style: theme.textTheme.headlineMedium?.copyWith(
             color: RoamAppColors.secondaryColor,
           ),
         ),
@@ -60,8 +59,7 @@ class SignUpScreen extends StatelessWidget {
                 onPressed: () {},
                 borderRadius: Sizes.RADIUS_8,
                 color: RoamAppColors.white,
-                hasIcon: true,
-                title: RoamStringConst.GOOGLE,
+                title: StringConst.GOOGLE,
                 icon: Image.asset(
                   RoamImagePath.GOOGLE,
                   width: Sizes.WIDTH_24,
@@ -75,8 +73,7 @@ class SignUpScreen extends StatelessWidget {
                 onPressed: () {},
                 borderRadius: Sizes.RADIUS_8,
                 color: RoamAppColors.white,
-                hasIcon: true,
-                title: RoamStringConst.FACEBOOK,
+                title: StringConst.FACEBOOK,
                 icon: Icon(
                   FontAwesomeIcons.facebookSquare,
                   color: RoamAppColors.facebookBlue,
@@ -87,7 +84,7 @@ class SignUpScreen extends StatelessWidget {
         ),
         SpaceH20(),
         Text(
-          RoamStringConst.OR,
+          StringConst.OR,
           style: theme.textTheme.bodyText1,
         ),
         SpaceH20(),
@@ -95,10 +92,10 @@ class SignUpScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
           child: CustomTextFormField(
             hasTitle: true,
-            fieldTitle: RoamStringConst.EMAIL,
+            fieldTitle: StringConst.EMAIL,
             fieldTitleTextStyle: titleTextStyle,
             textFormFieldStyle: formTextStyle,
-            hintText: RoamStringConst.EMAIL_HINT_TEXT,
+            hintText: StringConst.EMAIL_HINT_TEXT,
             prefixIconColor: RoamAppColors.primaryColor,
             hintTextStyle: hintTextStyle,
             filled: true,
@@ -111,10 +108,10 @@ class SignUpScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
           child: CustomTextFormField(
             hasTitle: true,
-            fieldTitle: RoamStringConst.PASSWORD,
+            fieldTitle: StringConst.PASSWORD,
             fieldTitleTextStyle: titleTextStyle,
             textFormFieldStyle: formTextStyle,
-            hintText: RoamStringConst.PASSWORD_HINT_TEXT,
+            hintText: StringConst.PASSWORD_HINT_TEXT,
             prefixIconColor: RoamAppColors.primaryColor,
             hintTextStyle: hintTextStyle,
             filled: true,
@@ -128,10 +125,10 @@ class SignUpScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
             child: CustomTextFormField(
               hasTitle: true,
-              fieldTitle: RoamStringConst.CONFIRM_PASSWORD,
+              fieldTitle: StringConst.CONFIRM_PASSWORD,
               fieldTitleTextStyle: titleTextStyle,
               textFormFieldStyle: formTextStyle,
-              hintText: RoamStringConst.PASSWORD_HINT_TEXT,
+              hintText: StringConst.PASSWORD_HINT_TEXT,
               prefixIconColor: RoamAppColors.primaryColor,
               hintTextStyle: hintTextStyle,
               filled: true,
@@ -146,8 +143,8 @@ class SignUpScreen extends StatelessWidget {
           child: CustomButton(
             onPressed: () {},
             borderRadius: Sizes.RADIUS_8,
-            title: RoamStringConst.SIGN_UP,
-            textStyle: theme.textTheme.subtitle1.copyWith(
+            title: StringConst.SIGN_UP,
+            textStyle: theme.textTheme.titleLarge?.copyWith(
               color: RoamAppColors.white,
             ),
           ),
@@ -155,7 +152,7 @@ class SignUpScreen extends StatelessWidget {
         Spacer(),
         InkWell(
           onTap: () {
-            ExtendedNavigator.root.pop();
+            AutoRouter.of(context).pop();
           },
           child: Container(
             padding: EdgeInsets.only(
@@ -171,14 +168,14 @@ class SignUpScreen extends StatelessWidget {
             ),
             child: RichText(
               text: TextSpan(
-                text: RoamStringConst.ALREADY_HAVE_AN_ACCOUNT,
-                style: theme.textTheme.bodyText2.copyWith(
+                text: StringConst.ALREADY_HAVE_AN_ACCOUNT,
+                style: theme.textTheme.bodyMedium?.copyWith(
                   color: RoamAppColors.secondaryColor,
                 ),
                 children: <TextSpan>[
                   TextSpan(
-                    text: RoamStringConst.LOG_IN,
-                    style: theme.textTheme.bodyText2.copyWith(
+                    text: StringConst.LOG_IN,
+                    style: theme.textTheme.bodyMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: RoamAppColors.secondaryColor,
                     ),

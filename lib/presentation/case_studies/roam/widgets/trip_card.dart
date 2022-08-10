@@ -10,11 +10,11 @@ class TripCard extends StatelessWidget {
   TripCard({
     this.width,
     this.height,
-    this.imagePath,
-    this.title,
-    this.subtitle,
-    this.content,
-    this.footer,
+    required this.imagePath,
+    required this.title,
+    required this.subtitle,
+    required this.content,
+    required this.footer,
     this.icon = Icons.location_pin,
     this.images,
     this.hasCollaborators = true,
@@ -24,10 +24,15 @@ class TripCard extends StatelessWidget {
         Sizes.RADIUS_8,
       ),
     ),
+    this.imageBorderRadius = const BorderRadius.all(
+      const Radius.circular(
+        Sizes.RADIUS_8,
+      ),
+    ),
   });
 
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final String imagePath;
   final String title;
   final String subtitle;
@@ -35,7 +40,8 @@ class TripCard extends StatelessWidget {
   final String footer;
   final IconData icon;
   final BorderRadiusGeometry borderRadius;
-  final List<String> images;
+  final BorderRadius? imageBorderRadius;
+  final List<String>? images;
   final bool hasCollaborators;
   final int collaborators;
 
@@ -60,7 +66,7 @@ class TripCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
-                    borderRadius: borderRadius,
+                    borderRadius: imageBorderRadius,
                     child: Image.asset(
                       imagePath,
                       width: (width ?? widthOfCard) - (kPadding * 2),
@@ -74,11 +80,11 @@ class TripCard extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: theme.textTheme.headline6,
+                        style: theme.textTheme.headlineSmall,
                       ),
                       Text(
                         subtitle,
-                        style: theme.textTheme.subtitle2.copyWith(
+                        style: theme.textTheme.titleMedium?.copyWith(
                           color: RoamAppColors.primaryColor,
                           fontSize: Sizes.TEXT_SIZE_12,
                         ),
@@ -88,7 +94,7 @@ class TripCard extends StatelessWidget {
                   SpaceH8(),
                   Text(
                     content,
-                    style: theme.textTheme.bodyText2.copyWith(
+                    style: theme.textTheme.bodyMedium?.copyWith(
                       color: RoamAppColors.primaryText2,
                     ),
                   ),
@@ -97,19 +103,19 @@ class TripCard extends StatelessWidget {
                     children: [
                       hasCollaborators
                           ? StackedImages(
-                              images: images,
-                              extraImagesLength: collaborators,
-                            )
+                        images: images!,
+                        extraImagesLength: collaborators,
+                      )
                           : Empty(),
                       hasCollaborators ? SpaceW4() : Empty(),
                       hasCollaborators
                           ? Text(
-                              RoamStringConst.TRIP_COLLABORATORS,
-                              style: theme.textTheme.bodyText2.copyWith(
-                                color: RoamAppColors.primaryColor,
-                                fontSize: Sizes.TEXT_SIZE_12,
-                              ),
-                            )
+                        RoamStringConst.TRIP_COLLABORATORS,
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          color: RoamAppColors.primaryColor,
+                          fontSize: Sizes.TEXT_SIZE_12,
+                        ),
+                      )
                           : Empty(),
                       Spacer(),
                       Icon(
@@ -120,7 +126,7 @@ class TripCard extends StatelessWidget {
                       SpaceW4(),
                       Text(
                         footer,
-                        style: theme.textTheme.subtitle2.copyWith(
+                        style: theme.textTheme.titleMedium?.copyWith(
                           color: RoamAppColors.accentColor,
                         ),
                       ),

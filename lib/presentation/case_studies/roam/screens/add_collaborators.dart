@@ -8,6 +8,7 @@ import 'package:fluttercatalog/presentation/case_studies/roam/widgets/custom_tex
 import 'package:fluttercatalog/presentation/case_studies/roam/widgets/spaces.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
 class AddCollaboratorsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class AddCollaboratorsScreen extends StatelessWidget {
                   height: Sizes.HEIGHT_50,
                   child: CustomButton2(
                     onPressed: () {
-                      ExtendedNavigator.root.pop();
+                      AutoRouter.of(context).pop();
                     },
                     borderRadius: Sizes.RADIUS_12,
                     icon: Icons.arrow_back_ios,
@@ -41,19 +42,19 @@ class AddCollaboratorsScreen extends StatelessWidget {
             Center(
               child: Text(
                 RoamStringConst.ADD_COLLABORATORS,
-                style: theme.textTheme.headline6.copyWith(
+                style: theme.textTheme.headlineSmall?.copyWith(
                   color: RoamAppColors.black50,
                 ),
               ),
             ),
             SpaceH16(),
             CustomTextFormField(
-              textFormFieldStyle: theme.textTheme.subtitle1.copyWith(
+              textFormFieldStyle: theme.textTheme.titleLarge?.copyWith(
                 color: RoamAppColors.secondaryColor,
               ),
               hintText: RoamStringConst.SEARCH_HINT_TEXT_2,
               prefixIconColor: RoamAppColors.primaryColor,
-              hintTextStyle: theme.textTheme.bodyText2.copyWith(
+              hintTextStyle: theme.textTheme.bodyMedium?.copyWith(
                 color: RoamAppColors.grey,
               ),
               filled: true,
@@ -70,10 +71,10 @@ class AddCollaboratorsScreen extends StatelessWidget {
             SpaceH20(),
             CustomButton(
               onPressed: () {
-                ExtendedNavigator.root.pop();
+                AutoRouter.of(context).pop();
               },
               title: RoamStringConst.FINISH,
-              textStyle: theme.textTheme.subtitle1.copyWith(
+              textStyle: theme.textTheme.titleLarge?.copyWith(
                 color: RoamAppColors.white,
               ),
               borderRadius: Sizes.RADIUS_8,

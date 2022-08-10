@@ -16,10 +16,10 @@ const double kPaddingHorizontal = Sizes.PADDING_24;
 
 class PlaceScreen extends StatelessWidget {
   PlaceScreen({
-    @required this.place,
-    @required this.location,
-    @required this.imagePath,
-    @required this.rating,
+    required this.place,
+    required this.location,
+    required this.imagePath,
+    required this.rating,
   });
 
   final String place;
@@ -48,7 +48,7 @@ class PlaceScreen extends StatelessWidget {
                 children: [
                   Text(
                     RoamStringConst.LOREM_IPSUM_2,
-                    style: theme.textTheme.bodyText1.copyWith(
+                    style: theme.textTheme.bodyLarge?.copyWith(
                       color: RoamAppColors.primaryText2,
                     ),
                   ),
@@ -86,9 +86,9 @@ class PlaceScreen extends StatelessWidget {
                           child: Image.asset(
                             RoamData.moreImages[index],
                             width:
-                                assignWidth(context: context, fraction: 0.25),
+                            assignWidth(context: context, fraction: 0.25),
                             height:
-                                assignHeight(context: context, fraction: 0.20),
+                            assignHeight(context: context, fraction: 0.20),
                             fit: BoxFit.cover,
                           ),
                         );
@@ -118,7 +118,7 @@ class PlaceScreen extends StatelessWidget {
               Center(
                 child: Text(
                   RoamStringConst.SEE_MORE,
-                  style: theme.textTheme.bodyText2.copyWith(
+                  style: theme.textTheme.bodyMedium?.copyWith(
                     color: RoamAppColors.primaryColor,
                   ),
                 ),
@@ -128,7 +128,7 @@ class PlaceScreen extends StatelessWidget {
                 onPressed: () {},
                 borderRadius: Sizes.RADIUS_8,
                 title: RoamStringConst.LETS_GO + place,
-                textStyle: theme.textTheme.subtitle1.copyWith(
+                textStyle: theme.textTheme.titleLarge?.copyWith(
                   color: RoamAppColors.white,
                 ),
               ),
@@ -141,7 +141,6 @@ class PlaceScreen extends StatelessWidget {
   }
 
   Widget _buildTopSection(BuildContext context) {
-    ThemeData theme = Theme.of(context);
     double width = assignWidth(context: context, fraction: 1);
     double height = assignHeight(context: context, fraction: 0.4);
     double widthOfFab = Sizes.WIDTH_56;
@@ -216,7 +215,8 @@ class PlaceScreen extends StatelessWidget {
                 width: Sizes.WIDTH_50,
                 height: Sizes.HEIGHT_50,
                 child: CustomButton2(
-                  onPressed: () => ExtendedNavigator.root.pop(),
+                  onPressed: () =>
+                      AutoRouter.of(context).pop(),
                   icon: Icons.arrow_back_ios,
                   borderRadius: Sizes.RADIUS_8,
                 ),
@@ -236,7 +236,7 @@ class PlaceScreen extends StatelessWidget {
                   children: [
                     Text(
                       "$rating",
-                      style: theme.textTheme.subtitle1.copyWith(
+                      style: theme.textTheme.titleLarge?.copyWith(
                         color: RoamAppColors.white,
                         fontSize: Sizes.TEXT_SIZE_14,
                       ),
@@ -263,7 +263,7 @@ class PlaceScreen extends StatelessWidget {
                   children: [
                     Text(
                       "$place",
-                      style: theme.textTheme.headline5.copyWith(
+                      style: theme.textTheme.headlineMedium?.copyWith(
                         color: RoamAppColors.white,
                       ),
                     ),
@@ -277,7 +277,7 @@ class PlaceScreen extends StatelessWidget {
                         SpaceW4(),
                         Text(
                           "$location",
-                          style: theme.textTheme.subtitle1.copyWith(
+                          style: theme.textTheme.titleLarge?.copyWith(
                             color: RoamAppColors.yellow,
                             fontSize: Sizes.TEXT_SIZE_20,
                           ),
@@ -299,7 +299,7 @@ class PlaceScreen extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: RoamStringConst.TEMPERATURE,
-                        style: theme.textTheme.headline5.copyWith(
+                        style: theme.textTheme.headlineMedium?.copyWith(
                           color: RoamAppColors.white,
                         ),
                       ),
@@ -309,7 +309,7 @@ class PlaceScreen extends StatelessWidget {
                           child: Text(
                             RoamStringConst.CELSIUS,
                             textScaleFactor: 0.7,
-                            style: theme.textTheme.subtitle1.copyWith(
+                            style: theme.textTheme.titleLarge?.copyWith(
                               color: RoamAppColors.white,
                               fontSize: Sizes.TEXT_SIZE_20,
                             ),
@@ -336,8 +336,8 @@ class PlaceScreen extends StatelessWidget {
           title: exploreItems[index].title,
           content: exploreItems[index].content,
           imagePath: exploreItems[index].imagePath,
-          tags: exploreItems[index].tags,
-          rating: exploreItems[index].rating,
+          tags: exploreItems[index].tags!,
+          rating: exploreItems[index].rating!,
         ),
       );
     }
@@ -356,7 +356,7 @@ class PlaceScreen extends StatelessWidget {
             title: RoamData.attractionCardItems[index].title,
             content: RoamData.attractionCardItems[index].content,
             imagePath: RoamData.attractionCardItems[index].imagePath,
-            rating: RoamData.attractionCardItems[index].rating,
+            rating: RoamData.attractionCardItems[index].rating!,
           );
         },
         separatorBuilder: (BuildContext context, int index) {

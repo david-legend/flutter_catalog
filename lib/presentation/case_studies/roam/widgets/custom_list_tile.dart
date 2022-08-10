@@ -6,8 +6,8 @@ import 'package:fluttercatalog/values/values.dart';
 
 class CustomListTile extends StatefulWidget {
   CustomListTile({
-    @required this.title,
-    @required this.imagePath,
+    required this.title,
+    required this.imagePath,
     this.stars = 0,
     this.isFollowing = false,
   });
@@ -22,7 +22,7 @@ class CustomListTile extends StatefulWidget {
 }
 
 class _CustomListTileState extends State<CustomListTile> {
-  bool isFollowing;
+  late bool isFollowing;
 
   @override
   void initState() {
@@ -52,7 +52,7 @@ class _CustomListTileState extends State<CustomListTile> {
       ),
       title: Text(
         widget.title,
-        style: theme.textTheme.subtitle1.copyWith(
+        style: theme.textTheme.titleLarge?.copyWith(
           color: RoamAppColors.secondaryColor,
         ),
       ),
@@ -67,7 +67,7 @@ class _CustomListTileState extends State<CustomListTile> {
           Expanded(
             child: Text(
               "${widget.stars} ${RoamStringConst.TRAVELLERS_STARS}",
-              style: theme.textTheme.bodyText2.copyWith(
+              style: theme.textTheme.bodyMedium?.copyWith(
                 color: RoamAppColors.grey,
               ),
             ),
@@ -83,14 +83,13 @@ class _CustomListTileState extends State<CustomListTile> {
           borderSide: isFollowing
               ? Borders.defaultPrimaryBorder
               : BorderSide(
-                  width: Sizes.WIDTH_1,
-                  color: RoamAppColors.grey,
-                ),
+            width: Sizes.WIDTH_1,
+            color: RoamAppColors.grey,
+          ),
           elevation: Sizes.ELEVATION_0,
           onPressed: () => _toggleFollowButton(),
-          title:
-              isFollowing ? RoamStringConst.FOLLOWING : RoamStringConst.FOLLOW,
-          textStyle: theme.textTheme.subtitle1.copyWith(
+          title: isFollowing ? RoamStringConst.FOLLOWING : RoamStringConst.FOLLOW,
+          textStyle: theme.textTheme.titleLarge?.copyWith(
             color: isFollowing ? RoamAppColors.white : RoamAppColors.grey,
             fontSize: Sizes.TEXT_SIZE_12,
           ),
@@ -105,3 +104,4 @@ class _CustomListTileState extends State<CustomListTile> {
     });
   }
 }
+

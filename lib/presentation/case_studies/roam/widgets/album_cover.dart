@@ -6,8 +6,8 @@ const double kHorizontalPadding = Sizes.PADDING_24;
 
 class AlbumCoverItem {
   AlbumCoverItem({
-    @required this.title,
-    @required this.imagePath,
+    required this.title,
+    required this.imagePath,
     this.width = 1.0,
     this.spacing = 0.0,
   });
@@ -20,8 +20,8 @@ class AlbumCoverItem {
 
 class AlbumCover extends StatelessWidget {
   AlbumCover({
-    this.title,
-    this.imagePath,
+    required this.title,
+    required this.imagePath,
     this.width,
     this.height,
     this.horizontalPadding = (kHorizontalPadding * 2),
@@ -34,9 +34,9 @@ class AlbumCover extends StatelessWidget {
 
   final String title;
   final String imagePath;
-  final double width;
-  final double height;
-  final BorderRadiusGeometry borderRadius;
+  final double? width;
+  final double? height;
+  final BorderRadius? borderRadius;
   final double horizontalPadding;
 
   @override
@@ -76,7 +76,7 @@ class AlbumCover extends StatelessWidget {
               alignment: Alignment.topRight,
               child: Text(
                 title,
-                style: theme.textTheme.subtitle2.copyWith(
+                style: theme.textTheme.titleMedium?.copyWith(
                   color: RoamAppColors.white,
                 ),
               ),

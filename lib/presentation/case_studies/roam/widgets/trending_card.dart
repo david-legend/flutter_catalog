@@ -9,9 +9,9 @@ class TrendingCard extends StatelessWidget {
   TrendingCard({
     this.width,
     this.height,
-    this.imagePath,
-    this.title,
-    this.subtitle,
+    required this.imagePath,
+    required this.title,
+    required this.subtitle,
     this.onTap,
     this.icon = Icons.location_pin,
     this.rating = 0,
@@ -22,15 +22,15 @@ class TrendingCard extends StatelessWidget {
     ),
   });
 
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final String imagePath;
   final String title;
   final String subtitle;
   final IconData icon;
   final double rating;
-  final GestureTapCallback onTap;
-  final BorderRadiusGeometry borderRadius;
+  final GestureTapCallback? onTap;
+  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -65,8 +65,8 @@ class TrendingCard extends StatelessWidget {
   }
 
   Widget _buildBackgroundImage({
-    double widthOfCard,
-    double heightOfCard,
+    required double widthOfCard,
+    required double heightOfCard,
   }) {
     return ClipRRect(
       borderRadius: borderRadius,
@@ -80,8 +80,8 @@ class TrendingCard extends StatelessWidget {
   }
 
   Widget _buildRating({
-    @required BuildContext context,
-    double widthOfCard,
+    required BuildContext context,
+    required double widthOfCard,
   }) {
     ThemeData theme = Theme.of(context);
     return Positioned(
@@ -103,7 +103,7 @@ class TrendingCard extends StatelessWidget {
           children: [
             Text(
               "$rating",
-              style: theme.textTheme.bodyText1.copyWith(
+              style: theme.textTheme.bodyLarge?.copyWith(
                 color: RoamAppColors.white,
               ),
             ),
@@ -120,9 +120,9 @@ class TrendingCard extends StatelessWidget {
   }
 
   Widget _buildLocation({
-    @required BuildContext context,
-    double widthOfCard,
-    double heightOfCard,
+    required BuildContext context,
+    required double widthOfCard,
+    required double heightOfCard,
   }) {
     ThemeData theme = Theme.of(context);
     double kMargin = Sizes.MARGIN_8;
@@ -161,7 +161,7 @@ class TrendingCard extends StatelessWidget {
                     child: Text(
                       title,
                       overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.headline6.copyWith(
+                      style: theme.textTheme.headlineSmall?.copyWith(
                         color: RoamAppColors.white,
                         fontSize: Sizes.TEXT_SIZE_16,
                       ),
@@ -175,7 +175,7 @@ class TrendingCard extends StatelessWidget {
                       Text(
                         subtitle,
                         overflow: TextOverflow.ellipsis,
-                        style: theme.textTheme.bodyText2.copyWith(
+                        style: theme.textTheme.bodyMedium?.copyWith(
                           color: RoamAppColors.white,
                         ),
                       ),

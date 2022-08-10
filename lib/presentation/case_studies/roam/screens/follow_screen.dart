@@ -6,11 +6,12 @@ import 'package:fluttercatalog/presentation/case_studies/roam/widgets/spaces.dar
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
 class FollowListItem {
   FollowListItem({
-    @required this.title,
-    @required this.imagePath,
-    this.stars,
+    required this.title,
+    required this.imagePath,
+    this.stars = 0,
   });
 
   final String title;
@@ -64,8 +65,8 @@ class FollowScreen extends StatelessWidget {
         children: [
           Text(
             RoamStringConst.FOLLOW_FRIENDS,
-            style: theme.textTheme.bodyText1.copyWith(
-              color: RoamAppColors.secondaryColor,
+            style: theme.textTheme.bodyLarge?.copyWith(
+              color: AppColors.secondaryColor,
               fontSize: Sizes.TEXT_SIZE_20,
             ),
           ),
@@ -74,13 +75,13 @@ class FollowScreen extends StatelessWidget {
           SpaceH20(),
           CustomButton(
             onPressed: () {
-              ExtendedNavigator.root.push(Routes.roamRootScreen);
+              AutoRouter.of(context).push(RootScreenRoute());
             },
             height: Sizes.HEIGHT_56,
             title: RoamStringConst.FINISH,
             borderRadius: Sizes.RADIUS_8,
-            textStyle: theme.textTheme.subtitle1.copyWith(
-              color: RoamAppColors.white,
+            textStyle: theme.textTheme.titleLarge?.copyWith(
+              color: AppColors.white,
             ),
           ),
         ],

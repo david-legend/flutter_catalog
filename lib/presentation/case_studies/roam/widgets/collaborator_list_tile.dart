@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
 class CollaboratorItem {
   CollaboratorItem({
-    @required this.title,
-    @required this.imagePath,
+    required this.title,
+    required this.imagePath,
   });
 
   final String title;
@@ -13,8 +14,8 @@ class CollaboratorItem {
 
 class CollaboratorListTile extends StatefulWidget {
   CollaboratorListTile({
-    @required this.title,
-    @required this.imagePath,
+    required this.title,
+    required this.imagePath,
     this.isSelected = false,
   });
 
@@ -27,7 +28,7 @@ class CollaboratorListTile extends StatefulWidget {
 }
 
 class _CollaboratorListTileState extends State<CollaboratorListTile> {
-  bool isSelected;
+  late bool isSelected;
 
   @override
   void initState() {
@@ -51,7 +52,7 @@ class _CollaboratorListTileState extends State<CollaboratorListTile> {
       ),
       title: Text(
         widget.title,
-        style: textTheme.subtitle1.copyWith(color: RoamAppColors.black50),
+        style: textTheme.titleLarge?.copyWith(color: RoamAppColors.black50),
       ),
       trailing: Container(
         child: Container(
@@ -63,17 +64,17 @@ class _CollaboratorListTileState extends State<CollaboratorListTile> {
             border: isSelected
                 ? null
                 : Border.all(
-                    color: RoamAppColors.grey,
-                  ),
+              color: RoamAppColors.grey,
+            ),
           ),
           child: isSelected
               ? Center(
-                  child: Icon(
-                    Icons.done,
-                    color: RoamAppColors.white,
-                    size: Sizes.ICON_SIZE_16,
-                  ),
-                )
+            child: Icon(
+              Icons.done,
+              color: RoamAppColors.white,
+              size: Sizes.ICON_SIZE_16,
+            ),
+          )
               : null,
         ),
       ),

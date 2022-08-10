@@ -5,13 +5,12 @@ import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
 
 import 'empty.dart';
-
 class OldTripItem {
   OldTripItem({
-    @required this.title,
-    @required this.subtitle,
-    @required this.imagePath,
-    this.collaborators,
+    required this.title,
+    required this.subtitle,
+    required this.imagePath,
+    this.collaborators = 0,
   });
 
   final String title;
@@ -24,30 +23,37 @@ class OldTripCard extends StatelessWidget {
   OldTripCard({
     this.width,
     this.height,
-    this.imagePath,
-    this.title,
-    this.subtitle,
+    required this.imagePath,
+    required this.title,
+    required this.subtitle,
     this.images,
     this.hasCollaborators = true,
-    this.collaborators,
+    this.collaborators = 0,
     this.borderRadius = const BorderRadius.all(
       const Radius.circular(
         Sizes.RADIUS_8,
       ),
     ),
+    this.imageBorderRadius = const BorderRadius.all(
+      const Radius.circular(
+        Sizes.RADIUS_8,
+      ),
+    ),
     this.elevation = Sizes.ELEVATION_2,
-  });
+  }) : assert((hasCollaborators && images != null) ||
+      (!hasCollaborators && images == null));
 
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final String imagePath;
   final String title;
   final String subtitle;
   final BorderRadiusGeometry borderRadius;
+  final BorderRadius? imageBorderRadius;
   final bool hasCollaborators;
   final int collaborators;
   final double elevation;
-  final List<String> images;
+  final List<String>? images;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +73,7 @@ class OldTripCard extends StatelessWidget {
           child: Row(
             children: [
               ClipRRect(
-                borderRadius: borderRadius,
+                borderRadius: imageBorderRadius,
                 child: Image.asset(
                   imagePath,
                   width: (width ?? widthOfCard * 0.35) - (kPadding * 2),
@@ -83,35 +89,35 @@ class OldTripCard extends StatelessWidget {
                     Text(
                       title,
                       overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.headline6,
+                      style: theme.textTheme.headlineSmall,
                     ),
                     Spacer(),
                     Text(
                       subtitle,
                       overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.bodyText2.copyWith(
-                        color: RoamAppColors.primaryColor,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: AppColors.primaryColor,
                       ),
                     ),
                     Spacer(),
                     hasCollaborators
                         ? Row(
-                            children: [
-                              StackedImages(
-                                images: images,
-                                extraImagesLength: collaborators,
-                              ),
-                              SpaceW4(),
-                              Text(
-                                RoamStringConst.TRIP_COLLABORATORS,
-                                overflow: TextOverflow.ellipsis,
-                                style: theme.textTheme.bodyText2.copyWith(
-                                  color: RoamAppColors.primaryColor,
-                                  fontSize: Sizes.TEXT_SIZE_12,
-                                ),
-                              ),
-                            ],
-                          )
+                      children: [
+                        StackedImages(
+                          images: images!,
+                          extraImagesLength: collaborators,
+                        ),
+                        SpaceW4(),
+                        Text(
+                          RoamStringConst.TRIP_COLLABORATORS,
+                          overflow: TextOverflow.ellipsis,
+                          style: theme.textTheme.titleMedium?.copyWith(
+                            color: AppColors.primaryColor,
+                            fontSize: Sizes.TEXT_SIZE_12,
+                          ),
+                        ),
+                      ],
+                    )
                         : Empty(),
                   ],
                 ),

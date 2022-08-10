@@ -26,10 +26,10 @@ class OnBoardingScreen extends StatefulWidget {
 }
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
+  late double currentIndexPage;
+  late int pageLength;
   PageController _pageController = PageController();
-  double currentIndexPage;
 
-  int pageLength;
   List<OnBoardingItem> onBoardingItemList = [
     OnBoardingItem(
       RoamImagePath.BEAUTIFUL_SITES,
@@ -103,9 +103,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   }
 
   Widget onBoardingItem({
-    @required String imagePath,
-    @required String title,
-    @required String subtitle,
+    required String imagePath,
+    required String title,
+    required String subtitle,
   }) {
     double widthOfScreen = assignWidth(context: context, fraction: 1.0);
     double heightOfScreen = assignHeight(context: context, fraction: 1.0);
@@ -120,7 +120,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         ),
         Container(
           decoration: BoxDecoration(
-            gradient: Gradients.darkOverlayGradient2,
+            gradient: Gradients.darkOverlayGradient,
           ),
         ),
         Container(
@@ -132,14 +132,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             children: [
               Text(
                 title,
-                style: theme.textTheme.headline4.copyWith(
+                style: theme.textTheme.headlineLarge?.copyWith(
                   color: RoamAppColors.white,
                 ),
               ),
               SpaceH8(),
               Text(
                 subtitle,
-                style: theme.textTheme.subtitle1.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                   color: RoamAppColors.white,
                 ),
               ),
@@ -155,28 +155,29 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     double widthOfScreen = assignWidth(context: context, fraction: 1.0);
     return Row(
       mainAxisAlignment:
-          !isLastItem() ? MainAxisAlignment.start : MainAxisAlignment.center,
+      !isLastItem() ? MainAxisAlignment.start : MainAxisAlignment.center,
       children: [
         !isLastItem()
             ? Expanded(
-                child: _buildControls(),
-              )
+          child: _buildControls(),
+        )
             : Container(
-                width: widthOfScreen - (kPadding * 2),
-                height: Sizes.HEIGHT_56,
-                child: Center(
-                  child: CustomButton(
-                    onPressed: () {
-                      ExtendedNavigator.root.push(Routes.loginScreen);
-                    },
-                    title: RoamStringConst.GET_STARTED,
-                    borderRadius: Sizes.RADIUS_8,
-                    textStyle: theme.textTheme.subtitle1.copyWith(
-                      color: RoamAppColors.white,
-                    ),
-                  ),
-                ),
-              )
+          width: widthOfScreen - (kPadding * 2),
+          height: Sizes.HEIGHT_56,
+          child: Center(
+            child: CustomButton(
+              onPressed: () {
+
+                AutoRouter.of(context).push(LoginScreenRoute());
+              },
+              title: RoamStringConst.GET_STARTED,
+              borderRadius: Sizes.RADIUS_8,
+              textStyle: theme.textTheme.titleLarge?.copyWith(
+                color: RoamAppColors.white,
+              ),
+            ),
+          ),
+        )
       ],
     );
   }
@@ -194,16 +195,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       children: [
         isFirstItem()
             ? Container(
-                width: Sizes.WIDTH_56,
-                height: Sizes.HEIGHT_56,
-                child: CustomButton2(
-                  onPressed: () => _slideBackwards(),
-                  color: RoamAppColors.lightGreen50,
-                  iconColor: RoamAppColors.accentColor,
-                  borderRadius: Sizes.RADIUS_8,
-                  icon: FeatherIcons.chevronLeft,
-                ),
-              )
+          width: Sizes.WIDTH_56,
+          height: Sizes.HEIGHT_56,
+          child: CustomButton2(
+            onPressed: () => _slideBackwards(),
+            color: RoamAppColors.lightGreen50,
+            iconColor: RoamAppColors.accentColor,
+            borderRadius: Sizes.RADIUS_8,
+            icon: FeatherIcons.chevronLeft,
+          ),
+        )
             : Empty(),
         isFirstItem() ? Spacer() : Empty(),
         Container(
@@ -218,11 +219,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               activeSize: Size(Sizes.SIZE_20, Sizes.SIZE_6),
               shape: RoundedRectangleBorder(
                 borderRadius:
-                    BorderRadius.all(const Radius.circular(Sizes.RADIUS_8)),
+                BorderRadius.all(const Radius.circular(Sizes.RADIUS_8)),
               ),
               activeShape: RoundedRectangleBorder(
                 borderRadius:
-                    BorderRadius.all(const Radius.circular(Sizes.RADIUS_8)),
+                BorderRadius.all(const Radius.circular(Sizes.RADIUS_8)),
               ),
               spacing: EdgeInsets.symmetric(horizontal: Sizes.SIZE_4),
             ),

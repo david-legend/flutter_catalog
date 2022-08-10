@@ -3,17 +3,18 @@ import 'package:fluttercatalog/values/values.dart';
 
 import 'empty.dart';
 
+
 class CustomTextFormField extends StatelessWidget {
-  final TextStyle textFormFieldStyle;
-  final TextStyle fieldTitleTextStyle;
-  final TextStyle hintTextStyle;
+  final TextStyle? textFormFieldStyle;
+  final TextStyle? fieldTitleTextStyle;
+  final TextStyle? hintTextStyle;
   final BorderStyle borderStyle;
   final double borderRadius;
   final double borderWidth;
   final double contentPaddingHorizontal;
   final double contentPaddingVertical;
-  final String prefixIconImagePath;
-  final String hintText;
+  final String? prefixIconImagePath;
+  final String? hintText;
   final Color prefixIconColor;
   final Color borderColor;
   final Color focusedBorderColor;
@@ -23,17 +24,23 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscured;
   final bool hasPrefixIcon;
   final bool hasSuffixIcon;
-  final Widget suffixIcon;
+  final Widget? suffixIcon;
   final int maxLines;
   final bool hasTitle;
+  final InputBorder? enabledBorder;
+  final InputBorder? focusedBorder;
+  final InputBorder? border;
 
-  final String fieldTitle;
+  final String? fieldTitle;
 
   CustomTextFormField({
     this.hasPrefixIcon = false,
     this.prefixIconImagePath,
     this.maxLines = 1,
     this.textFormFieldStyle,
+    this.border,
+    this.enabledBorder,
+    this.focusedBorder,
     this.fieldTitleTextStyle,
     this.hintTextStyle,
     this.borderStyle = BorderStyle.none,
@@ -53,16 +60,21 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.hasSuffixIcon = false,
     this.fieldTitle,
-  });
+  })  : assert((hasSuffixIcon == false && suffixIcon == null) ||
+      (hasSuffixIcon == true && suffixIcon != null)),
+        assert((hasPrefixIcon == false && prefixIconImagePath == null) ||
+            (hasPrefixIcon == true && prefixIconImagePath != null)),
+        assert((hasTitle == false && fieldTitle == null) ||
+            (hasTitle == true && fieldTitle != null));
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    TextStyle titleTextStyle = theme.textTheme.subtitle1;
-    TextStyle formTextStyle = theme.textTheme.subtitle1.copyWith(
+    TextStyle? titleTextStyle = theme.textTheme.titleLarge;
+    TextStyle? formTextStyle = theme.textTheme.titleLarge?.copyWith(
       color: RoamAppColors.secondaryColor,
     );
-    TextStyle formHintTextStyle = theme.textTheme.bodyText2.copyWith(
+    TextStyle? formHintTextStyle = theme.textTheme.bodyMedium?.copyWith(
       color: RoamAppColors.grey,
     );
     return Container(
@@ -71,43 +83,46 @@ class CustomTextFormField extends StatelessWidget {
         children: [
           hasTitle
               ? formFieldTitle(
-                  fieldTitle: fieldTitle,
-                  textStyle: fieldTitleTextStyle ?? titleTextStyle)
+              fieldTitle: fieldTitle!,
+              textStyle: fieldTitleTextStyle ?? titleTextStyle)
               : Empty(),
           TextFormField(
             style: textFormFieldStyle ?? formTextStyle,
             maxLines: maxLines,
             decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(borderRadius),
-                borderSide: BorderSide(
-                  color: borderColor,
-                  width: borderWidth,
-                  style: borderStyle,
-                ),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(borderRadius),
-                borderSide: BorderSide(
-                  color: enabledBorderColor,
-                  width: borderWidth,
-                  style: borderStyle,
-                ),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(borderRadius),
-                borderSide: BorderSide(
-                  color: focusedBorderColor,
-                  width: borderWidth,
-                  style: borderStyle,
-                ),
-              ),
+              border: border ??
+                  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(borderRadius),
+                    borderSide: BorderSide(
+                      color: borderColor,
+                      width: borderWidth,
+                      style: borderStyle,
+                    ),
+                  ),
+              enabledBorder: enabledBorder ??
+                  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(borderRadius),
+                    borderSide: BorderSide(
+                      color: enabledBorderColor,
+                      width: borderWidth,
+                      style: borderStyle,
+                    ),
+                  ),
+              focusedBorder: focusedBorder ??
+                  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(borderRadius),
+                    borderSide: BorderSide(
+                      color: focusedBorderColor,
+                      width: borderWidth,
+                      style: borderStyle,
+                    ),
+                  ),
               suffixIcon: hasSuffixIcon ? suffixIcon : null,
               prefixIcon: hasPrefixIcon
                   ? ImageIcon(
-                      AssetImage(prefixIconImagePath),
-                      color: prefixIconColor,
-                    )
+                AssetImage(prefixIconImagePath!),
+                color: prefixIconColor,
+              )
                   : null,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: contentPaddingHorizontal,
@@ -125,7 +140,7 @@ class CustomTextFormField extends StatelessWidget {
     );
   }
 
-  Widget formFieldTitle({@required String fieldTitle, TextStyle textStyle}) {
+  Widget formFieldTitle({required String fieldTitle, TextStyle? textStyle}) {
     return Container(
       margin: EdgeInsets.only(bottom: Sizes.MARGIN_8),
       child: Text(

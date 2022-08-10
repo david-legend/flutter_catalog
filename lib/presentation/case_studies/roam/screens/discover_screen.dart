@@ -23,11 +23,11 @@ class DiscoverScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          ExtendedNavigator.root.push(Routes.planTripScreen);
+          AutoRouter.of(context).push(PlanTripScreenRoute());
         },
         label: Text(
           RoamStringConst.NEW_TRIP,
-          style: theme.textTheme.subtitle1.copyWith(
+          style: theme.textTheme.titleLarge?.copyWith(
             color: RoamAppColors.white,
           ),
         ),
@@ -44,7 +44,7 @@ class DiscoverScreen extends StatelessWidget {
         children: [
           Text(
             RoamStringConst.MY_TRIPS,
-            style: theme.textTheme.headline5.copyWith(
+            style: theme.textTheme.headlineMedium?.copyWith(
               color: RoamAppColors.primaryColor,
               fontSize: Sizes.TEXT_SIZE_28,
             ),

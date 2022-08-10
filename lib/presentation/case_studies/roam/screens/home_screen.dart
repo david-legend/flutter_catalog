@@ -20,24 +20,24 @@ const double kButtonWidth = Sizes.WIDTH_56;
 
 class DiscoverCardItem {
   DiscoverCardItem({
-    @required this.title,
-    @required this.icon,
+    required this.title,
+    required this.icon,
     this.color,
     this.backgroundColor,
   });
 
   final String title;
   final String icon;
-  final Color color;
-  final Color backgroundColor;
+  final Color? color;
+  final Color? backgroundColor;
 }
 
 class TrendingCardItem {
   TrendingCardItem({
-    @required this.title,
-    @required this.subtitle,
-    this.imagePath,
-    this.rating,
+    required this.title,
+    required this.subtitle,
+    required this.imagePath,
+    this.rating = 0,
   });
 
   final String title;
@@ -48,11 +48,11 @@ class TrendingCardItem {
 
 class PlaceCardItem {
   PlaceCardItem({
-    @required this.title,
-    @required this.subtitle,
-    @required this.content,
-    this.imagePath,
-    this.rating,
+    required this.title,
+    required this.subtitle,
+    required this.content,
+    required this.imagePath,
+    this.rating = 0,
   });
 
   final String title;
@@ -62,12 +62,12 @@ class PlaceCardItem {
   final double rating;
 }
 
-class RoamHomeScreen extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _RoamHomeScreenState createState() => _RoamHomeScreenState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _RoamHomeScreenState extends State<RoamHomeScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -84,8 +84,8 @@ class _RoamHomeScreenState extends State<RoamHomeScreen> {
         children: [
           Text(
             RoamStringConst.TRAVEL,
-            style: theme.textTheme.headline5.copyWith(
-              color: RoamAppColors.primaryColor,
+            style: theme.textTheme.headlineMedium?.copyWith(
+              color: AppColors.primaryColor,
               fontSize: Sizes.TEXT_SIZE_28,
             ),
           ),
@@ -106,7 +106,7 @@ class _RoamHomeScreenState extends State<RoamHomeScreen> {
                 return DiscoverCard(
                   title: RoamData.discoverCardItems[index].title,
                   backgroundColor:
-                      RoamData.discoverCardItems[index].backgroundColor,
+                  RoamData.discoverCardItems[index].backgroundColor,
                   color: RoamData.discoverCardItems[index].color,
                   child: SvgPicture.asset(
                     RoamData.discoverCardItems[index].icon,
@@ -141,15 +141,12 @@ class _RoamHomeScreenState extends State<RoamHomeScreen> {
                   imagePath: RoamData.trendingItems[index].imagePath,
                   rating: RoamData.trendingItems[index].rating,
                   onTap: () {
-                    ExtendedNavigator.root.push(
-                      Routes.placeScreen,
-                      arguments: PlaceScreenArguments(
-                        place: RoamData.trendingItems[index].title,
-                        location: RoamData.trendingItems[index].subtitle,
-                        imagePath: RoamData.trendingItems[index].imagePath,
-                        rating: RoamData.trendingItems[index].rating,
-                      ),
-                    );
+                    AutoRouter.of(context).push(PlaceScreenRoute(
+                      place: RoamData.trendingItems[index].title,
+                      location: RoamData.trendingItems[index].subtitle,
+                      imagePath: RoamData.trendingItems[index].imagePath,
+                      rating: RoamData.trendingItems[index].rating,
+                    ));
                   },
                 );
               },
@@ -189,38 +186,4 @@ class _RoamHomeScreenState extends State<RoamHomeScreen> {
     );
   }
 
-  Widget _buildSearch() {
-    ThemeData theme = Theme.of(context);
-    double widthOfScreen = assignWidth(context: context, fraction: 1);
-    return Row(
-      children: [
-        Container(
-          width: widthOfScreen - ((kSidePadding * 2) + kButtonWidth + 8),
-          child: CustomTextFormField(
-            textFormFieldStyle: theme.textTheme.subtitle1.copyWith(
-              color: RoamAppColors.secondaryColor,
-            ),
-            hintText: RoamStringConst.SEARCH_HINT_TEXT,
-            prefixIconColor: RoamAppColors.primaryColor,
-            hintTextStyle: theme.textTheme.bodyText2.copyWith(
-              color: RoamAppColors.grey,
-            ),
-            filled: true,
-            fillColor: RoamAppColors.white,
-            borderStyle: BorderStyle.solid,
-          ),
-        ),
-        SpaceW8(),
-        Container(
-          width: kButtonWidth,
-          height: Sizes.HEIGHT_56,
-          child: CustomButton2(
-            onPressed: () {},
-            borderRadius: Sizes.RADIUS_8,
-            icon: FeatherIcons.sliders,
-          ),
-        )
-      ],
-    );
-  }
 }

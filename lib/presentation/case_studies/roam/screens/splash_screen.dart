@@ -11,7 +11,7 @@ import 'package:fluttercatalog/themes/roam_app_theme.dart';
 import 'package:fluttercatalog/values/values.dart';
 
 class RoamSplashScreen extends StatefulWidget {
-  RoamSplashScreen({@required this.themeBloc});
+  RoamSplashScreen({required this.themeBloc});
 
   final ThemeBloc themeBloc;
   @override
@@ -19,7 +19,7 @@ class RoamSplashScreen extends StatefulWidget {
 }
 
 class _RoamSplashScreenState extends State<RoamSplashScreen> {
-  ThemeBloc themeBloc;
+  late ThemeBloc themeBloc;
   @override
   void initState() {
     super.initState();
@@ -30,7 +30,7 @@ class _RoamSplashScreenState extends State<RoamSplashScreen> {
 
   void run() {
     Future.delayed(Duration(milliseconds: 1500), () {
-      ExtendedNavigator.root.push(Routes.onBoardingScreen);
+      AutoRouter.of(context).push(OnBoardingScreenRoute());
     });
   }
 
@@ -119,8 +119,8 @@ class _RoamSplashScreenState extends State<RoamSplashScreen> {
           children: [
             Text(
               RoamStringConst.APP_NAME,
-              style: theme.textTheme.headline4
-                  .copyWith(color: RoamAppColors.accentColor),
+              style: theme.textTheme.headlineLarge
+                  ?.copyWith(color: RoamAppColors.accentColor),
             ),
             SpaceW48(),
             BgCard(

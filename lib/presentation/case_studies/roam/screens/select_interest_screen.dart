@@ -6,6 +6,7 @@ import 'package:fluttercatalog/presentation/case_studies/roam/widgets/spaces.dar
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
 class InterestItem {
   InterestItem(this.title, this.imagePath);
 
@@ -40,20 +41,20 @@ class SelectInterestScreen extends StatelessWidget {
           RichText(
             text: TextSpan(
               text: RoamStringConst.HELLO,
-              style: theme.textTheme.bodyText1.copyWith(
+              style: theme.textTheme.bodyLarge?.copyWith(
                 color: RoamAppColors.secondaryColor,
               ),
               children: <TextSpan>[
                 TextSpan(
                   text: RoamStringConst.KRISTIN,
-                  style: theme.textTheme.bodyText1.copyWith(
+                  style: theme.textTheme.bodyLarge?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: RoamAppColors.secondaryColor,
                   ),
                 ),
                 TextSpan(
                   text: RoamStringConst.INTEREST,
-                  style: theme.textTheme.bodyText1.copyWith(
+                  style: theme.textTheme.bodyLarge?.copyWith(
                     color: RoamAppColors.secondaryColor,
                   ),
                 ),
@@ -63,7 +64,7 @@ class SelectInterestScreen extends StatelessWidget {
           SpaceH16(),
           Text(
             RoamStringConst.SELECT_5,
-            style: theme.textTheme.bodyText2.copyWith(
+            style: theme.textTheme.bodyMedium?.copyWith(
               color: RoamAppColors.grey,
             ),
           ),
@@ -76,12 +77,12 @@ class SelectInterestScreen extends StatelessWidget {
           SpaceH24(),
           CustomButton(
             onPressed: () {
-              ExtendedNavigator.root.push(Routes.followScreen);
+              AutoRouter.of(context).push(FollowScreenRoute());
             },
             height: Sizes.HEIGHT_56,
             title: RoamStringConst.NEXT,
             borderRadius: Sizes.RADIUS_8,
-            textStyle: theme.textTheme.subtitle1.copyWith(
+            textStyle: theme.textTheme.titleLarge?.copyWith(
               color: RoamAppColors.white,
             ),
           ),

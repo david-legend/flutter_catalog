@@ -6,8 +6,8 @@ import 'package:fluttercatalog/values/values.dart';
 
 class Rating extends StatelessWidget {
   Rating({
-    this.rating,
-    this.content,
+    this.rating = 0,
+    this.content = "",
     this.maxRating = 5,
     this.itemCount = 5,
     this.hasContent = true,
@@ -27,7 +27,7 @@ class Rating extends StatelessWidget {
         children: [
           Text(
             "$rating",
-            style: theme.textTheme.bodyText2.copyWith(
+            style: theme.textTheme.bodyMedium?.copyWith(
               color: RoamAppColors.grey200,
             ),
           ),
@@ -45,16 +45,16 @@ class Rating extends StatelessWidget {
               Icons.star,
               color: RoamAppColors.yellow,
             ),
-            onRatingUpdate: null,
+            onRatingUpdate: (rating){},
           ),
           hasContent ? SpaceW8() : Empty(),
           hasContent
               ? Text(
-                  "$content",
-                  style: theme.textTheme.bodyText2.copyWith(
-                    color: RoamAppColors.grey200,
-                  ),
-                )
+            "$content",
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: RoamAppColors.grey200,
+            ),
+          )
               : Empty(),
         ],
       ),

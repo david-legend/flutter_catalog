@@ -23,7 +23,7 @@ class BgCard extends StatelessWidget {
   final Color backgroundColor;
   final BorderRadiusGeometry borderRadius;
   final BoxShadow shadow;
-  final Widget child;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
