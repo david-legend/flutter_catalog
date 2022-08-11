@@ -17,17 +17,17 @@ class CurvedContainer extends StatelessWidget {
     this.boxShadow,
   });
 
-  final double height;
-  final Color backgroundColor;
-  final BorderRadiusGeometry borderRadius;
-  final BoxDecoration decoration;
-  final Widget child;
-  final EdgeInsetsGeometry margin;
+  final double? height;
+  final Color? backgroundColor;
+  final BorderRadiusGeometry? borderRadius;
+  final BoxDecoration? decoration;
+  final Widget? child;
+  final EdgeInsetsGeometry? margin;
   final double topLeftRadius;
   final double topRightRadius;
   final double bottomRightRadius;
   final double bottomLeftRadius;
-  final List<BoxShadow> boxShadow;
+  final List<BoxShadow>? boxShadow;
 
   @override
   Widget build(BuildContext context) {

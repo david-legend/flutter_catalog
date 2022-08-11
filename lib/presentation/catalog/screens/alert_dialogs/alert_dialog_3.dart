@@ -44,14 +44,14 @@ class AlertDialog3 extends StatelessWidget {
           children: [
             Text(
               StringConst.CONFIRM,
-              style: theme.textTheme.headline6.copyWith(
+              style: theme.textTheme.headlineSmall?.copyWith(
                 color: AppColors.white,
               ),
             ),
             SpaceH8(),
             Text(
               StringConst.LOREM_IPSUM,
-              style: theme.textTheme.bodyText2.copyWith(
+              style: theme.textTheme.bodyMedium?.copyWith(
                 color: AppColors.purple50,
               ),
             ),
@@ -60,7 +60,7 @@ class AlertDialog3 extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 FloatingActionButton(
-                  onPressed: () => closeDialog(),
+                  onPressed: () => closeDialog(context),
                   backgroundColor: AppColors.pink50,
                   child: Icon(
                     Icons.close,
@@ -69,7 +69,7 @@ class AlertDialog3 extends StatelessWidget {
                 ),
                 SpaceW8(),
                 FloatingActionButton(
-                  onPressed: () => closeDialog(),
+                  onPressed: () => closeDialog(context),
                   backgroundColor: AppColors.primaryColor,
                   child: Icon(
                     Icons.done,
@@ -84,7 +84,7 @@ class AlertDialog3 extends StatelessWidget {
     );
   }
 
-  void closeDialog() {
-    ExtendedNavigator.root.pop();
+  void closeDialog(BuildContext context) {
+    AutoRouter.of(context).pop();
   }
 }

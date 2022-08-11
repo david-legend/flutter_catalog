@@ -30,7 +30,7 @@ const _desktopCardsPerPage = 4;
 //TODO:: Link my Bio and Details
 
 class RootScreen extends StatefulWidget {
-  RootScreen({@required this.themeBloc});
+  RootScreen({required this.themeBloc});
 
   final ThemeBloc themeBloc;
 
@@ -41,15 +41,13 @@ class RootScreen extends StatefulWidget {
 class _RootScreenState extends State<RootScreen>
     with SingleTickerProviderStateMixin, RouteAware {
   var scaffoldKey = GlobalKey<ScaffoldState>();
-  AnimationController _animationController;
-  ThemeBloc themeBloc;
-  List<Menu.MenuItem> menuList = [
-    Menu.MenuItem(
+  late AnimationController _animationController;
+  late ThemeBloc themeBloc;
+  List<Menu.CatalogMenuItem> menuList = [
+    Menu.CatalogMenuItem(
       StringConst.OTHER_PROJECTS,
       iconData: FeatherIcons.code,
-      onTap: () {
-        ExtendedNavigator.root.push(Routes.otherProjectsScreen);
-      },
+      route: OtherProjectsScreenRoute(),
     ),
   ];
 
@@ -67,14 +65,14 @@ class _RootScreenState extends State<RootScreen>
   @override
   void dispose() {
     _animationController.dispose();
-    routeObserver.unsubscribe(this);
+    // routeObserver.unsubscribe(this);
     super.dispose();
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    routeObserver.subscribe(this, ModalRoute.of(context));
+    // routeObserver.subscribe(this, ModalRoute.of(context));
   }
 
   @override
@@ -95,11 +93,8 @@ class _RootScreenState extends State<RootScreen>
         assetDarkColor: const Color(0xFF543B3C),
         textColor: AppColors.primaryColor,
         onTap: () {
-          ExtendedNavigator.root.push(
-            caseStudyDemos()[0].routeName,
-            arguments: DropSplashScreenArguments(
-              themeBloc: themeBloc,
-            ),
+          AutoRouter.of(context).push(
+            DropSplashScreenRoute(themeBloc: themeBloc),
           );
         },
       ),
@@ -111,11 +106,8 @@ class _RootScreenState extends State<RootScreen>
         assetDark: const AssetImage(RoamImagePath.ROAM_COVER),
         assetDarkColor: const Color(0xFF253538),
         onTap: () {
-          ExtendedNavigator.root.push(
-            caseStudyDemos()[1].routeName,
-            arguments: RoamSplashScreenArguments(
-              themeBloc: themeBloc,
-            ),
+          AutoRouter.of(context).push(
+            RoamSplashScreenRoute(themeBloc: themeBloc),
           );
         },
       ),
@@ -249,7 +241,7 @@ class _RootScreenState extends State<RootScreen>
                 child: Row(
                   children: [
                     InkWell(
-                      onTap: () => scaffoldKey.currentState.openDrawer(),
+                      onTap: () => scaffoldKey.currentState?.openDrawer(),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Icon(
@@ -262,7 +254,7 @@ class _RootScreenState extends State<RootScreen>
                     SpaceW12(),
                     Text(
                       StringConst.APP_NAME,
-                      style: theme.textTheme.headline5.copyWith(
+                      style: theme.textTheme.headlineMedium?.copyWith(
                         color: AppColors.primaryColor,
                       ),
                     ),
@@ -280,7 +272,7 @@ class _RootScreenState extends State<RootScreen>
                 ),
                 child: Text(
                   StringConst.CATEGORIES,
-                  style: theme.textTheme.headline6.copyWith(
+                  style: theme.textTheme.headlineSmall?.copyWith(
                     color: AppColors.primaryColor,
                   ),
                 ),
@@ -333,13 +325,13 @@ class _RootScreenState extends State<RootScreen>
               SpaceH8(),
               Text(
                 StringConst.DAVID_LEGEND,
-                style: theme.textTheme.headline6.copyWith(
+                style: theme.textTheme.headlineSmall?.copyWith(
                   color: AppColors.white,
                 ),
               ),
               Text(
                 StringConst.DAVID_LEGEND_USERNAME,
-                style: theme.textTheme.caption.copyWith(
+                style: theme.textTheme.bodySmall?.copyWith(
                   color: AppColors.white,
                 ),
               ),
@@ -350,7 +342,7 @@ class _RootScreenState extends State<RootScreen>
     );
   }
 
-  List<Widget> _buildMenuList(List<Menu.MenuItem> menuItemList) {
+  List<Widget> _buildMenuList(List<Menu.CatalogMenuItem> menuItemList) {
     ThemeData theme = Theme.of(context);
     List<Widget> menuList = [];
 
@@ -372,7 +364,7 @@ class _RootScreenState extends State<RootScreen>
               ),
               title: Text(
                 menuItemList[index].title,
-                style: theme.textTheme.subtitle2.copyWith(
+                style: theme.textTheme.titleMedium?.copyWith(
                   color: AppColors.black,
                 ),
               ),
@@ -382,7 +374,11 @@ class _RootScreenState extends State<RootScreen>
                   const Radius.circular(Sizes.RADIUS_80),
                 ),
               ),
-              onTap: menuItemList[index].onTap,
+              onTap: () {
+                if (menuItemList[index].route != null) {
+                  AutoRouter.of(context).push(menuItemList[index].route!);
+                }
+              },
             ),
           ),
         ),
@@ -397,10 +393,10 @@ class _RootScreenState extends State<RootScreen>
 /// which is defined in [_AnimatedHomePageState].
 class _AnimatedCategoryItem extends StatelessWidget {
   _AnimatedCategoryItem({
-    Key key,
-    double startDelayFraction,
-    @required this.controller,
-    @required this.child,
+    Key? key,
+    double startDelayFraction = 0,
+    required this.controller,
+    required this.child,
   })  : topPaddingAnimation = Tween(
           begin: 60.0,
           end: 0.0,
@@ -438,9 +434,9 @@ class _AnimatedCategoryItem extends StatelessWidget {
 /// Animates the carousel to come in from the right.
 class _AnimatedCarousel extends StatelessWidget {
   _AnimatedCarousel({
-    Key key,
-    @required this.child,
-    @required this.controller,
+    Key? key,
+    required this.child,
+    required this.controller,
   })  : startPositionAnimation = Tween(
           begin: 1.0,
           end: 0.0,
@@ -471,7 +467,7 @@ class _AnimatedCarousel extends StatelessWidget {
             builder: (context, child) {
               return PositionedDirectional(
                 start: constraints.maxWidth * startPositionAnimation.value,
-                child: child,
+                child: child!,
               );
             },
             child: Container(
@@ -489,9 +485,9 @@ class _AnimatedCarousel extends StatelessWidget {
 /// Animates a carousel card to come in from the right.
 class _AnimatedCarouselCard extends StatelessWidget {
   _AnimatedCarouselCard({
-    Key key,
-    @required this.child,
-    @required this.controller,
+    Key? key,
+    required this.child,
+    required this.controller,
   })  : startPaddingAnimation = Tween(
           begin: _horizontalPadding,
           end: 0.0,
@@ -530,9 +526,9 @@ class _AnimatedCarouselCard extends StatelessWidget {
 
 class _Carousel extends StatefulWidget {
   const _Carousel({
-    Key key,
-    this.children,
-    this.animationController,
+    Key? key,
+    required this.children,
+    required this.animationController,
   }) : super(key: key);
 
   final List<Widget> children;
@@ -544,22 +540,22 @@ class _Carousel extends StatefulWidget {
 
 class _CarouselState extends State<_Carousel>
     with SingleTickerProviderStateMixin {
-  PageController _controller;
+  late PageController _controller;
   int _currentPage = 0;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (_controller == null) {
-      // The viewPortFraction is calculated as the width of the device minus the
-      // padding.
-      final width = MediaQuery.of(context).size.width;
-      final padding = (_horizontalPadding * 2) - (_carouselItemMargin * 2);
-      _controller = PageController(
-        initialPage: _currentPage,
-        viewportFraction: (width - padding) / width,
-      );
-    }
+    // if (_controller == null) {
+    // The viewPortFraction is calculated as the width of the device minus the
+    // padding.
+    final width = MediaQuery.of(context).size.width;
+    final padding = (_horizontalPadding * 2) - (_carouselItemMargin * 2);
+    _controller = PageController(
+      initialPage: _currentPage,
+      viewportFraction: (width - padding) / width,
+    );
+    // }
   }
 
   @override
@@ -574,7 +570,7 @@ class _CarouselState extends State<_Carousel>
       builder: (context, child) {
         double value;
         if (_controller.position.haveDimensions) {
-          value = _controller.page - index;
+          value = _controller.page! - index;
         } else {
           // If haveDimensions is false, use _currentPage to calculate value.
           value = (_currentPage - index).toDouble();
@@ -629,8 +625,8 @@ class _CarouselState extends State<_Carousel>
 
 class _CarouselCard extends StatelessWidget {
   const _CarouselCard({
-    Key key,
-    this.demo,
+    Key? key,
+    required this.demo,
     this.asset,
     this.assetDark,
     this.assetColor,
@@ -640,12 +636,12 @@ class _CarouselCard extends StatelessWidget {
   }) : super(key: key);
 
   final CatalogDemo demo;
-  final ImageProvider asset;
-  final ImageProvider assetDark;
-  final Color assetColor;
-  final Color assetDarkColor;
-  final Color textColor;
-  final GestureTapCallback onTap;
+  final ImageProvider? asset;
+  final ImageProvider? assetDark;
+  final Color? assetColor;
+  final Color? assetDarkColor;
+  final Color? textColor;
+  final GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -688,13 +684,13 @@ class _CarouselCard extends StatelessWidget {
                   children: [
                     Text(
                       demo.title,
-                      style: textTheme.subtitle1.apply(color: textColor),
+                      style: textTheme.titleLarge?.apply(color: textColor),
                       maxLines: 1,
                       overflow: TextOverflow.visible,
                     ),
                     Text(
                       demo.subtitle,
-                      style: textTheme.caption.apply(color: textColor),
+                      style: textTheme.bodySmall?.apply(color: textColor),
                       maxLines: 1,
                       overflow: TextOverflow.visible,
                     ),
@@ -717,11 +713,11 @@ class _CarouselCard extends StatelessWidget {
 
 /// Scrolling physics that snaps to the new item in the [_DesktopCarousel].
 class _SnappingScrollPhysics extends ScrollPhysics {
-  const _SnappingScrollPhysics({ScrollPhysics parent}) : super(parent: parent);
+  const _SnappingScrollPhysics({ScrollPhysics? parent}) : super(parent: parent);
 
   @override
-  _SnappingScrollPhysics applyTo(ScrollPhysics ancestor) {
-    return _SnappingScrollPhysics(parent: buildParent(ancestor));
+  _SnappingScrollPhysics applyTo(ScrollPhysics? ancestor) {
+    return _SnappingScrollPhysics(parent: buildParent(ancestor)!);
   }
 
   double _getTargetPixels(
@@ -743,7 +739,7 @@ class _SnappingScrollPhysics extends ScrollPhysics {
   }
 
   @override
-  Simulation createBallisticSimulation(
+  Simulation? createBallisticSimulation(
     ScrollMetrics position,
     double velocity,
   ) {
@@ -771,13 +767,13 @@ class _SnappingScrollPhysics extends ScrollPhysics {
 
 class _DesktopPageButton extends StatelessWidget {
   const _DesktopPageButton({
-    Key key,
+    Key? key,
     this.isEnd = false,
     this.onTap,
   }) : super(key: key);
 
   final bool isEnd;
-  final GestureTapCallback onTap;
+  final GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {

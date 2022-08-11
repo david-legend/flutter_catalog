@@ -8,7 +8,7 @@ import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 
 class LoginScreen3 extends StatefulWidget {
-  LoginScreen3();
+
 
   @override
   _LoginScreen3State createState() => _LoginScreen3State();
@@ -18,6 +18,17 @@ class _LoginScreen3State extends State<LoginScreen3> {
   GlobalKey key = GlobalKey();
   double buttonOffset = 40.0;
   double textOffset = 60.0;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // executes after build
+      getSizeOfCard();
+    });
+  }
+
+
 
   void getSizeOfCard() {
     final keyContext = key.currentContext;
@@ -113,7 +124,7 @@ class _LoginScreen3State extends State<LoginScreen3> {
                           Text(
                             StringConst.LOG_IN_2,
                             textAlign: TextAlign.center,
-                            style: textTheme.headline.copyWith(
+                            style: textTheme.headlineMedium?.copyWith(
                               color: AppColors.lightBlueShade5,
                             ),
                           ),
@@ -122,10 +133,10 @@ class _LoginScreen3State extends State<LoginScreen3> {
                           SpaceH16(),
                           Container(
                             margin:
-                                EdgeInsets.only(left: (widthOfScreen * 0.75)),
+                            EdgeInsets.only(left: (widthOfScreen * 0.75)),
                             child: Text(
                               "Forgot ?",
-                              style: textTheme.body1.copyWith(
+                              style: textTheme.bodyLarge?.copyWith(
                                 fontSize: Sizes.TEXT_SIZE_16,
                                 color: AppColors.lightBlueShade1,
                                 fontWeight: FontWeight.w600,
@@ -137,11 +148,10 @@ class _LoginScreen3State extends State<LoginScreen3> {
                             height: 60,
                             width: 120,
                             margin:
-                                EdgeInsets.only(right: (widthOfScreen - 120)),
+                            EdgeInsets.only(right: (widthOfScreen - 120)),
                             child: RaisedButton(
-                              onPressed: () => ExtendedNavigator.root.push(
-                                Routes.signUpScreen3,
-                              ),
+                              onPressed: () => AutoRouter.of(context).push(SignUpScreen3Route()),
+
                               color: AppColors.white,
                               elevation: Sizes.ELEVATION_6,
                               shape: RoundedRectangleBorder(
@@ -152,7 +162,7 @@ class _LoginScreen3State extends State<LoginScreen3> {
                               ),
                               child: Text(
                                 StringConst.REGISTER,
-                                style: textTheme.button.copyWith(
+                                style: textTheme.bodyMedium?.copyWith(
                                   color: AppColors.orangeShade1,
                                 ),
                               ),
@@ -171,7 +181,7 @@ class _LoginScreen3State extends State<LoginScreen3> {
     );
   }
 
-  Widget _buildForm({@required BuildContext context}) {
+  Widget _buildForm({required BuildContext context}) {
     var widthOfScreen = MediaQuery.of(context).size.width;
 
     return Container(
@@ -287,3 +297,4 @@ class _LoginScreen3State extends State<LoginScreen3> {
     );
   }
 }
+

@@ -158,7 +158,7 @@ import 'package:fluttercatalog/presentation/root_screen.dart';
     CupertinoRoute(page: ProfileScreen),
     CupertinoRoute(page: CheckOutScreen),
 
-    /****************************** Drop Routes ******************************/
+    /****************************** Roam Routes ******************************/
     // initial route is named "/"
     MaterialRoute(page: RoamSplashScreen),
 

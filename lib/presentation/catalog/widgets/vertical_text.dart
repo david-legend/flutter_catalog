@@ -3,16 +3,16 @@ import 'package:fluttercatalog/values/values.dart';
 
 class VerticalText extends StatelessWidget {
   VerticalText({
-    this.title,
-    this.subtitle,
+    required this.title,
+    required this.subtitle,
     this.titleTextStyle,
     this.subtitleTextStyle,
   });
 
   final String title;
   final String subtitle;
-  final TextStyle titleTextStyle;
-  final TextStyle subtitleTextStyle;
+  final TextStyle? titleTextStyle;
+  final TextStyle? subtitleTextStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +22,14 @@ class VerticalText extends StatelessWidget {
         Text(
           title,
           style: titleTextStyle ??
-              theme.textTheme.headline6.copyWith(
+              theme.textTheme.headlineSmall?.copyWith(
                 color: AppColors.white,
               ),
         ),
         Text(
           subtitle,
           style: subtitleTextStyle ??
-              theme.textTheme.subtitle1.copyWith(color: AppColors.purple50),
+              theme.textTheme.titleLarge?.copyWith(color: AppColors.purple50),
         ),
       ],
     );

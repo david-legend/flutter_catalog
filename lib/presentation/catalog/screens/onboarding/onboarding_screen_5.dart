@@ -9,8 +9,8 @@ class OnBoardingScreen5 extends StatefulWidget {
 }
 
 class _OnBoardingScreen5State extends State<OnBoardingScreen5> {
-  double currentIndexPage;
-  int pageLength;
+  late double currentIndexPage;
+  late int pageLength;
   List<String> onBoardingImageList = [
     ImagePath.CARRIBEAN,
     ImagePath.YOGA_2,
@@ -114,7 +114,7 @@ class _OnBoardingScreen5State extends State<OnBoardingScreen5> {
               child: Text(
                 StringConst.LOREM_IPSUM,
                 textAlign: TextAlign.center,
-                style: theme.textTheme.bodyText2.copyWith(
+                style: theme.textTheme.bodyMedium?.copyWith(
                   color: AppColors.blackShade6,
                 ),
               ),
@@ -134,7 +134,7 @@ class _OnBoardingScreen5State extends State<OnBoardingScreen5> {
                   Container(),
                   Text(
                     StringConst.CONTINUE,
-                    style: theme.textTheme.subtitle1.copyWith(
+                    style: theme.textTheme.titleLarge?.copyWith(
                       color: AppColors.white,
                     ),
                   ),

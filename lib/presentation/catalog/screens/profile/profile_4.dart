@@ -13,7 +13,7 @@ class Profile4Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
 
-    TextStyle subtitleTextStyle = theme.textTheme.bodyText1.copyWith(
+    TextStyle? subtitleTextStyle = theme.textTheme.bodyLarge?.copyWith(
       color: AppColors.white,
       fontSize: Sizes.TEXT_SIZE_14,
     );
@@ -84,11 +84,11 @@ class Profile4Screen extends StatelessWidget {
                 SpaceH16(),
                 VerticalText(
                   title: StringConst.JACK_SNOW,
-                  titleTextStyle: theme.textTheme.headline5.copyWith(
+                  titleTextStyle: theme.textTheme.headlineMedium?.copyWith(
                     color: AppColors.violet400,
                   ),
                   subtitle: StringConst.LOCATION_2,
-                  subtitleTextStyle: theme.textTheme.bodyText1.copyWith(
+                  subtitleTextStyle: theme.textTheme.bodyLarge?.copyWith(
                     color: AppColors.indigo50,
                   ),
                 )
@@ -110,14 +110,14 @@ class Profile4Screen extends StatelessWidget {
   @swidget
   Widget _buildListCards(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    TextStyle headingStyle = theme.textTheme.subtitle2.copyWith(
+    TextStyle? headingStyle = theme.textTheme.titleMedium?.copyWith(
       color: AppColors.white,
     );
-    TextStyle contentStyle = theme.textTheme.bodyText1.copyWith(
+    TextStyle? contentStyle = theme.textTheme.bodyLarge?.copyWith(
       color: AppColors.purple10,
       fontSize: Sizes.TEXT_SIZE_14,
     );
-    TextStyle iconTextStyle = theme.textTheme.subtitle1.copyWith(
+    TextStyle? iconTextStyle = theme.textTheme.titleLarge?.copyWith(
       color: AppColors.indigo50,
     );
 

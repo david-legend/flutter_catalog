@@ -75,7 +75,7 @@ class FollowScreen extends StatelessWidget {
           SpaceH20(),
           CustomButton(
             onPressed: () {
-              AutoRouter.of(context).push(RootScreenRoute());
+              AutoRouter.of(context).push(RoamRootScreenRoute());
             },
             height: Sizes.HEIGHT_56,
             title: RoamStringConst.FINISH,

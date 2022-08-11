@@ -24,7 +24,8 @@ class NotificationsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             boxShadow: Shadows.containerShadow,
             onLeadingTap: () {
-              ExtendedNavigator.root.pop();
+
+              AutoRouter.of(context).pop();
             },
             title: Padding(
               padding: const EdgeInsets.only(
@@ -36,7 +37,7 @@ class NotificationsScreen extends StatelessWidget {
                   Text(
                     StringConst.NOTIFICATIONS,
                     textAlign: TextAlign.left,
-                    style: theme.textTheme.headline5.copyWith(),
+                    style: theme.textTheme.headlineMedium?.copyWith(),
                   )
                 ],
               ),

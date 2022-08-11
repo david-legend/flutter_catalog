@@ -12,12 +12,12 @@ import 'package:fluttercatalog/values/values.dart';
 
 const double kPaddingHorizontal = Sizes.PADDING_24;
 
-class ProfileScreen extends StatefulWidget {
+class RoamProfileScreen extends StatefulWidget {
   @override
-  _ProfileScreenState createState() => _ProfileScreenState();
+  _RoamProfileScreenState createState() => _RoamProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen>
+class _RoamProfileScreenState extends State<RoamProfileScreen>
 {
 
   @override

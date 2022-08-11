@@ -6,6 +6,7 @@ import 'package:fluttercatalog/presentation/catalog/widgets/custom_text_form_fie
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
 class SignUpScreen3 extends StatefulWidget {
   @override
   _SignUpScreen3State createState() => _SignUpScreen3State();
@@ -33,6 +34,17 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
       });
     }
   }
+
+//  void getSizeOfCard() {
+//    final keyContext = key.currentContext;
+//    if (keyContext != null) {
+//      print("hello");
+//      final box = keyContext.findRenderObject() as RenderBox;
+//      setState(() {
+//        height = (box.size.height / 2) - 30;
+//      });
+//    }
+//  }
 
   @override
   Widget build(BuildContext context) {
@@ -110,8 +122,9 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
                 height: Sizes.HEIGHT_60,
                 width: Sizes.WIDTH_120,
                 child: RaisedButton(
-                  onPressed: () =>
-                      ExtendedNavigator.root.push(Routes.loginScreen3),
+                  onPressed: () => AutoRouter.of(context).push(
+                    LoginScreen3Route(),
+                  ),
                   color: AppColors.white,
                   elevation: Sizes.ELEVATION_6,
                   shape: RoundedRectangleBorder(
@@ -122,7 +135,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
                   ),
                   child: Text(
                     StringConst.LOG_IN_2,
-                    style: textTheme.button.copyWith(
+                    style: textTheme.bodyMedium?.copyWith(
                       color: AppColors.orangeShade1,
                     ),
                   ),
@@ -144,7 +157,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
                               Text(
                                 StringConst.REGISTER,
                                 textAlign: TextAlign.center,
-                                style: textTheme.headline.copyWith(
+                                style: textTheme.headlineMedium?.copyWith(
                                   color: AppColors.lightBlueShade5,
                                 ),
                               ),
@@ -165,7 +178,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
     );
   }
 
-  Widget _buildForm({@required BuildContext context}) {
+  Widget _buildForm({required BuildContext context}) {
     var widthOfScreen = MediaQuery.of(context).size.width;
 
     return Container(

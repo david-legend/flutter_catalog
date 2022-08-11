@@ -11,11 +11,11 @@ class OnBoardingScreen7 extends StatefulWidget {
 }
 
 class _OnBoardingScreen7State extends State<OnBoardingScreen7> {
+  late int pageLength;
   CarouselController _carouselController = CarouselController();
 
   int itemLength = 4;
   double currentIndexPage = 0;
-  int pageLength;
 
   @override
   void initState() {
@@ -98,7 +98,7 @@ class _OnBoardingScreen7State extends State<OnBoardingScreen7> {
             child: Text(
               StringConst.LOREM_IPSUM,
               textAlign: TextAlign.center,
-              style: theme.textTheme.bodyText2.copyWith(
+              style: theme.textTheme.bodyMedium?.copyWith(
                 color: AppColors.blackShade6,
               ),
             ),
@@ -146,7 +146,7 @@ class _OnBoardingScreen7State extends State<OnBoardingScreen7> {
             children: [
               Text(
                 StringConst.NEXT.toUpperCase(),
-                style: theme.textTheme.subtitle2.copyWith(
+                style: theme.textTheme.titleMedium?.copyWith(
                   color: AppColors.white,
                 ),
               ),

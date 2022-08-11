@@ -17,7 +17,7 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
   @override
   Widget build(BuildContext context) {
     double tearDropButtonRadius =
-        assignHeight(context: context, fraction: 0.07);
+    assignHeight(context: context, fraction: 0.07);
     ThemeData theme = Theme.of(context);
 
     return GestureDetector(
@@ -35,7 +35,7 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
               _drawTearDrop(),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
+                const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
                 child: _buildForm(),
               ),
               SpaceH20(),
@@ -55,11 +55,11 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
                             tearDropAlignment: TearDropAlignment.bottomRight,
                             style: PaintingStyle.stroke,
                             color: AppColors.indigo200,
-                            buttonTextStyle: theme.textTheme.bodyText1.copyWith(
+                            buttonTextStyle: theme.textTheme.bodyLarge?.copyWith(
                               color: AppColors.indigo200,
                             ),
                             onTap: () {
-                              ExtendedNavigator.root.pop();
+                              AutoRouter.of(context).pop();
                             },
                           ),
                         ),
@@ -81,7 +81,7 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
                 alignment: Alignment.center,
                 child: Text(
                   StringConst.ALREADY_HAVE_AN_ACCOUNT,
-                  style: theme.textTheme.bodyText1.copyWith(
+                  style: theme.textTheme.bodyLarge?.copyWith(
                     color: AppColors.indigo200,
                   ),
                 ),
@@ -124,14 +124,14 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  StringConst.LETS_GET_STARTED,
-                  style: theme.textTheme.headline5.copyWith(
+                  StringConst.GET_STARTED,
+                  style: theme.textTheme.headlineMedium?.copyWith(
                     color: AppColors.white,
                   ),
                 ),
                 Text(
                   StringConst.CREATE_ACCOUNT,
-                  style: theme.textTheme.bodyText1.copyWith(
+                  style: theme.textTheme.bodyLarge?.copyWith(
                     color: AppColors.white,
                   ),
                 ),
@@ -145,14 +145,14 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
 
   Widget _buildForm() {
     ThemeData theme = Theme.of(context);
-    TextStyle titleTextStyle = theme.textTheme.subtitle2.copyWith(
+    TextStyle? titleTextStyle = theme.textTheme.titleSmall?.copyWith(
       color: AppColors.orangeShade6,
     );
-    TextStyle hintTextStyle = theme.textTheme.bodyText1.copyWith(
+    TextStyle? hintTextStyle = theme.textTheme.bodyLarge?.copyWith(
       color: AppColors.indigo200,
     );
     UnderlineInputBorder customUnderlineInputBorder =
-        Borders.customUnderlineInputBorder(
+    Borders.customUnderlineInputBorder(
       color: AppColors.indigo200,
     );
 

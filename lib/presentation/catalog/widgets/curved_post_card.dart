@@ -7,17 +7,17 @@ import 'action_icon.dart';
 
 class PostItem {
   PostItem({
-    @required this.height,
-    @required this.body,
+    required this.height,
+     this.body,
     this.hasHeader = false,
     this.hasFooter = true,
     this.topMargin = 0.0,
     this.backgroundColor = AppColors.white,
     this.bodyTextColor = AppColors.black,
     this.footerIconColor = AppColors.grey,
-    this.profileImagePath,
-    this.headerSubTitle,
-    this.headerTitle,
+     this.profileImagePath,
+     this.headerSubTitle,
+     this.headerTitle,
     this.headerTitleColor = AppColors.white,
     this.headerSubtitleColor = AppColors.white,
   });
@@ -29,12 +29,12 @@ class PostItem {
   final Color backgroundColor;
   final Color bodyTextColor;
   final Color footerIconColor;
-  final String profileImagePath;
-  final String headerTitle;
+  final String? profileImagePath;
+  final String? headerTitle;
   final Color headerTitleColor;
-  final String headerSubTitle;
+  final String? headerSubTitle;
   final Color headerSubtitleColor;
-  final Widget body;
+  final Widget? body;
 }
 
 class CurvedPostCard extends StatelessWidget {
@@ -56,18 +56,18 @@ class CurvedPostCard extends StatelessWidget {
     this.bodyTextColor = AppColors.black,
     this.footerIconColor = AppColors.grey,
     this.headerMainAxisAlignment = MainAxisAlignment.start,
-    this.profileImagePath,
-    this.headerTitle,
+     this.profileImagePath,
+     this.headerTitle,
     this.headerTitleColor = AppColors.white,
-    this.headerSubTitle,
+     this.headerSubTitle,
     this.headerSubtitleColor = AppColors.white,
     this.headerTitleStyle,
     this.headerSubtitleStyle,
   });
 
-  final double spacerHeight;
-  final BorderRadiusGeometry borderRadius;
-  final double height;
+  final double? spacerHeight;
+  final BorderRadiusGeometry? borderRadius;
+  final double? height;
   final String bodyText;
   final bool hasFooter;
   final bool hasHeader;
@@ -75,16 +75,16 @@ class CurvedPostCard extends StatelessWidget {
   final Color backgroundColor;
   final Color bodyTextColor;
   final Color footerIconColor;
-  final Widget body;
-  final Widget footer;
+  final Widget? body;
+  final Widget? footer;
   final MainAxisAlignment headerMainAxisAlignment;
-  final String profileImagePath;
-  final String headerTitle;
+  final String? profileImagePath;
+  final String? headerTitle;
   final Color headerTitleColor;
-  final String headerSubTitle;
+  final String? headerSubTitle;
   final Color headerSubtitleColor;
-  final TextStyle headerTitleStyle;
-  final TextStyle headerSubtitleStyle;
+  final TextStyle? headerTitleStyle;
+  final TextStyle? headerSubtitleStyle;
   final BoxShadow shadow;
 
   @override
@@ -101,7 +101,7 @@ class CurvedPostCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Container(height: spacerHeight) ?? Container(),
+          Container(height: spacerHeight ?? 0),
           hasHeader
               ? Padding(
                   padding: padding,
@@ -130,7 +130,7 @@ class CurvedPostCard extends StatelessWidget {
   }
 
   Widget _buildFooter(BuildContext context) {
-    TextStyle textStyle = Theme.of(context).textTheme.bodyText1.copyWith(
+    TextStyle? textStyle = Theme.of(context).textTheme.bodyLarge?.copyWith(
           color: footerIconColor,
           fontSize: Sizes.TEXT_SIZE_14,
         );
@@ -172,7 +172,7 @@ class CurvedPostCard extends StatelessWidget {
       mainAxisAlignment: headerMainAxisAlignment,
       children: [
         CircleAvatar(
-          backgroundImage: AssetImage(profileImagePath),
+          backgroundImage: AssetImage(profileImagePath!),
           minRadius: Sizes.RADIUS_20,
           maxRadius: Sizes.RADIUS_20,
         ),
@@ -181,16 +181,16 @@ class CurvedPostCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              headerTitle,
+              headerTitle!,
               style: headerTitleStyle ??
-                  theme.textTheme.subtitle2.copyWith(
+                  theme.textTheme.titleMedium?.copyWith(
                     color: headerTitleColor,
                   ),
             ),
             Text(
-              headerSubTitle,
+              headerSubTitle!,
               style: headerSubtitleStyle ??
-                  theme.textTheme.bodyText1.copyWith(
+                  theme.textTheme.bodyLarge?.copyWith(
                     color: headerSubtitleColor,
                     fontSize: Sizes.TEXT_SIZE_14,
                   ),

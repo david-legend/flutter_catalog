@@ -10,7 +10,7 @@ class BottomSheet3 extends StatefulWidget {
 }
 
 class _BottomSheet3State extends State<BottomSheet3> {
-  List<SheetItemData> sheetItems;
+ late List<SheetItemData> sheetItems;
   Radius borderRadius = const Radius.circular(Sizes.RADIUS_60);
 
   @override
@@ -77,7 +77,8 @@ class _BottomSheet3State extends State<BottomSheet3> {
   }
 
   void closeDialog() {
-    ExtendedNavigator.root.pop();
+
+    AutoRouter.of(context).pop();
   }
 
   List<Widget> _buildSheetItems(List<SheetItemData> sheetItems) {
@@ -105,7 +106,7 @@ class _BottomSheet3State extends State<BottomSheet3> {
   double getHeight(int startIndex, int length) {
     double height = 0.0;
     for (var i = startIndex; i < length; i++) {
-      height += sheetItems[i].height;
+      height += sheetItems[i].height!;
     }
     return height;
   }

@@ -45,14 +45,14 @@ class AlertDialog2 extends StatelessWidget {
           children: [
             Text(
               StringConst.ARE_YOU_SURE,
-              style: theme.textTheme.headline6.copyWith(
+              style: theme.textTheme.headlineSmall?.copyWith(
                 color: AppColors.white,
               ),
             ),
             SpaceH8(),
             Text(
               StringConst.LOREM_IPSUM,
-              style: theme.textTheme.bodyText2.copyWith(
+              style: theme.textTheme.bodyMedium?.copyWith(
                 color: AppColors.purple50,
               ),
             ),
@@ -60,31 +60,31 @@ class AlertDialog2 extends StatelessWidget {
             CustomButton(
               title: StringConst.YES,
               height: Sizes.HEIGHT_44,
-              textStyle: theme.textTheme.subtitle2.copyWith(
+              textStyle: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.white,
               ),
               color: AppColors.primaryColor,
-              onPressed: () => closeDialog(),
+              onPressed: () => closeDialog(context),
             ),
             SpaceH8(),
             CustomButton(
               title: StringConst.MAYBE,
               height: Sizes.HEIGHT_44,
               color: AppColors.pink50,
-              textStyle: theme.textTheme.subtitle2.copyWith(
+              textStyle: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.white,
               ),
-              onPressed: () => closeDialog(),
+              onPressed: () => closeDialog(context),
             ),
             SpaceH8(),
             CustomButton(
               title: StringConst.CANCEL,
               height: Sizes.HEIGHT_44,
               color: AppColors.purple100,
-              textStyle: theme.textTheme.subtitle2.copyWith(
+              textStyle: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.white,
               ),
-              onPressed: () => closeDialog(),
+              onPressed: () => closeDialog(context),
             ),
             Spacer(),
           ],
@@ -93,7 +93,7 @@ class AlertDialog2 extends StatelessWidget {
     );
   }
 
-  void closeDialog() {
-    ExtendedNavigator.root.pop();
+  void closeDialog(BuildContext context) {
+    AutoRouter.of(context).pop();
   }
 }

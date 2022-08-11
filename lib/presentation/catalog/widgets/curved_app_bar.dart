@@ -33,29 +33,29 @@ class CurvedAppBar extends StatelessWidget {
     this.title,
   });
 
-  final double height;
-  final Widget leading;
-  final Widget trailing;
-  final GestureTapCallback onLeadingTap;
-  final GestureTapCallback onTrailingTap;
+  final double? height;
+  final Widget? leading;
+  final Widget? trailing;
+  final GestureTapCallback? onLeadingTap;
+  final GestureTapCallback? onTrailingTap;
   final bool hasLeading;
   final bool hasTrailing;
   final Color backgroundColor;
   final IconData leadingIcon;
   final IconData trailingIcon;
-  final Color iconColor;
+  final Color? iconColor;
   final double iconSize;
-  final BorderRadiusGeometry borderRadius;
-  final BoxDecoration decoration;
-  final EdgeInsetsGeometry margin;
+  final BorderRadiusGeometry? borderRadius;
+  final BoxDecoration? decoration;
+  final EdgeInsetsGeometry? margin;
   final double topLeftRadius;
   final double topRightRadius;
   final double bottomRightRadius;
   final double bottomLeftRadius;
-  final BoxShadow boxShadow;
+  final BoxShadow? boxShadow;
   final MainAxisAlignment mainAxisAlignment;
   final CrossAxisAlignment crossAxisAlignment;
-  final Widget title;
+  final Widget? title;
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +104,7 @@ class CurvedAppBar extends StatelessWidget {
   @swidget
   Widget defaultLeading(BuildContext context) {
     return InkWell(
-      onTap: onLeadingTap ?? () => ExtendedNavigator.of(context).pop(),
+      onTap: onLeadingTap ?? () => AutoRouter.of(context).pop(),
       child: Icon(
         leadingIcon,
         color: iconColor,

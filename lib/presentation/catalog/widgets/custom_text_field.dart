@@ -1,142 +1,134 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:fluttercatalog/values/values.dart';
 
 class CustomTextField extends StatelessWidget {
-  final TextEditingController controller;
-  final TextStyle textFormFieldStyle;
-  final TextStyle hintTextStyle;
-  final TextStyle fieldTitleTextStyle;
+  final TextStyle? textFormFieldStyle;
+  final TextStyle? fieldTitleTextStyle;
+  final TextStyle? hintTextStyle;
   final BorderStyle borderStyle;
   final double borderRadius;
   final double borderWidth;
   final double contentPaddingHorizontal;
   final double contentPaddingVertical;
-  final String hintText;
-  final String fieldTitle;
+  final String? prefixIconImagePath;
+  final String? hintText;
+  final Color prefixIconColor;
+  final Color borderColor;
+  final Color focusedBorderColor;
+  final Color enabledBorderColor;
   final Color fillColor;
   final bool filled;
   final bool obscured;
-  final bool autoCorrect;
-  final bool hasTitle;
-  final bool hasSuffixIcon;
   final bool hasPrefixIcon;
-  final IconData suffixIcon;
-  final IconData prefixIcon;
-  final Color suffixIconColor;
-  final Color prefixIconColor;
-  final Color suffixIconBackgroundColor;
-  final GestureTapCallback onTapSuffixIcon;
-  final GestureTapCallback onTapPrefixIcon;
-  final GestureTapCallback onTap;
-  final TextInputType textInputType;
-  final FormFieldValidator<String> validator;
+  final bool hasSuffixIcon;
+  final Widget? suffixIcon;
   final int maxLines;
-  final InputBorder border;
-  final InputBorder enabledBorder;
-  final InputBorder focusedBorder;
-  final String initialValue;
+  final bool hasTitle;
+  final InputBorder? enabledBorder;
+  final InputBorder? focusedBorder;
+  final InputBorder? border;
+  final String? fieldTitle;
 
   CustomTextField({
-    this.controller,
-    this.hasSuffixIcon = false,
-    this.autoCorrect = false,
-    this.suffixIcon = FeatherIcons.search,
-    this.onTapSuffixIcon,
-    this.onTap,
-    this.suffixIconBackgroundColor = AppColors.primaryColor,
-    this.suffixIconColor = AppColors.primaryText,
-    this.prefixIcon,
-    this.onTapPrefixIcon,
-    this.prefixIconColor,
-    this.hasPrefixIcon,
-    this.textInputType = TextInputType.text,
+    this.hasPrefixIcon = false,
+    this.prefixIconImagePath,
+    this.maxLines = 1,
     this.textFormFieldStyle,
+    this.border,
+    this.enabledBorder,
+    this.focusedBorder,
     this.fieldTitleTextStyle,
     this.hintTextStyle,
     this.borderStyle = BorderStyle.none,
     this.borderRadius = Sizes.RADIUS_6,
     this.borderWidth = Sizes.WIDTH_0,
-    this.contentPaddingHorizontal = Sizes.SIZE_16,
-    this.contentPaddingVertical = Sizes.SIZE_16,
+    this.contentPaddingHorizontal = Sizes.PADDING_16,
+    this.contentPaddingVertical = Sizes.PADDING_16,
     this.hintText,
-    this.fillColor = AppColors.white,
+    this.prefixIconColor = RoamAppColors.primaryColor,
+    this.borderColor = RoamAppColors.grey,
+    this.focusedBorderColor = RoamAppColors.grey,
+    this.enabledBorderColor = RoamAppColors.grey,
+    this.fillColor = RoamAppColors.white,
     this.filled = true,
     this.obscured = false,
     this.hasTitle = false,
+    this.suffixIcon,
+    this.hasSuffixIcon = false,
     this.fieldTitle,
-    this.validator,
-    this.maxLines = 1,
-    this.border = Borders.defaultBorder,
-    this.focusedBorder = Borders.defaultBorder,
-    this.enabledBorder = Borders.defaultBorder,
-    this.initialValue,
-  });
+  })  : assert((hasSuffixIcon == false && suffixIcon == null) ||
+      (hasSuffixIcon == true && suffixIcon != null)),
+        assert((hasPrefixIcon == false && prefixIconImagePath == null) ||
+            (hasPrefixIcon == true && prefixIconImagePath != null)),
+        assert((hasTitle == false && fieldTitle == null) ||
+            (hasTitle == true && fieldTitle != null));
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
+    TextStyle? titleTextStyle = theme.textTheme.titleLarge;
+    TextStyle? formTextStyle = theme.textTheme.titleLarge?.copyWith(
+      color: RoamAppColors.secondaryColor,
+    );
+    TextStyle? formHintTextStyle = theme.textTheme.bodyMedium?.copyWith(
+      color: RoamAppColors.grey,
+    );
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          hasTitle ? formFieldTitle(fieldTitle: fieldTitle) : Container(),
+        children: [
+          hasTitle
+              ? formFieldTitle(
+              fieldTitle: fieldTitle!,
+              textStyle: fieldTitleTextStyle ?? titleTextStyle)
+              : Container(),
           TextFormField(
-            controller: controller,
-            style: textFormFieldStyle,
-            validator: validator,
-            initialValue: initialValue,
-            onTap: onTap,
-            autocorrect: autoCorrect,
-            autovalidate: true,
+            style: textFormFieldStyle ?? formTextStyle,
             maxLines: maxLines,
             decoration: InputDecoration(
-              border: border,
-              enabledBorder: enabledBorder,
-              focusedBorder: focusedBorder,
+              border: border ??
+                  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(borderRadius),
+                    borderSide: BorderSide(
+                      color: borderColor,
+                      width: borderWidth,
+                      style: borderStyle,
+                    ),
+                  ),
+              enabledBorder: enabledBorder ??
+                  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(borderRadius),
+                    borderSide: BorderSide(
+                      color: enabledBorderColor,
+                      width: borderWidth,
+                      style: borderStyle,
+                    ),
+                  ),
+              focusedBorder: focusedBorder ??
+                  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(borderRadius),
+                    borderSide: BorderSide(
+                      color: focusedBorderColor,
+                      width: borderWidth,
+                      style: borderStyle,
+                    ),
+                  ),
+              suffixIcon: hasSuffixIcon ? suffixIcon : null,
               prefixIcon: hasPrefixIcon
-                  ? InkWell(
-                      onTap: onTapPrefixIcon,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: Sizes.PADDING_4,
-                          vertical: Sizes.PADDING_4,
-                        ),
-                        child: Icon(
-                          prefixIcon,
-                          color: prefixIconColor,
-                        ),
-                      ),
-                    )
+                  ? ImageIcon(
+                AssetImage(prefixIconImagePath!),
+                color: prefixIconColor,
+              )
                   : null,
-              suffixIcon: hasSuffixIcon
-                  ? InkWell(
-                      onTap: onTapSuffixIcon,
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(
-                          horizontal: Sizes.MARGIN_4,
-                          vertical: Sizes.MARGIN_4,
-                        ),
-                        decoration: BoxDecoration(
-                          color: suffixIconBackgroundColor,
-                          borderRadius: BorderRadius.circular(Sizes.RADIUS_6),
-                        ),
-                        child: Icon(
-                          suffixIcon,
-                          color: suffixIconColor,
-                        ),
-                      ),
-                    )
-                  : null,
-              hintText: hintText,
-              hintStyle: hintTextStyle,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: contentPaddingHorizontal,
                 vertical: contentPaddingVertical,
               ),
+              hintText: hintText,
+              hintStyle: hintTextStyle ?? formHintTextStyle,
               filled: filled,
               fillColor: fillColor,
             ),
-            keyboardType: textInputType,
             obscureText: obscured,
           ),
         ],
@@ -144,12 +136,12 @@ class CustomTextField extends StatelessWidget {
     );
   }
 
-  Widget formFieldTitle({@required String fieldTitle}) {
+  Widget formFieldTitle({required String fieldTitle, TextStyle? textStyle}) {
     return Container(
-      margin: EdgeInsets.only(bottom: 8.0),
+      margin: EdgeInsets.only(bottom: Sizes.MARGIN_8),
       child: Text(
         fieldTitle,
-        style: fieldTitleTextStyle,
+        style: textStyle,
       ),
     );
   }

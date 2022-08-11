@@ -36,7 +36,7 @@ class TimeLine extends StatelessWidget {
             bottomLeftRadius: Sizes.RADIUS_80,
             crossAxisAlignment: CrossAxisAlignment.start,
             onLeadingTap: () {
-              ExtendedNavigator.root.pop();
+              AutoRouter.of(context).pop();
             },
             title: Padding(
               padding: const EdgeInsets.only(
@@ -48,7 +48,7 @@ class TimeLine extends StatelessWidget {
                   Text(
                     StringConst.TIMELINE,
                     textAlign: TextAlign.left,
-                    style: theme.textTheme.headline5.copyWith(),
+                    style: theme.textTheme.headlineMedium?.copyWith(),
                   )
                 ],
               ),
@@ -70,14 +70,14 @@ class TimeLine extends StatelessWidget {
   @swidget
   Widget _buildListCards(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    TextStyle headingStyle = theme.textTheme.subtitle2.copyWith(
+    TextStyle? headingStyle = theme.textTheme.titleMedium?.copyWith(
       color: AppColors.white,
     );
-    TextStyle contentStyle = theme.textTheme.bodyText1.copyWith(
+    TextStyle? contentStyle = theme.textTheme.bodyLarge?.copyWith(
       color: AppColors.purple10,
       fontSize: Sizes.TEXT_SIZE_14,
     );
-    TextStyle iconTextStyle = theme.textTheme.subtitle1.copyWith(
+    TextStyle? iconTextStyle = theme.textTheme.titleLarge?.copyWith(
       color: AppColors.indigo50,
     );
 

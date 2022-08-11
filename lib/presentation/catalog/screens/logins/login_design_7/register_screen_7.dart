@@ -8,6 +8,8 @@ import 'package:fluttercatalog/values/values.dart';
 
 class RegisterScreen7 extends StatefulWidget {
 
+
+
   @override
   _RegisterScreen7State createState() => _RegisterScreen7State();
 }
@@ -46,8 +48,8 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
                       right: widthOfScreen * 0.3,
                     ),
                     child: TabBar(
-                      labelStyle: theme.textTheme.subtitle1
-                          .copyWith(color: AppColors.violet),
+                      labelStyle: theme.textTheme.titleMedium
+                          ?.copyWith(color: AppColors.violet),
                       indicatorColor: AppColors.violet,
                       labelColor: AppColors.violet,
                       unselectedLabelColor: AppColors.violetShade1,
@@ -147,13 +149,13 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
             ),
             padding:
-                EdgeInsets.only(left: Sizes.PADDING_12, top: Sizes.PADDING_12),
+            EdgeInsets.only(left: Sizes.PADDING_12, top: Sizes.PADDING_12),
             child: CustomTextFormField(
               textInputType: TextInputType.text,
               textFormFieldMargin: EdgeInsets.only(left: Sizes.MARGIN_26),
               hasTitle: true,
               title: StringConst.USER_NAME,
-              titleStyle: theme.textTheme.subtitle1.copyWith(
+              titleStyle: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.violet,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -169,7 +171,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               enabledBorder: Borders.noBorder,
               focusedBorder: Borders.noBorder,
               hintTextStyle:
-                  Styles.customTextStyle(color: AppColors.violetShade1),
+              Styles.customTextStyle(color: AppColors.violetShade1),
               textStyle: Styles.customTextStyle(color: AppColors.violetShade1),
               hintText: StringConst.USERNAME_HINT_TEXT,
             ),
@@ -181,13 +183,13 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
             ),
             padding:
-                EdgeInsets.only(left: Sizes.PADDING_12, top: Sizes.PADDING_12),
+            EdgeInsets.only(left: Sizes.PADDING_12, top: Sizes.PADDING_12),
             child: CustomTextFormField(
               textInputType: TextInputType.text,
               textFormFieldMargin: EdgeInsets.only(left: Sizes.MARGIN_26),
               hasTitle: true,
               title: StringConst.PASSWORD,
-              titleStyle: theme.textTheme.subtitle1.copyWith(
+              titleStyle: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.violet,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -204,7 +206,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               focusedBorder: Borders.noBorder,
               obscured: true,
               hintTextStyle:
-                  Styles.customTextStyle(color: AppColors.violetShade1),
+              Styles.customTextStyle(color: AppColors.violetShade1),
               textStyle: Styles.customTextStyle(color: AppColors.violetShade1),
               hintText: StringConst.PASSWORD_HINT_TEXT,
             ),
@@ -215,7 +217,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
             child: CustomButton(
               title: StringConst.LOG_IN_2,
               color: AppColors.violet,
-              textStyle: theme.textTheme.button.copyWith(
+              textStyle: theme.textTheme.bodyMedium?.copyWith(
                 color: AppColors.white,
                 fontSize: Sizes.TEXT_SIZE_16,
               ),
@@ -240,13 +242,13 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
             ),
             padding:
-                EdgeInsets.only(left: Sizes.PADDING_12, top: Sizes.PADDING_12),
+            EdgeInsets.only(left: Sizes.PADDING_12, top: Sizes.PADDING_12),
             child: CustomTextFormField(
               textInputType: TextInputType.text,
               textFormFieldMargin: EdgeInsets.only(left: Sizes.MARGIN_26),
               hasTitle: true,
               title: StringConst.USER_NAME,
-              titleStyle: theme.textTheme.subtitle1.copyWith(
+              titleStyle: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.violet,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -262,7 +264,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               enabledBorder: Borders.noBorder,
               focusedBorder: Borders.noBorder,
               hintTextStyle:
-                  Styles.customTextStyle(color: AppColors.violetShade1),
+              Styles.customTextStyle(color: AppColors.violetShade1),
               textStyle: Styles.customTextStyle(color: AppColors.violetShade1),
               hintText: StringConst.USERNAME_HINT_TEXT,
             ),
@@ -274,13 +276,13 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
             ),
             padding:
-                EdgeInsets.only(left: Sizes.PADDING_12, top: Sizes.PADDING_12),
+            EdgeInsets.only(left: Sizes.PADDING_12, top: Sizes.PADDING_12),
             child: CustomTextFormField(
               textInputType: TextInputType.text,
               textFormFieldMargin: EdgeInsets.only(left: Sizes.MARGIN_26),
               hasTitle: true,
               title: StringConst.PASSWORD,
-              titleStyle: theme.textTheme.subtitle1.copyWith(
+              titleStyle: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.violet,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -297,7 +299,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               focusedBorder: Borders.noBorder,
               obscured: true,
               hintTextStyle:
-                  Styles.customTextStyle(color: AppColors.violetShade1),
+              Styles.customTextStyle(color: AppColors.violetShade1),
               textStyle: Styles.customTextStyle(color: AppColors.violetShade1),
               hintText: StringConst.PASSWORD_HINT_TEXT,
             ),
@@ -309,13 +311,13 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
             ),
             padding:
-                EdgeInsets.only(left: Sizes.PADDING_12, top: Sizes.PADDING_12),
+            EdgeInsets.only(left: Sizes.PADDING_12, top: Sizes.PADDING_12),
             child: CustomTextFormField(
               textInputType: TextInputType.emailAddress,
               textFormFieldMargin: EdgeInsets.only(left: Sizes.MARGIN_26),
               hasTitle: true,
               title: StringConst.EMAIL_2,
-              titleStyle: theme.textTheme.subtitle1.copyWith(
+              titleStyle: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.violet,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -331,7 +333,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               enabledBorder: Borders.noBorder,
               focusedBorder: Borders.noBorder,
               hintTextStyle:
-                  Styles.customTextStyle(color: AppColors.violetShade1),
+              Styles.customTextStyle(color: AppColors.violetShade1),
               textStyle: Styles.customTextStyle(color: AppColors.violetShade1),
               hintText: StringConst.EMAIL_HINT_TEXT,
             ),
@@ -342,7 +344,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
             child: CustomButton(
               title: StringConst.REGISTER,
               color: AppColors.violet,
-              textStyle: theme.textTheme.button.copyWith(
+              textStyle: theme.textTheme.bodyMedium?.copyWith(
                 color: AppColors.white,
                 fontSize: Sizes.TEXT_SIZE_16,
               ),

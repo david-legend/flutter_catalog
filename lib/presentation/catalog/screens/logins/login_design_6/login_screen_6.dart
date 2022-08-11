@@ -8,12 +8,17 @@ import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 
 class LoginScreen6 extends StatefulWidget {
+
+
+
   @override
   _LoginScreen6State createState() => _LoginScreen6State();
 }
 
 class _LoginScreen6State extends State<LoginScreen6> {
   bool onCheck = false;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +60,7 @@ class _LoginScreen6State extends State<LoginScreen6> {
                     margin: EdgeInsets.only(left: widthOfScreen * 0.15),
                     child: Text(
                       StringConst.LOG_IN,
-                      style: theme.textTheme.headline3.copyWith(
+                      style: theme.textTheme.displaySmall?.copyWith(
                         color: AppColors.deepBrown,
                       ),
                     ),
@@ -85,7 +90,7 @@ class _LoginScreen6State extends State<LoginScreen6> {
         CustomTextFormField(
           hasTitle: true,
           title: StringConst.EMAIL_2,
-          titleStyle: theme.textTheme.subtitle1.copyWith(
+          titleStyle: theme.textTheme.titleSmall?.copyWith(
             color: AppColors.deepDarkGreen,
             fontSize: Sizes.TEXT_SIZE_14,
           ),
@@ -108,7 +113,7 @@ class _LoginScreen6State extends State<LoginScreen6> {
         CustomTextFormField(
           hasTitle: true,
           title: StringConst.PASSWORD,
-          titleStyle: theme.textTheme.subtitle1.copyWith(
+          titleStyle: theme.textTheme.titleMedium?.copyWith(
             color: AppColors.deepDarkGreen,
             fontSize: Sizes.TEXT_SIZE_14,
           ),
@@ -134,7 +139,7 @@ class _LoginScreen6State extends State<LoginScreen6> {
           child: CustomButton(
             title: StringConst.LOG_IN_4,
             color: AppColors.deepLimeGreen,
-            textStyle: theme.textTheme.button.copyWith(
+            textStyle: theme.textTheme.bodyMedium?.copyWith(
               color: AppColors.white,
               fontWeight: FontWeight.w700,
               fontSize: Sizes.TEXT_SIZE_16,
@@ -146,22 +151,20 @@ class _LoginScreen6State extends State<LoginScreen6> {
           height: heightOfScreen * 0.04,
         ),
         InkWell(
-          onTap: () {
-            ExtendedNavigator.root.push(Routes.signUpScreen6);
-          },
+          onTap: () => AutoRouter.of(context).push(SignUpScreen6Route()),
           child: RichText(
             text: TextSpan(
               children: [
                 TextSpan(
                   text: StringConst.DONT_HAVE_AN_ACCOUNT,
-                  style: theme.textTheme.bodyText1.copyWith(
+                  style: theme.textTheme.bodyLarge?.copyWith(
                     color: AppColors.black,
                     fontSize: Sizes.TEXT_SIZE_16,
                   ),
                 ),
                 TextSpan(
                   text: StringConst.SIGN_UP,
-                  style: theme.textTheme.subtitle2.copyWith(
+                  style: theme.textTheme.titleSmall?.copyWith(
                     color: AppColors.deepDarkGreen,
                     fontSize: Sizes.TEXT_SIZE_16,
                     fontWeight: FontWeight.bold,

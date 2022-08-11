@@ -11,8 +11,8 @@ class OnBoardingScreen3 extends StatefulWidget {
 }
 
 class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
-  double currentIndexPage;
-  int pageLength;
+  late double currentIndexPage;
+  late int pageLength;
   List<String> onBoardingImageList = [
     ImagePath.YOGA_3,
     ImagePath.SUNRISE,
@@ -104,7 +104,7 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
       children: [
         Text(
           StringConst.WELCOME_TO_MEET_UP,
-          style: theme.textTheme.headline5.copyWith(
+          style: theme.textTheme.headlineMedium?.copyWith(
             color: AppColors.white,
           ),
         ),
@@ -112,7 +112,7 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
         Text(
           StringConst.LOREM_IPSUM,
           textAlign: TextAlign.center,
-          style: theme.textTheme.bodyText2.copyWith(
+          style: theme.textTheme.bodyMedium?.copyWith(
             color: AppColors.white,
           ),
         ),
@@ -126,7 +126,7 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
       children: [
         Text(
           StringConst.CONTINUE_WITH,
-          style: theme.textTheme.subtitle2.copyWith(
+          style: theme.textTheme.titleMedium?.copyWith(
             color: AppColors.purple10,
           ),
         ),
@@ -134,7 +134,7 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
         CustomButton(
           title: StringConst.EMAIL,
           color: AppColors.primaryColor,
-          textStyle: theme.textTheme.subtitle1.copyWith(
+          textStyle: theme.textTheme.titleLarge?.copyWith(
             color: AppColors.white,
           ),
           onPressed: () {},
@@ -143,7 +143,7 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
         CustomButton(
           title: StringConst.FACEBOOK.toUpperCase(),
           color: AppColors.pink50,
-          textStyle: theme.textTheme.subtitle1.copyWith(
+          textStyle: theme.textTheme.titleLarge?.copyWith(
             color: AppColors.white,
           ),
           onPressed: () {},

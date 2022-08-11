@@ -552,8 +552,8 @@ class LoginDesign7ShapeClipper3 extends CustomClipper<Path> {
 
 class LoginDesign9ShapeClipper extends CustomClipper<Path> {
   LoginDesign9ShapeClipper({
-    @required this.offset,
-    @required this.radius,
+    required this.offset,
+    required this.radius,
     this.tearDropAlignment = TearDropAlignment.topRight,
   });
 

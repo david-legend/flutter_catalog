@@ -8,13 +8,12 @@ import 'package:fluttercatalog/values/values.dart';
 
 class CategoryListItem extends StatefulWidget {
   const CategoryListItem({
-    Key key,
-    this.category,
-    this.imageString,
+    Key? key,
+    required this.category,
+    required this.imageString,
     this.demos = const [],
     this.initiallyExpanded = false,
-  })  : assert(initiallyExpanded != null),
-        super(key: key);
+  }) : super(key: key);
 
   final CatalogDemoCategory category;
   final String imageString;
@@ -30,14 +29,14 @@ class _CategoryListItemState extends State<CategoryListItem>
   static final Animatable<double> _easeInTween =
       CurveTween(curve: Curves.easeIn);
   static const _expandDuration = Duration(milliseconds: 200);
-  AnimationController _controller;
-  Animation<double> _childrenHeightFactor;
-  Animation<double> _headerChevronOpacity;
-  Animation<double> _headerHeight;
-  Animation<EdgeInsetsGeometry> _headerMargin;
-  Animation<EdgeInsetsGeometry> _headerImagePadding;
-  Animation<EdgeInsetsGeometry> _childrenPadding;
-  Animation<BorderRadius> _headerBorderRadius;
+  late AnimationController _controller;
+  late Animation<double> _childrenHeightFactor;
+  late Animation<double> _headerChevronOpacity;
+  late Animation<double> _headerHeight;
+  late Animation<EdgeInsetsGeometry> _headerMargin;
+  late Animation<EdgeInsetsGeometry> _headerImagePadding;
+  late Animation<EdgeInsetsGeometry> _childrenPadding;
+  late Animation<BorderRadius?> _headerBorderRadius;
 
   bool _isExpanded = false;
 
@@ -84,7 +83,7 @@ class _CategoryListItemState extends State<CategoryListItem>
       end: BorderRadius.zero,
     ).animate(_controller);
 
-    _isExpanded = PageStorage.of(context)?.readState(context) as bool ??
+    _isExpanded = PageStorage.of(context)?.readState(context)  ??
         widget.initiallyExpanded;
     if (_isExpanded) {
       _controller.value = 1.0;
@@ -116,7 +115,7 @@ class _CategoryListItemState extends State<CategoryListItem>
     });
   }
 
-  Widget _buildHeaderWithChildren(BuildContext context, Widget child) {
+  Widget _buildHeaderWithChildren(BuildContext context, Widget? child) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -161,25 +160,25 @@ class _CategoryListItemState extends State<CategoryListItem>
 
 class _CategoryHeader extends StatelessWidget {
   const _CategoryHeader({
-    Key key,
+    Key? key,
     this.margin,
-    this.imagePadding,
-    this.borderRadius,
-    this.height,
-    this.chevronOpacity,
-    this.imageString,
-    this.category,
+    required this.imagePadding,
+    this.borderRadius = BorderRadius.zero,
+    required this.height,
+    required this.chevronOpacity,
+    required this.imageString,
+    required this.category,
     this.onTap,
   }) : super(key: key);
 
-  final EdgeInsetsGeometry margin;
+  final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry imagePadding;
   final double height;
-  final BorderRadiusGeometry borderRadius;
+  final BorderRadiusGeometry? borderRadius;
   final String imageString;
   final CatalogDemoCategory category;
   final double chevronOpacity;
-  final GestureTapCallback onTap;
+  final GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -187,7 +186,7 @@ class _CategoryHeader extends StatelessWidget {
     return Container(
       margin: margin,
       child: Material(
-        shape: RoundedRectangleBorder(borderRadius: borderRadius),
+        shape: RoundedRectangleBorder(borderRadius: borderRadius!),
         color: colorScheme.onBackground,
         clipBehavior: Clip.antiAlias,
         child: Container(
@@ -216,7 +215,10 @@ class _CategoryHeader extends StatelessWidget {
                         padding: const EdgeInsetsDirectional.only(start: 8),
                         child: Text(
                           category.displayTitle(),
-                          style: Theme.of(context).textTheme.headline6.copyWith(
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall
+                              ?.copyWith(
                                 color: colorScheme.onSurface,
                                 fontSize: Sizes.TEXT_SIZE_18,
                               ),
@@ -251,9 +253,9 @@ class _CategoryHeader extends StatelessWidget {
 
 class _ExpandedCategoryDemos extends StatelessWidget {
   const _ExpandedCategoryDemos({
-    Key key,
-    this.category,
-    this.demos,
+    Key? key,
+    required this.category,
+    required this.demos,
   }) : super(key: key);
 
   final CatalogDemoCategory category;
@@ -268,7 +270,7 @@ class _ExpandedCategoryDemos extends StatelessWidget {
         for (final demo in demos)
           CategoryDemoItem(
             demo: demo,
-            routeName: demo.routeName,
+            route: demo.route,
           ),
         const SizedBox(height: Sizes.HEIGHT_12), // Extra space below.
       ],
@@ -278,13 +280,13 @@ class _ExpandedCategoryDemos extends StatelessWidget {
 
 class CategoryDemoItem extends StatelessWidget {
   const CategoryDemoItem({
-    Key key,
-    this.demo,
-    this.routeName,
+    Key? key,
+    required this.demo,
+    this.route,
   }) : super(key: key);
 
   final CatalogDemo demo;
-  final String routeName;
+  final PageRouteInfo? route;
 
   @override
   Widget build(BuildContext context) {
@@ -297,8 +299,8 @@ class CategoryDemoItem extends StatelessWidget {
       child: MergeSemantics(
         child: InkWell(
           onTap: () {
-            if (routeName != null) {
-              ExtendedNavigator.root.push(routeName);
+            if (route != null) {
+              AutoRouter.of(context).push(route!);
             }
           },
           child: Padding(
@@ -321,12 +323,12 @@ class CategoryDemoItem extends StatelessWidget {
                     children: [
                       Text(
                         demo.title,
-                        style: textTheme.subtitle1
-                            .apply(color: colorScheme.onSurface),
+                        style: textTheme.titleLarge
+                            ?.apply(color: colorScheme.onSurface),
                       ),
                       Text(
                         demo.subtitle,
-                        style: textTheme.overline.apply(
+                        style: textTheme.bodySmall?.apply(
                           color: colorScheme.onSurface.withOpacity(0.5),
                         ),
                       ),

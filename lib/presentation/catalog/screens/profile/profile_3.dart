@@ -40,13 +40,13 @@ class Profile3Screen extends StatelessWidget {
                       ),
                       Text(
                         StringConst.ALEXIO_MORALES,
-                        style: theme.textTheme.headline4.copyWith(
+                        style: theme.textTheme.headlineLarge?.copyWith(
                           color: AppColors.white,
                         ),
                       ),
                       Text(
                         StringConst.NUMBER_OF_FOLLOWERS_2,
-                        style: theme.textTheme.bodyText1.copyWith(
+                        style: theme.textTheme.bodyLarge?.copyWith(
                           color: AppColors.white,
                         ),
                       ),
@@ -63,12 +63,12 @@ class Profile3Screen extends StatelessWidget {
                     children: [
                       VerticalText(
                         title: StringConst.PHOTOS_AND_VIDEOS,
-                        titleTextStyle: theme.textTheme.subtitle1.copyWith(
+                        titleTextStyle: theme.textTheme.titleLarge?.copyWith(
                           fontWeight: FontWeight.bold,
                           fontSize: Sizes.TEXT_SIZE_18,
                         ),
                         subtitle: StringConst.NUMBER_OF_PHOTOS,
-                        subtitleTextStyle: theme.textTheme.bodyText1.copyWith(
+                        subtitleTextStyle: theme.textTheme.bodyLarge?.copyWith(
                           fontSize: Sizes.TEXT_SIZE_14,
                           color: AppColors.purple50,
                         ),

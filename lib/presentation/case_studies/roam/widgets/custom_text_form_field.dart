@@ -30,7 +30,6 @@ class CustomTextFormField extends StatelessWidget {
   final InputBorder? enabledBorder;
   final InputBorder? focusedBorder;
   final InputBorder? border;
-
   final String? fieldTitle;
 
   CustomTextFormField({

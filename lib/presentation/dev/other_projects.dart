@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:fluttercatalog/presentation/case_studies/roam/widgets/empty.dart';
-import 'package:fluttercatalog/presentation/case_studies/roam/widgets/image_clipper.dart';
 import 'package:fluttercatalog/presentation/case_studies/roam/widgets/spaces.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
@@ -25,7 +24,7 @@ class OtherProjectsScreen extends StatelessWidget {
           children: [
             Text(
               StringConst.PROJECTS,
-              style: theme.textTheme.headline5.copyWith(
+              style: theme.textTheme.headlineMedium?.copyWith(
                 color: AppColors.primaryColor,
               ),
             ),
@@ -65,8 +64,8 @@ class OtherProjectsScreen extends StatelessWidget {
 
 class ProjectCardItem {
   ProjectCardItem({
-    @required this.title,
-    @required this.imagePath,
+    required this.title,
+    required this.imagePath,
     this.isOnGithub = true,
     this.isOnPlayStore = false,
     this.isOnTheWeb = false,
@@ -77,9 +76,9 @@ class ProjectCardItem {
 
   final String title;
   final String imagePath;
-  final String gitHubLink;
-  final String playStoreLink;
-  final String webLink;
+  final String? gitHubLink;
+  final String? playStoreLink;
+  final String? webLink;
   final bool isOnGithub;
   final bool isOnPlayStore;
   final bool isOnTheWeb;
@@ -87,8 +86,8 @@ class ProjectCardItem {
 
 class ProjectCard extends StatelessWidget {
   ProjectCard({
-    @required this.title,
-    @required this.imagePath,
+    required this.title,
+    required this.imagePath,
     this.width,
     this.height = 280,
     this.borderRadius = const BorderRadius.all(
@@ -104,12 +103,12 @@ class ProjectCard extends StatelessWidget {
 
   final String title;
   final double height;
-  final double width;
+  final double? width;
   final String imagePath;
-  final BorderRadiusGeometry borderRadius;
-  final String gitHubLink;
-  final String playStoreLink;
-  final String webLink;
+  final BorderRadius? borderRadius;
+  final String? gitHubLink;
+  final String? playStoreLink;
+  final String? webLink;
   final bool isOnGithub;
   final bool isOnPlayStore;
   final bool isOnTheWeb;
@@ -159,7 +158,7 @@ class ProjectCard extends StatelessWidget {
                     isOnGithub
                         ? InkWell(
                             onTap: () {
-                              _launchInBrowser(gitHubLink);
+                              _launchInBrowser(gitHubLink!);
                             },
                             child: Padding(
                               padding: const EdgeInsets.all(Sizes.PADDING_4),
@@ -174,7 +173,7 @@ class ProjectCard extends StatelessWidget {
                     isOnPlayStore
                         ? InkWell(
                             onTap: () {
-                              _launchInBrowser(playStoreLink);
+                              _launchInBrowser(playStoreLink!);
                             },
                             child: Padding(
                               padding: const EdgeInsets.all(Sizes.PADDING_4),
@@ -189,7 +188,7 @@ class ProjectCard extends StatelessWidget {
                     isOnTheWeb
                         ? InkWell(
                             onTap: () {
-                              _launchInBrowser(webLink);
+                              _launchInBrowser(webLink!);
                             },
                             child: Padding(
                               padding: const EdgeInsets.all(Sizes.PADDING_4),
@@ -216,7 +215,6 @@ class ProjectCard extends StatelessWidget {
         url,
         forceSafariVC: false,
         forceWebView: false,
-//        headers: <String, String>{'my_header_key': 'my_header_value'},
       );
     } else {
       throw 'Could not launch $url';

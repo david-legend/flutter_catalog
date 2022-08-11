@@ -6,12 +6,16 @@ import 'package:fluttercatalog/presentation/catalog/widgets/spaces.dart';
 import 'package:fluttercatalog/values/values.dart';
 
 class SignUpScreen6 extends StatefulWidget {
+
+
   @override
   _SignUpScreen6State createState() => _SignUpScreen6State();
 }
 
 class _SignUpScreen6State extends State<SignUpScreen6> {
   bool onCheck = false;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +60,7 @@ class _SignUpScreen6State extends State<SignUpScreen6> {
                       children: <Widget>[
                         Text(
                           StringConst.SIGN,
-                          style: theme.textTheme.headline3.copyWith(
+                          style: theme.textTheme.displaySmall?.copyWith(
                             color: AppColors.deepBrown,
                           ),
                         ),
@@ -65,14 +69,14 @@ class _SignUpScreen6State extends State<SignUpScreen6> {
                             children: [
                               TextSpan(
                                 text: 'Sig',
-                                style: theme.textTheme.headline3.copyWith(
+                                style: theme.textTheme.displaySmall?.copyWith(
                                   color: Colors.transparent,
                                   height: 0.7,
                                 ),
                               ),
                               TextSpan(
                                 text: StringConst.UP,
-                                style: theme.textTheme.headline3.copyWith(
+                                style: theme.textTheme.displaySmall?.copyWith(
                                   color: AppColors.deepBrown,
                                   height: 0.7,
                                 ),
@@ -107,7 +111,7 @@ class _SignUpScreen6State extends State<SignUpScreen6> {
         CustomTextFormField(
           hasTitle: true,
           title: StringConst.EMAIL_2,
-          titleStyle: theme.textTheme.subtitle1.copyWith(
+          titleStyle: theme.textTheme.titleMedium?.copyWith(
             color: AppColors.deepDarkGreen,
             fontSize: Sizes.TEXT_SIZE_14,
           ),
@@ -130,7 +134,7 @@ class _SignUpScreen6State extends State<SignUpScreen6> {
         CustomTextFormField(
           hasTitle: true,
           title: StringConst.PASSWORD,
-          titleStyle: theme.textTheme.subtitle1.copyWith(
+          titleStyle: theme.textTheme.titleMedium?.copyWith(
             color: AppColors.deepDarkGreen,
             fontSize: Sizes.TEXT_SIZE_14,
           ),
@@ -154,7 +158,7 @@ class _SignUpScreen6State extends State<SignUpScreen6> {
         CustomTextFormField(
           hasTitle: true,
           title: StringConst.CONFIRM_PASSWORD,
-          titleStyle: theme.textTheme.subtitle1.copyWith(
+          titleStyle: theme.textTheme.titleMedium?.copyWith(
             color: AppColors.deepDarkGreen,
             fontSize: Sizes.TEXT_SIZE_14,
           ),
@@ -189,7 +193,7 @@ class _SignUpScreen6State extends State<SignUpScreen6> {
           child: CustomButton(
             title: StringConst.SIGN_UP_2,
             color: AppColors.deepLimeGreen,
-            textStyle: theme.textTheme.button.copyWith(
+            textStyle: theme.textTheme.bodyMedium?.copyWith(
               color: AppColors.white,
               fontWeight: FontWeight.w700,
               fontSize: Sizes.TEXT_SIZE_16,
@@ -197,6 +201,7 @@ class _SignUpScreen6State extends State<SignUpScreen6> {
             onPressed: () {},
           ),
         ),
+
       ],
     );
   }

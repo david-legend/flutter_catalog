@@ -65,7 +65,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             boxShadow: Shadows.containerShadow,
             onLeadingTap: () {
-              ExtendedNavigator.root.pop();
+              AutoRouter.of(context).pop();
             },
             title: Padding(
               padding: const EdgeInsets.only(
@@ -77,7 +77,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
                   Text(
                     StringConst.ACTIVITY_1,
                     textAlign: TextAlign.left,
-                    style: theme.textTheme.headline5.copyWith(),
+                    style: theme.textTheme.headlineMedium?.copyWith(),
                   )
                 ],
               ),

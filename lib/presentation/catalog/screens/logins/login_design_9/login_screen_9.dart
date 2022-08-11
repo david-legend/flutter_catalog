@@ -9,16 +9,21 @@ import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 import 'package:fluttercatalog/presentation/catalog/widgets/spaces.dart';
 
+
 class LoginScreen9 extends StatefulWidget {
+
+
   @override
   _LoginScreen9State createState() => _LoginScreen9State();
 }
 
 class _LoginScreen9State extends State<LoginScreen9> {
+
+
   @override
   Widget build(BuildContext context) {
     double tearDropButtonRadius =
-        assignHeight(context: context, fraction: 0.07);
+    assignHeight(context: context, fraction: 0.07);
     ThemeData theme = Theme.of(context);
     return GestureDetector(
       onTap: () {
@@ -28,7 +33,7 @@ class _LoginScreen9State extends State<LoginScreen9> {
         }
       },
       child: Scaffold(
-        resizeToAvoidBottomPadding: false,
+        resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.deepBlue200,
         body: Container(
           child: Column(
@@ -36,7 +41,7 @@ class _LoginScreen9State extends State<LoginScreen9> {
               _drawTearDrop(),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
+                const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
                 child: _buildForm(),
               ),
               SpaceH20(),
@@ -64,11 +69,11 @@ class _LoginScreen9State extends State<LoginScreen9> {
                             tearDropAlignment: TearDropAlignment.bottomLeft,
                             style: PaintingStyle.stroke,
                             color: AppColors.indigo200,
-                            buttonTextStyle: theme.textTheme.bodyText1.copyWith(
+                            buttonTextStyle: theme.textTheme.bodyLarge?.copyWith(
                               color: AppColors.indigo200,
                             ),
                             onTap: () {
-                              ExtendedNavigator.root.push(Routes.signUpScreen9);
+                              AutoRouter.of(context).push(SignUpScreen9Route());
                             },
                           ),
                         )
@@ -82,7 +87,7 @@ class _LoginScreen9State extends State<LoginScreen9> {
                 alignment: Alignment.center,
                 child: Text(
                   StringConst.DONT_HAVE_AN_ACCOUNT,
-                  style: theme.textTheme.bodyText1.copyWith(
+                  style: theme.textTheme.bodyLarge?.copyWith(
                     color: AppColors.indigo200,
                   ),
                 ),
@@ -125,14 +130,14 @@ class _LoginScreen9State extends State<LoginScreen9> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  StringConst.LETS_GET_STARTED,
-                  style: theme.textTheme.headline5.copyWith(
+                  StringConst.GET_STARTED,
+                  style: theme.textTheme.headlineMedium?.copyWith(
                     color: AppColors.white,
                   ),
                 ),
                 Text(
                   StringConst.LOGIN_MSG_2,
-                  style: theme.textTheme.bodyText1.copyWith(
+                  style: theme.textTheme.bodyLarge?.copyWith(
                     color: AppColors.white,
                   ),
                 ),
@@ -146,14 +151,14 @@ class _LoginScreen9State extends State<LoginScreen9> {
 
   Widget _buildForm() {
     ThemeData theme = Theme.of(context);
-    TextStyle titleTextStyle = theme.textTheme.subtitle2.copyWith(
+    TextStyle? titleTextStyle = theme.textTheme.titleMedium?.copyWith(
       color: AppColors.orangeShade6,
     );
-    TextStyle hintTextStyle = theme.textTheme.bodyText1.copyWith(
+    TextStyle? hintTextStyle = theme.textTheme.bodyLarge?.copyWith(
       color: AppColors.indigo200,
     );
     UnderlineInputBorder customUnderlineInputBorder =
-        Borders.customUnderlineInputBorder(
+    Borders.customUnderlineInputBorder(
       color: AppColors.indigo200,
     );
     return Container(

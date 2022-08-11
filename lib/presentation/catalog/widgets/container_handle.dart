@@ -10,10 +10,10 @@ class ContainerHandle extends StatelessWidget {
     this.borderRadius = const BorderRadius.all(const Radius.circular(16)),
   });
 
-  final double height;
-  final double width;
-  final Color color;
-  final BorderRadiusGeometry borderRadius;
+  final double? height;
+  final double? width;
+  final Color? color;
+  final BorderRadiusGeometry? borderRadius;
 
   @override
   Widget build(BuildContext context) {

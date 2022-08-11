@@ -7,14 +7,17 @@ import 'package:fluttercatalog/presentation/catalog/widgets/spaces.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 
+
 class LoginScreen2 extends StatefulWidget {
-  LoginScreen2();
+
 
   @override
   _LoginScreen2State createState() => _LoginScreen2State();
 }
 
 class _LoginScreen2State extends State<LoginScreen2> {
+
+
   @override
   Widget build(BuildContext context) {
     var heightOfScreen = MediaQuery.of(context).size.height;
@@ -43,7 +46,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
                         Text(
                           StringConst.SIGN_IN,
                           textAlign: TextAlign.center,
-                          style: textTheme.headline,
+                          style: textTheme.headlineMedium,
                         ),
                         SpaceH20(),
                         _buildForm()
@@ -52,20 +55,19 @@ class _LoginScreen2State extends State<LoginScreen2> {
                   ),
                 ),
                 InkWell(
-                  onTap: () =>
-                      ExtendedNavigator.root.push(Routes.signUpScreen2),
+                  onTap: () => AutoRouter.of(context).push(SignUpScreen2Route()),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(StringConst.DONT_HAVE_AN_ACCOUNT,
-                          style: textTheme.body1.copyWith(
+                          style: textTheme.bodySmall?.copyWith(
                             color: AppColors.blackShade9,
                             fontWeight: FontWeight.w600,
                           )),
                       SpaceW16(),
                       Text(
                         StringConst.REGISTER,
-                        style: textTheme.body1.copyWith(
+                        style: textTheme.bodySmall?.copyWith(
                           color: AppColors.lightBlue,
                           fontWeight: FontWeight.w600,
                         ),
@@ -93,10 +95,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
         CustomTextFormField(
           textInputType: TextInputType.text,
           labelText: StringConst.EMAIL_ADDRESS,
-          border: Borders.customOutlineInputBorder(
-            borderRadius: Sizes.RADIUS_30,
-            color: AppColors.grey,
-          ),
+          border: inputBorder,
           enabledBorder: inputBorder,
           focusedBorder: inputBorder,
           labelStyle: Styles.customTextStyle2(),
@@ -121,7 +120,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
           children: <Widget>[
             Text(
               StringConst.FORGOT_PASSWORD,
-              style: textTheme.body1.copyWith(
+              style: textTheme.bodySmall?.copyWith(
                 color: AppColors.lightBlue,
               ),
             ),
@@ -130,7 +129,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
         SpaceH20(),
         CustomButton(
           title: StringConst.SIGN_IN,
-          textStyle: textTheme.title.copyWith(color: AppColors.white),
+          textStyle: textTheme.titleMedium?.copyWith(color: AppColors.white),
           color: AppColors.pinkShade2,
           onPressed: () {},
         ),
@@ -139,8 +138,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
         SpaceH16(),
         CustomButton(
           title: StringConst.SIGN_IN_WITH_GOOGLE,
-          textStyle: textTheme.title,
-          hasIcon: true,
+          textStyle: textTheme.titleMedium,
           color: AppColors.white,
           onPressed: () {},
           icon: Image.asset(
@@ -164,7 +162,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
             child: CustomDivider(color: AppColors.black),
           ),
           SpaceW8(),
-          Text(StringConst.OR, style: textTheme.title),
+          Text(StringConst.OR, style: textTheme.titleMedium),
           SpaceW8(),
           Expanded(child: CustomDivider(color: AppColors.black)),
         ],

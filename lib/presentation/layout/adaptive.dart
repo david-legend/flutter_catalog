@@ -46,8 +46,8 @@ double heightOfScreen(BuildContext context) {
 }
 
 double assignHeight({
-  @required BuildContext context,
-  @required double fraction,
+  required BuildContext context,
+  required double fraction,
   double additions = 0,
   double subs = 0,
 }) {
@@ -55,8 +55,8 @@ double assignHeight({
 }
 
 double assignWidth({
-  @required BuildContext context,
-  @required double fraction,
+  required BuildContext context,
+  required double fraction,
   double additions = 0,
   double subs = 0,
 }) {

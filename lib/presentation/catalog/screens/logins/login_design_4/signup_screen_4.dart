@@ -50,14 +50,14 @@ class _SignUpScreen4State extends State<SignUpScreen4> {
                         ),
                         Text(
                           StringConst.HELLO_2,
-                          style: theme.textTheme.headline6.copyWith(
+                          style: theme.textTheme.headlineSmall?.copyWith(
                             fontSize: Sizes.TEXT_SIZE_20,
                             color: AppColors.white,
                           ),
                         ),
                         Text(
                           StringConst.SIGN_UP_3,
-                          style: theme.textTheme.headline4.copyWith(
+                          style: theme.textTheme.headlineLarge?.copyWith(
                             color: AppColors.white,
                           ),
                         ),
@@ -147,7 +147,7 @@ class _SignUpScreen4State extends State<SignUpScreen4> {
             ),
             Text(
               StringConst.ACCEPT_TERMS,
-              style: theme.textTheme.subtitle2.copyWith(
+              style: theme.textTheme.titleSmall?.copyWith(
                 color: AppColors.blackShade10,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -161,7 +161,7 @@ class _SignUpScreen4State extends State<SignUpScreen4> {
           child: CustomButton(
             title: StringConst.SIGN_UP,
             elevation: Sizes.ELEVATION_12,
-            textStyle: theme.textTheme.subtitle.copyWith(
+            textStyle: theme.textTheme.titleSmall?.copyWith(
               color: AppColors.white,
               fontWeight: FontWeight.w600,
             ),

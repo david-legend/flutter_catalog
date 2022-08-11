@@ -76,7 +76,7 @@ class _BottomSheet1State extends State<BottomSheet1> {
                   ),
                   Text(
                     "$guests",
-                    style: theme.textTheme.bodyText1.copyWith(fontSize: 28),
+                    style: theme.textTheme.bodyMedium?.copyWith(fontSize: 28),
                   ),
                   FloatingActionButton(
                     onPressed: () {
@@ -96,7 +96,7 @@ class _BottomSheet1State extends State<BottomSheet1> {
               CustomButton(
                 title: StringConst.NEXT,
                 color: AppColors.primaryColor,
-                textStyle: theme.textTheme.subtitle2.copyWith(
+                textStyle: theme.textTheme.titleMedium?.copyWith(
                   color: AppColors.white,
                 ),
                 onPressed: () => closeDialog(),
@@ -110,6 +110,6 @@ class _BottomSheet1State extends State<BottomSheet1> {
   }
 
   void closeDialog() {
-    ExtendedNavigator.root.pop();
+    AutoRouter.of(context).pop();
   }
 }

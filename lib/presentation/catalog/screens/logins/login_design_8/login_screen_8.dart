@@ -41,7 +41,7 @@ class _LoginScreen8State extends State<LoginScreen8> {
                       children: <Widget>[
                         Text(
                           StringConst.LOG_IN_2,
-                          style: theme.textTheme.headline4.copyWith(
+                          style: theme.textTheme.headlineLarge?.copyWith(
                             color: AppColors.black,
                           ),
                         ),
@@ -54,7 +54,7 @@ class _LoginScreen8State extends State<LoginScreen8> {
                         SpaceH20(),
                         Text(
                           StringConst.LOGIN_MSG,
-                          style: theme.textTheme.bodyText1.copyWith(
+                          style: theme.textTheme.bodyLarge?.copyWith(
                             color: AppColors.greyShade8,
                             fontWeight: FontWeight.w600,
                             fontSize: Sizes.TEXT_SIZE_14,
@@ -98,7 +98,7 @@ class _LoginScreen8State extends State<LoginScreen8> {
           ),
           child: Text(
             StringConst.FITNESS_GYM,
-            style: theme.textTheme.headline4.copyWith(
+            style: theme.textTheme.headlineLarge?.copyWith(
               color: AppColors.white,
             ),
           ),
@@ -118,7 +118,7 @@ class _LoginScreen8State extends State<LoginScreen8> {
           hintTextStyle: Styles.customTextStyle(color: AppColors.greyShade8),
           textStyle: Styles.customTextStyle(color: AppColors.greyShade8),
           labelText: StringConst.EMAIL_2,
-          labelStyle: theme.textTheme.subtitle1.copyWith(
+          labelStyle: theme.textTheme.titleMedium?.copyWith(
             color: AppColors.violetShade2,
           ),
           hasSuffixIcon: true,
@@ -145,7 +145,7 @@ class _LoginScreen8State extends State<LoginScreen8> {
           ),
           textStyle: Styles.customTextStyle(color: AppColors.greyShade8),
           labelText: StringConst.PASSWORD,
-          labelStyle: theme.textTheme.subtitle1.copyWith(
+          labelStyle: theme.textTheme.titleMedium?.copyWith(
             color: AppColors.violetShade2,
           ),
           hintText: StringConst.PASSWORD_HINT_TEXT,
@@ -171,7 +171,7 @@ class _LoginScreen8State extends State<LoginScreen8> {
           children: <Widget>[
             Text(
               StringConst.FORGOT_PASSWORD,
-              style: theme.textTheme.subtitle1.copyWith(
+              style: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.black,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -183,7 +183,7 @@ class _LoginScreen8State extends State<LoginScreen8> {
           title: StringConst.LOG_IN_3,
           color: AppColors.violetShade2,
           borderRadius: Sizes.ELEVATION_4,
-          textStyle: theme.textTheme.button.copyWith(
+          textStyle: theme.textTheme.bodyMedium?.copyWith(
             color: AppColors.white,
             fontSize: Sizes.TEXT_SIZE_16,
           ),
@@ -201,9 +201,8 @@ class _LoginScreen8State extends State<LoginScreen8> {
             Expanded(
               child: CustomButton(
                 title: StringConst.FACEBOOK,
-                textStyle: theme.textTheme.button
-                    .copyWith(color: AppColors.greyShade8),
-                hasIcon: true,
+                textStyle: theme.textTheme.bodyMedium
+                    ?.copyWith(color: AppColors.greyShade8),
                 color: AppColors.white,
                 elevation: Sizes.ELEVATION_0,
                 borderRadius: Sizes.ELEVATION_4,
@@ -219,13 +218,12 @@ class _LoginScreen8State extends State<LoginScreen8> {
             Expanded(
               child: CustomButton(
                 title: StringConst.GOOGLE,
-                hasIcon: true,
                 color: AppColors.white,
                 elevation: Sizes.ELEVATION_0,
                 borderRadius: Sizes.ELEVATION_4,
                 borderSide: Borders.customBorder(color: AppColors.grey),
-                textStyle: theme.textTheme.button
-                    .copyWith(color: AppColors.greyShade8),
+                textStyle: theme.textTheme.bodyMedium
+                    ?.copyWith(color: AppColors.greyShade8),
                 icon: Image.asset(
                   ImagePath.GOOGLE_LOGO,
                   height: Sizes.HEIGHT_24,
@@ -244,7 +242,7 @@ class _LoginScreen8State extends State<LoginScreen8> {
           children: <Widget>[
             Text(
               StringConst.DONT_HAVE_AN_ACCOUNT,
-              style: theme.textTheme.bodyText1.copyWith(
+              style: theme.textTheme.bodyLarge?.copyWith(
                 color: AppColors.black,
                 fontWeight: FontWeight.w600,
                 fontSize: Sizes.TEXT_SIZE_14,
@@ -257,7 +255,7 @@ class _LoginScreen8State extends State<LoginScreen8> {
               children: <Widget>[
                 Text(
                   StringConst.REGISTER,
-                  style: theme.textTheme.headline4.copyWith(
+                  style: theme.textTheme.headlineLarge?.copyWith(
                     color: AppColors.orangeShade5,
                     fontSize: Sizes.TEXT_SIZE_14,
                     fontWeight: FontWeight.w600,
@@ -287,20 +285,20 @@ class _LoginScreen8State extends State<LoginScreen8> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           CustomDivider(
-            color: Colors.grey[300],
+            color: Colors.grey[300]!,
             width: widthOfScreen * 0.15,
             height: Sizes.HEIGHT_2,
           ),
           SpaceW16(),
           Text(
             StringConst.OR,
-            style: textTheme.subtitle1.copyWith(
+            style: textTheme.titleMedium?.copyWith(
               color: AppColors.greyShade8,
             ),
           ),
           SpaceW16(),
           CustomDivider(
-            color: Colors.grey[300],
+            color: Colors.grey[300]!,
             width: widthOfScreen * 0.15,
             height: Sizes.HEIGHT_2,
           ),

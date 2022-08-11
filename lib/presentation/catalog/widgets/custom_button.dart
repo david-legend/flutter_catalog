@@ -6,53 +6,50 @@ class CustomButton extends StatelessWidget {
   CustomButton({
     this.title,
     this.onPressed,
-//    this.width = Sizes.WIDTH_150,
     this.height = Sizes.HEIGHT_50,
     this.elevation = Sizes.ELEVATION_1,
     this.borderRadius = Sizes.RADIUS_24,
-    this.color = AppColors.blackShade5,
+    this.color = RoamAppColors.accentColor,
     this.borderSide = Borders.defaultPrimaryBorder,
     this.textStyle,
     this.icon,
-    this.hasIcon = false,
   });
 
-  final VoidCallback onPressed;
-//  final double width;
+  final VoidCallback? onPressed;
   final double height;
   final double elevation;
   final double borderRadius;
-  final String title;
+  final String? title;
   final Color color;
   final BorderSide borderSide;
-  final TextStyle textStyle;
-  final Widget icon;
-  final bool hasIcon;
+  final TextStyle? textStyle;
+  final Widget? icon;
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: onPressed,
       elevation: elevation,
-//      minWidth: width ?? MediaQuery.of(context).size.width,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(borderRadius),
         side: borderSide,
       ),
-
       height: height,
       color: color,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          hasIcon ? icon : Container(),
-          hasIcon ? SpaceW8() : Container(),
+          icon != null ? icon! : Container(),
+          icon != null ? SpaceW8() : Container(),
           title != null
               ? Text(
-                  title,
-                  style: textStyle,
-                )
-              : Container(),
+            title!,
+            style: textStyle,
+          )
+              : Container(
+            width: 0,
+            height: 0,
+          ),
         ],
       ),
     );

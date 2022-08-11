@@ -1,15 +1,17 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:fluttercatalog/presentation/layout/adaptive.dart';
 import 'package:fluttercatalog/values/values.dart';
 import 'package:fluttercatalog/presentation/catalog/widgets/spaces.dart';
 
-class MenuItem {
-  MenuItem(this.title, {this.iconData, this.onTap, this.selected = false});
+class CatalogMenuItem {
+  CatalogMenuItem(this.title, {this.iconData, this.onTap, this.route, this.selected = false});
 
   final String title;
-  final IconData iconData;
-  final GestureTapCallback onTap;
+  final IconData? iconData;
+  final GestureTapCallback? onTap;
+  final PageRouteInfo? route;
   final bool selected;
 }
 
@@ -19,12 +21,12 @@ class MenuScreen1 extends StatefulWidget {
 }
 
 class _MenuScreen1State extends State<MenuScreen1> {
-  List<MenuItem> menuList = [
-    MenuItem(StringConst.HOME, iconData: FeatherIcons.home, onTap: () {}),
-    MenuItem(StringConst.MEET_UPS, iconData: FeatherIcons.users, onTap: () {}),
-    MenuItem(StringConst.EVENTS, iconData: FeatherIcons.calendar, onTap: () {}),
-    MenuItem(StringConst.CONTACT_US, iconData: FeatherIcons.user, onTap: () {}),
-    MenuItem(StringConst.ABOUT_US, iconData: FeatherIcons.info, onTap: () {}),
+  List<CatalogMenuItem> menuList = [
+    CatalogMenuItem(StringConst.HOME, iconData: FeatherIcons.home, onTap: () {}),
+    CatalogMenuItem(StringConst.MEET_UPS, iconData: FeatherIcons.users, onTap: () {}),
+    CatalogMenuItem(StringConst.EVENTS, iconData: FeatherIcons.calendar, onTap: () {}),
+    CatalogMenuItem(StringConst.CONTACT_US, iconData: FeatherIcons.user, onTap: () {}),
+    CatalogMenuItem(StringConst.ABOUT_US, iconData: FeatherIcons.info, onTap: () {}),
   ];
 
   @override
@@ -62,7 +64,7 @@ class _MenuScreen1State extends State<MenuScreen1> {
                   ),
                   title: Text(
                     StringConst.LOG_OUT,
-                    style: theme.textTheme.subtitle2.copyWith(
+                    style: theme.textTheme.titleMedium?.copyWith(
                       color: AppColors.white,
                     ),
                   ),
@@ -77,7 +79,7 @@ class _MenuScreen1State extends State<MenuScreen1> {
       body: Container(
         child: Center(
           child: RaisedButton(
-            onPressed: () => scaffoldKey.currentState.openDrawer(),
+            onPressed: () => scaffoldKey.currentState?.openDrawer(),
             child: Text(StringConst.OPEN_DRAWER),
           ),
         ),
@@ -112,13 +114,13 @@ class _MenuScreen1State extends State<MenuScreen1> {
               SpaceH8(),
               Text(
                 StringConst.SALOMAN,
-                style: theme.textTheme.subtitle1.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                   color: AppColors.white,
                 ),
               ),
               Text(
                 StringConst.SALOMAN_USERNAME,
-                style: theme.textTheme.bodyText2.copyWith(
+                style: theme.textTheme.bodyMedium?.copyWith(
                   color: AppColors.purple10,
                 ),
               ),
@@ -129,7 +131,7 @@ class _MenuScreen1State extends State<MenuScreen1> {
     );
   }
 
-  List<Widget> _buildMenuList(List<MenuItem> menuItemList) {
+  List<Widget> _buildMenuList(List<CatalogMenuItem> menuItemList) {
     ThemeData theme = Theme.of(context);
     List<Widget> menuList = [];
 
@@ -142,7 +144,7 @@ class _MenuScreen1State extends State<MenuScreen1> {
           ),
           title: Text(
             menuItemList[index].title,
-            style: theme.textTheme.subtitle2.copyWith(
+            style: theme.textTheme.titleMedium?.copyWith(
               color: AppColors.white,
             ),
           ),

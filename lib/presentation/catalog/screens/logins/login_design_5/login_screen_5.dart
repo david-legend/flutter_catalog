@@ -10,16 +10,22 @@ import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
 
 class LoginScreen5 extends StatefulWidget {
+
+
+
   @override
   _LoginScreen5State createState() => _LoginScreen5State();
 }
 
 class _LoginScreen5State extends State<LoginScreen5> {
+
+
+
+
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     var heightOfScreen = MediaQuery.of(context).size.height;
-    var widthOfScreen = MediaQuery.of(context).size.width;
 
     return Scaffold(
       body: GestureDetector(
@@ -45,21 +51,21 @@ class _LoginScreen5State extends State<LoginScreen5> {
                       children: <Widget>[
                         Text(
                           StringConst.LOG_IN_3,
-                          style: theme.textTheme.headline4.copyWith(
+                          style: theme.textTheme.headlineLarge?.copyWith(
                             color: AppColors.black,
                           ),
                         ),
                         SpaceH8(),
                         InkWell(
-                          onTap: () => ExtendedNavigator.root.push(
-                            Routes.signUpScreen5,
-                          ),
+                          onTap: () =>
+                              AutoRouter.of(context).push(SignUpScreen5Route()),
+                          // ExtendedNavigator.root.push(Routes.signUpScreen5),
                           child: RichText(
                             text: TextSpan(
                               children: [
                                 TextSpan(
                                   text: StringConst.DONT_HAVE_AN_ACCOUNT,
-                                  style: theme.textTheme.subtitle2.copyWith(
+                                  style: theme.textTheme.titleSmall?.copyWith(
                                     color: AppColors.black,
                                     fontSize: Sizes.TEXT_SIZE_16,
                                     fontWeight: FontWeight.bold,
@@ -67,7 +73,7 @@ class _LoginScreen5State extends State<LoginScreen5> {
                                 ),
                                 TextSpan(
                                   text: StringConst.SIGN_UP.toUpperCase(),
-                                  style: theme.textTheme.subtitle2.copyWith(
+                                  style: theme.textTheme.titleSmall?.copyWith(
                                     color: AppColors.pinkShade3,
                                     fontSize: Sizes.TEXT_SIZE_16,
                                     fontWeight: FontWeight.bold,
@@ -95,10 +101,10 @@ class _LoginScreen5State extends State<LoginScreen5> {
                           title: StringConst.LOGIN_WITH_FACEBOOK,
                           color: AppColors.white,
                           borderRadius: Sizes.RADIUS_4,
-                          hasIcon: true,
+
                           elevation: Sizes.ELEVATION_0,
                           height: Sizes.HEIGHT_60,
-                          textStyle: theme.textTheme.button.copyWith(
+                          textStyle: theme.textTheme.bodyMedium?.copyWith(
                             color: AppColors.facebookBlue,
                             fontWeight: FontWeight.w800,
                           ),
@@ -117,7 +123,7 @@ class _LoginScreen5State extends State<LoginScreen5> {
                           borderRadius: Sizes.RADIUS_4,
                           color: AppColors.redShade4,
                           height: Sizes.HEIGHT_60,
-                          textStyle: theme.textTheme.button.copyWith(
+                          textStyle: theme.textTheme.bodyMedium?.copyWith(
                               color: AppColors.white,
                               fontSize: Sizes.TEXT_SIZE_16),
                           onPressed: () {},
@@ -185,7 +191,7 @@ class _LoginScreen5State extends State<LoginScreen5> {
         CustomTextFormField(
           hasTitle: true,
           title: StringConst.USER_NAME_2,
-          titleStyle: theme.textTheme.subtitle1.copyWith(
+          titleStyle: theme.textTheme.titleSmall?.copyWith(
             color: AppColors.greyShade8,
             fontSize: Sizes.TEXT_SIZE_14,
           ),
@@ -193,14 +199,14 @@ class _LoginScreen5State extends State<LoginScreen5> {
           hintTextStyle: Styles.customTextStyle(color: AppColors.blackShade10),
           enabledBorder: Borders.customUnderlineInputBorder(),
           focusedBorder:
-              Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
+          Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
           textStyle: Styles.customTextStyle(color: AppColors.blackShade10),
         ),
         SpaceH16(),
         CustomTextFormField(
           hasTitle: true,
           title: StringConst.PASSWORD_2,
-          titleStyle: theme.textTheme.subtitle1.copyWith(
+          titleStyle: theme.textTheme.titleSmall?.copyWith(
             color: AppColors.greyShade8,
             fontSize: Sizes.TEXT_SIZE_14,
           ),
@@ -208,7 +214,7 @@ class _LoginScreen5State extends State<LoginScreen5> {
           hintTextStyle: Styles.customTextStyle(color: AppColors.blackShade10),
           enabledBorder: Borders.customUnderlineInputBorder(),
           focusedBorder:
-              Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
+          Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
           textStyle: Styles.customTextStyle(color: AppColors.blackShade10),
           obscured: true,
         ),
@@ -218,8 +224,8 @@ class _LoginScreen5State extends State<LoginScreen5> {
           children: <Widget>[
             Text(
               StringConst.FORGOT_PASSWORD,
-              style: theme.textTheme.title
-                  .copyWith(color: AppColors.greyShade8, fontSize: 14),
+              style: theme.textTheme.titleMedium
+                  ?.copyWith(color: AppColors.greyShade8, fontSize: 14),
             ),
           ],
         )

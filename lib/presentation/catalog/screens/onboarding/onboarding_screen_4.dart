@@ -10,8 +10,8 @@ class OnBoardingScreen4 extends StatefulWidget {
 }
 
 class _OnBoardingScreen4State extends State<OnBoardingScreen4> {
-  double currentIndexPage;
-  int pageLength;
+  late double currentIndexPage;
+  late int pageLength;
   List<String> onBoardingImageList = [
     ImagePath.SUNRISE,
     ImagePath.JADE_YOGA,
@@ -103,7 +103,7 @@ class _OnBoardingScreen4State extends State<OnBoardingScreen4> {
       children: [
         Text(
           StringConst.WELCOME_TO_MEET_UP,
-          style: theme.textTheme.headline5.copyWith(
+          style: theme.textTheme.headlineMedium?.copyWith(
             color: AppColors.white,
           ),
         ),
@@ -111,7 +111,7 @@ class _OnBoardingScreen4State extends State<OnBoardingScreen4> {
         Text(
           StringConst.LOREM_IPSUM,
           textAlign: TextAlign.center,
-          style: theme.textTheme.bodyText2.copyWith(
+          style: theme.textTheme.bodyMedium?.copyWith(
             color: AppColors.white,
           ),
         ),
@@ -141,7 +141,7 @@ class _OnBoardingScreen4State extends State<OnBoardingScreen4> {
               children: [
                 Text(
                   StringConst.LOG_IN,
-                  style: theme.textTheme.subtitle1.copyWith(
+                  style: theme.textTheme.titleLarge?.copyWith(
                     color: AppColors.white,
                   ),
                 ),
@@ -162,7 +162,7 @@ class _OnBoardingScreen4State extends State<OnBoardingScreen4> {
             child: Center(
               child: Text(
                 StringConst.SIGN_UP,
-                style: theme.textTheme.subtitle1.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                   color: AppColors.white,
                 ),
               ),

@@ -15,15 +15,15 @@ class SheetItemData {
     this.onActionTap,
   });
 
-  final double height;
-  final String title;
+  final double? height;
+  final String? title;
   final bool hasTitle;
-  final String content;
+  final String? content;
   final bool hasContent;
-  final String action;
+  final String? action;
   final bool hasAction;
-  final BorderRadiusGeometry borderRadius;
-  final GestureTapCallback onActionTap;
+  final BorderRadiusGeometry? borderRadius;
+  final GestureTapCallback? onActionTap;
 }
 
 class SheetItem extends StatelessWidget {
@@ -42,31 +42,34 @@ class SheetItem extends StatelessWidget {
     this.titleTextStyle,
     this.actionTextStyle,
     this.onActionTap,
-  });
+  })  : assert((!hasTitle && title == null) || (hasTitle && title != null)),
+        assert((!hasContent && content == null) ||
+            (hasContent && content != null)),
+        assert((!hasAction && action == null) || (hasAction && action != null));
 
-  final double height;
-  final String title;
+  final double? height;
+  final String? title;
   final bool hasTitle;
-  final String content;
+  final String? content;
   final bool hasContent;
-  final String action;
+  final String? action;
   final bool hasAction;
-  final BorderRadiusGeometry borderRadius;
+  final BorderRadiusGeometry? borderRadius;
   final Color backgroundColor;
   final BoxShadow shadow;
-  final TextStyle actionTextStyle;
-  final TextStyle contentTextStyle;
-  final TextStyle titleTextStyle;
-  final GestureTapCallback onActionTap;
+  final TextStyle? actionTextStyle;
+  final TextStyle? contentTextStyle;
+  final TextStyle? titleTextStyle;
+  final GestureTapCallback? onActionTap;
 
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
-    TextStyle titleStyle = theme.textTheme.headline6;
-    TextStyle contentStyle = theme.textTheme.bodyText1.copyWith(
+    TextStyle? titleStyle = theme.textTheme.headlineSmall;
+    TextStyle? contentStyle = theme.textTheme.bodyLarge?.copyWith(
       color: AppColors.purple100,
     );
-    TextStyle actionStyle = theme.textTheme.subtitle1.copyWith(
+    TextStyle? actionStyle = theme.textTheme.titleLarge?.copyWith(
       color: AppColors.violet400,
     );
 
@@ -86,7 +89,7 @@ class SheetItem extends StatelessWidget {
           SpaceH8(),
           hasTitle
               ? Text(
-                  title,
+                  title!,
                   style: titleTextStyle ?? titleStyle,
                 )
               : Spacer(),
@@ -96,7 +99,8 @@ class SheetItem extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(
                     horizontal: Sizes.PADDING_32,
                   ),
-                  child: Text(content, style: contentTextStyle ?? contentStyle),
+                  child:
+                      Text(content!, style: contentTextStyle ?? contentStyle),
                 )
               : Spacer(),
           hasContent ? SpaceH12() : Container(),
@@ -105,7 +109,7 @@ class SheetItem extends StatelessWidget {
                   onTap: onActionTap,
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 16.0),
-                    child: Text(action.toUpperCase(),
+                    child: Text(action!.toUpperCase(),
                         style: actionTextStyle ?? actionStyle),
                   ),
                 )

@@ -8,14 +8,17 @@ import 'package:fluttercatalog/presentation/catalog/widgets/custom_text_form_fie
 import 'package:fluttercatalog/presentation/catalog/widgets/spaces.dart';
 import 'package:fluttercatalog/routes/router.gr.dart';
 import 'package:fluttercatalog/values/values.dart';
-
 class LoginScreen1 extends StatefulWidget {
+
+
   @override
   _LoginScreen1State createState() => _LoginScreen1State();
 }
 
 class _LoginScreen1State extends State<LoginScreen1> {
   final heightOfAppBar = 56.0;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +91,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
       children: <Widget>[
         Text(
           StringConst.WELCOME,
-          style: textTheme.headline.copyWith(
+          style: textTheme.headlineMedium?.copyWith(
             color: AppColors.white,
             fontWeight: FontWeight.w900,
           ),
@@ -96,7 +99,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
         SpaceH4(),
         Text(
           StringConst.BACK,
-          style: textTheme.headline.copyWith(
+          style: textTheme.headlineMedium?.copyWith(
             color: AppColors.white,
             fontWeight: FontWeight.w900,
           ),
@@ -104,7 +107,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
         SpaceH4(),
         Text(
           StringConst.SIGN_IN_MSG,
-          style: textTheme.subtitle.copyWith(
+          style: textTheme.titleSmall?.copyWith(
             color: AppColors.white,
             fontSize: Sizes.TEXT_SIZE_16,
             fontWeight: FontWeight.w600,
@@ -113,7 +116,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
         SizedBox(height: heightOfScreen * 0.075),
         Text(
           StringConst.SIGN_IN,
-          style: textTheme.headline5.copyWith(
+          style: textTheme.headlineMedium?.copyWith(
             color: AppColors.white,
             fontWeight: FontWeight.w900,
           ),
@@ -157,18 +160,19 @@ class _LoginScreen1State extends State<LoginScreen1> {
         SpaceH24(),
         CustomButton(
           title: StringConst.SIGN_ME_IN,
-          textStyle: textTheme.button.copyWith(
+          textStyle: textTheme.bodyLarge?.copyWith(
             color: AppColors.white,
           ),
           onPressed: () {},
         ),
         SpaceH20(),
         InkWell(
-          onTap: () => ExtendedNavigator.root.push(Routes.signUpScreen1),
+          onTap: () => AutoRouter.of(context).push(SignUpScreen1Route()),
+          // ExtendedNavigator.root.push(Routes.signUpScreen1),
           child: Text(
             StringConst.DONT_HAVE_AN_ACCOUNT,
             textAlign: TextAlign.center,
-            style: textTheme.subtitle.copyWith(
+            style: textTheme.titleSmall?.copyWith(
               fontSize: Sizes.TEXT_SIZE_14,
               color: AppColors.blackShade6,
               fontWeight: FontWeight.w600,
@@ -179,7 +183,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
         Text(
           StringConst.NEED_HELP,
           textAlign: TextAlign.center,
-          style: textTheme.subtitle.copyWith(
+          style: textTheme.titleSmall?.copyWith(
             fontSize: Sizes.TEXT_SIZE_14,
             color: AppColors.blackShade6,
             fontWeight: FontWeight.w600,

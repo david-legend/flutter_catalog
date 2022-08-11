@@ -10,7 +10,7 @@ class BottomSheet4 extends StatefulWidget {
 }
 
 class _BottomSheet4State extends State<BottomSheet4> {
-  List<SheetItemData> sheetItems;
+ late  List<SheetItemData> sheetItems;
   Radius borderRadius = const Radius.circular(Sizes.RADIUS_60);
 
   @override
@@ -77,19 +77,17 @@ class _BottomSheet4State extends State<BottomSheet4> {
   }
 
   void closeDialog() {
-    ExtendedNavigator.root.pop();
+
+    AutoRouter.of(context).pop();
   }
 
   List<Widget> _buildSheetItems(List<SheetItemData> sheetItems) {
     List<Widget> items = [];
     ThemeData theme = Theme.of(context);
-    TextStyle titleTextStyle = theme.textTheme.headline6.copyWith(
+    TextStyle? titleTextStyle = theme.textTheme.headlineSmall?.copyWith(
       color: AppColors.white,
     );
-//    TextStyle contentStyle = theme.textTheme.bodyText1.copyWith(
-//      color: AppColors.purple100,
-//    );
-    TextStyle actionTextStyle = theme.textTheme.subtitle1.copyWith(
+    TextStyle? actionTextStyle = theme.textTheme.titleLarge?.copyWith(
       color: AppColors.white,
     );
     for (var index = 0; index < sheetItems.length; index++) {
@@ -123,7 +121,7 @@ class _BottomSheet4State extends State<BottomSheet4> {
   double getHeight(int startIndex, int length) {
     double height = 0.0;
     for (var i = startIndex; i < length; i++) {
-      height += sheetItems[i].height;
+      height += sheetItems[i].height!;
     }
     return height;
   }

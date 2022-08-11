@@ -4,7 +4,7 @@ import 'package:fluttercatalog/values/values.dart';
 
 class ActionIcon extends StatelessWidget {
   ActionIcon({
-    this.iconData,
+    required this.iconData,
     this.color = AppColors.grey,
     this.title,
     this.size,
@@ -15,13 +15,13 @@ class ActionIcon extends StatelessWidget {
   }) : assert(hasTitle == false || title != null);
 
   final IconData iconData;
-  final double size;
-  final Color color;
-  final String title;
-  final TextStyle titleStyle;
+  final double? size;
+  final Color? color;
+  final String? title;
+  final TextStyle? titleStyle;
   final bool hasTitle;
   final bool isHorizontal;
-  final GestureTapCallback onTap;
+  final GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +39,9 @@ class ActionIcon extends StatelessWidget {
                 hasTitle ? SpaceH8() : Container(),
                 hasTitle
                     ? Text(
-                        title,
+                        title!,
                         style: titleStyle ??
-                            theme.textTheme.bodyText1.copyWith(
+                            theme.textTheme.bodyLarge?.copyWith(
                                 color: AppColors.grey,
                                 fontSize: Sizes.TEXT_SIZE_14),
                       )
@@ -52,9 +52,9 @@ class ActionIcon extends StatelessWidget {
               children: [
                 hasTitle
                     ? Text(
-                        title,
+                        title!,
                         style: titleStyle ??
-                            theme.textTheme.bodyText1.copyWith(
+                            theme.textTheme.bodyLarge?.copyWith(
                                 color: AppColors.grey,
                                 fontSize: Sizes.TEXT_SIZE_14),
                       )

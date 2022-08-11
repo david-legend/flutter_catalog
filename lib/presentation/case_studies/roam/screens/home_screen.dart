@@ -62,12 +62,12 @@ class PlaceCardItem {
   final double rating;
 }
 
-class HomeScreen extends StatefulWidget {
+class RoamHomeScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _RoamHomeScreenState createState() => _RoamHomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _RoamHomeScreenState extends State<RoamHomeScreen> {
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);

@@ -11,21 +11,21 @@ import 'home_screen.dart';
 import 'profile_screen.dart';
 import 'saved_places_screen.dart';
 
-class RootScreen extends StatefulWidget {
+class RoamRootScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _RootScreenState();
+    return _RoamRootScreenState();
   }
 }
 
-class _RootScreenState extends State<RootScreen> {
+class _RoamRootScreenState extends State<RoamRootScreen> {
   final PageStorageBucket bucket = PageStorageBucket();
   int _selectedIndex = 0;
   final List<Widget> pages = [
-    HomeScreen(),
+    RoamHomeScreen(),
     DiscoverScreen(),
     SavedPlacesScreen(),
-    ProfileScreen(),
+    RoamProfileScreen(),
   ];
 
   @override

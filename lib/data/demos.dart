@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
@@ -46,30 +47,28 @@ extension CatalogDemoExtension on CatalogDemoCategory {
         return StringConst.LOGIN;
       case CatalogDemoCategory.messagesAndNotification:
         return StringConst.MESSAGES_AND_NOTIFICATION;
+      default:
+        return "No title";
     }
-    return null;
   }
 }
 
 class CatalogDemo {
   const CatalogDemo({
-    @required this.title,
-    @required this.category,
-    @required this.subtitle,
-    // Parameters below are required for non-study demos.
+    required this.title,
+    required this.category,
+    required this.subtitle,
+     this.route,
     this.slug,
-    this.routeName,
     this.icon,
-  })  : assert(title != null),
-        assert(category != null),
-        assert(subtitle != null);
+  });
 
   final String title;
   final CatalogDemoCategory category;
   final String subtitle;
-  final String slug;
-  final String routeName;
-  final IconData icon;
+  final String? slug;
+  final PageRouteInfo? route;
+  final IconData? icon;
 
   String get describe => '$title@${category.name}';
 }
@@ -168,7 +167,7 @@ List<CatalogDemo> caseStudyDemos() {
       slug: 'drop',
       subtitle: "Online store with the newest drops",
       category: CatalogDemoCategory.dropCaseStudy,
-      routeName: Routes.dropSplashScreen,
+      // route: DropSplashScreenRoute(),
     ),
     CatalogDemo(
       title: "Roam Case Study",
@@ -176,7 +175,7 @@ List<CatalogDemo> caseStudyDemos() {
       slug: 'roam',
       subtitle: "UI/UX Case study for a travel advisory app",
       category: CatalogDemoCategory.roamCaseStudy,
-      routeName: Routes.roamSplashScreen,
+      // route: Routes.roamSplashScreen,
     ),
     CatalogDemo(
       title: "Balenciga",
@@ -197,7 +196,7 @@ List<CatalogDemo> profileDemos() {
       slug: 'profile-design-1',
       subtitle: StringConst.PROFILE_SUBTITLE,
       category: CatalogDemoCategory.profile,
-      routeName: Routes.profile1Screen,
+      route: Profile1ScreenRoute(),
     ),
     CatalogDemo(
       title: "Profile Design 2",
@@ -205,7 +204,7 @@ List<CatalogDemo> profileDemos() {
       slug: 'profile-design-2',
       subtitle: StringConst.PROFILE_SUBTITLE,
       category: CatalogDemoCategory.profile,
-      routeName: Routes.profile2Screen,
+      route: Profile2ScreenRoute(),
     ),
     CatalogDemo(
       title: "Profile Design 3",
@@ -213,7 +212,7 @@ List<CatalogDemo> profileDemos() {
       slug: 'profile-design-3',
       subtitle: StringConst.PROFILE_SUBTITLE,
       category: CatalogDemoCategory.profile,
-      routeName: Routes.profile3Screen,
+      route: Profile3ScreenRoute(),
     ),
     CatalogDemo(
       title: "Profile Design 4",
@@ -221,7 +220,7 @@ List<CatalogDemo> profileDemos() {
       slug: 'profile-design-4',
       subtitle: StringConst.PROFILE_SUBTITLE,
       category: CatalogDemoCategory.profile,
-      routeName: Routes.profile4Screen,
+      route: Profile4ScreenRoute(),
     ),
   ];
 }
@@ -234,7 +233,7 @@ List<CatalogDemo> activitiesAndTimelineDemos() {
       slug: 'timeline-1',
       subtitle: StringConst.ACTIVITIES_SUBTITLE,
       category: CatalogDemoCategory.activitiesAndTimeLine,
-      routeName: Routes.timeLine,
+      route: TimeLineRoute(),
     ),
     CatalogDemo(
       title: "Activity 1",
@@ -242,7 +241,7 @@ List<CatalogDemo> activitiesAndTimelineDemos() {
       slug: 'activity-1',
       subtitle: StringConst.ACTIVITIES_SUBTITLE,
       category: CatalogDemoCategory.activitiesAndTimeLine,
-      routeName: Routes.activityScreen,
+      route: ActivityScreenRoute(),
     ),
     CatalogDemo(
       title: "Activity 2",
@@ -250,7 +249,7 @@ List<CatalogDemo> activitiesAndTimelineDemos() {
       slug: 'activity-2',
       subtitle: StringConst.ACTIVITIES_SUBTITLE,
       category: CatalogDemoCategory.activitiesAndTimeLine,
-      routeName: Routes.activityScreen2,
+      route: ActivityScreen2Route(),
     ),
     CatalogDemo(
       title: "Activity 3",
@@ -258,7 +257,7 @@ List<CatalogDemo> activitiesAndTimelineDemos() {
       slug: 'activity-3',
       subtitle: StringConst.ACTIVITIES_SUBTITLE,
       category: CatalogDemoCategory.activitiesAndTimeLine,
-      routeName: Routes.activityScreen3,
+      route: ActivityScreen3Route(),
     ),
   ];
 }
@@ -271,7 +270,7 @@ List<CatalogDemo> messagesAndNotificationsDemos() {
       slug: 'messages',
       subtitle: "",
       category: CatalogDemoCategory.messagesAndNotification,
-      routeName: Routes.messagesScreen,
+      route: MessagesScreenRoute(),
     ),
 //    CatalogDemo(
 //      title: "Notification",
@@ -292,7 +291,7 @@ List<CatalogDemo> menuDemos() {
       slug: 'menu-design-1',
       subtitle: StringConst.MENU_SUBTITLE,
       category: CatalogDemoCategory.menu,
-      routeName: Routes.menuScreen1,
+      route: MenuScreen1Route(),
     ),
     CatalogDemo(
       title: "Menu Design 2",
@@ -300,7 +299,7 @@ List<CatalogDemo> menuDemos() {
       slug: 'menu-design-2',
       subtitle: StringConst.MENU_SUBTITLE,
       category: CatalogDemoCategory.menu,
-      routeName: Routes.menuScreen2,
+      route: MenuScreen2Route(),
     ),
     CatalogDemo(
       title: "Menu Design 3",
@@ -308,7 +307,7 @@ List<CatalogDemo> menuDemos() {
       slug: 'menu-design-3',
       subtitle: StringConst.MENU_SUBTITLE,
       category: CatalogDemoCategory.menu,
-      routeName: Routes.menuScreen3,
+      route: MenuScreen3Route(),
     ),
     CatalogDemo(
       title: "Menu Design 4",
@@ -316,7 +315,7 @@ List<CatalogDemo> menuDemos() {
       slug: 'menu-design-4',
       subtitle: StringConst.MENU_SUBTITLE,
       category: CatalogDemoCategory.menu,
-      routeName: Routes.menuScreen4,
+      route: MenuScreen4Route(),
     ),
   ];
 }
@@ -329,7 +328,7 @@ List<CatalogDemo> onBoardingDemos() {
       slug: 'onBoarding-design',
       subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
-      routeName: Routes.onBoardingScreen1,
+      route: OnBoardingScreen1Route(),
     ),
     CatalogDemo(
       title: "OnBoarding Design 2",
@@ -337,7 +336,7 @@ List<CatalogDemo> onBoardingDemos() {
       slug: 'onBoarding-design',
       subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
-      routeName: Routes.onBoardingScreen2,
+      route: OnBoardingScreen2Route(),
     ),
     CatalogDemo(
       title: "OnBoarding Design 3",
@@ -345,7 +344,7 @@ List<CatalogDemo> onBoardingDemos() {
       slug: 'onBoarding-design',
       subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
-      routeName: Routes.onBoardingScreen3,
+      route: OnBoardingScreen3Route(),
     ),
     CatalogDemo(
       title: "OnBoarding Design 4",
@@ -353,7 +352,7 @@ List<CatalogDemo> onBoardingDemos() {
       slug: 'onBoarding-design',
       subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
-      routeName: Routes.onBoardingScreen4,
+      route: OnBoardingScreen4Route(),
     ),
     CatalogDemo(
       title: "OnBoarding Design 5",
@@ -361,7 +360,7 @@ List<CatalogDemo> onBoardingDemos() {
       slug: 'onBoarding-design',
       subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
-      routeName: Routes.onBoardingScreen5,
+      route: OnBoardingScreen5Route(),
     ),
     CatalogDemo(
       title: "OnBoarding Design 6",
@@ -369,7 +368,7 @@ List<CatalogDemo> onBoardingDemos() {
       slug: 'onBoarding-design',
       subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
-      routeName: Routes.onBoardingScreen6,
+      route: OnBoardingScreen6Route(),
     ),
     CatalogDemo(
       title: "OnBoarding Design 7",
@@ -377,7 +376,7 @@ List<CatalogDemo> onBoardingDemos() {
       slug: 'onBoarding-design',
       subtitle: StringConst.ONBOARDING_SUBTITLE,
       category: CatalogDemoCategory.onBoarding,
-      routeName: Routes.onBoardingScreen7,
+      route: OnBoardingScreen7Route(),
     ),
   ];
 }
@@ -390,7 +389,7 @@ List<CatalogDemo> alertDialogsDemos() {
       slug: 'alert-dialog-1',
       subtitle: StringConst.ALERT_DIALOGS_SUBTITLE,
       category: CatalogDemoCategory.alertDialogs,
-      routeName: Routes.alertDialog1,
+      route: AlertDialog1Route(),
     ),
     CatalogDemo(
       title: "Alert Dialog 2",
@@ -398,7 +397,7 @@ List<CatalogDemo> alertDialogsDemos() {
       slug: 'alert-dialog-2',
       subtitle: StringConst.ALERT_DIALOGS_SUBTITLE,
       category: CatalogDemoCategory.alertDialogs,
-      routeName: Routes.alertDialog2,
+      route:AlertDialog2Route(),
     ),
     CatalogDemo(
       title: "Alert Dialog 3",
@@ -406,7 +405,7 @@ List<CatalogDemo> alertDialogsDemos() {
       slug: 'alert-dialog-3',
       subtitle: StringConst.ALERT_DIALOGS_SUBTITLE,
       category: CatalogDemoCategory.alertDialogs,
-      routeName: Routes.alertDialog3,
+      route: AlertDialog3Route(),
     ),
     CatalogDemo(
       title: "Alert Dialog 4",
@@ -414,7 +413,7 @@ List<CatalogDemo> alertDialogsDemos() {
       slug: 'alert-dialog-4',
       subtitle: StringConst.ALERT_DIALOGS_SUBTITLE,
       category: CatalogDemoCategory.alertDialogs,
-      routeName: Routes.alertDialog4,
+      route: AlertDialog4Route(),
     ),
     CatalogDemo(
       title: "Bottom Sheet 1",
@@ -422,7 +421,7 @@ List<CatalogDemo> alertDialogsDemos() {
       slug: 'bottom-sheet-1',
       subtitle: StringConst.ALERT_DIALOGS_SUBTITLE,
       category: CatalogDemoCategory.alertDialogs,
-      routeName: Routes.bottomSheet1,
+      route: BottomSheet1Route(),
     ),
     CatalogDemo(
       title: "Bottom Sheet 2",
@@ -430,7 +429,7 @@ List<CatalogDemo> alertDialogsDemos() {
       slug: 'bottom-sheet-2',
       subtitle: StringConst.ALERT_DIALOGS_SUBTITLE,
       category: CatalogDemoCategory.alertDialogs,
-      routeName: Routes.bottomSheet2,
+      route: BottomSheet2Route(),
     ),
     CatalogDemo(
       title: "Bottom Sheet 3",
@@ -438,7 +437,7 @@ List<CatalogDemo> alertDialogsDemos() {
       slug: 'bottom-sheet-3',
       subtitle: StringConst.ALERT_DIALOGS_SUBTITLE,
       category: CatalogDemoCategory.alertDialogs,
-      routeName: Routes.bottomSheet3,
+      route: BottomSheet3Route(),
     ),
     CatalogDemo(
       title: "Bottom Sheet 4",
@@ -446,7 +445,7 @@ List<CatalogDemo> alertDialogsDemos() {
       slug: 'bottom-sheet-4',
       subtitle: StringConst.ALERT_DIALOGS_SUBTITLE,
       category: CatalogDemoCategory.alertDialogs,
-      routeName: Routes.bottomSheet4,
+      route: BottomSheet4Route(),
     ),
   ];
 }
@@ -459,7 +458,7 @@ List<CatalogDemo> loginDemos() {
       slug: 'login-design-1',
       subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
-      routeName: Routes.loginScreen1,
+      route: LoginScreen1Route(),
     ),
     CatalogDemo(
       title: "Login Design 2",
@@ -467,7 +466,7 @@ List<CatalogDemo> loginDemos() {
       slug: 'login-design-2',
       subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
-      routeName: Routes.loginScreen2,
+      route: LoginScreen2Route(),
     ),
     CatalogDemo(
       title: "Login Design 3",
@@ -475,7 +474,7 @@ List<CatalogDemo> loginDemos() {
       slug: 'login-design-3',
       subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
-      routeName: Routes.loginScreen3,
+      route: LoginScreen3Route(),
     ),
     CatalogDemo(
       title: "Login Design 4",
@@ -483,7 +482,7 @@ List<CatalogDemo> loginDemos() {
       slug: 'login-design-4',
       subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
-      routeName: Routes.loginScreen4,
+      route: LoginScreen4Route(),
     ),
     CatalogDemo(
       title: "Login Design 5",
@@ -491,7 +490,7 @@ List<CatalogDemo> loginDemos() {
       slug: 'login-design-5',
       subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
-      routeName: Routes.loginScreen5,
+      route:LoginScreen5Route(),
     ),
     CatalogDemo(
       title: "Login Design 6",
@@ -499,7 +498,7 @@ List<CatalogDemo> loginDemos() {
       slug: 'login-design-6',
       subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
-      routeName: Routes.loginScreen6,
+      route: LoginScreen6Route(),
     ),
     CatalogDemo(
       title: "Login Design 7",
@@ -507,7 +506,7 @@ List<CatalogDemo> loginDemos() {
       slug: 'login-design-7',
       subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
-      routeName: Routes.registerScreen7,
+      route: RegisterScreen7Route(),
     ),
     CatalogDemo(
       title: "Login Design 8",
@@ -515,7 +514,7 @@ List<CatalogDemo> loginDemos() {
       slug: 'login-design-8',
       subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
-      routeName: Routes.loginScreen8,
+      route: LoginScreen8Route(),
     ),
     CatalogDemo(
       title: "Login Design 9",
@@ -523,7 +522,7 @@ List<CatalogDemo> loginDemos() {
       slug: 'login-design-9',
       subtitle: StringConst.LOGIN_SUBTITLE,
       category: CatalogDemoCategory.profile,
-      routeName: Routes.loginScreen9,
+      route: LoginScreen9Route(),
     ),
   ];
 }

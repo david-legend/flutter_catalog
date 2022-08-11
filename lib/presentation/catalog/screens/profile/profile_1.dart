@@ -67,7 +67,7 @@ class Profile1Screen extends StatelessWidget {
   }
 
   @swidget
-  Widget _buildProfileDetails({@required BuildContext context}) {
+  Widget _buildProfileDetails({required BuildContext context}) {
     ThemeData theme = Theme.of(context);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_16),
@@ -84,13 +84,13 @@ class Profile1Screen extends StatelessWidget {
               ),
               Text(
                 StringConst.USER_LOCATION,
-                style: theme.textTheme.bodyText1.copyWith(
+                style: theme.textTheme.bodyLarge?.copyWith(
                   color: AppColors.purple50,
                 ),
               ),
               Text(
                 StringConst.AGE,
-                style: theme.textTheme.bodyText1.copyWith(
+                style: theme.textTheme.bodyLarge?.copyWith(
                   color: AppColors.purple50,
                 ),
               ),
@@ -106,7 +106,7 @@ class Profile1Screen extends StatelessWidget {
   }
 
   @swidget
-  Widget _buildOptionIcons({@required BuildContext context}) {
+  Widget _buildOptionIcons({required BuildContext context}) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_16),
       padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),

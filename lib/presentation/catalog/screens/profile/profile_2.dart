@@ -49,7 +49,7 @@ class Profile2Screen extends StatelessWidget {
                         Spacer(),
                         Text(
                           StringConst.IDA,
-                          style: theme.textTheme.headline4.copyWith(
+                          style: theme.textTheme.headlineLarge?.copyWith(
                             color: AppColors.white,
                           ),
                         )
@@ -114,16 +114,16 @@ class Profile2Screen extends StatelessWidget {
   }
 
   @swidget
-  Widget _buildContent({@required BuildContext context}) {
+  Widget _buildContent({required BuildContext context}) {
     ThemeData theme = Theme.of(context);
-    TextStyle headingStyle = theme.textTheme.subtitle2.copyWith(
+    TextStyle? headingStyle = theme.textTheme.titleMedium?.copyWith(
       color: AppColors.white,
     );
-    TextStyle contentStyle = theme.textTheme.bodyText1.copyWith(
+    TextStyle? contentStyle = theme.textTheme.bodyLarge?.copyWith(
       color: AppColors.purple10,
       fontSize: Sizes.TEXT_SIZE_14,
     );
-    TextStyle iconTextStyle = theme.textTheme.subtitle1.copyWith(
+    TextStyle? iconTextStyle = theme.textTheme.titleLarge?.copyWith(
       color: AppColors.indigo50,
     );
     return Container(

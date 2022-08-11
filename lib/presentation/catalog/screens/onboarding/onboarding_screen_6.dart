@@ -11,8 +11,8 @@ class OnBoardingScreen6 extends StatefulWidget {
 
 class _OnBoardingScreen6State extends State<OnBoardingScreen6> {
   PageController _pageController = PageController();
-  double currentIndexPage;
-  int pageLength;
+  late double currentIndexPage;
+  late int pageLength;
   List<String> onBoardingImageList = [
     ImagePath.YOGA_ASIA,
     ImagePath.YOGA_2,
@@ -93,7 +93,7 @@ class _OnBoardingScreen6State extends State<OnBoardingScreen6> {
         SpaceH8(),
         Text(
           StringConst.LOREM_IPSUM,
-          style: theme.textTheme.bodyText2.copyWith(
+          style: theme.textTheme.bodyMedium?.copyWith(
             color: AppColors.blackShade6,
           ),
         ),

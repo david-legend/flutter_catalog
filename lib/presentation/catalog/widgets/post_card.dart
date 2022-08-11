@@ -10,7 +10,9 @@ class PostCard extends StatelessWidget {
   PostCard({
     this.height,
     this.width,
-    this.borderRadius,
+    this.borderRadius = const BorderRadius.all(
+      Radius.circular(Sizes.RADIUS_20),
+    ),
     this.decoration,
     this.padding,
     this.margin,
@@ -32,34 +34,34 @@ class PostCard extends StatelessWidget {
     this.canShare = true,
     this.iconColor,
     this.hasImage = false,
-    this.contentImagePath,
+     this.contentImagePath,
   });
 
-  final double height;
-  final double width;
-  final EdgeInsetsGeometry margin;
-  final EdgeInsetsGeometry padding;
-  final BoxDecoration decoration;
-  final double borderRadius;
+  final double? height;
+  final double? width;
+  final EdgeInsetsGeometry? margin;
+  final EdgeInsetsGeometry? padding;
+  final BoxDecoration? decoration;
+  final BorderRadiusGeometry? borderRadius;
   final Color color;
   final String title;
   final String subTitle;
   final String content;
   final String profileImagePath;
-  final String contentImagePath;
-  final TextStyle titleStyle;
-  final TextStyle subtitleStyle;
-  final TextStyle contentStyle;
-  final TextStyle iconTextStyle;
-  final GestureTapCallback onShare;
-  final GestureTapCallback onCommentsTap;
-  final GestureTapCallback onLike;
+  final String? contentImagePath;
+  final TextStyle? titleStyle;
+  final TextStyle? subtitleStyle;
+  final TextStyle? contentStyle;
+  final TextStyle? iconTextStyle;
+  final GestureTapCallback? onShare;
+  final GestureTapCallback? onCommentsTap;
+  final GestureTapCallback? onLike;
   final MainAxisAlignment headMainAxisAlignment;
   final MainAxisAlignment footerMainAxisAlignment;
-  final TextAlign contentTextAlign;
+  final TextAlign? contentTextAlign;
   final bool canShare;
   final bool hasImage;
-  final Color iconColor;
+  final Color? iconColor;
 
   @override
   Widget build(BuildContext context) {
@@ -72,10 +74,7 @@ class PostCard extends StatelessWidget {
       decoration: decoration ??
           BoxDecoration(
             color: color,
-            borderRadius: borderRadius ??
-                BorderRadius.all(
-                  Radius.circular(Sizes.RADIUS_20),
-                ),
+            borderRadius: borderRadius,
           ),
       child: Column(
         children: [
@@ -98,7 +97,7 @@ class PostCard extends StatelessWidget {
                   Text(
                     subTitle,
                     style: subtitleStyle ??
-                        theme.textTheme.bodyText1.copyWith(
+                        theme.textTheme.bodyLarge?.copyWith(
                           color: AppColors.grey,
                           fontSize: Sizes.TEXT_SIZE_14,
                         ),
@@ -114,13 +113,13 @@ class PostCard extends StatelessWidget {
               maxLines: 4,
               textAlign: contentTextAlign,
               style: contentStyle ??
-                  theme.textTheme.bodyText1.copyWith(
+                  theme.textTheme.bodyLarge?.copyWith(
                     fontSize: Sizes.TEXT_SIZE_14,
                   ),
             ),
           ),
           hasImage ? SpaceH4() : Container(),
-          hasImage ? Image.asset(contentImagePath) : Container(),
+          hasImage ? Image.asset(contentImagePath!) : Container(),
           SpaceH16(),
           Row(
             mainAxisAlignment: footerMainAxisAlignment,

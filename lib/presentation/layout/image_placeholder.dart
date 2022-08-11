@@ -13,9 +13,9 @@ import 'package:flutter/material.dart';
 /// the image with another widget, for example an [Ink.image].
 class FadeInImagePlaceholder extends StatelessWidget {
   const FadeInImagePlaceholder({
-    Key key,
-    @required this.image,
-    @required this.placeholder,
+    Key? key,
+    required this.image,
+    required this.placeholder,
     this.child,
     this.duration = const Duration(milliseconds: 500),
     this.excludeFromSemantics = false,
@@ -36,7 +36,7 @@ class FadeInImagePlaceholder extends StatelessWidget {
   /// loaded.
   ///
   /// Defaults to display the [image].
-  final Widget child;
+  final Widget? child;
 
   /// The duration for how long the the fade out of the placeholder and
   /// fade in of [child] should take.
@@ -46,13 +46,13 @@ class FadeInImagePlaceholder extends StatelessWidget {
   final bool excludeFromSemantics;
 
   /// See [Image.width].
-  final double width;
+  final double? width;
 
   /// See [Image.height].
-  final double height;
+  final double? height;
 
   /// See [Image.fit].
-  final BoxFit fit;
+  final BoxFit? fit;
 
   @override
   Widget build(BuildContext context) {

@@ -4,24 +4,27 @@ import 'package:fluttercatalog/values/values.dart';
 
 class CurvedButton extends StatelessWidget {
   CurvedButton({
-    @required this.title,
+    required this.title,
     this.style,
     this.width,
     this.height,
     this.decoration,
-    this.borderRadius,
+    this.borderRadius = const BorderRadius.only(
+      topRight: Radius.circular(Sizes.RADIUS_40),
+      bottomLeft: Radius.circular(Sizes.RADIUS_40),
+    ),
     this.onTap,
     this.color = AppColors.primaryColor,
-  }) : assert(title != null);
+  });
 
-  final double width;
-  final double height;
-  final double borderRadius;
-  final BoxDecoration decoration;
+  final double? width;
+  final double? height;
+  final BorderRadiusGeometry? borderRadius;
+  final BoxDecoration? decoration;
   final Color color;
   final String title;
-  final TextStyle style;
-  final GestureTapCallback onTap;
+  final TextStyle? style;
+  final GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -31,19 +34,16 @@ class CurvedButton extends StatelessWidget {
       child: Container(
         width: width ?? assignWidth(context: context, fraction: 0.3),
         height: height ?? assignHeight(context: context, fraction: 0.07),
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: borderRadius ??
-              BorderRadius.only(
-                topRight: Radius.circular(Sizes.RADIUS_40),
-                bottomLeft: Radius.circular(Sizes.RADIUS_40),
-              ),
-        ),
+        decoration: decoration ??
+            BoxDecoration(
+              color: color,
+              borderRadius: borderRadius,
+            ),
         child: Center(
           child: Text(
             title,
             style: style ??
-                theme.textTheme.subtitle1.copyWith(
+                theme.textTheme.titleLarge?.copyWith(
                   color: AppColors.white,
                 ),
           ),

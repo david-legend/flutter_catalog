@@ -141,8 +141,7 @@ class AppRouter extends _i73.RootStackRouter {
   @override
   final Map<String, _i73.PageFactory> pagesMap = {
     RootScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<RootScreenRouteArgs>(
-          orElse: () => const RootScreenRouteArgs());
+      final args = routeData.argsAs<RootScreenRouteArgs>();
       return _i73.MaterialPageX<dynamic>(
           routeData: routeData,
           child: _i1.RootScreen(themeBloc: args.themeBloc));
@@ -380,8 +379,7 @@ class AppRouter extends _i73.RootStackRouter {
           routeData: routeData, child: _i58.CheckOutScreen());
     },
     RoamSplashScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<RoamSplashScreenRouteArgs>(
-          orElse: () => const RoamSplashScreenRouteArgs());
+      final args = routeData.argsAs<RoamSplashScreenRouteArgs>();
       return _i73.MaterialPageX<dynamic>(
           routeData: routeData,
           child: _i59.RoamSplashScreen(themeBloc: args.themeBloc));
@@ -431,8 +429,7 @@ class AppRouter extends _i73.RootStackRouter {
           routeData: routeData, child: _i70.PlanTripScreen());
     },
     PlaceScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<PlaceScreenRouteArgs>(
-          orElse: () => const PlaceScreenRouteArgs());
+      final args = routeData.argsAs<PlaceScreenRouteArgs>();
       return _i73.MaterialPageX<dynamic>(
           routeData: routeData,
           child: _i71.PlaceScreen(
@@ -546,7 +543,7 @@ class AppRouter extends _i73.RootStackRouter {
 /// generated route for
 /// [_i1.RootScreen]
 class RootScreenRoute extends _i73.PageRouteInfo<RootScreenRouteArgs> {
-  RootScreenRoute({_i75.ThemeBloc themeBloc})
+  RootScreenRoute({required _i75.ThemeBloc themeBloc})
       : super(RootScreenRoute.name,
             path: '/', args: RootScreenRouteArgs(themeBloc: themeBloc));
 
@@ -554,7 +551,7 @@ class RootScreenRoute extends _i73.PageRouteInfo<RootScreenRouteArgs> {
 }
 
 class RootScreenRouteArgs {
-  const RootScreenRouteArgs({this.themeBloc});
+  const RootScreenRouteArgs({required this.themeBloc});
 
   final _i75.ThemeBloc themeBloc;
 
@@ -1118,7 +1115,7 @@ class CheckOutScreenRoute extends _i73.PageRouteInfo<void> {
 /// [_i59.RoamSplashScreen]
 class RoamSplashScreenRoute
     extends _i73.PageRouteInfo<RoamSplashScreenRouteArgs> {
-  RoamSplashScreenRoute({_i75.ThemeBloc themeBloc})
+  RoamSplashScreenRoute({required _i75.ThemeBloc themeBloc})
       : super(RoamSplashScreenRoute.name,
             path: '/roam-splash-screen',
             args: RoamSplashScreenRouteArgs(themeBloc: themeBloc));
@@ -1127,7 +1124,7 @@ class RoamSplashScreenRoute
 }
 
 class RoamSplashScreenRouteArgs {
-  const RoamSplashScreenRouteArgs({this.themeBloc});
+  const RoamSplashScreenRouteArgs({required this.themeBloc});
 
   final _i75.ThemeBloc themeBloc;
 
@@ -1240,7 +1237,10 @@ class PlanTripScreenRoute extends _i73.PageRouteInfo<void> {
 /// [_i71.PlaceScreen]
 class PlaceScreenRoute extends _i73.PageRouteInfo<PlaceScreenRouteArgs> {
   PlaceScreenRoute(
-      {String place, String location, String imagePath, double rating})
+      {required String place,
+      required String location,
+      required String imagePath,
+      required double rating})
       : super(PlaceScreenRoute.name,
             path: '/place-screen',
             args: PlaceScreenRouteArgs(
@@ -1254,7 +1254,10 @@ class PlaceScreenRoute extends _i73.PageRouteInfo<PlaceScreenRouteArgs> {
 
 class PlaceScreenRouteArgs {
   const PlaceScreenRouteArgs(
-      {this.place, this.location, this.imagePath, this.rating});
+      {required this.place,
+      required this.location,
+      required this.imagePath,
+      required this.rating});
 
   final String place;
 

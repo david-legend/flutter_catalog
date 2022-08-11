@@ -46,14 +46,14 @@ class AlertDialog1 extends StatelessWidget {
           children: [
             Text(
               StringConst.HOLD_ON,
-              style: theme.textTheme.headline6.copyWith(
+              style: theme.textTheme.headlineSmall?.copyWith(
                 color: AppColors.white,
               ),
             ),
             SpaceH8(),
             Text(
               StringConst.LOREM_IPSUM,
-              style: theme.textTheme.bodyText2.copyWith(
+              style: theme.textTheme.bodyMedium?.copyWith(
                 color: AppColors.purple50,
               ),
             ),
@@ -64,21 +64,21 @@ class AlertDialog1 extends StatelessWidget {
                 CustomButton(
                   title: StringConst.SKIP,
                   height: Sizes.HEIGHT_44,
-                  textStyle: theme.textTheme.subtitle2.copyWith(
+                  textStyle: theme.textTheme.titleMedium?.copyWith(
                     color: AppColors.white,
                   ),
                   color: AppColors.purple100,
-                  onPressed: () => closeDialog(),
+                  onPressed: () => closeDialog(context),
                 ),
                 SpaceW8(),
                 CustomButton(
                   title: StringConst.NEXT,
                   height: Sizes.HEIGHT_44,
                   color: AppColors.primaryColor,
-                  textStyle: theme.textTheme.subtitle2.copyWith(
+                  textStyle: theme.textTheme.titleMedium?.copyWith(
                     color: AppColors.white,
                   ),
-                  onPressed: () => closeDialog(),
+                  onPressed: () => closeDialog(context),
                 ),
               ],
             )
@@ -88,7 +88,7 @@ class AlertDialog1 extends StatelessWidget {
     );
   }
 
-  void closeDialog() {
-    ExtendedNavigator.root.pop();
+  void closeDialog(BuildContext context) {
+    AutoRouter.of(context).pop();
   }
 }

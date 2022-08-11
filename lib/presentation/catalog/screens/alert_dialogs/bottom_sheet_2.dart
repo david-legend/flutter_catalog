@@ -67,14 +67,14 @@ class BottomSheet2 extends StatelessWidget {
                   children: [
                     Text(
                       StringConst.YOGA_TIME,
-                      style: theme.textTheme.bodyText2.copyWith(
+                      style: theme.textTheme.bodyMedium?.copyWith(
                         color: AppColors.purple10,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     Text(
                       StringConst.YOGA_TITLE,
-                      style: theme.textTheme.bodyText1.copyWith(
+                      style: theme.textTheme.bodyLarge?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -87,21 +87,20 @@ class BottomSheet2 extends StatelessWidget {
           CustomButton(
             title: StringConst.TELL_FRIENDS,
             color: AppColors.indigo100,
-            hasIcon: true,
             icon: Icon(FeatherIcons.share2, color: AppColors.white),
-            textStyle: theme.textTheme.subtitle2.copyWith(
+            textStyle: theme.textTheme.titleMedium?.copyWith(
               color: AppColors.white,
             ),
-            onPressed: () => closeDialog(),
+            onPressed: () => closeDialog(context),
           ),
           SpaceH16(),
           CustomButton(
             title: StringConst.DONE,
             color: AppColors.primaryColor,
-            textStyle: theme.textTheme.subtitle2.copyWith(
+            textStyle: theme.textTheme.titleMedium?.copyWith(
               color: AppColors.white,
             ),
-            onPressed: () => closeDialog(),
+            onPressed: () => closeDialog(context),
           ),
           Spacer(),
         ],
@@ -109,7 +108,8 @@ class BottomSheet2 extends StatelessWidget {
     );
   }
 
-  void closeDialog() {
-    ExtendedNavigator.root.pop();
+  void closeDialog(BuildContext context) {
+
+    AutoRouter.of(context).pop();
   }
 }

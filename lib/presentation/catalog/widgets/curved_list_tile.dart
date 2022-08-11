@@ -4,29 +4,29 @@ import 'curved_container.dart';
 
 class PostListTileItem {
   PostListTileItem({
-    this.height,
+    required this.height,
     this.spacerHeight,
     this.topMargin,
     this.headerSubtitleColor,
     this.headerTitleColor,
-    this.headerSubTitle,
-    this.headerTitle,
-    this.profileImagePath,
+    required this.headerSubTitle,
+    required this.headerTitle,
+    required this.profileImagePath,
     this.bodyTextColor,
     this.backgroundColor,
-    this.body,
+    required this.body,
   });
 
   final double height;
-  final double spacerHeight;
-  final double topMargin;
-  final Color backgroundColor;
-  final Color bodyTextColor;
+  final double? spacerHeight;
+  final double? topMargin;
+  final Color? backgroundColor;
+  final Color? bodyTextColor;
   final String profileImagePath;
   final String headerTitle;
-  final Color headerTitleColor;
+  final Color? headerTitleColor;
   final String headerSubTitle;
-  final Color headerSubtitleColor;
+  final Color? headerSubtitleColor;
   final Widget body;
 }
 
@@ -36,13 +36,13 @@ class CurvedListTile extends StatelessWidget {
     this.backgroundColor,
     this.borderRadius,
     this.decoration,
-    this.child,
+    required this.child,
   });
 
   final double height;
-  final Color backgroundColor;
-  final BorderRadiusGeometry borderRadius;
-  final BoxDecoration decoration;
+  final Color? backgroundColor;
+  final BorderRadiusGeometry? borderRadius;
+  final BoxDecoration? decoration;
   final Widget child;
 
   @override

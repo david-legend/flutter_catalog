@@ -11,8 +11,8 @@ class OnBoardingScreen1 extends StatefulWidget {
 
 //TODO:: Fix button issues --> When an inkwell is added as a parent for the button function, the pageviewer stops working
 class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
-  double currentIndexPage;
-  int pageLength;
+  late double currentIndexPage;
+  late int pageLength;
   List<String> onBoardingImageList = [
     ImagePath.JADE_YOGA,
     ImagePath.MARIA,
@@ -78,7 +78,7 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
           onTap: () {},
           child: Text(
             StringConst.SKIP,
-            style: theme.textTheme.subtitle1.copyWith(
+            style: theme.textTheme.titleLarge?.copyWith(
               color: AppColors.white,
             ),
           ),
@@ -131,13 +131,13 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
             children: [
               Text(
                 StringConst.TUTORIAL.toUpperCase(),
-                style: theme.textTheme.subtitle2.copyWith(
+                style: theme.textTheme.titleMedium?.copyWith(
                   color: AppColors.purple10,
                 ),
               ),
               Text(
                 StringConst.WELCOME_TO_MEET_UP,
-                style: theme.textTheme.headline4.copyWith(
+                style: theme.textTheme.headlineLarge?.copyWith(
                   color: AppColors.white,
                 ),
               ),
@@ -173,7 +173,7 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
           children: [
             Text(
               StringConst.GET_STARTED.toUpperCase(),
-              style: theme.textTheme.subtitle2.copyWith(
+              style: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.white,
               ),
             ),

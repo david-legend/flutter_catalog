@@ -3,8 +3,8 @@ import 'package:fluttercatalog/values/values.dart';
 
 class GradientOverlay extends StatelessWidget {
   final Gradient gradient;
-  final double height;
-  final double width;
+  final double? height;
+  final double? width;
 
   GradientOverlay({
     this.gradient = Gradients.footerOverlayGradient,

@@ -12,13 +12,13 @@ class MenuScreen4 extends StatefulWidget {
 }
 
 class _MenuScreen4State extends State<MenuScreen4> {
-  List<MenuItem> menuList = [
-    MenuItem(StringConst.BUSINESS, onTap: () {}),
-    MenuItem(StringConst.TRENDING, selected: true, onTap: () {}),
-    MenuItem(StringConst.HEALTH, onTap: () {}),
-    MenuItem(StringConst.MUSIC, onTap: () {}),
-    MenuItem(StringConst.SPORTS, onTap: () {}),
-    MenuItem(StringConst.LEARNING, onTap: () {}),
+  List<CatalogMenuItem> menuList = [
+    CatalogMenuItem(StringConst.BUSINESS, onTap: () {}),
+    CatalogMenuItem(StringConst.TRENDING, selected: true, onTap: () {}),
+    CatalogMenuItem(StringConst.HEALTH, onTap: () {}),
+    CatalogMenuItem(StringConst.MUSIC, onTap: () {}),
+    CatalogMenuItem(StringConst.SPORTS, onTap: () {}),
+    CatalogMenuItem(StringConst.LEARNING, onTap: () {}),
   ];
 
   @override
@@ -77,7 +77,7 @@ class _MenuScreen4State extends State<MenuScreen4> {
       body: Container(
         child: Center(
           child: RaisedButton(
-            onPressed: () => scaffoldKey.currentState.openDrawer(),
+            onPressed: () => scaffoldKey.currentState?.openDrawer(),
             child: Text(StringConst.OPEN_DRAWER),
           ),
         ),
@@ -85,7 +85,7 @@ class _MenuScreen4State extends State<MenuScreen4> {
     );
   }
 
-  List<Widget> _buildMenuList(List<MenuItem> menuItemList) {
+  List<Widget> _buildMenuList(List<CatalogMenuItem> menuItemList) {
     ThemeData theme = Theme.of(context);
     List<Widget> menuList = [];
 
@@ -93,7 +93,7 @@ class _MenuScreen4State extends State<MenuScreen4> {
       menuList.add(
         Text(
           menuItemList[index].title,
-          style: theme.textTheme.subtitle2.copyWith(
+          style: theme.textTheme.titleMedium?.copyWith(
             color: menuItemList[index].selected
                 ? AppColors.indigo200
                 : AppColors.greyShade6,

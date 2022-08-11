@@ -8,7 +8,7 @@ import 'package:fluttercatalog/values/values.dart';
 import 'package:functional_widget_annotation/functional_widget_annotation.dart';
 
 List<PostListTileItem> curvedPostTileItems = [
-  PostListTileItem(),
+  // PostListTileItem(),
 ];
 
 class MessagesScreen extends StatefulWidget {
@@ -45,7 +45,8 @@ class _MessagesScreenState extends State<MessagesScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             boxShadow: Shadows.containerShadow,
             onLeadingTap: () {
-              ExtendedNavigator.root.pop();
+
+              AutoRouter.of(context).pop();
             },
             title: Padding(
               padding: const EdgeInsets.only(
@@ -57,7 +58,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                   Text(
                     StringConst.MESSAGES,
                     textAlign: TextAlign.left,
-                    style: theme.textTheme.headline5.copyWith(),
+                    style: theme.textTheme.headlineMedium?.copyWith(),
                   )
                 ],
               ),
@@ -68,31 +69,31 @@ class _MessagesScreenState extends State<MessagesScreen> {
     );
   }
 
-  @swidget
-  List<Widget> _buildCurvedCards(List<PostListTileItem> postListTileItems) {
-    double heightOfAppBar = assignHeight(context: context, fraction: 0.2);
-    List<Widget> curvedCards = [];
-
-    for (var index = 0; index < postListTileItems.length; index++) {
-      double height = getHeight(index, postListTileItems.length);
-
-      double spacerHeight = getHeight(index + 1, postListTileItems.length);
-      double topMargin = postListTileItems[index].topMargin;
-
-      curvedCards.add(
-        CurvedListTile(
-          height: height + heightOfAppBar,
-//          spacerHeight: spacerHeight + heightOfAppBar + topMargin,
-//          hasFooter: postListTileItems[index].hasFooter,
-//          body: postListTileItems[index].body,
-//          backgroundColor: postListTileItems[index].backgroundColor,
-//          bodyTextColor: postListTileItems[index].bodyTextColor,
-//          footerIconColor: postListTileItems[index].footerIconColor,
-        ),
-      );
-    }
-    return curvedCards;
-  }
+//   @swidget
+//   List<Widget> _buildCurvedCards(List<PostListTileItem> postListTileItems) {
+//     double heightOfAppBar = assignHeight(context: context, fraction: 0.2);
+//     List<Widget> curvedCards = [];
+//
+//     for (var index = 0; index < postListTileItems.length; index++) {
+//       double height = getHeight(index, postListTileItems.length);
+//
+//       double spacerHeight = getHeight(index + 1, postListTileItems.length);
+//       double topMargin = postListTileItems[index].topMargin;
+//
+//       curvedCards.add(
+//         CurvedListTile(
+//           height: height + heightOfAppBar,
+// //          spacerHeight: spacerHeight + heightOfAppBar + topMargin,
+// //          hasFooter: postListTileItems[index].hasFooter,
+// //          body: postListTileItems[index].body,
+// //          backgroundColor: postListTileItems[index].backgroundColor,
+// //          bodyTextColor: postListTileItems[index].bodyTextColor,
+// //          footerIconColor: postListTileItems[index].footerIconColor,
+//         ),
+//       );
+//     }
+//     return curvedCards;
+//   }
 
   /// gets the height of all the postItems that have not been rendered including the
   /// one about to be rendered and sums the up.

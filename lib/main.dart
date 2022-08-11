@@ -23,7 +23,8 @@ class FlutterCatalog extends StatefulWidget {
 }
 
 class _FlutterCatalogState extends State<FlutterCatalog> {
-  ThemeBloc _themeBloc;
+  late ThemeBloc _themeBloc;
+  final _appRouter = AppRouter();
 
   @override
   void initState() {
@@ -37,16 +38,28 @@ class _FlutterCatalogState extends State<FlutterCatalog> {
       initialData: _themeBloc.initialTheme().data,
       stream: _themeBloc.themeDataStream,
       builder: (BuildContext context, AsyncSnapshot<ThemeData> snapshot) {
-        return MaterialApp(
+        // return MaterialApp(
+        //   debugShowCheckedModeBanner: false,
+        //   theme: snapshot.data,
+        //   darkTheme: null,
+        //   builder: ExtendedNavigator<AppRouter>(
+        //     router: AppRouter(),
+        //     initialRoute: Routes.rootScreen,
+        //     initialRouteArgs: RootScreenArguments(themeBloc: _themeBloc),
+        //     observers: [routeObserver],
+        //   ),
+        // );
+
+        return MaterialApp.router(
           debugShowCheckedModeBanner: false,
           theme: snapshot.data,
-          darkTheme: null,
-          builder: ExtendedNavigator<AppRouter>(
-            router: AppRouter(),
-            initialRoute: Routes.rootScreen,
-            initialRouteArgs: RootScreenArguments(themeBloc: _themeBloc),
-            observers: [routeObserver],
+          title: StringConst.APP_NAME,
+          routerDelegate: _appRouter.delegate(
+            initialRoutes: [
+              RootScreenRoute(themeBloc: _themeBloc)
+            ]
           ),
+          routeInformationParser: _appRouter.defaultRouteParser(),
         );
       },
     );

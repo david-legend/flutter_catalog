@@ -6,9 +6,9 @@ import 'package:fluttercatalog/values/values.dart';
 
 class DrawCircle extends CustomPainter {
   DrawCircle({
-    @required this.radius,
-    @required this.offset,
-    @required this.color,
+    required this.radius,
+    required this.offset,
+    required this.color,
     this.elevation = Sizes.ELEVATION_8,
     this.transparentOccluder = true,
     this.shadowColor,
@@ -27,9 +27,9 @@ class DrawCircle extends CustomPainter {
   final double elevation;
   final bool transparentOccluder;
   final bool hasShadow;
-  final Color shadowColor;
+  final Color? shadowColor;
   final double shadowOffset;
-  Paint _paint;
+  Paint _paint = Paint();
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -57,9 +57,9 @@ class DrawCircle extends CustomPainter {
 
 class DrawTearDrop extends CustomPainter {
   DrawTearDrop({
-    @required this.radius,
-    @required this.offset,
-    @required this.color,
+    required this.radius,
+    required this.offset,
+    required this.color,
     this.strokeWidth = 1.0,
     this.elevation = Sizes.ELEVATION_8,
     this.transparentOccluder = true,
@@ -82,18 +82,16 @@ class DrawTearDrop extends CustomPainter {
   final double elevation;
   final bool transparentOccluder;
   final bool hasShadow;
-  final Color shadowColor;
+  final Color? shadowColor;
   final double shadowOffset;
   final PaintingStyle paintingStyle;
-  Paint _paint;
+  Paint _paint = Paint();
   final TearDropAlignment tearDropAlignment;
 
   @override
   void paint(Canvas canvas, Size size) {
     Path path = Path();
     if (hasShadow) {
-//      Path oval = Path();
-
       if (tearDropAlignment == TearDropAlignment.topLeft) {
         canvas.drawPath(drawPathForTopLeftAlignment(size, path), _paint);
       } else if (tearDropAlignment == TearDropAlignment.topRight) {

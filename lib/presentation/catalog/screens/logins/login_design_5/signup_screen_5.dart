@@ -41,19 +41,19 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
                       children: <Widget>[
                         Text(
                           StringConst.SIGN_UP_2,
-                          style: theme.textTheme.headline4.copyWith(
+                          style: theme.textTheme.headlineLarge?.copyWith(
                             color: AppColors.black,
                           ),
                         ),
                         SpaceH8(),
                         InkWell(
-                          onTap: () => ExtendedNavigator.root.pop(),
+                          onTap: () => AutoRouter.of(context).pop(),
                           child: RichText(
                             text: TextSpan(
                               children: [
                                 TextSpan(
                                   text: StringConst.ALREADY_HAVE_AN_ACCOUNT,
-                                  style: theme.textTheme.subtitle2.copyWith(
+                                  style: theme.textTheme.titleSmall?.copyWith(
                                     color: AppColors.black,
                                     fontSize: Sizes.TEXT_SIZE_16,
                                     fontWeight: FontWeight.bold,
@@ -61,7 +61,7 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
                                 ),
                                 TextSpan(
                                   text: StringConst.LOG_IN_3.toUpperCase(),
-                                  style: theme.textTheme.subtitle2.copyWith(
+                                  style: theme.textTheme.titleSmall?.copyWith(
                                     color: AppColors.pinkShade3,
                                     fontSize: Sizes.TEXT_SIZE_16,
                                     fontWeight: FontWeight.bold,
@@ -89,10 +89,9 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
                           title: StringConst.LOGIN_WITH_FACEBOOK,
                           color: AppColors.white,
                           borderRadius: Sizes.RADIUS_4,
-                          hasIcon: true,
                           elevation: Sizes.ELEVATION_0,
                           height: Sizes.HEIGHT_60,
-                          textStyle: theme.textTheme.button.copyWith(
+                          textStyle: theme.textTheme.bodyMedium?.copyWith(
                             color: AppColors.facebookBlue,
                             fontWeight: FontWeight.w800,
                           ),
@@ -111,7 +110,7 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
                           borderRadius: Sizes.RADIUS_4,
                           color: AppColors.redShade4,
                           height: Sizes.HEIGHT_60,
-                          textStyle: theme.textTheme.button.copyWith(
+                          textStyle: theme.textTheme.bodyMedium?.copyWith(
                               color: AppColors.white,
                               fontSize: Sizes.TEXT_SIZE_16),
                           onPressed: () {},
@@ -181,7 +180,7 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
         CustomTextFormField(
           hasTitle: true,
           title: StringConst.USER_NAME_2,
-          titleStyle: theme.textTheme.subtitle1.copyWith(
+          titleStyle: theme.textTheme.bodyMedium?.copyWith(
             color: AppColors.greyShade8,
             fontSize: Sizes.TEXT_SIZE_14,
           ),
@@ -196,7 +195,7 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
         CustomTextFormField(
           hasTitle: true,
           title: StringConst.PASSWORD_2,
-          titleStyle: theme.textTheme.subtitle1.copyWith(
+          titleStyle: theme.textTheme.bodyMedium?.copyWith(
             color: AppColors.greyShade8,
             fontSize: Sizes.TEXT_SIZE_14,
           ),
@@ -212,7 +211,7 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
         CustomTextFormField(
           hasTitle: true,
           title: StringConst.EMAIL,
-          titleStyle: theme.textTheme.subtitle1.copyWith(
+          titleStyle: theme.textTheme.bodyMedium?.copyWith(
             color: AppColors.greyShade8,
             fontSize: Sizes.TEXT_SIZE_14,
           ),
@@ -230,8 +229,8 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
           children: <Widget>[
             Text(
               StringConst.FORGOT_PASSWORD,
-              style: theme.textTheme.title
-                  .copyWith(color: AppColors.greyShade8, fontSize: 14),
+              style: theme.textTheme.titleMedium
+                  ?.copyWith(color: AppColors.greyShade8, fontSize: 14),
             ),
           ],
         )

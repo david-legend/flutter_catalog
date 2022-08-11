@@ -11,8 +11,8 @@ class OnBoardingScreen2 extends StatefulWidget {
 }
 
 class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
-  double currentIndexPage;
-  int pageLength;
+ late  double currentIndexPage;
+ late  int pageLength;
   List<String> onBoardingImageList = [
     ImagePath.YOGA_2,
     ImagePath.JADE_YOGA,
@@ -112,7 +112,7 @@ class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
             SpaceH8(),
             Text(
               StringConst.MEET_UP.toUpperCase(),
-              style: theme.textTheme.subtitle2.copyWith(
+              style: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.greyShade6,
               ),
             ),
@@ -122,7 +122,7 @@ class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
             Text(
               StringConst.LOREM_IPSUM,
               textAlign: TextAlign.center,
-              style: theme.textTheme.bodyText2.copyWith(
+              style: theme.textTheme.bodyMedium?.copyWith(
                 color: AppColors.blackShade6,
               ),
             ),
@@ -132,7 +132,7 @@ class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
               child: CustomButton(
                 title: StringConst.NEXT,
                 color: AppColors.primaryColor,
-                textStyle: theme.textTheme.subtitle1.copyWith(
+                textStyle: theme.textTheme.titleLarge?.copyWith(
                   color: AppColors.white,
                 ),
                 onPressed: () {},
